@@ -5,7 +5,6 @@ use std::fs;
 static EMBEDDED: Dir = include_dir!("$CARGO_MANIFEST_DIR/corpus");
 
 /// All embedded entries. Panics never: build.rs already validated them.
-#[allow(dead_code)]
 fn embedded() -> Vec<Entry> {
     fn walk(dir: &Dir, out: &mut Vec<Entry>) {
         for f in dir.files() {
@@ -24,7 +23,6 @@ fn embedded() -> Vec<Entry> {
 }
 
 /// User overlay: ~/.collective/corpus/*.yaml. Invalid entries warn + skip.
-#[allow(dead_code)]
 fn overlay() -> Vec<Entry> {
     let Some(base) = directories::BaseDirs::new() else { return vec![] };
     let dir = base.home_dir().join(".collective/corpus");
@@ -47,7 +45,6 @@ fn overlay() -> Vec<Entry> {
         .collect()
 }
 
-#[allow(dead_code)]
 fn merge(base: Vec<Entry>, over: Vec<Entry>) -> Vec<Entry> {
     let mut entries = base;
     for e in over {
@@ -58,7 +55,6 @@ fn merge(base: Vec<Entry>, over: Vec<Entry>) -> Vec<Entry> {
     entries
 }
 
-#[allow(dead_code)]
 pub fn load() -> Vec<Entry> {
     merge(embedded(), overlay())
 }
