@@ -1,0 +1,12 @@
+id: pmset-disable-sleep
+title: Disable sleep entirely on macOS (even lid closed)
+cmd: sudo pmset -a disablesleep 1
+undo: sudo pmset -a disablesleep 0
+platform: [macos]
+domains: [power, macos-admin]
+danger: medium
+explanation: >
+  Hard-disables system sleep on all power sources, including clamshell mode.
+  Great for long builds on a closed laptop; remember to undo or your battery pays.
+source: https://ss64.com/mac/pmset.html
+tags: [sleep, clamshell, laptop, power]

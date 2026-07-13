@@ -1,0 +1,13 @@
+id: tmutil-thin-snapshots
+title: Reclaim disk space eaten by local Time Machine snapshots
+cmd: tmutil thinlocalsnapshots / 999999999999 4
+undo: ""
+platform: [macos]
+domains: [macos-admin, disk]
+danger: medium
+explanation: >
+  "System Data" mysteriously huge? Local APFS snapshots are the usual culprit.
+  This purges them aggressively (urgency 4). List first with
+  tmutil listlocalsnapshots /.
+source: https://ss64.com/mac/tmutil.html
+tags: [disk, time-machine, snapshots, storage]

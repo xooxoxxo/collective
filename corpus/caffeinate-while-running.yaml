@@ -1,0 +1,12 @@
+id: caffeinate-while-running
+title: Keep Mac awake only while a command runs
+cmd: caffeinate -dims make build
+undo: ""
+platform: [macos]
+domains: [power]
+danger: low
+explanation: >
+  Wraps any command; Mac stays awake (display, idle, disk, system) exactly until
+  it exits. Safer than pmset because it cannot be forgotten.
+source: https://ss64.com/mac/caffeinate.html
+tags: [sleep, awake, build]

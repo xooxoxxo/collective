@@ -1,0 +1,11 @@
+id: dock-autohide-instant
+title: Make Dock auto-hide animation instant
+cmd: defaults write com.apple.dock autohide-time-modifier -float 0 && killall Dock
+undo: defaults delete com.apple.dock autohide-time-modifier && killall Dock
+platform: [macos]
+domains: [macos-admin]
+danger: low
+explanation: >
+  Removes the auto-hide animation delay so the Dock snaps in and out instantly.
+source: https://macos-defaults.com/dock/autohide-time-modifier.html
+tags: [dock, defaults, animation, speed]

@@ -1,0 +1,12 @@
+id: remove-quarantine
+title: Remove the quarantine flag from a downloaded app
+cmd: xattr -dr com.apple.quarantine /Applications/SomeApp.app
+undo: ""
+platform: [macos]
+domains: [macos-admin, security]
+danger: medium
+explanation: >
+  Clears Gatekeeper's "downloaded from the internet" warning. Only run on
+  software you actually trust — this bypasses a real safety check.
+source: https://ss64.com/mac/xattr.html
+tags: [gatekeeper, quarantine, xattr, unsigned]

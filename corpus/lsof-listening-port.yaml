@@ -1,0 +1,12 @@
+id: lsof-listening-port
+title: Find which process is listening on a port
+cmd: lsof -iTCP:3000 -sTCP:LISTEN -n -P
+undo: ""
+platform: [macos, linux]
+domains: [network, debugging]
+danger: low
+explanation: >
+  Answers "who is squatting on my port" with PID and process name. -n -P skips
+  slow DNS/port-name lookups. Swap 3000 for any port.
+source: https://ss64.com/mac/lsof.html
+tags: [port, lsof, process, debugging]

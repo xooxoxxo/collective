@@ -1,0 +1,12 @@
+id: mdfind-by-name
+title: Spotlight-search files from the terminal
+cmd: mdfind -name invoice.pdf
+undo: ""
+platform: [macos]
+domains: [files]
+danger: low
+explanation: >
+  Uses the Spotlight index, so it is instant — no find(1) filesystem crawl.
+  Drop -name to full-text search file contents instead.
+source: https://ss64.com/mac/mdfind.html
+tags: [spotlight, search, find, files]

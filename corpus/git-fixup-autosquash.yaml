@@ -1,0 +1,12 @@
+id: git-fixup-autosquash
+title: Fix an earlier commit without manual rebase surgery
+cmd: git commit --fixup <sha> && git rebase --autosquash -i <sha>^
+undo: git rebase --abort
+platform: [macos, linux]
+domains: [git]
+danger: medium
+explanation: >
+  Stage the fix, mark it as belonging to <sha>, and autosquash melds it in place.
+  Rewrites history — only on unpushed/unshared branches.
+source: https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---autosquash
+tags: [git, rebase, fixup, history]
