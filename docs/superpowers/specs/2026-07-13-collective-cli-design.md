@@ -52,7 +52,7 @@ tags: [sleep, laptop, clamshell]
 
 ### Crates
 
-`clap`, `serde_yaml`, `nucleo-matcher` (or `fuzzy-matcher`), `arboard`, `crossterm`, `directories`.
+`clap`, `serde_yaml`, `nucleo-matcher`, `arboard`, `crossterm`, `directories`.
 
 ### Danger display
 
