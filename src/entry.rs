@@ -7,14 +7,11 @@ pub struct Entry {
     pub title: String,
     pub cmd: String,
     #[serde(default)]
-    #[allow(dead_code)]
     pub undo: Option<String>,
     pub platform: Vec<String>,
     pub domains: Vec<String>,
-    #[allow(dead_code)]
     pub danger: Danger,
     pub explanation: String,
-    #[allow(dead_code)]
     pub source: String,
     #[serde(default)]
     pub tags: Vec<String>,
