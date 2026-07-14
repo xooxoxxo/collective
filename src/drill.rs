@@ -64,7 +64,10 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
         print!("your answer (or Enter to reveal): ");
         io::stdout().flush().unwrap();
         let mut buf = String::new();
-        stdin.read_line(&mut buf).unwrap();
+        if stdin.read_line(&mut buf).unwrap() == 0 {
+            println!();
+            return;
+        }
         let typed = buf.trim();
         println!("  {}", e.cmd);
         if !typed.is_empty() {
@@ -75,10 +78,19 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
             print!("grade  1=again 2=hard 3=good 4=easy: ");
             io::stdout().flush().unwrap();
             let mut g = String::new();
-            stdin.read_line(&mut g).unwrap();
-            match g.trim().parse::<u8>() {
-                Ok(n @ 1..=4) => break n,
-                _ => continue,
+            match stdin.read_line(&mut g) {
+                Ok(0) => {
+                    println!("\nsession ended.");
+                    return;
+                }
+                Ok(_) => match g.trim().parse::<u8>() {
+                    Ok(n @ 1..=4) => break n,
+                    _ => continue,
+                },
+                Err(err) => {
+                    eprintln!("input error: {err}");
+                    return;
+                }
             }
         };
         let card = state.get(&e.id).copied().unwrap_or_default();

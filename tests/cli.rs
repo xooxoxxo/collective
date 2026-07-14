@@ -42,3 +42,13 @@ fn random_prints_an_entry() {
         .success()
         .stdout(str::contains("source: "));
 }
+
+#[test]
+fn drill_with_empty_stdin_exits_cleanly() {
+    Command::cargo_bin("col")
+        .unwrap()
+        .args(["drill", "--domain", "git"])
+        .write_stdin("")
+        .assert()
+        .success();
+}
