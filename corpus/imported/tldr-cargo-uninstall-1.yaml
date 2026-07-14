@@ -1,0 +1,13 @@
+id: tldr-cargo-uninstall-1
+title: 'cargo-uninstall: Remove an installed binary'
+cmd: cargo uninstall <package_spec>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove a Rust binary installed globally using `cargo install`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-uninstall.md
+  (CC-BY-4.0)
+tags:
+- cargo-uninstall

@@ -1,0 +1,12 @@
+id: tldr-git-remote-6
+title: 'git-remote: Remove a remote'
+cmd: git remote remove <remote_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage set of tracked repositories ("remotes")
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-remote.md (CC-BY-4.0)
+tags:
+- git-remote

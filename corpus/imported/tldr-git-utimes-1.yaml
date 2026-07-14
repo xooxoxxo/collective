@@ -1,0 +1,13 @@
+id: tldr-git-utimes-1
+title: 'git-utimes: Change all files modification time to their last commit date'
+cmd: git utimes
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change files modification time to their last commit date. Does not touch
+  files that are in the working tree or index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-utimes.md (CC-BY-4.0)
+tags:
+- git-utimes

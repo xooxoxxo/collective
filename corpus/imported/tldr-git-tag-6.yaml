@@ -1,0 +1,12 @@
+id: tldr-git-tag-6
+title: 'git-tag: Get updated tags from remote'
+cmd: git fetch <[-t|--tags]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, delete, or verify tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-tag.md (CC-BY-4.0)
+tags:
+- git-tag

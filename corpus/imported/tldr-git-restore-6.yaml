@@ -1,0 +1,12 @@
+id: tldr-git-restore-6
+title: 'git-restore: Discard all changes to files, both staged and unstaged'
+cmd: git restore <[-W|--worktree]> <[-S|--staged]> :/
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Restore working tree files. Requires Git version 2.23+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-restore.md (CC-BY-4.0)
+tags:
+- git-restore

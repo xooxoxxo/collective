@@ -1,0 +1,13 @@
+id: tldr-git-delta-1
+title: 'git-delta: List files from the current checked out branch that differ from
+  the `main` branch'
+cmd: git delta <main>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List files that differ from another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-delta.md (CC-BY-4.0)
+tags:
+- git-delta

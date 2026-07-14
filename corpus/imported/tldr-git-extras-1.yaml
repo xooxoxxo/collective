@@ -1,0 +1,12 @@
+id: tldr-git-extras-1
+title: 'git-extras: Install or upgrade `git-extras` commands'
+cmd: git extras update
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git extension pack
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-extras.md (CC-BY-4.0)
+tags:
+- git-extras

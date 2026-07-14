@@ -1,0 +1,12 @@
+id: tldr-trash-1
+title: 'trash: Move a file to the trash'
+cmd: trash <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Move files and directories to the user trash folder
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/trash.md (CC-BY-4.0)
+tags:
+- trash

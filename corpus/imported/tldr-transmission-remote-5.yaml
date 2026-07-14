@@ -1,0 +1,15 @@
+id: tldr-transmission-remote-5
+title: 'transmission-remote: Remove torrent 1 and 2, and also delete local data for
+  torrent 2'
+cmd: transmission-remote <hostname> <[-t|--torrent]> 1 <[-r|--remove]> <[-t|--torrent]>
+  2 <[-rad|--remove-and-delete]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

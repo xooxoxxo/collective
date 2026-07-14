@@ -1,0 +1,12 @@
+id: tldr-git-fork-2
+title: 'git-fork: Fork and clone a GitHub repository by its slug'
+cmd: git fork <tldr-pages/tldr>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Fork a GitHub repo. Like `git clone` but forks first
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fork.md (CC-BY-4.0)
+tags:
+- git-fork

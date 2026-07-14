@@ -1,0 +1,12 @@
+id: tldr-brew-bundle-6
+title: 'brew-bundle: List all entries in the Brewfile'
+cmd: brew bundle list --all
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bundler for Homebrew, Homebrew Cask and the Mac App Store
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-bundle.md (CC-BY-4.0)
+tags:
+- brew-bundle

@@ -1,0 +1,14 @@
+id: tldr-git-gui-4
+title: 'git-gui: Open `git gui blame` and scroll the view to center on a specific
+  line'
+cmd: git gui blame --line=<line> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A GUI for Git to manage branches, commits, and remotes, and perform local
+  merges
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gui.md (CC-BY-4.0)
+tags:
+- git-gui

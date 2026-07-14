@@ -1,0 +1,13 @@
+id: tldr-git-subtree-1
+title: 'git-subtree: Add a Git repository as a subtree and squash the commits together'
+cmd: git subtree add <[-P|--prefix]> <path/to/directory> --squash <repository_url>
+  <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge subtrees together or split repository into subtrees
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-subtree.md (CC-BY-4.0)
+tags:
+- git-subtree

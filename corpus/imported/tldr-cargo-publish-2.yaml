@@ -1,0 +1,14 @@
+id: tldr-cargo-publish-2
+title: 'cargo-publish: Perform checks, create a `.crate` file but don''t upload it
+  (equivalent of `cargo package`)'
+cmd: cargo publish <[-n|--dry-run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Upload a package to a registry
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-publish.md
+  (CC-BY-4.0)
+tags:
+- cargo-publish

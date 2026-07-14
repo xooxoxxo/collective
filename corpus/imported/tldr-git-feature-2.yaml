@@ -1,0 +1,13 @@
+id: tldr-git-feature-2
+title: 'git-feature: Merge a feature branch into the current branch creating a merge
+  commit'
+cmd: git feature finish <feature_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create or merge feature branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-feature.md (CC-BY-4.0)
+tags:
+- git-feature

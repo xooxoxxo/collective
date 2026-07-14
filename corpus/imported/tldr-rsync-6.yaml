@@ -1,0 +1,14 @@
+id: tldr-rsync-6
+title: 'rsync: Use archive mode, resolve symlinks, and skip files that are newer on
+  the destination'
+cmd: rsync <[-auL|--archive --update --copy-links]> <path/to/source> <path/to/destination>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfer files either to or from a remote host (but not between two remote
+  hosts), by default using SSH
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/rsync.md (CC-BY-4.0)
+tags:
+- rsync

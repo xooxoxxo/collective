@@ -1,0 +1,13 @@
+id: tldr-transmission-create-5
+title: 'transmission-create: Display help'
+cmd: transmission-create <[-h|--help]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create BitTorrent `.torrent` files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-create.md
+  (CC-BY-4.0)
+tags:
+- transmission-create

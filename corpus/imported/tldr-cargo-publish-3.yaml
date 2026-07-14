@@ -1,0 +1,14 @@
+id: tldr-cargo-publish-3
+title: 'cargo-publish: Use the specified registry (registry names can be defined in
+  the configuration - the default is <https://crates.io>)'
+cmd: cargo publish --registry <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Upload a package to a registry
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-publish.md
+  (CC-BY-4.0)
+tags:
+- cargo-publish

@@ -1,0 +1,12 @@
+id: tldr-makepasswd-3
+title: 'makepasswd: Generate a 5 to 10 characters long password'
+cmd: makepasswd --minchars <5> --maxchars <10>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate and encrypt passwords
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/makepasswd.md (CC-BY-4.0)
+tags:
+- makepasswd

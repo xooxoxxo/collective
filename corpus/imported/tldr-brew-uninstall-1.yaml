@@ -1,0 +1,13 @@
+id: tldr-brew-uninstall-1
+title: 'brew-uninstall: Uninstall a formula/cask'
+cmd: brew <[rm|uninstall]> <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Uninstall a Homebrew formula/cask
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-uninstall.md
+  (CC-BY-4.0)
+tags:
+- brew-uninstall

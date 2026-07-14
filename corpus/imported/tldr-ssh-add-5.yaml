@@ -1,0 +1,12 @@
+id: tldr-ssh-add-5
+title: 'ssh-add: Delete all currently loaded keys from the `ssh-agent`'
+cmd: ssh-add -D
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage loaded SSH keys in the `ssh-agent`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-add.md (CC-BY-4.0)
+tags:
+- ssh-add

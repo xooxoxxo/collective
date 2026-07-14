@@ -1,0 +1,13 @@
+id: tldr-cargo-report-3
+title: 'cargo-report: Display a report for the specified package'
+cmd: cargo report future-incompatibilities <[-p|--package]> <package>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display various kinds of reports
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-report.md
+  (CC-BY-4.0)
+tags:
+- cargo-report

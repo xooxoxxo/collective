@@ -1,0 +1,13 @@
+id: tldr-makepasswd-1
+title: 'makepasswd: Generate a random password (8 to 10 characters long, containing
+  letters and numbers)'
+cmd: makepasswd
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate and encrypt passwords
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/makepasswd.md (CC-BY-4.0)
+tags:
+- makepasswd

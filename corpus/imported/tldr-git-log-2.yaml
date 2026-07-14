@@ -1,0 +1,12 @@
+id: tldr-git-log-2
+title: 'git-log: Show the history of a particular file or directory, including differences'
+cmd: git log <[-p|--patch]> <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

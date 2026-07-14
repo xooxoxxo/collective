@@ -1,0 +1,13 @@
+id: tldr-git-diff-tree-2
+title: 'git-diff-tree: Show changes between two specific commits'
+cmd: git diff-tree -r <commit1> <commit2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compares the content and mode of blobs found via two tree objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff-tree.md
+  (CC-BY-4.0)
+tags:
+- git-diff-tree

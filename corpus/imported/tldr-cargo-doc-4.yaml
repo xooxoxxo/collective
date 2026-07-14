@@ -1,0 +1,12 @@
+id: tldr-cargo-doc-4
+title: 'cargo-doc: Build and view the documentation of a particular package'
+cmd: cargo <[d|doc]> --open <[-p|--package]> <package>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-doc.md (CC-BY-4.0)
+tags:
+- cargo-doc

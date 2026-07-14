@@ -1,0 +1,13 @@
+id: tldr-tre-6
+title: 'tre: Print files within the tree hierarchy, excluding all paths that match
+  the provided `regex`'
+cmd: tre <[-E|--exclude]> <regex>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

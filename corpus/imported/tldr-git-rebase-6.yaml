@@ -1,0 +1,13 @@
+id: tldr-git-rebase-6
+title: 'git-rebase: Move part of the current branch onto a new base, providing the
+  old base to start from'
+cmd: git rebase --onto <new_base> <old_base>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

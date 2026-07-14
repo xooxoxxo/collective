@@ -1,0 +1,12 @@
+id: tldr-cargo-2
+title: 'cargo: Install a binary crate'
+cmd: cargo install <crate_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage Rust projects and their module dependencies (crates)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo.md (CC-BY-4.0)
+tags:
+- cargo

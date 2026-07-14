@@ -1,0 +1,13 @@
+id: tldr-git-switch-3
+title: 'git-switch: Create a new branch based on an existing commit and switch to
+  it'
+cmd: git switch <[-c|--create]> <branch_name> <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Switch between Git branches. Requires Git version 2.23+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-switch.md (CC-BY-4.0)
+tags:
+- git-switch

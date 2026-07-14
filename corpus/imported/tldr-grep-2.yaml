@@ -1,0 +1,12 @@
+id: tldr-grep-2
+title: 'grep: Search for an exact string (disables `regex`es)'
+cmd: grep <[-F|--fixed-strings]> "<exact_string>" <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

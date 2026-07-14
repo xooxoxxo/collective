@@ -1,0 +1,13 @@
+id: tldr-git-diff-4
+title: 'git-diff: Show changes from all commits since a given date/time (a date expression,
+  e.g. "1 week 2 days" or an ISO date)'
+cmd: git diff 'HEAD@<{3 months|weeks|days|hours|seconds ago>}'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show changes to tracked files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff.md (CC-BY-4.0)
+tags:
+- git-diff

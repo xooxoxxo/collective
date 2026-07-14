@@ -1,0 +1,14 @@
+id: tldr-git-show-merged-branches-1
+title: 'git-show-merged-branches: Print all branches which are merged into the current
+  head'
+cmd: git show-merged-branches
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print all branches which are merged into the current head
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-merged-branches.md
+  (CC-BY-4.0)
+tags:
+- git-show-merged-branches

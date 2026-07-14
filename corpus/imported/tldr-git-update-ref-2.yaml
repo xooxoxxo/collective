@@ -1,0 +1,13 @@
+id: tldr-git-update-ref-2
+title: 'git-update-ref: Update ref with a message'
+cmd: git update-ref -m <message> <HEAD> <4e95e05>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for creating, updating, and deleting Git refs
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-update-ref.md
+  (CC-BY-4.0)
+tags:
+- git-update-ref

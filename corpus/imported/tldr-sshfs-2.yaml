@@ -1,0 +1,12 @@
+id: tldr-sshfs-2
+title: 'sshfs: Unmount remote directory'
+cmd: umount <mountpoint>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Filesystem client based on SSH
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshfs.md (CC-BY-4.0)
+tags:
+- sshfs

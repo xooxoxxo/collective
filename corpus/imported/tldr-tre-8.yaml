@@ -1,0 +1,12 @@
+id: tldr-tre-8
+title: 'tre: Display version'
+cmd: tre <[-V|--version]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

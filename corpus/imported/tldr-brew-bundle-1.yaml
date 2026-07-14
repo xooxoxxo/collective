@@ -1,0 +1,12 @@
+id: tldr-brew-bundle-1
+title: 'brew-bundle: Install packages from a Brewfile at the current path'
+cmd: brew bundle
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bundler for Homebrew, Homebrew Cask and the Mac App Store
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-bundle.md (CC-BY-4.0)
+tags:
+- brew-bundle

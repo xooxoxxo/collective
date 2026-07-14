@@ -1,0 +1,12 @@
+id: tldr-git-clean-2
+title: 'git-clean: Show which files would be deleted without actually deleting them'
+cmd: git clean <[-n|--dry-run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files not tracked by Git from the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clean.md (CC-BY-4.0)
+tags:
+- git-clean

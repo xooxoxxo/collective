@@ -1,0 +1,12 @@
+id: tldr-cargo-clean-2
+title: 'cargo-clean: Remove documentation artifacts (the `target/doc` directory)'
+cmd: cargo clean --doc
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove generated artifacts in the `target` directory
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-clean.md (CC-BY-4.0)
+tags:
+- cargo-clean

@@ -1,0 +1,13 @@
+id: tldr-git-submodule-5
+title: 'git-submodule: Update submodules to their latest commits'
+cmd: git submodule update --remote
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Inspect, update, and manage submodules
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-submodule.md
+  (CC-BY-4.0)
+tags:
+- git-submodule

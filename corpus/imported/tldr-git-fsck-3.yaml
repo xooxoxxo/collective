@@ -1,0 +1,12 @@
+id: tldr-git-fsck-3
+title: 'git-fsck: List all root nodes found'
+cmd: git fsck --root
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Verify the validity and connectivity of nodes in a Git repository index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fsck.md (CC-BY-4.0)
+tags:
+- git-fsck

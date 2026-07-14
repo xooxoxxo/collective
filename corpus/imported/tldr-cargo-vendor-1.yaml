@@ -1,0 +1,15 @@
+id: tldr-cargo-vendor-1
+title: 'cargo-vendor: Vendor dependencies and configure `cargo` to use the vendored
+  sources in the current project'
+cmd: cargo vendor <path/to/directory> > .cargo/config.toml
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: 'Vendor all dependencies of a project into the specified directory (default:
+  `vendor`)'
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-vendor.md
+  (CC-BY-4.0)
+tags:
+- cargo-vendor

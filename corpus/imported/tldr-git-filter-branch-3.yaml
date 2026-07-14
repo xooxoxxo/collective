@@ -1,0 +1,13 @@
+id: tldr-git-filter-branch-3
+title: 'git-filter-branch: Delete a folder from history'
+cmd: git filter-branch --tree-filter 'rm <[-rf|--recursive --force]> <folder>' HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change branch history, like removing files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-filter-branch.md
+  (CC-BY-4.0)
+tags:
+- git-filter-branch

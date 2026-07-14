@@ -1,0 +1,12 @@
+id: tldr-git-stash-8
+title: 'git-stash: Delete all stashes'
+cmd: git stash clear
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Stash local Git changes in a temporary area
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-stash.md (CC-BY-4.0)
+tags:
+- git-stash

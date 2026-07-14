@@ -1,0 +1,13 @@
+id: tldr-git-subtree-5
+title: 'git-subtree: Extract a new project history from the history of a subtree'
+cmd: git subtree split <[-P|--prefix]> <path/to/directory> <repository_url> <[-b|--branch]>
+  <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge subtrees together or split repository into subtrees
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-subtree.md (CC-BY-4.0)
+tags:
+- git-subtree

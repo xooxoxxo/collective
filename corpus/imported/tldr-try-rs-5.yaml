@@ -1,0 +1,12 @@
+id: tldr-try-rs-5
+title: 'try-rs: Create a Git worktree from the current repository'
+cmd: try-rs --worktree <worktree_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage temporary project workspaces with an interactive TUI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/try-rs.md (CC-BY-4.0)
+tags:
+- try-rs

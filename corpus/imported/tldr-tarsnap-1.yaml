@@ -1,0 +1,14 @@
+id: tldr-tarsnap-1
+title: 'tarsnap: [c]reate a backup archive of one or more files or directories, specifying
+  the cryptographic key and the cache directory'
+cmd: tarsnap -c --keyfile <path/to/key_file> --cachedir <path/to/cache_directory>
+  -f <archive_name> <path/to/file_or_directory1 path/to/file_or_directory2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manipulate remote Tarsnap encrypted backups
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap.md (CC-BY-4.0)
+tags:
+- tarsnap

@@ -1,0 +1,12 @@
+id: tldr-git-grep-4
+title: 'git-grep: Search for a string at a specific point in history'
+cmd: git grep "<search_string>" <HEAD~2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find strings inside tracked files in a repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-grep.md (CC-BY-4.0)
+tags:
+- git-grep

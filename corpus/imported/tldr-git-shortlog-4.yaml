@@ -1,0 +1,14 @@
+id: tldr-git-shortlog-4
+title: 'git-shortlog: View a summary of the last 5 commits (i.e. specify a revision
+  range)'
+cmd: git shortlog HEAD~5..HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Summarizes the `git log` output
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-shortlog.md
+  (CC-BY-4.0)
+tags:
+- git-shortlog

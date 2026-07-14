@@ -1,0 +1,12 @@
+id: tldr-make-8
+title: 'make: Override variables defined in the Makefile by the environment'
+cmd: make <[-e|--environment-overrides]> <target>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Task runner for targets described in Makefile
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/make.md (CC-BY-4.0)
+tags:
+- make

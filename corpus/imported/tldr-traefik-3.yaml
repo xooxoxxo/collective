@@ -1,0 +1,12 @@
+id: tldr-traefik-3
+title: 'traefik: Start the server with cluster mode enabled'
+cmd: traefik --cluster
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An HTTP reverse proxy and load balancer
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/traefik.md (CC-BY-4.0)
+tags:
+- traefik

@@ -1,0 +1,14 @@
+id: tldr-git-diff-index-2
+title: 'git-diff-index: Compare a specific file or directory in working directory
+  with a commit'
+cmd: git diff-index <commit> <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compare the working directory with a commit or tree object
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff-index.md
+  (CC-BY-4.0)
+tags:
+- git-diff-index

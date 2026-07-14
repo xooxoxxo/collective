@@ -1,0 +1,12 @@
+id: tldr-git-abort-1
+title: 'git-abort: Abort a Git rebase, merge, or cherry-pick'
+cmd: git abort
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Abort an ongoing rebase, merge, or cherry-pick
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-abort.md (CC-BY-4.0)
+tags:
+- git-abort

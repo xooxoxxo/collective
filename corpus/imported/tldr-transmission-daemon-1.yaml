@@ -1,0 +1,13 @@
+id: tldr-transmission-daemon-1
+title: 'transmission-daemon: Start a headless `transmission` session'
+cmd: transmission-daemon
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Daemon controlled with `transmission-remote` or its web interface
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-daemon.md
+  (CC-BY-4.0)
+tags:
+- transmission-daemon

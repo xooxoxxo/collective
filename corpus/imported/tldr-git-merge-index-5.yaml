@@ -1,0 +1,13 @@
+id: tldr-git-merge-index-5
+title: 'git-merge-index: Inspect merge inputs for a file using `cat`'
+cmd: git merge-index cat -- <path>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run a merge program on files that need merging
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-index.md
+  (CC-BY-4.0)
+tags:
+- git-merge-index

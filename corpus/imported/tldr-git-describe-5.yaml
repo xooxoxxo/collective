@@ -1,0 +1,13 @@
+id: tldr-git-describe-5
+title: 'git-describe: Create a name for the last commit of a given branch'
+cmd: git describe <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Give an object a human-readable name based on an available ref
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-describe.md
+  (CC-BY-4.0)
+tags:
+- git-describe

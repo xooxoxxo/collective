@@ -1,0 +1,12 @@
+id: tldr-trash-2
+title: 'trash: Move multiple items or directories to the trash'
+cmd: trash <path/to/file_or_directory1 path/to/file_or_directory2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Move files and directories to the user trash folder
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/trash.md (CC-BY-4.0)
+tags:
+- trash

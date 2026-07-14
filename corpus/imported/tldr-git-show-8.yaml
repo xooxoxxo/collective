@@ -1,0 +1,13 @@
+id: tldr-git-show-8
+title: 'git-show: Show the contents of a file as it was at a given revision (e.g.
+  branch, tag, or commit)'
+cmd: git show <revision>:<path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show various types of Git objects (commits, tags, etc.)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show.md (CC-BY-4.0)
+tags:
+- git-show

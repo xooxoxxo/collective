@@ -1,0 +1,13 @@
+id: tldr-git-scp-5
+title: 'git-scp: Copy a specific directory to a remote'
+cmd: git scp <remote_name> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Copy files from the current working tree to the working directory of
+  a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-scp.md (CC-BY-4.0)
+tags:
+- git-scp

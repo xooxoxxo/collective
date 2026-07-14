@@ -1,0 +1,13 @@
+id: tldr-git-write-tree-1
+title: 'git-write-tree: Create a tree object from the current index'
+cmd: git write-tree
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Low level utility to create a tree object from the current index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-write-tree.md
+  (CC-BY-4.0)
+tags:
+- git-write-tree

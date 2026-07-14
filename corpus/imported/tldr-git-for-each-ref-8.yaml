@@ -1,0 +1,13 @@
+id: tldr-git-for-each-ref-8
+title: 'git-for-each-ref: Limit output to a specified number of refs'
+cmd: git for-each-ref --count <count>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List and optionally format references (branches, tags) in a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-for-each-ref.md
+  (CC-BY-4.0)
+tags:
+- git-for-each-ref

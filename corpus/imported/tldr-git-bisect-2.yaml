@@ -1,0 +1,13 @@
+id: tldr-git-bisect-2
+title: 'git-bisect: For each commit that `git bisect` selects, mark it as "bad" or
+  "good" after testing it for the issue'
+cmd: git bisect <good|bad>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Use binary search to find the commit that introduced a bug
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bisect.md (CC-BY-4.0)
+tags:
+- git-bisect

@@ -1,0 +1,12 @@
+id: tldr--3
+title: '~: List the contents of the previous directory you were in'
+cmd: ls ~-
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Expand to a directory
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/~.md (CC-BY-4.0)
+tags:
+- ''

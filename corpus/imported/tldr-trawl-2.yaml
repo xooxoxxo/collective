@@ -1,0 +1,12 @@
+id: tldr-trawl-2
+title: 'trawl: Filter interface names using a case-insensitive `regex`'
+cmd: trawl -f wi
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print out network interface information to the console, much like ifconfig/ipconfig/ip/ifdata
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trawl.md (CC-BY-4.0)
+tags:
+- trawl

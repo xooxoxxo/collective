@@ -1,0 +1,12 @@
+id: tldr-ssh-add-1
+title: 'ssh-add: Add the default SSH keys in `~/.ssh` to the ssh-agent'
+cmd: ssh-add
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage loaded SSH keys in the `ssh-agent`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-add.md (CC-BY-4.0)
+tags:
+- ssh-add

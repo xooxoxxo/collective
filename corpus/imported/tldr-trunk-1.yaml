@@ -1,0 +1,12 @@
+id: tldr-trunk-1
+title: 'trunk: View documentation for the Rust WASM bundler'
+cmd: tldr trunk.rs
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: '`trunk` can refer to multiple commands with the same name'
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.md (CC-BY-4.0)
+tags:
+- trunk

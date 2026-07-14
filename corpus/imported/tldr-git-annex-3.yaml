@@ -1,0 +1,12 @@
+id: tldr-git-annex-3
+title: 'git-annex: Show the current status of a file or directory'
+cmd: git annex status <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage files with Git, without checking their contents in
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-annex.md (CC-BY-4.0)
+tags:
+- git-annex

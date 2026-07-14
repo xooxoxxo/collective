@@ -1,0 +1,13 @@
+id: tldr-tree-6
+title: 'tree: Print files within the tree hierarchy, using a wildcard (glob) pattern,
+  and pruning out directories that don''t contain matching files'
+cmd: tree -P '<*.txt>' --prune
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tree.md (CC-BY-4.0)
+tags:
+- tree

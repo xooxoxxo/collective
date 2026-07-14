@@ -1,0 +1,12 @@
+id: tldr-clangd-3
+title: 'clangd: Display version'
+cmd: clangd --version
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Language server that provides IDE-like features to editors
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clangd.md (CC-BY-4.0)
+tags:
+- clangd

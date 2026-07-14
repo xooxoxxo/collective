@@ -1,0 +1,12 @@
+id: tldr-tar-4
+title: 'tar: E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely'
+cmd: tar xvf <path/to/source.tar[.gz|.bz2|.xz]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

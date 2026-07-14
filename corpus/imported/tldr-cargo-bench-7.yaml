@@ -1,0 +1,12 @@
+id: tldr-cargo-bench-7
+title: 'cargo-bench: Benchmark all binary targets'
+cmd: cargo bench --bins
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile and execute benchmarks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-bench.md (CC-BY-4.0)
+tags:
+- cargo-bench

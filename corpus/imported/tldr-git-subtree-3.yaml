@@ -1,0 +1,14 @@
+id: tldr-git-subtree-3
+title: 'git-subtree: Merge recent changes up to the latest subtree commit into the
+  subtree'
+cmd: git subtree merge <[-P|--prefix]> <path/to/directory> --squash <repository_url>
+  <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge subtrees together or split repository into subtrees
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-subtree.md (CC-BY-4.0)
+tags:
+- git-subtree

@@ -1,0 +1,12 @@
+id: tldr-git-extras-2
+title: 'git-extras: Display help'
+cmd: git extras <[-h|--help]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git extension pack
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-extras.md (CC-BY-4.0)
+tags:
+- git-extras

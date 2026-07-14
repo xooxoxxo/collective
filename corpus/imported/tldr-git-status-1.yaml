@@ -1,0 +1,12 @@
+id: tldr-git-status-1
+title: 'git-status: Show untracked and changed files which are not yet added for commit'
+cmd: git status
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the changes to files in a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-status.md (CC-BY-4.0)
+tags:
+- git-status

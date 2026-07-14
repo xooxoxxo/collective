@@ -1,0 +1,13 @@
+id: tldr-cargo-install-4
+title: 'cargo-install: Install a package from a local directory'
+cmd: cargo install --path <path/to/package>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build and install a Rust binary
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-install.md
+  (CC-BY-4.0)
+tags:
+- cargo-install

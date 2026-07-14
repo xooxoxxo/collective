@@ -1,0 +1,13 @@
+id: tldr-cargo-rustc-8
+title: 'cargo-rustc: Build only the specified binary'
+cmd: cargo rustc --bin <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile a Rust package. Similar to `cargo build`, but you can pass extra
+  options to the compiler
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustc.md (CC-BY-4.0)
+tags:
+- cargo-rustc

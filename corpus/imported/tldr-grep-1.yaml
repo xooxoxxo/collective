@@ -1,0 +1,12 @@
+id: tldr-grep-1
+title: 'grep: Search for a pattern within files'
+cmd: grep "<search_pattern>" <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

@@ -1,0 +1,14 @@
+id: tldr-launchctl-3
+title: 'launchctl: Activate a system-wide daemon to be loaded whenever the system
+  boots up (even if no user logs in)'
+cmd: sudo launchctl load /Library/LaunchDaemons/<system_daemon>.plist
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Control Apple's `launchd` manager for launch daemons (system-wide services)
+  and launch agents (per-user programs)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/launchctl.md (CC-BY-4.0)
+tags:
+- launchctl

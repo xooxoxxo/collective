@@ -1,0 +1,14 @@
+id: tldr-cargo-package-2
+title: 'cargo-package: Display what files would be included in the tarball without
+  actually creating it'
+cmd: cargo package <[-l|--list]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Assemble a local package into a distributable tarball (a `.crate` file)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-package.md
+  (CC-BY-4.0)
+tags:
+- cargo-package

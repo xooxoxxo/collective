@@ -1,0 +1,14 @@
+id: tldr-gcc-3
+title: 'gcc: Show common warnings, debug symbols in output, and optimize without affecting
+  debugging'
+cmd: gcc <path/to/source.c> -Wall <[-g|--debug]> -Og <[-o|--output]> <path/to/output_executable>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Preprocess and compile C and C++ source files, then assemble and link
+  them together
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gcc.md (CC-BY-4.0)
+tags:
+- gcc

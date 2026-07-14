@@ -1,0 +1,14 @@
+id: tldr-cargo-logout-1
+title: 'cargo-logout: Remove an API token from the local credential storage (located
+  in `$CARGO_HOME/credentials.toml`)'
+cmd: cargo logout
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove an API token from the registry locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-logout.md
+  (CC-BY-4.0)
+tags:
+- cargo-logout

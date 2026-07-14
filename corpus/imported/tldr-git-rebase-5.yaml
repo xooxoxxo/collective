@@ -1,0 +1,13 @@
+id: tldr-git-rebase-5
+title: 'git-rebase: Abort a rebase in progress (e.g. if it is interrupted by a merge
+  conflict)'
+cmd: git rebase --abort
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

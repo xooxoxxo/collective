@@ -1,0 +1,12 @@
+id: tldr-git-p4-5
+title: 'git-p4: Clone the full Perforce history instead of only the latest changelist'
+cmd: git p4 clone <path/to/p4_depot>@all
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Import from and submit to Perforce repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-p4.md (CC-BY-4.0)
+tags:
+- git-p4

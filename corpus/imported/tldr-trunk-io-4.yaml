@@ -1,0 +1,12 @@
+id: tldr-trunk-io-4
+title: 'trunk.io: Format files in place'
+cmd: trunk fmt
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run linters, formatters, and security analyzers on code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.io.md (CC-BY-4.0)
+tags:
+- trunk-io

@@ -1,0 +1,12 @@
+id: tldr-scp-8
+title: 'scp: Use a specific proxy when connecting to the remote host'
+cmd: scp -J <proxy_username>@<proxy_host> <path/to/local_file> <remote_host>:<path/to/remote_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure copy
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/scp.md (CC-BY-4.0)
+tags:
+- scp

@@ -1,0 +1,12 @@
+id: tldr-git-diff-8
+title: 'git-diff: Compare different files from the current branch to another branch'
+cmd: git diff <other_branch>:<path/to/file2> <path/to/file1>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show changes to tracked files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff.md (CC-BY-4.0)
+tags:
+- git-diff

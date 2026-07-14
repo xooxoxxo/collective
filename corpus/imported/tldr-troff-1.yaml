@@ -1,0 +1,12 @@
+id: tldr-troff-1
+title: 'troff: Format output for a PostScript printer, saving the output to a file'
+cmd: troff <path/to/input.roff> | grops > <path/to/output.ps>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Typesetting processor for the groff (GNU Troff) document formatting system
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/troff.md (CC-BY-4.0)
+tags:
+- troff

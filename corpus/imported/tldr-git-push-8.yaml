@@ -1,0 +1,12 @@
+id: tldr-git-push-8
+title: 'git-push: Publish tags that aren''t yet in the remote repository'
+cmd: git push --tags
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Push commits to a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-push.md (CC-BY-4.0)
+tags:
+- git-push

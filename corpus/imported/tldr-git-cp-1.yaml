@@ -1,0 +1,12 @@
+id: tldr-git-cp-1
+title: 'git-cp: Copy an existing file in a Git repo, staying in the same directory'
+cmd: git cp <file> <new_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Copy an existing file to a new location, preserving history
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cp.md (CC-BY-4.0)
+tags:
+- git-cp

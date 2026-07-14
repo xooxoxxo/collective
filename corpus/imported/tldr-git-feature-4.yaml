@@ -1,0 +1,12 @@
+id: tldr-git-feature-4
+title: 'git-feature: Send changes from a specific feature branch to its remote counterpart'
+cmd: git feature <feature_branch> <[-r|--remote]> <remote_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create or merge feature branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-feature.md (CC-BY-4.0)
+tags:
+- git-feature

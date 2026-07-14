@@ -1,0 +1,13 @@
+id: tldr-travis-1
+title: 'travis: Authenticate the CLI client against the server, using an authentication
+  token'
+cmd: travis login
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Interface with Travis CI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/travis.md (CC-BY-4.0)
+tags:
+- travis

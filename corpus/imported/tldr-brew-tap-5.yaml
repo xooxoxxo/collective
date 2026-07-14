@@ -1,0 +1,13 @@
+id: tldr-brew-tap-5
+title: 'brew-tap: Display help'
+cmd: brew tap <[-h|--help]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Tap a Homebrew formula repository. If no arguments are provided, list
+  all installed Homebrew taps
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-tap.md (CC-BY-4.0)
+tags:
+- brew-tap

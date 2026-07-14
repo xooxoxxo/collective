@@ -1,0 +1,13 @@
+id: tldr-cargo-update-1
+title: 'cargo-update: Update dependencies in `Cargo.lock` to the latest possible version'
+cmd: cargo update
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Update dependencies as recorded in `Cargo.lock`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-update.md
+  (CC-BY-4.0)
+tags:
+- cargo-update

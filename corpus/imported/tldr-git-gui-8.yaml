@@ -1,0 +1,14 @@
+id: tldr-git-gui-8
+title: 'git-gui: Show a browser for the tree of a specific branch, opening the blame
+  tool when clicking on the files'
+cmd: git gui browser maint
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A GUI for Git to manage branches, commits, and remotes, and perform local
+  merges
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gui.md (CC-BY-4.0)
+tags:
+- git-gui

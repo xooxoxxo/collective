@@ -1,0 +1,13 @@
+id: tldr-brew-outdated-2
+title: 'brew-outdated: List only outdated formulae'
+cmd: brew outdated --formula
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List outdated casks and formulae
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-outdated.md
+  (CC-BY-4.0)
+tags:
+- brew-outdated

@@ -1,0 +1,14 @@
+id: tldr-git-ls-remote-2
+title: 'git-ls-remote: Show only heads references in the default remote repository'
+cmd: git ls-remote --heads
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for listing references in a remote repository based on name
+  or URL
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ls-remote.md
+  (CC-BY-4.0)
+tags:
+- git-ls-remote

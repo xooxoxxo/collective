@@ -1,0 +1,13 @@
+id: tldr-brew-update-1
+title: 'brew-update: Fetch the newest version of Homebrew and all formulae'
+cmd: brew <[up|update]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Fetch the newest version of Homebrew and all formulae from GitHub using
+  `git` and perform any necessary migrations
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-update.md (CC-BY-4.0)
+tags:
+- brew-update

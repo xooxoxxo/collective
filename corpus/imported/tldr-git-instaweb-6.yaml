@@ -1,0 +1,13 @@
+id: tldr-git-instaweb-6
+title: 'git-instaweb: Stop the currently running GitWeb server'
+cmd: git instaweb --stop
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Helper to launch a GitWeb server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-instaweb.md
+  (CC-BY-4.0)
+tags:
+- git-instaweb

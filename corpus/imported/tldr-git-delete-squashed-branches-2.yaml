@@ -1,0 +1,15 @@
+id: tldr-git-delete-squashed-branches-2
+title: 'git-delete-squashed-branches: Delete all branches that were "squash-merged"
+  into a specific branch'
+cmd: git delete-squashed-branches <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Delete branches that have been "squashed-merged" into a specified branch
+  and checkout. If no branch is specified, default to the currently checked out branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-delete-squashed-branches.md
+  (CC-BY-4.0)
+tags:
+- git-delete-squashed-branches

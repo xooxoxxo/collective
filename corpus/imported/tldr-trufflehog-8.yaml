@@ -1,0 +1,13 @@
+id: tldr-trufflehog-8
+title: 'trufflehog: Scan a Docker image for verified secrets'
+cmd: trufflehog docker --image <trufflesecurity/secrets> --only-verified
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find and verify credentials in files, Git repositories, S3 buckets, and
+  Docker images
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trufflehog.md (CC-BY-4.0)
+tags:
+- trufflehog

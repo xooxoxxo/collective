@@ -1,0 +1,13 @@
+id: tldr-cut-4
+title: 'cut: Split each line by the specified [d]elimiter and print all from the second
+  [f]ield onward'
+cmd: <command> | cut -d "<delimiter>" -f 2-
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Cut out fields from `stdin` or files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/cut.md (CC-BY-4.0)
+tags:
+- cut

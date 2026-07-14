@@ -1,0 +1,13 @@
+id: tldr-transmission-remote-6
+title: 'transmission-remote: Stop all torrents'
+cmd: transmission-remote <hostname> <[-t|--torrent]> <all> <[-S|--stop]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

@@ -1,0 +1,12 @@
+id: tldr-git-status-2
+title: 'git-status: Give output in short format'
+cmd: git status <[-s|--short]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the changes to files in a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-status.md (CC-BY-4.0)
+tags:
+- git-status

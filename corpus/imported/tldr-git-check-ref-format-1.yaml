@@ -1,0 +1,14 @@
+id: tldr-git-check-ref-format-1
+title: 'git-check-ref-format: Check the format of the specified reference name'
+cmd: git check-ref-format <refs/head/refname>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check if a reference name is acceptable, and exit with a non-zero status
+  if it is not
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-check-ref-format.md
+  (CC-BY-4.0)
+tags:
+- git-check-ref-format

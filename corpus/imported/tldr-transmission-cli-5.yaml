@@ -1,0 +1,13 @@
+id: tldr-transmission-cli-5
+title: 'transmission-cli: Specify the upload speed limit (in KB/s)'
+cmd: transmission-cli <[-u|--uplimit]> <50> <url|magnet|path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A lightweight, command-line BitTorrent client
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-cli.md
+  (CC-BY-4.0)
+tags:
+- transmission-cli

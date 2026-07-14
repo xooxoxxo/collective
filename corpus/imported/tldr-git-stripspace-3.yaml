@@ -1,0 +1,14 @@
+id: tldr-git-stripspace-3
+title: 'git-stripspace: Convert all lines in a file into Git comments'
+cmd: git < <path/to/file> stripspace <[-c|--comment-lines]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Read text (e.g. commit messages, notes, tags, and branch descriptions)
+  from `stdin` and clean it into the manner used by Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-stripspace.md
+  (CC-BY-4.0)
+tags:
+- git-stripspace

@@ -1,0 +1,14 @@
+id: tldr-git-get-tar-commit-id-1
+title: 'git-get-tar-commit-id: Extract commit hash ID or quietly exit with a return
+  code of 1'
+cmd: git < <path/to/archive.tar> get-tar-commit-id
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Extract commit ID from an archive created using `git archive`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-get-tar-commit-id.md
+  (CC-BY-4.0)
+tags:
+- git-get-tar-commit-id

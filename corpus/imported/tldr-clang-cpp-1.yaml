@@ -1,0 +1,12 @@
+id: tldr-clang-cpp-1
+title: 'clang-cpp: View documentation for the original command'
+cmd: tldr clang++
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `clang++`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang-cpp.md (CC-BY-4.0)
+tags:
+- clang-cpp

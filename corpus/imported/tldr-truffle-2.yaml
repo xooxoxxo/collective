@@ -1,0 +1,12 @@
+id: tldr-truffle-2
+title: 'truffle: Compile contract source files in the current directory'
+cmd: truffle compile
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Develop smart contracts for running services on the Ethereum blockchain
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truffle.md (CC-BY-4.0)
+tags:
+- truffle

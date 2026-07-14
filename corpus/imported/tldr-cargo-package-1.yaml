@@ -1,0 +1,14 @@
+id: tldr-cargo-package-1
+title: 'cargo-package: Perform checks and create a `.crate` file (equivalent of `cargo
+  publish --dry-run`)'
+cmd: cargo package
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Assemble a local package into a distributable tarball (a `.crate` file)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-package.md
+  (CC-BY-4.0)
+tags:
+- cargo-package

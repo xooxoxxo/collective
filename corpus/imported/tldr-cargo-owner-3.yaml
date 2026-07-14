@@ -1,0 +1,12 @@
+id: tldr-cargo-owner-3
+title: 'cargo-owner: List owners of a crate'
+cmd: cargo owner <[-l|--list]> <crate>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage the owners of a crate on the registry
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-owner.md (CC-BY-4.0)
+tags:
+- cargo-owner

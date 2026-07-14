@@ -1,0 +1,12 @@
+id: tldr-git-svn-1
+title: 'git-svn: Clone an SVN repository'
+cmd: git svn clone <https://example.com/subversion_repo> <local_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bidirectional operation between a Subversion repository and Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-svn.md (CC-BY-4.0)
+tags:
+- git-svn

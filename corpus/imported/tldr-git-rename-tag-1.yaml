@@ -1,0 +1,13 @@
+id: tldr-git-rename-tag-1
+title: 'git-rename-tag: Rename an existing Git tag locally and remotely'
+cmd: git rename-tag <old_tag_name> <new_tag_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Rename a Git tag
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rename-tag.md
+  (CC-BY-4.0)
+tags:
+- git-rename-tag

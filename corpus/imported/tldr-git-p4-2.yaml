@@ -1,0 +1,12 @@
+id: tldr-git-p4-2
+title: 'git-p4: Sync changes from Perforce into the current Git repository'
+cmd: git p4 sync <path/to/p4_depot>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Import from and submit to Perforce repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-p4.md (CC-BY-4.0)
+tags:
+- git-p4

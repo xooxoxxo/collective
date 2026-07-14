@@ -1,0 +1,13 @@
+id: tldr-git-bisect-6
+title: 'git-bisect: Automate the bisect process using a test script that `exit`s with
+  0 for "good" and non-zero for "bad"'
+cmd: git bisect run <path/to/test_script> <optional_script_arguments>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Use binary search to find the commit that introduced a bug
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bisect.md (CC-BY-4.0)
+tags:
+- git-bisect

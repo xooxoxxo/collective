@@ -1,0 +1,13 @@
+id: tldr-git-switch-6
+title: 'git-switch: Switch to a branch and automatically merge the current branch
+  and any uncommitted changes into it'
+cmd: git switch <[-m|--merge]> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Switch between Git branches. Requires Git version 2.23+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-switch.md (CC-BY-4.0)
+tags:
+- git-switch

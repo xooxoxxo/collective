@@ -1,0 +1,12 @@
+id: tldr-trans-5
+title: 'trans: Behave like a dictionary to get the meaning of a word'
+cmd: trans <[-d|-dictionary]> <word>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Translate Shell, a command-line translator
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trans.md (CC-BY-4.0)
+tags:
+- trans

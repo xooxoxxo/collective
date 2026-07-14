@@ -1,0 +1,13 @@
+id: tldr-git-merge-6
+title: 'git-merge: Merge using a specific strategy'
+cmd: git merge <[-s|--strategy]> <strategy> <[-X|--strategy-option]> <strategy_option>
+  <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge.md (CC-BY-4.0)
+tags:
+- git-merge

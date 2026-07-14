@@ -1,0 +1,12 @@
+id: tldr-git-column-1
+title: 'git-column: Format `stdin` as multiple columns'
+cmd: ls | git column --mode=<column>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display data in columns
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-column.md (CC-BY-4.0)
+tags:
+- git-column

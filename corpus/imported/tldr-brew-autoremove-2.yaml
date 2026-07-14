@@ -1,0 +1,13 @@
+id: tldr-brew-autoremove-2
+title: 'brew-autoremove: Print what would be removed, but don''t actually remove anything'
+cmd: brew autoremove <[-n|--dry-run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove unused formulae previously installed as dependencies
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-autoremove.md
+  (CC-BY-4.0)
+tags:
+- brew-autoremove

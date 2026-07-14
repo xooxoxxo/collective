@@ -1,0 +1,13 @@
+id: tldr-sort-8
+title: 'sort: Sort a file, printing the output to the specified output file (can be
+  used to sort a file in-place)'
+cmd: sort <[-o|--output]> <path/to/output_file> <path/to/input_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Sort lines of text files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sort.md (CC-BY-4.0)
+tags:
+- sort

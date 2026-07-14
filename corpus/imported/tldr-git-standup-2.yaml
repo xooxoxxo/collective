@@ -1,0 +1,13 @@
+id: tldr-git-standup-2
+title: 'git-standup: Show a given author''s commits from the last 10 days and whether
+  they are GPG signed'
+cmd: git standup -a <name|email> -d 10 -g
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: See commits from a specified user
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-standup.md (CC-BY-4.0)
+tags:
+- git-standup

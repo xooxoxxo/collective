@@ -1,0 +1,12 @@
+id: tldr-git-diff-2
+title: 'git-diff: Show all uncommitted changes (including staged ones)'
+cmd: git diff HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show changes to tracked files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff.md (CC-BY-4.0)
+tags:
+- git-diff

@@ -1,0 +1,12 @@
+id: tldr-git-reflog-2
+title: 'git-reflog: Show the reflog for a given branch'
+cmd: git reflog <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a log of changes to local references like HEAD, branches, or tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reflog.md (CC-BY-4.0)
+tags:
+- git-reflog

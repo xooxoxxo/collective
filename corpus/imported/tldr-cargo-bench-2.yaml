@@ -1,0 +1,12 @@
+id: tldr-cargo-bench-2
+title: 'cargo-bench: Don''t stop when a benchmark fails'
+cmd: cargo bench --no-fail-fast
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile and execute benchmarks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-bench.md (CC-BY-4.0)
+tags:
+- cargo-bench

@@ -1,0 +1,13 @@
+id: tldr-git-bisect-4
+title: 'git-bisect: Skip a commit during a bisect (e.g. one that fails the tests due
+  to a different issue)'
+cmd: git bisect skip
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Use binary search to find the commit that introduced a bug
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bisect.md (CC-BY-4.0)
+tags:
+- git-bisect

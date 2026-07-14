@@ -1,0 +1,12 @@
+id: tldr-git-summary-1
+title: 'git-summary: Display data about a Git repository'
+cmd: git summary
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display information about a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-summary.md (CC-BY-4.0)
+tags:
+- git-summary

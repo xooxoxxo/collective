@@ -1,0 +1,13 @@
+id: tldr-git-show-2
+title: 'git-show: Show information about a specific commit, tag, or branch (such as
+  `HEAD` for the latest commit)'
+cmd: git show <commit|tag|branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show various types of Git objects (commits, tags, etc.)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show.md (CC-BY-4.0)
+tags:
+- git-show

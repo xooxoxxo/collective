@@ -1,0 +1,12 @@
+id: tldr-truffle-1
+title: 'truffle: Download a pre-built Truffle project (Truffle Box)'
+cmd: truffle unbox <box_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Develop smart contracts for running services on the Ethereum blockchain
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truffle.md (CC-BY-4.0)
+tags:
+- truffle

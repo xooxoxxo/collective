@@ -1,0 +1,13 @@
+id: tldr-cargo-login-1
+title: 'cargo-login: Add an API token to the local credential storage (located in
+  `$CARGO_HOME/credentials.toml`)'
+cmd: cargo login
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Save an API token from the registry locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-login.md (CC-BY-4.0)
+tags:
+- cargo-login

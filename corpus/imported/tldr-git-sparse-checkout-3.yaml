@@ -1,0 +1,14 @@
+id: tldr-git-sparse-checkout-3
+title: 'git-sparse-checkout: Specify which directories (or files) to include'
+cmd: git sparse-checkout set <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out only part of a repository's files instead of cloning or checking
+  out everything
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sparse-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-sparse-checkout

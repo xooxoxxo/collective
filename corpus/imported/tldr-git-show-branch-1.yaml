@@ -1,0 +1,13 @@
+id: tldr-git-show-branch-1
+title: 'git-show-branch: Show a summary of the latest commit on a branch'
+cmd: git show-branch <branch_name|ref|commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show branches and their commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-branch.md
+  (CC-BY-4.0)
+tags:
+- git-show-branch

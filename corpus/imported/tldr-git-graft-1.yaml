@@ -1,0 +1,14 @@
+id: tldr-git-graft-1
+title: 'git-graft: Merge all commits not present on the target branch from the source
+  branch to target branch, and delete the source branch'
+cmd: git graft <source_branch> <target_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge commits from a branch into another branch and delete the source
+  branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-graft.md (CC-BY-4.0)
+tags:
+- git-graft

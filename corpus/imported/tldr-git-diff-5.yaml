@@ -1,0 +1,13 @@
+id: tldr-git-diff-5
+title: 'git-diff: Show diff statistics, like files changed, histogram, and total line
+  insertions/deletions'
+cmd: git diff --stat <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show changes to tracked files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff.md (CC-BY-4.0)
+tags:
+- git-diff

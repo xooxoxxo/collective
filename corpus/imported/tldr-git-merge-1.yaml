@@ -1,0 +1,12 @@
+id: tldr-git-merge-1
+title: 'git-merge: Merge branches into your current branch'
+cmd: git merge <branch_name1 branch_name2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge.md (CC-BY-4.0)
+tags:
+- git-merge

@@ -1,0 +1,12 @@
+id: tldr-make-4
+title: 'make: Use a specific Makefile'
+cmd: make <[-f|--file]> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Task runner for targets described in Makefile
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/make.md (CC-BY-4.0)
+tags:
+- make

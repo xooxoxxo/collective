@@ -1,0 +1,13 @@
+id: tldr-git-reset-1
+title: 'git-reset: Unstage everything'
+cmd: git reset
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Undo commits or unstage changes by resetting the current Git HEAD to
+  the specified state
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reset.md (CC-BY-4.0)
+tags:
+- git-reset

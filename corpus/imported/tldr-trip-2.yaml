@@ -1,0 +1,12 @@
+id: tldr-trip-2
+title: 'trip: Trace without requiring elevated privileges (supported platforms only)'
+cmd: trip <example.com> --unprivileged
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A network diagnostic tool
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trip.md (CC-BY-4.0)
+tags:
+- trip

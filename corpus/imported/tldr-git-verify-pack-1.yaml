@@ -1,0 +1,13 @@
+id: tldr-git-verify-pack-1
+title: 'git-verify-pack: Verify a packed Git archive file'
+cmd: git verify-pack <path/to/pack-file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Verify packed Git archive files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-verify-pack.md
+  (CC-BY-4.0)
+tags:
+- git-verify-pack

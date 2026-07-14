@@ -1,0 +1,15 @@
+id: tldr-transmission-remote-1
+title: 'transmission-remote: Add a torrent file or magnet link to Transmission and
+  download to a specified directory'
+cmd: transmission-remote <hostname> <[-a|--all]> <torrent|url> <[-w|--download-dir]>
+  /<path/to/download_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

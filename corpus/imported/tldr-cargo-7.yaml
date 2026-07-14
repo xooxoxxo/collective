@@ -1,0 +1,12 @@
+id: tldr-cargo-7
+title: 'cargo: Run the built binary (will build it if it''s not already built)'
+cmd: cargo <[r|run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage Rust projects and their module dependencies (crates)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo.md (CC-BY-4.0)
+tags:
+- cargo

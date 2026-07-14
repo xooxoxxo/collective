@@ -1,0 +1,13 @@
+id: tldr-sshpass-1
+title: 'sshpass: Connect to a remote server using a password supplied on a file descriptor
+  (in this case, `stdin`)'
+cmd: sshpass -d <0> ssh <user>@<hostname>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An SSH password provider
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshpass.md (CC-BY-4.0)
+tags:
+- sshpass

@@ -1,0 +1,12 @@
+id: tldr-trap-1
+title: 'trap: List the commands and the names of the expected events'
+cmd: trap
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command upon an event
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trap.md (CC-BY-4.0)
+tags:
+- trap

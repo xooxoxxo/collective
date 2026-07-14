@@ -1,0 +1,13 @@
+id: tldr-brew-upgrade-4
+title: 'brew-upgrade: Upgrade all outdated packages without asking for confirmation'
+cmd: brew upgrade <[-y|--yes]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Upgrade outdated formulae and casks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-upgrade.md
+  (CC-BY-4.0)
+tags:
+- brew-upgrade

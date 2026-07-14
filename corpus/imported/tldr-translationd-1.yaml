@@ -1,0 +1,12 @@
+id: tldr-translationd-1
+title: 'translationd: Start the daemon'
+cmd: translationd
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Enable Translation features
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/translationd.md (CC-BY-4.0)
+tags:
+- translationd

@@ -1,0 +1,13 @@
+id: tldr-git-config-1
+title: 'git-config: Globally set your name or email (this information is required
+  to commit to a repository and will be included in all commits)'
+cmd: git config --global <user.name|user.email> "<Your Name|email@example.com>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage custom configuration options for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-config.md (CC-BY-4.0)
+tags:
+- git-config

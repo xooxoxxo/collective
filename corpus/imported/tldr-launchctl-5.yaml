@@ -1,0 +1,15 @@
+id: tldr-launchctl-5
+title: 'launchctl: Unload a currently loaded agent, e.g. to make changes (Note: The
+  plist file is automatically loaded into `launchd` after a reboot and/or logging
+  in)'
+cmd: launchctl unload ~/Library/LaunchAgents/<my_script>.plist
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Control Apple's `launchd` manager for launch daemons (system-wide services)
+  and launch agents (per-user programs)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/launchctl.md (CC-BY-4.0)
+tags:
+- launchctl

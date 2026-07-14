@@ -1,0 +1,13 @@
+id: tldr-curl-4
+title: 'curl: Send form-encoded data (POST request of type `application/x-www-form-urlencoded`).
+  Use `--data @file_name` or `--data @''-''` to read from `stdin`'
+cmd: curl <[-X|--request]> POST <[-d|--data]> '<name=bob>' <http://example.com/form>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

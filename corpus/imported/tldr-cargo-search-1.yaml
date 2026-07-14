@@ -1,0 +1,13 @@
+id: tldr-cargo-search-1
+title: 'cargo-search: Search for packages'
+cmd: cargo search <query>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Search for packages on <https://crates.io>
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-search.md
+  (CC-BY-4.0)
+tags:
+- cargo-search

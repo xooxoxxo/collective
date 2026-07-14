@@ -1,0 +1,13 @@
+id: tldr-gcc-7
+title: 'gcc: Optimize the compiled program for performance'
+cmd: gcc <path/to/source.c> -O<1|2|3|fast> <[-o|--output]> <path/to/output_executable>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Preprocess and compile C and C++ source files, then assemble and link
+  them together
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gcc.md (CC-BY-4.0)
+tags:
+- gcc

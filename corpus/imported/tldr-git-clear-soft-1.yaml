@@ -1,0 +1,14 @@
+id: tldr-git-clear-soft-1
+title: 'git-clear-soft: Reset all tracked files and delete all untracked files'
+cmd: git clear-soft
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Clear a Git working directory as if it was freshly cloned with the current
+  branch excluding files in `.gitignore`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clear-soft.md
+  (CC-BY-4.0)
+tags:
+- git-clear-soft

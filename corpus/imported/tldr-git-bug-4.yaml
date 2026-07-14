@@ -1,0 +1,13 @@
+id: tldr-git-bug-4
+title: 'git-bug: Pull for updates'
+cmd: git bug pull
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A distributed bug tracker that uses Git's internal storage, so no files
+  are added in your project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bug.md (CC-BY-4.0)
+tags:
+- git-bug

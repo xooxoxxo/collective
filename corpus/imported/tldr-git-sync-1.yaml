@@ -1,0 +1,12 @@
+id: tldr-git-sync-1
+title: 'git-sync: Sync the current local branch with its remote branch'
+cmd: git sync
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Sync local branches with remote branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sync.md (CC-BY-4.0)
+tags:
+- git-sync

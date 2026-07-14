@@ -1,0 +1,12 @@
+id: tldr-git-pr-4
+title: 'git-pr: Clean up old pull request branches'
+cmd: git pr clean
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out GitHub pull requests locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-pr.md (CC-BY-4.0)
+tags:
+- git-pr

@@ -1,0 +1,12 @@
+id: tldr-git-fetch-6
+title: 'git-fetch: Deepen current shallow branch by 2 commits'
+cmd: git fetch --deepen 2
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Download objects and refs from a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fetch.md (CC-BY-4.0)
+tags:
+- git-fetch

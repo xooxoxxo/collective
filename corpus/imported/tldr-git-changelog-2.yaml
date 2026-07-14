@@ -1,0 +1,13 @@
+id: tldr-git-changelog-2
+title: 'git-changelog: List commits from the current version'
+cmd: git changelog <[-l|--list]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a changelog report from repository commits and tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-changelog.md
+  (CC-BY-4.0)
+tags:
+- git-changelog

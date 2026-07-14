@@ -1,0 +1,13 @@
+id: tldr-sshpass-2
+title: 'sshpass: Connect to a remote server with the password supplied as an option,
+  and automatically accept unknown SSH keys'
+cmd: sshpass -p <password> ssh -o StrictHostKeyChecking=no <user>@<hostname>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An SSH password provider
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshpass.md (CC-BY-4.0)
+tags:
+- sshpass

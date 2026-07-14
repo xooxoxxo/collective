@@ -1,0 +1,12 @@
+id: tldr-git-flow-1
+title: 'git-flow: Initialize it inside an existing Git repository'
+cmd: git flow init
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of Git extensions to provide high-level repository operations
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-flow.md (CC-BY-4.0)
+tags:
+- git-flow

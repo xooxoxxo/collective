@@ -1,0 +1,14 @@
+id: tldr-git-reset-6
+title: 'git-reset: Discard any uncommitted changes, staged or not (for only unstaged
+  changes, use `git checkout`)'
+cmd: git reset --hard
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Undo commits or unstage changes by resetting the current Git HEAD to
+  the specified state
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reset.md (CC-BY-4.0)
+tags:
+- git-reset

@@ -1,0 +1,14 @@
+id: tldr-git-worktree-7
+title: 'git-worktree: Remove metadata for a worktree directory that''s been manually
+  deleted'
+cmd: git worktree prune
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage multiple working trees attached to the same repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-worktree.md
+  (CC-BY-4.0)
+tags:
+- git-worktree

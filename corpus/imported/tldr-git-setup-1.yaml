@@ -1,0 +1,13 @@
+id: tldr-git-setup-1
+title: 'git-setup: Create a Git repository in the current directory and commit all
+  files'
+cmd: git setup
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a Git repository in a directory and commit all files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-setup.md (CC-BY-4.0)
+tags:
+- git-setup

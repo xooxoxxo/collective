@@ -1,0 +1,12 @@
+id: tldr-git-magic-2
+title: 'git-magic: [a]dd untracked files and commit changes with a generated message'
+cmd: git magic -a
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Automate add, commit, and push routines
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-magic.md (CC-BY-4.0)
+tags:
+- git-magic

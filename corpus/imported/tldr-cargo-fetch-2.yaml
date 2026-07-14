@@ -1,0 +1,12 @@
+id: tldr-cargo-fetch-2
+title: 'cargo-fetch: Fetch dependencies for the specified target'
+cmd: cargo fetch --target <target_triple>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Fetch dependencies of a package from the network
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fetch.md (CC-BY-4.0)
+tags:
+- cargo-fetch

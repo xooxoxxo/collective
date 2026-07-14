@@ -1,0 +1,13 @@
+id: tldr-truncate-5
+title: 'truncate: Empty the file''s content, but do not create the file if it does
+  not exist'
+cmd: truncate <[-s|--size]> 0 <[-c|--no-create]> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Shrink or extend the size of a file to the specified size
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truncate.md (CC-BY-4.0)
+tags:
+- truncate

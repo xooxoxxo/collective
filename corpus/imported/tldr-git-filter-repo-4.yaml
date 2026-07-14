@@ -1,0 +1,13 @@
+id: tldr-git-filter-repo-4
+title: 'git-filter-repo: Move everything from sub-folder one level up'
+cmd: 'git filter-repo --path-rename <path/to/folder>/:'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile tool for rewriting Git history
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-filter-repo.md
+  (CC-BY-4.0)
+tags:
+- git-filter-repo

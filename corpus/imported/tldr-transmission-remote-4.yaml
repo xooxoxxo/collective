@@ -1,0 +1,14 @@
+id: tldr-transmission-remote-4
+title: 'transmission-remote: Start torrent 1 and 2, stop torrent 3'
+cmd: transmission-remote <hostname> <[-t|--torrent]> "1,2" <[-s|--start]> <[-t|--torrent]>
+  3 <[-S|--stop]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

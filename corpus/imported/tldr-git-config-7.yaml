@@ -1,0 +1,13 @@
+id: tldr-git-config-7
+title: 'git-config: Edit the local Git configuration (`.git/config`) in the default
+  editor'
+cmd: git config <[-e|--edit]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage custom configuration options for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-config.md (CC-BY-4.0)
+tags:
+- git-config

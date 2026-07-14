@@ -1,0 +1,12 @@
+id: tldr-troff-3
+title: 'troff: Format output as ASCII text using the man macro package'
+cmd: troff -T <ascii> -<man> <path/to/input.roff> | grotty
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Typesetting processor for the groff (GNU Troff) document formatting system
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/troff.md (CC-BY-4.0)
+tags:
+- troff

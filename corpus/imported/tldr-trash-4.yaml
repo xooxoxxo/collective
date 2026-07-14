@@ -1,0 +1,12 @@
+id: tldr-trash-4
+title: 'trash: Display help'
+cmd: trash <[-h|--help]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Move files and directories to the user trash folder
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/trash.md (CC-BY-4.0)
+tags:
+- trash

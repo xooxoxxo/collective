@@ -1,0 +1,12 @@
+id: tldr-sshuttle-1
+title: 'sshuttle: Forward all IPv4 TCP traffic via a remote SSH server'
+cmd: sshuttle <[-r|--remote]> <username>@<sshserver> <0.0.0.0/0>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transparent proxy server that tunnels traffic over an SSH connection
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshuttle.md (CC-BY-4.0)
+tags:
+- sshuttle

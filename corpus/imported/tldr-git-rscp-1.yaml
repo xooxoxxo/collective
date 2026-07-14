@@ -1,0 +1,13 @@
+id: tldr-git-rscp-1
+title: 'git-rscp: Copy specific files from a remote'
+cmd: git rscp <remote_name> <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reverse `git scp` - copy files from the working directory of a remote
+  repository to the current working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rscp.md (CC-BY-4.0)
+tags:
+- git-rscp

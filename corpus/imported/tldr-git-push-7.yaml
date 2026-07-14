@@ -1,0 +1,12 @@
+id: tldr-git-push-7
+title: 'git-push: Remove remote branches that don''t have a local counterpart'
+cmd: git push --prune <remote_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Push commits to a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-push.md (CC-BY-4.0)
+tags:
+- git-push

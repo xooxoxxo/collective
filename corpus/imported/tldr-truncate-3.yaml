@@ -1,0 +1,12 @@
+id: tldr-truncate-3
+title: 'truncate: Shrink the file by 2 GiB, by removing data from the end of file'
+cmd: truncate <[-s|--size]> -2G <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Shrink or extend the size of a file to the specified size
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truncate.md (CC-BY-4.0)
+tags:
+- truncate

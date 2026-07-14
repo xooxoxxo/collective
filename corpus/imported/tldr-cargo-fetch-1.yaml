@@ -1,0 +1,12 @@
+id: tldr-cargo-fetch-1
+title: 'cargo-fetch: Fetch dependencies specified in `Cargo.lock` (for all targets)'
+cmd: cargo fetch
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Fetch dependencies of a package from the network
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fetch.md (CC-BY-4.0)
+tags:
+- cargo-fetch

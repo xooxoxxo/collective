@@ -1,0 +1,12 @@
+id: tldr-git-stash-1
+title: 'git-stash: Stash the current uncommitted changes'
+cmd: git stash
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Stash local Git changes in a temporary area
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-stash.md (CC-BY-4.0)
+tags:
+- git-stash

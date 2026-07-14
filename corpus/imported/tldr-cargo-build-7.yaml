@@ -1,0 +1,12 @@
+id: tldr-cargo-build-7
+title: 'cargo-build: Build only the specified test target'
+cmd: cargo <[b|build]> --test <test_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile a local package and all of its dependencies
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-build.md (CC-BY-4.0)
+tags:
+- cargo-build

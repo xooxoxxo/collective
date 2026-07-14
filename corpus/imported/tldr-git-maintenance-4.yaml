@@ -1,0 +1,14 @@
+id: tldr-git-maintenance-4
+title: 'git-maintenance: Remove the current repository from the user''s maintenance
+  repository list'
+cmd: git maintenance unregister
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run tasks to optimize Git repository data
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-maintenance.md
+  (CC-BY-4.0)
+tags:
+- git-maintenance

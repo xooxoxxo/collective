@@ -1,0 +1,13 @@
+id: tldr-git-bisect-5
+title: 'git-bisect: Start a bisect session considering only commits that modify a
+  specific file or directory'
+cmd: git bisect start <bad_commit> <good_commit> -- <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Use binary search to find the commit that introduced a bug
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bisect.md (CC-BY-4.0)
+tags:
+- git-bisect

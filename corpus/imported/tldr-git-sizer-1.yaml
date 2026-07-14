@@ -1,0 +1,14 @@
+id: tldr-git-sizer-1
+title: 'git-sizer: Report only statistics that have a level of concern greater than
+  0'
+cmd: git-sizer
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Computes various Git repository size metrics and alerts you to any that
+  might cause problems or inconvenience
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sizer.md (CC-BY-4.0)
+tags:
+- git-sizer

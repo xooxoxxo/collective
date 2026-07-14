@@ -1,0 +1,12 @@
+id: tldr-sort-1
+title: 'sort: Sort a file in ascending order'
+cmd: sort <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Sort lines of text files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sort.md (CC-BY-4.0)
+tags:
+- sort

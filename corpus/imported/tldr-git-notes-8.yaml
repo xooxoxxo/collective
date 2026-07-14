@@ -1,0 +1,12 @@
+id: tldr-git-notes-8
+title: 'git-notes: Remove all the notes added to a specified object'
+cmd: git notes remove <object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add or inspect object notes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-notes.md (CC-BY-4.0)
+tags:
+- git-notes

@@ -1,0 +1,12 @@
+id: tldr-git-cliff-5
+title: 'git-cliff: Write the default config file to `cliff.toml` in the current directory'
+cmd: git cliff <[-i|--init]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A highly customizable changelog generator
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cliff.md (CC-BY-4.0)
+tags:
+- git-cliff

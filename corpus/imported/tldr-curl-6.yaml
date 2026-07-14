@@ -1,0 +1,13 @@
+id: tldr-curl-6
+title: 'curl: Send data in JSON format, specifying the appropriate Content-Type header'
+cmd: 'curl <[-d|--data]> ''<{"name":"bob">}'' <[-H|--header]> ''<Content-Type: application/json>''
+  <http://example.com/users/1234>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

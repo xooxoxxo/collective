@@ -1,0 +1,12 @@
+id: tldr-git-branch-3
+title: 'git-branch: Show the name of the current branch'
+cmd: git branch --show-current
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Main Git command for working with branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-branch.md (CC-BY-4.0)
+tags:
+- git-branch

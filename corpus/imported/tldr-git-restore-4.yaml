@@ -1,0 +1,12 @@
+id: tldr-git-restore-4
+title: 'git-restore: Unstage a file'
+cmd: git restore <[-S|--staged]> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Restore working tree files. Requires Git version 2.23+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-restore.md (CC-BY-4.0)
+tags:
+- git-restore

@@ -1,0 +1,12 @@
+id: tldr-trip-1
+title: 'trip: Basic usage with default parameters'
+cmd: sudo trip <example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A network diagnostic tool
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trip.md (CC-BY-4.0)
+tags:
+- trip

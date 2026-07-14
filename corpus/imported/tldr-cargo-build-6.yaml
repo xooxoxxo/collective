@@ -1,0 +1,12 @@
+id: tldr-cargo-build-6
+title: 'cargo-build: Build only the specified binary'
+cmd: cargo <[b|build]> --bin <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile a local package and all of its dependencies
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-build.md (CC-BY-4.0)
+tags:
+- cargo-build

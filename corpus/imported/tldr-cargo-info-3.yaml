@@ -1,0 +1,12 @@
+id: tldr-cargo-info-3
+title: 'cargo-info: Display additional information about a package'
+cmd: cargo info <[-v|--verbose]> <package>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display information about a Rust package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-info.md (CC-BY-4.0)
+tags:
+- cargo-info

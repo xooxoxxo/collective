@@ -1,0 +1,12 @@
+id: tldr-tar-7
+title: 'tar: Lis[t] the contents of a tar [f]ile [v]erbosely'
+cmd: tar tvf <path/to/source.tar>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

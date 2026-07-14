@@ -1,0 +1,12 @@
+id: tldr-treemd-1
+title: 'treemd: Open a markdown file in interactive TUI mode'
+cmd: treemd <path/to/file.md>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: View markdown files with tree-based navigation and an interactive TUI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/treemd.md (CC-BY-4.0)
+tags:
+- treemd

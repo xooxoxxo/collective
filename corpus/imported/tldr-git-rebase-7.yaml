@@ -1,0 +1,13 @@
+id: tldr-git-rebase-7
+title: 'git-rebase: Reapply the last 5 commits in-place, stopping to allow them to
+  be reordered, omitted, combined, or modified'
+cmd: git rebase <[-i|--interactive]> <HEAD~5>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

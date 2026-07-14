@@ -1,0 +1,12 @@
+id: tldr-cargo-5
+title: 'cargo: Add a dependency to `Cargo.toml` in the current directory'
+cmd: cargo add <dependency>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage Rust projects and their module dependencies (crates)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo.md (CC-BY-4.0)
+tags:
+- cargo

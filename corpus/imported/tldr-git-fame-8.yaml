@@ -1,0 +1,12 @@
+id: tldr-git-fame-8
+title: 'git-fame: Detect intra-file line moves and copies'
+cmd: git fame -M
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Pretty-print Git repository contributions
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fame.md (CC-BY-4.0)
+tags:
+- git-fame

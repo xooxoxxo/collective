@@ -1,0 +1,12 @@
+id: tldr-make-1
+title: 'make: Call the first target specified in the Makefile (usually named "all")'
+cmd: make
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Task runner for targets described in Makefile
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/make.md (CC-BY-4.0)
+tags:
+- make

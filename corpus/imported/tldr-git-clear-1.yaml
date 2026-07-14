@@ -1,0 +1,14 @@
+id: tldr-git-clear-1
+title: 'git-clear: Reset all tracked files and delete all untracked files even if
+  they are included in the `.gitignore`'
+cmd: git clear
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Clear a Git working directory as if it was freshly cloned with the current
+  branch including files in `.gitignore`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clear.md (CC-BY-4.0)
+tags:
+- git-clear

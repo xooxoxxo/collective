@@ -1,0 +1,13 @@
+id: tldr-git-cvsexportcommit-1
+title: 'git-cvsexportcommit: Merge a specific patch into CVS'
+cmd: git cvsexportcommit -v -c -w <path/to/project_cvs_checkout> <commit_sha1>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Export a single `Git` commit to a CVS checkout
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cvsexportcommit.md
+  (CC-BY-4.0)
+tags:
+- git-cvsexportcommit

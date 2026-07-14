@@ -1,0 +1,14 @@
+id: tldr-git-force-clone-1
+title: 'git-force-clone: Clone a Git repository into a new directory'
+cmd: git force-clone <remote_repository_location> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Get the basic functionality of `git clone`, but if the destination Git
+  repository already exists it will force-reset it to resemble a clone of the remote
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-force-clone.md
+  (CC-BY-4.0)
+tags:
+- git-force-clone

@@ -1,0 +1,14 @@
+id: tldr-rsync-7
+title: 'rsync: Transfer a directory from a remote host running `rsyncd` and delete
+  files on the destination that do not exist on the source'
+cmd: rsync <[-r|--recursive]> --delete rsync://<host>:<path/to/source> <path/to/destination>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfer files either to or from a remote host (but not between two remote
+  hosts), by default using SSH
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/rsync.md (CC-BY-4.0)
+tags:
+- rsync

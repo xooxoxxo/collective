@@ -1,0 +1,12 @@
+id: tldr-tree-8
+title: 'tree: Print the tree ignoring the given directories'
+cmd: tree -I '<directory_name1|directory_name2>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tree.md (CC-BY-4.0)
+tags:
+- tree

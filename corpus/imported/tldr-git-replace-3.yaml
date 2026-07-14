@@ -1,0 +1,12 @@
+id: tldr-git-replace-3
+title: 'git-replace: Edit an object''s content interactively'
+cmd: git replace --edit <object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, and delete refs to replace objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-replace.md (CC-BY-4.0)
+tags:
+- git-replace

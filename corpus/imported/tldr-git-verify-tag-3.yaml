@@ -1,0 +1,13 @@
+id: tldr-git-verify-tag-3
+title: 'git-verify-tag: Check tags for a GPG signature and print the raw details'
+cmd: git verify-tag <tag1 optional_tag2 ...> --raw
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check for GPG verification of tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-verify-tag.md
+  (CC-BY-4.0)
+tags:
+- git-verify-tag

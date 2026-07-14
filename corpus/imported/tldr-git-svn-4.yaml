@@ -1,0 +1,13 @@
+id: tldr-git-svn-4
+title: 'git-svn: Fetch updates from the remote SVN repository without changing the
+  Git `HEAD`'
+cmd: git svn fetch
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bidirectional operation between a Subversion repository and Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-svn.md (CC-BY-4.0)
+tags:
+- git-svn

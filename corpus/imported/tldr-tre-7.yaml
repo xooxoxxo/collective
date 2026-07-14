@@ -1,0 +1,12 @@
+id: tldr-tre-7
+title: 'tre: Display help'
+cmd: tre <[-h|--help]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

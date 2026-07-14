@@ -1,0 +1,13 @@
+id: tldr-git-cherry-pick-3
+title: 'git-cherry-pick: Apply multiple (non-sequential) commits to the current branch'
+cmd: git cherry-pick <commit1 commit2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Apply the changes introduced by existing commits to the current branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cherry-pick.md
+  (CC-BY-4.0)
+tags:
+- git-cherry-pick

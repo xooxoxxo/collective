@@ -1,0 +1,12 @@
+id: tldr-git-imerge-3
+title: 'git-imerge: Show ASCII diagram of in-progress merge or rebase'
+cmd: git imerge diagram
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Perform a merge or rebase between two Git branches incrementally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-imerge.md (CC-BY-4.0)
+tags:
+- git-imerge

@@ -1,0 +1,13 @@
+id: tldr-sort-5
+title: 'sort: Sort `/etc/passwd` by the 3rd field onward of each line numerically,
+  using `:` as a field separator'
+cmd: 'sort <[-t|--field-separator]> : <[-k|--key]> 3n /etc/passwd'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Sort lines of text files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sort.md (CC-BY-4.0)
+tags:
+- sort

@@ -1,0 +1,12 @@
+id: tldr-git-remote-7
+title: 'git-remote: Rename a remote'
+cmd: git remote rename <old_name> <new_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage set of tracked repositories ("remotes")
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-remote.md (CC-BY-4.0)
+tags:
+- git-remote

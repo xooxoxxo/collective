@@ -1,0 +1,13 @@
+id: tldr-git-diff-files-3
+title: 'git-diff-files: Show only the names of changed files'
+cmd: git diff-files --name-only
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compare files using their sha1 hashes and modes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff-files.md
+  (CC-BY-4.0)
+tags:
+- git-diff-files

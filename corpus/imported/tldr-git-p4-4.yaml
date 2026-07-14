@@ -1,0 +1,12 @@
+id: tldr-git-p4-4
+title: 'git-p4: Submit Git changes back to Perforce'
+cmd: git p4 submit
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Import from and submit to Perforce repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-p4.md (CC-BY-4.0)
+tags:
+- git-p4

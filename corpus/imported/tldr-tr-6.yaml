@@ -1,0 +1,13 @@
+id: tldr-tr-6
+title: 'tr: Translate the contents of a file to upper-case'
+cmd: tr < <path/to/file> "[:lower:]" "[:upper:]"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: 'Translate characters: run replacements based on single characters and
+  character sets'
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tr.md (CC-BY-4.0)
+tags:
+- tr

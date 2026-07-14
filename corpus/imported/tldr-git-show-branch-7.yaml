@@ -1,0 +1,13 @@
+id: tldr-git-show-branch-7
+title: 'git-show-branch: Display the commit name instead of the relative name'
+cmd: git show-branch --sha1-name --current <current|branch_name|ref>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show branches and their commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-branch.md
+  (CC-BY-4.0)
+tags:
+- git-show-branch

@@ -1,0 +1,13 @@
+id: tldr-tre-4
+title: 'tre: Print all hidden files and directories using the specified colorization
+  mode'
+cmd: tre <[-a|--all]> <[-c|--color]> <automatic|always|never>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

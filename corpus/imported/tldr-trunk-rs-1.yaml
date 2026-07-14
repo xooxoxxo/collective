@@ -1,0 +1,12 @@
+id: tldr-trunk-rs-1
+title: 'trunk.rs: Build the application in release mode and serve it locally'
+cmd: trunk serve --release
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bundle and serve Rust WASM web applications
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.rs.md (CC-BY-4.0)
+tags:
+- trunk-rs

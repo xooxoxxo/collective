@@ -1,0 +1,12 @@
+id: tldr-git-undo-1
+title: 'git-undo: Remove the most recent commit'
+cmd: git undo
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Undo recent commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-undo.md (CC-BY-4.0)
+tags:
+- git-undo

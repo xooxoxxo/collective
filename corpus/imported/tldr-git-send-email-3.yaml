@@ -1,0 +1,13 @@
+id: tldr-git-send-email-3
+title: 'git-send-email: Send multiple (e.g. 10) commits in the current branch'
+cmd: git send-email <-10>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Send a collection of patches as emails
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-send-email.md
+  (CC-BY-4.0)
+tags:
+- git-send-email

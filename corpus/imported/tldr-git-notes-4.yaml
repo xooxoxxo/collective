@@ -1,0 +1,12 @@
+id: tldr-git-notes-4
+title: 'git-notes: Append a note to a specified object (opens the default text editor)'
+cmd: git notes append <object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add or inspect object notes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-notes.md (CC-BY-4.0)
+tags:
+- git-notes

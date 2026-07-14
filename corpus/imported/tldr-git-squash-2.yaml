@@ -1,0 +1,13 @@
+id: tldr-git-squash-2
+title: 'git-squash: Squash all commits starting with a specific commit on the current
+  branch'
+cmd: git squash <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Squash multiple commits into a single commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-squash.md (CC-BY-4.0)
+tags:
+- git-squash

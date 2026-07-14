@@ -1,0 +1,12 @@
+id: tldr-git-tag-4
+title: 'git-tag: Create an annotated tag with the given message'
+cmd: git tag <tag_name> <[-m|--message]> <tag_message>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, delete, or verify tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-tag.md (CC-BY-4.0)
+tags:
+- git-tag

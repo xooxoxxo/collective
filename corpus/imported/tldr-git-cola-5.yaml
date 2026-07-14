@@ -1,0 +1,12 @@
+id: tldr-git-cola-5
+title: 'git-cola: Apply the path filter to the status widget'
+cmd: git cola <[-s|--status-filter]> <filter>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A powerful Git GUI with a slick and intuitive user interface
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cola.md (CC-BY-4.0)
+tags:
+- git-cola

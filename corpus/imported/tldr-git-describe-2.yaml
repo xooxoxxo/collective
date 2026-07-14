@@ -1,0 +1,13 @@
+id: tldr-git-describe-2
+title: 'git-describe: Create a name with 4 digits for the abbreviated commit hash'
+cmd: git describe --abbrev=<4>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Give an object a human-readable name based on an available ref
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-describe.md
+  (CC-BY-4.0)
+tags:
+- git-describe

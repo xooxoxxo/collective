@@ -1,0 +1,13 @@
+id: tldr-git-paste-1
+title: 'git-paste: Send the patches between the current branch and its upstream to
+  a pastebin using `pastebinit`'
+cmd: git paste
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Send commits to a pastebin site using `pastebinit`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-paste.md (CC-BY-4.0)
+tags:
+- git-paste

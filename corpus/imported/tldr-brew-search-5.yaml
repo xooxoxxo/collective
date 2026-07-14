@@ -1,0 +1,12 @@
+id: tldr-brew-search-5
+title: 'brew-search: Only search for casks'
+cmd: brew search --cask <keyword>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Search for casks and formulae
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-search.md (CC-BY-4.0)
+tags:
+- brew-search

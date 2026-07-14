@@ -1,0 +1,13 @@
+id: tldr-git-rev-parse-1
+title: 'git-rev-parse: Get the commit hash of a branch'
+cmd: git rev-parse <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display metadata related to revisions
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rev-parse.md
+  (CC-BY-4.0)
+tags:
+- git-rev-parse

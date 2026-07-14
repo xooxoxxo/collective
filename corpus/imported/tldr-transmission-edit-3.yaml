@@ -1,0 +1,13 @@
+id: tldr-transmission-edit-3
+title: 'transmission-edit: Update a tracker''s passcode in a torrent file'
+cmd: transmission-edit <[-r|--replace]> <old-passcode> <new-passcode> <path/to/file.torrent>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Modify announce URLs from torrent files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-edit.md
+  (CC-BY-4.0)
+tags:
+- transmission-edit

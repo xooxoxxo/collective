@@ -1,0 +1,14 @@
+id: tldr-git-checkout-index-4
+title: 'git-checkout-index: Export a copy of the entire tree at the last commit to
+  the specified directory (the trailing slash is important)'
+cmd: git checkout-index <[-a|--all]> <[-f|--force]> --prefix <path/to/export_directory>/
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Copy files from the index to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout-index.md
+  (CC-BY-4.0)
+tags:
+- git-checkout-index

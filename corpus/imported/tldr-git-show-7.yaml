@@ -1,0 +1,13 @@
+id: tldr-git-show-7
+title: 'git-show: Show a simplified list of all files changed in a commit (modified,
+  added, and deleted)'
+cmd: git show --name-only <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show various types of Git objects (commits, tags, etc.)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show.md (CC-BY-4.0)
+tags:
+- git-show

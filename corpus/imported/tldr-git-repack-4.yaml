@@ -1,0 +1,12 @@
+id: tldr-git-repack-4
+title: 'git-repack: Limit the repack to local objects only'
+cmd: git repack -l
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Pack unpacked objects in a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-repack.md (CC-BY-4.0)
+tags:
+- git-repack

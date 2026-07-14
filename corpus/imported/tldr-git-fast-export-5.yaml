@@ -1,0 +1,14 @@
+id: tldr-git-fast-export-5
+title: 'git-fast-export: Export only a specific subdirectory''s history'
+cmd: git fast-export --all -- <path/to/directory> > <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Export the contents and history of a Git repository in a streamable,
+  plain-text format
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fast-export.md
+  (CC-BY-4.0)
+tags:
+- git-fast-export

@@ -1,0 +1,13 @@
+id: tldr-xargs-7
+title: 'xargs: Read a file for arguments to be given to a command'
+cmd: xargs <[-a|--arg-file]> <path/to/file> <command>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command with piped arguments coming from another command, a
+  file, etc
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/xargs.md (CC-BY-4.0)
+tags:
+- xargs

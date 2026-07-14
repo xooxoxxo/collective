@@ -1,0 +1,14 @@
+id: tldr-tr-3
+title: 'tr: Map each character of the first set to the corresponding character of
+  the second set'
+cmd: tr < <path/to/file> '<abcd>' '<jkmn>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: 'Translate characters: run replacements based on single characters and
+  character sets'
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tr.md (CC-BY-4.0)
+tags:
+- tr

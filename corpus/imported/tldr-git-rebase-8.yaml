@@ -1,0 +1,13 @@
+id: tldr-git-rebase-8
+title: 'git-rebase: Auto-resolve any conflicts by favoring the working branch version
+  (`theirs` keyword has reversed meaning in this case)'
+cmd: git rebase <[-X|--strategy-option]> theirs <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

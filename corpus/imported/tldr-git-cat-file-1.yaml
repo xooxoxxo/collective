@@ -1,0 +1,13 @@
+id: tldr-git-cat-file-1
+title: 'git-cat-file: Get the [s]ize of the `HEAD` commit in bytes'
+cmd: git cat-file -s HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Provide content or type and size information for Git repository objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cat-file.md
+  (CC-BY-4.0)
+tags:
+- git-cat-file

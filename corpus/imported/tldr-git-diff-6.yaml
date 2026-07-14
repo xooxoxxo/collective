@@ -1,0 +1,13 @@
+id: tldr-git-diff-6
+title: 'git-diff: Output a summary of file creations, renames, and mode changes since
+  a given commit'
+cmd: git diff --summary <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show changes to tracked files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff.md (CC-BY-4.0)
+tags:
+- git-diff

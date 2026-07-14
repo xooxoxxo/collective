@@ -1,0 +1,13 @@
+id: tldr-tree-1
+title: 'tree: Print files and directories up to `num` levels of depth (where 1 means
+  the current directory)'
+cmd: tree -L <num>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tree.md (CC-BY-4.0)
+tags:
+- tree

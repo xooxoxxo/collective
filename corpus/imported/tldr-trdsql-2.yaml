@@ -1,0 +1,13 @@
+id: tldr-trdsql-2
+title: 'trdsql: Interpret JSON list as a table and put objects inside as columns (`path/to/file.json:
+  {"list":[{"age":"26","name":"Tanaka"}]}`)'
+cmd: trdsql "SELECT * FROM <path/to/file.json>::.list"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

@@ -1,0 +1,12 @@
+id: tldr-git-revert-2
+title: 'git-revert: Revert the 5th last commit'
+cmd: git revert HEAD~4
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create new commits which reverse the effect of earlier ones
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-revert.md (CC-BY-4.0)
+tags:
+- git-revert

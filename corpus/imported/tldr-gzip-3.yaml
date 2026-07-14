@@ -1,0 +1,12 @@
+id: tldr-gzip-3
+title: 'gzip: Display the name and reduction percentage for each file compressed'
+cmd: gzip <[-v|--verbose]> <path/to/file.gz>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

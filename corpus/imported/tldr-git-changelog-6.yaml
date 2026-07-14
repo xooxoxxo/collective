@@ -1,0 +1,13 @@
+id: tldr-git-changelog-6
+title: 'git-changelog: Specify `CHANGELOG.md` as the output file'
+cmd: git changelog CHANGELOG.md
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a changelog report from repository commits and tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-changelog.md
+  (CC-BY-4.0)
+tags:
+- git-changelog

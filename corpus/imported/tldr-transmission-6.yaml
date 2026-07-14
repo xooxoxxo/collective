@@ -1,0 +1,14 @@
+id: tldr-transmission-6
+title: 'transmission: View documentation for the deprecated method for interacting
+  with the daemon'
+cmd: tldr transmission-cli
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A simple torrent client
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission.md
+  (CC-BY-4.0)
+tags:
+- transmission

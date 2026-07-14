@@ -1,0 +1,14 @@
+id: tldr-cargo-install-3
+title: 'cargo-install: Build from the specified branch/tag/commit when installing
+  from a Git repository'
+cmd: cargo install --git <repo_url> --<branch|tag|rev> <branch_name|tag|commit_hash>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build and install a Rust binary
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-install.md
+  (CC-BY-4.0)
+tags:
+- cargo-install

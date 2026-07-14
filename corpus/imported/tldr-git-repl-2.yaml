@@ -1,0 +1,12 @@
+id: tldr-git-repl-2
+title: 'git-repl: Run a Git command while in the interactive Git shell'
+cmd: <git_subcommand> <command_arguments>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git REPL (read-evaluate-print-loop) - an interactive Git shell
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-repl.md (CC-BY-4.0)
+tags:
+- git-repl

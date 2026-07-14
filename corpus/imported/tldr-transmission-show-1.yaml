@@ -1,0 +1,13 @@
+id: tldr-transmission-show-1
+title: 'transmission-show: Display metadata for a specific torrent'
+cmd: transmission-show <path/to/file.torrent>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Get information about a torrent file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-show.md
+  (CC-BY-4.0)
+tags:
+- transmission-show

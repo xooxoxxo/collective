@@ -1,0 +1,13 @@
+id: tldr-transmission-edit-2
+title: 'transmission-edit: Remove a URL from a torrent''s announce list'
+cmd: transmission-edit <[-d|--delete]> <http://example.com> <path/to/file.torrent>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Modify announce URLs from torrent files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-edit.md
+  (CC-BY-4.0)
+tags:
+- transmission-edit

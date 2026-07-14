@@ -1,0 +1,12 @@
+id: tldr-tar-5
+title: 'tar: E[x]tract a (compressed) archive [f]ile into the target directory'
+cmd: tar xf <path/to/source.tar[.gz|.bz2|.xz]> <[-C|--directory]> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

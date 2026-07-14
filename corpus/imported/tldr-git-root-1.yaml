@@ -1,0 +1,12 @@
+id: tldr-git-root-1
+title: 'git-root: Print the absolute path of the current Git repository'
+cmd: git root
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the root directory of the current Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-root.md (CC-BY-4.0)
+tags:
+- git-root

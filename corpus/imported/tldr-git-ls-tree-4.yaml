@@ -1,0 +1,13 @@
+id: tldr-git-ls-tree-4
+title: 'git-ls-tree: Print the filenames of the current branch head in a tree structure
+  (Note: `tree --fromfile` is not supported on Windows)'
+cmd: git ls-tree -r --name-only HEAD | tree --fromfile
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List the contents of a tree object
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ls-tree.md (CC-BY-4.0)
+tags:
+- git-ls-tree

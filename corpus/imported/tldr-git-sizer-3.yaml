@@ -1,0 +1,13 @@
+id: tldr-git-sizer-3
+title: 'git-sizer: See additional options'
+cmd: git-sizer -h
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Computes various Git repository size metrics and alerts you to any that
+  might cause problems or inconvenience
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sizer.md (CC-BY-4.0)
+tags:
+- git-sizer

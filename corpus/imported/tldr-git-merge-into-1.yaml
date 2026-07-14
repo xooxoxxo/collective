@@ -1,0 +1,13 @@
+id: tldr-git-merge-into-1
+title: 'git-merge-into: Merge a source branch into a specific destination branch'
+cmd: git merge-into <source_branch> <destination_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge one branch into another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-into.md
+  (CC-BY-4.0)
+tags:
+- git-merge-into

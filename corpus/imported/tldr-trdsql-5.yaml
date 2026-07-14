@@ -1,0 +1,13 @@
+id: tldr-trdsql-5
+title: 'trdsql: Connect to PostgreSQL database'
+cmd: trdsql -driver postgres -dsn "host=<hostname> port=<5433> dbname=<database_name>"
+  "SELECT 1"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

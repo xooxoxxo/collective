@@ -1,0 +1,14 @@
+id: tldr-cargo-rustc-3
+title: 'cargo-rustc: Compile with architecture-specific optimizations for the current
+  CPU'
+cmd: cargo rustc <[-r|--release]> -- <[-C|--codegen]> target-cpu=native
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile a Rust package. Similar to `cargo build`, but you can pass extra
+  options to the compiler
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustc.md (CC-BY-4.0)
+tags:
+- cargo-rustc

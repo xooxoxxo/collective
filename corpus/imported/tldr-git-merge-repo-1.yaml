@@ -1,0 +1,14 @@
+id: tldr-git-merge-repo-1
+title: 'git-merge-repo: Merge a repository''s branch into the current repository''s
+  directory'
+cmd: git merge-repo <path/to/repo> <branch_name> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge two repository histories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-repo.md
+  (CC-BY-4.0)
+tags:
+- git-merge-repo

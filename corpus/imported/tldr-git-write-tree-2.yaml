@@ -1,0 +1,14 @@
+id: tldr-git-write-tree-2
+title: 'git-write-tree: Create a tree object without checking whether objects referenced
+  by the directory exist in the object database'
+cmd: git write-tree --missing-ok
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Low level utility to create a tree object from the current index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-write-tree.md
+  (CC-BY-4.0)
+tags:
+- git-write-tree

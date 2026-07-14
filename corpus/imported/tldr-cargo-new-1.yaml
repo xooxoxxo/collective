@@ -1,0 +1,12 @@
+id: tldr-cargo-new-1
+title: 'cargo-new: Create a new Rust project with a binary target'
+cmd: cargo new <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a new Cargo package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-new.md (CC-BY-4.0)
+tags:
+- cargo-new

@@ -1,0 +1,13 @@
+id: tldr-cargo-binstall-3
+title: 'cargo-binstall: Install a package and disable confirmation prompts'
+cmd: cargo binstall <[-y|--no-confirm]> <package>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Install Rust binaries from CI artifacts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-binstall.md
+  (CC-BY-4.0)
+tags:
+- cargo-binstall

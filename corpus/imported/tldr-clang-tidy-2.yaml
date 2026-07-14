@@ -1,0 +1,14 @@
+id: tldr-clang-tidy-2
+title: 'clang-tidy: Don''t run any checks other than the `cppcoreguidelines` checks
+  on a file'
+cmd: clang-tidy <path/to/file.cpp> -checks=<-*,cppcoreguidelines-*>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An LLVM-based C/C++ linter to find style violations, bugs, and security
+  flaws through static analysis
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang-tidy.md (CC-BY-4.0)
+tags:
+- clang-tidy

@@ -1,0 +1,12 @@
+id: tldr-git-rm-3
+title: 'git-rm: Remove file from repository index but keep it untouched locally'
+cmd: git rm --cached <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files from repository index and local filesystem
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rm.md (CC-BY-4.0)
+tags:
+- git-rm

@@ -1,0 +1,13 @@
+id: tldr-git-init-2
+title: 'git-init: Initialize a repository with the specified name for the initial
+  branch'
+cmd: git init <[-b|--initial-branch]> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Initialize a new local Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-init.md (CC-BY-4.0)
+tags:
+- git-init

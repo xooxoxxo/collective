@@ -1,0 +1,14 @@
+id: tldr-tre-5
+title: 'tre: Print files within the tree hierarchy, assigning a shell alias to each
+  file that, when called, will open the associated file using the provided `command`
+  (or in `$EDITOR` by default)'
+cmd: tre <[-e|--editor]> <command>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

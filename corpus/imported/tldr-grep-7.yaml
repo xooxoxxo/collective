@@ -1,0 +1,12 @@
+id: tldr-grep-7
+title: 'grep: Read data from `stdin` and do not print lines that match a pattern'
+cmd: cat <path/to/file> | grep <[-v|--invert-match]> "<search_pattern>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

@@ -1,0 +1,13 @@
+id: tldr-git-obliterate-2
+title: 'git-obliterate: Erase the existence of specific files between 2 commits'
+cmd: git obliterate <file_1 file_2 ...> -- <commit_hash_1>..<commit_hash_2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Delete files and erase their history from a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-obliterate.md
+  (CC-BY-4.0)
+tags:
+- git-obliterate

@@ -1,0 +1,13 @@
+id: tldr-git-grep-2
+title: 'git-grep: Search for a string in files matching a glob pattern in the current
+  `HEAD`'
+cmd: git grep "<search_string>" -- "<*.ext>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find strings inside tracked files in a repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-grep.md (CC-BY-4.0)
+tags:
+- git-grep

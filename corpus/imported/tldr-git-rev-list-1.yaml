@@ -1,0 +1,13 @@
+id: tldr-git-rev-list-1
+title: 'git-rev-list: List all commits on the current branch'
+cmd: git rev-list HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List revisions (commits) in reverse chronological order
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rev-list.md
+  (CC-BY-4.0)
+tags:
+- git-rev-list

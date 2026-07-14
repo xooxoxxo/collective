@@ -1,0 +1,13 @@
+id: tldr-git-instaweb-4
+title: 'git-instaweb: Use a specified HTTP daemon'
+cmd: git instaweb --start <[-d|--httpd]> <lighttpd|apache2|mongoose|plackup|webrick>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Helper to launch a GitWeb server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-instaweb.md
+  (CC-BY-4.0)
+tags:
+- git-instaweb

@@ -1,0 +1,13 @@
+id: tldr-transmission-cli-3
+title: 'transmission-cli: Create a torrent file from a specific file or directory'
+cmd: transmission-cli --new <path/to/source_file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A lightweight, command-line BitTorrent client
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-cli.md
+  (CC-BY-4.0)
+tags:
+- transmission-cli

@@ -1,0 +1,12 @@
+id: tldr-git-replace-2
+title: 'git-replace: Delete existing replace refs for the given objects'
+cmd: git replace <[-d|--delete]> <object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, and delete refs to replace objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-replace.md (CC-BY-4.0)
+tags:
+- git-replace

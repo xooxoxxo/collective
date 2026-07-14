@@ -1,0 +1,12 @@
+id: tldr-git-notes-6
+title: 'git-notes: Edit an existing note (defaults to `HEAD`)'
+cmd: git notes edit <object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add or inspect object notes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-notes.md (CC-BY-4.0)
+tags:
+- git-notes

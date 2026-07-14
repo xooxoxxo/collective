@@ -1,0 +1,13 @@
+id: tldr-cargo-version-1
+title: 'cargo-version: Display version'
+cmd: cargo version
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display `cargo` version information
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-version.md
+  (CC-BY-4.0)
+tags:
+- cargo-version

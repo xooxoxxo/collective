@@ -1,0 +1,12 @@
+id: tldr-cargo-fmt-3
+title: 'cargo-fmt: Pass arguments to each `rustfmt` call'
+cmd: cargo fmt -- <rustfmt_args>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run `rustfmt` on all source files in a Rust project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fmt.md (CC-BY-4.0)
+tags:
+- cargo-fmt

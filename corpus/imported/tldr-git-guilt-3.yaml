@@ -1,0 +1,13 @@
+id: tldr-git-guilt-3
+title: 'git-guilt: Show author emails instead of names'
+cmd: git guilt <[-e|--email]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show total blame count for files with unstaged changes or calculate the
+  change in blame between two revisions
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-guilt.md (CC-BY-4.0)
+tags:
+- git-guilt

@@ -1,0 +1,13 @@
+id: tldr-git-submodule-6
+title: 'git-submodule: Change the URL of a submodule'
+cmd: git submodule set-url <path/to/submodule> <new_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Inspect, update, and manage submodules
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-submodule.md
+  (CC-BY-4.0)
+tags:
+- git-submodule

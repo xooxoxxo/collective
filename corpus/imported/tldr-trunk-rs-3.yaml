@@ -1,0 +1,12 @@
+id: tldr-trunk-rs-3
+title: 'trunk.rs: Build for production at a specific output directory'
+cmd: trunk build --release <[-d|--dist]> <path/to/distribution>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bundle and serve Rust WASM web applications
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.rs.md (CC-BY-4.0)
+tags:
+- trunk-rs

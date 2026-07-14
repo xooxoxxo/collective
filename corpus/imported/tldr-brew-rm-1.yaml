@@ -1,0 +1,12 @@
+id: tldr-brew-rm-1
+title: 'brew-rm: View documentation for the original command'
+cmd: tldr brew uninstall
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `brew uninstall`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-rm.md (CC-BY-4.0)
+tags:
+- brew-rm

@@ -1,0 +1,12 @@
+id: tldr-trunk-io-5
+title: 'trunk.io: List all available tools and their status'
+cmd: trunk tools list
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run linters, formatters, and security analyzers on code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.io.md (CC-BY-4.0)
+tags:
+- trunk-io

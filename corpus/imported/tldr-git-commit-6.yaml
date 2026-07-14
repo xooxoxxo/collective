@@ -1,0 +1,13 @@
+id: tldr-git-commit-6
+title: 'git-commit: Update the last commit by adding the currently staged changes,
+  changing the commit''s hash and open an editor to change the message'
+cmd: git commit --amend
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Commit files to the repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit.md (CC-BY-4.0)
+tags:
+- git-commit

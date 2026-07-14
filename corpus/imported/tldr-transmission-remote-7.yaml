@@ -1,0 +1,14 @@
+id: tldr-transmission-remote-7
+title: 'transmission-remote: Move torrents 1-10 and 15-20 to a new directory (which
+  will be created if it does not exist)'
+cmd: transmission-remote <hostname> <[-t|--torrent]> "1-10,15-20" --move /<path/to/new_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

@@ -1,0 +1,12 @@
+id: tldr-git-pr-1
+title: 'git-pr: Check out a specific pull request'
+cmd: git pr <pr_number>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out GitHub pull requests locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-pr.md (CC-BY-4.0)
+tags:
+- git-pr

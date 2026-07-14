@@ -1,0 +1,16 @@
+id: tldr-cargo-metadata-4
+title: 'cargo-metadata: Print metadata with the `resolve` field including dependencies
+  only for the given target triple (Note: The `packages` array will still include
+  the dependencies for all targets)'
+cmd: cargo metadata --filter-platform <target_triple>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Output the workspace members and resolved dependencies of current package
+  as JSON
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-metadata.md
+  (CC-BY-4.0)
+tags:
+- cargo-metadata

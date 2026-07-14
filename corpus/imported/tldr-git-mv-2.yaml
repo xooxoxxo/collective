@@ -1,0 +1,12 @@
+id: tldr-git-mv-2
+title: 'git-mv: Rename a file or directory and add the renaming to the next commit'
+cmd: git mv <path/to/file_or_directory> <path/to/destination>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Move or rename files and update the Git index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mv.md (CC-BY-4.0)
+tags:
+- git-mv

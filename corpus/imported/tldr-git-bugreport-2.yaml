@@ -1,0 +1,15 @@
+id: tldr-git-bugreport-2
+title: 'git-bugreport: Create a new bug report file in the specified directory, creating
+  it if it does not exist'
+cmd: git bugreport <[-o|--output-directory]> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Capture debug information from the system and user, generating a text
+  file to aid in the reporting of a bug in Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bugreport.md
+  (CC-BY-4.0)
+tags:
+- git-bugreport

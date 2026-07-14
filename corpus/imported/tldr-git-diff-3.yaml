@@ -1,0 +1,12 @@
+id: tldr-git-diff-3
+title: 'git-diff: Show only staged (added, but not yet committed) changes'
+cmd: git diff --staged
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show changes to tracked files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff.md (CC-BY-4.0)
+tags:
+- git-diff

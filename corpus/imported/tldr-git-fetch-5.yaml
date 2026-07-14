@@ -1,0 +1,13 @@
+id: tldr-git-fetch-5
+title: 'git-fetch: Delete local references to remote branches that have been deleted
+  upstream'
+cmd: git fetch <[-p|--prune]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Download objects and refs from a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fetch.md (CC-BY-4.0)
+tags:
+- git-fetch

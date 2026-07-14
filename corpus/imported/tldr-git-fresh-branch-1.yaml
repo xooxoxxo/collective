@@ -1,0 +1,13 @@
+id: tldr-git-fresh-branch-1
+title: 'git-fresh-branch: Create an empty local branch'
+cmd: git fresh-branch <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create an empty local branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fresh-branch.md
+  (CC-BY-4.0)
+tags:
+- git-fresh-branch

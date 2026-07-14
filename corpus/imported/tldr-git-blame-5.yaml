@@ -1,0 +1,12 @@
+id: tldr-git-blame-5
+title: 'git-blame: Print a file with authorship info starting at a given line'
+cmd: git blame -L <123> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show what commit and author last modified each line of a file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-blame.md (CC-BY-4.0)
+tags:
+- git-blame

@@ -1,0 +1,13 @@
+id: tldr-git-config-3
+title: 'git-config: Set the global value of a given configuration entry (in this case
+  an alias)'
+cmd: git config --global <alias.unstage> "reset HEAD --"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage custom configuration options for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-config.md (CC-BY-4.0)
+tags:
+- git-config

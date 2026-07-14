@@ -1,0 +1,12 @@
+id: tldr-git-apply-4
+title: 'git-apply: Output diffstat for the input and apply the patch'
+cmd: git apply --stat --apply <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Apply a patch to files and/or to the index without creating a commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-apply.md (CC-BY-4.0)
+tags:
+- git-apply

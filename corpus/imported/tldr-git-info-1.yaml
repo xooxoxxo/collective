@@ -1,0 +1,13 @@
+id: tldr-git-info-1
+title: 'git-info: Display remote locations, remote and local branches, most recent
+  commit data, and `.git/config` settings'
+cmd: git info
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display Git repository information
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-info.md (CC-BY-4.0)
+tags:
+- git-info

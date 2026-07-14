@@ -1,0 +1,13 @@
+id: tldr-git-init-4
+title: 'git-init: Initialize a barebones repository, suitable for use as a remote
+  over SSH'
+cmd: git init --bare
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Initialize a new local Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-init.md (CC-BY-4.0)
+tags:
+- git-init

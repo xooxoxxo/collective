@@ -1,0 +1,13 @@
+id: tldr-git-filter-branch-1
+title: 'git-filter-branch: Remove a file from all commits'
+cmd: git filter-branch --tree-filter 'rm <[-f|--force]> <file>' HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change branch history, like removing files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-filter-branch.md
+  (CC-BY-4.0)
+tags:
+- git-filter-branch

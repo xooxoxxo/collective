@@ -1,0 +1,12 @@
+id: tldr-git-help-3
+title: 'git-help: Display a list of all available Git subcommands'
+cmd: git help <[-a|--all]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display help information about Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-help.md (CC-BY-4.0)
+tags:
+- git-help

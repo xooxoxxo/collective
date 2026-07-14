@@ -1,0 +1,12 @@
+id: tldr-bash-7
+title: 'bash: Execute specific commands from `stdin`'
+cmd: <echo "echo 'bash is executed'"> | bash
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bourne-Again SHell, an `sh`-compatible command-line interpreter
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash.md (CC-BY-4.0)
+tags:
+- bash

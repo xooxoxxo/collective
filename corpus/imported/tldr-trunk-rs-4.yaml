@@ -1,0 +1,12 @@
+id: tldr-trunk-rs-4
+title: 'trunk.rs: Build with a specific public URL path for hosting in a subdirectory'
+cmd: trunk build --release --public-url /<path/to/app_subdirectory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bundle and serve Rust WASM web applications
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.rs.md (CC-BY-4.0)
+tags:
+- trunk-rs

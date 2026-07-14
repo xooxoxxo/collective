@@ -1,0 +1,13 @@
+id: tldr-cargo-rustdoc-3
+title: 'cargo-rustdoc: Ignore a documentation lint'
+cmd: cargo rustdoc -- <[-A|--allow]> rustdoc::<lint_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustdoc.md
+  (CC-BY-4.0)
+tags:
+- cargo-rustdoc

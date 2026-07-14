@@ -1,0 +1,12 @@
+id: tldr-brew-8
+title: 'brew: Check the local Homebrew installation for potential problems'
+cmd: brew doctor
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Homebrew - a package manager for macOS and Linux
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew.md (CC-BY-4.0)
+tags:
+- brew

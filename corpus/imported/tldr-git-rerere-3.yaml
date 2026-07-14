@@ -1,0 +1,12 @@
+id: tldr-git-rerere-3
+title: 'git-rerere: Check the status of recorded resolutions'
+cmd: git rerere status
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reuse fixes for merge conflicts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rerere.md (CC-BY-4.0)
+tags:
+- git-rerere

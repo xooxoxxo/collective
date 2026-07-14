@@ -1,0 +1,13 @@
+id: tldr-clang-tidy-1
+title: 'clang-tidy: Run default checks on a source file'
+cmd: clang-tidy <path/to/file.cpp>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An LLVM-based C/C++ linter to find style violations, bugs, and security
+  flaws through static analysis
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang-tidy.md (CC-BY-4.0)
+tags:
+- clang-tidy

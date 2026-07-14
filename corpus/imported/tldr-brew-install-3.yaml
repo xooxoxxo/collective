@@ -1,0 +1,14 @@
+id: tldr-brew-install-3
+title: 'brew-install: Download the manifest, print what would be installed but don''t
+  actually install anything'
+cmd: brew install <[-n|--dry-run]> <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Install a Homebrew formula or cask
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-install.md
+  (CC-BY-4.0)
+tags:
+- brew-install

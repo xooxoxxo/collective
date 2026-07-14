@@ -1,0 +1,13 @@
+id: tldr-git-blame-someone-else-1
+title: 'git-blame-someone-else: Change the committer and author of a commit'
+cmd: git blame-someone-else "<author <someone@example.com>>" <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Blame someone else for your bad code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-blame-someone-else.md
+  (CC-BY-4.0)
+tags:
+- git-blame-someone-else

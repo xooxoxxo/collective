@@ -1,0 +1,12 @@
+id: tldr-tar-1
+title: 'tar: [c]reate an archive and write it to a [f]ile'
+cmd: tar cf <path/to/target.tar> <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

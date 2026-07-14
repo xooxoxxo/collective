@@ -1,0 +1,12 @@
+id: tldr-trash-cli-1
+title: 'trash-cli: View documentation for the original command'
+cmd: tldr trash
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `trash`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trash-cli.md (CC-BY-4.0)
+tags:
+- trash-cli

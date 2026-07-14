@@ -1,0 +1,12 @@
+id: tldr-bash-8
+title: 'bash: Start a [r]estricted shell session'
+cmd: bash <[-r|--restricted]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bourne-Again SHell, an `sh`-compatible command-line interpreter
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash.md (CC-BY-4.0)
+tags:
+- bash

@@ -1,0 +1,13 @@
+id: tldr-cargo-update-3
+title: 'cargo-update: Update only the specified dependencies'
+cmd: cargo update --package <dependency1> --package <dependency2> --package <dependency3>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Update dependencies as recorded in `Cargo.lock`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-update.md
+  (CC-BY-4.0)
+tags:
+- cargo-update

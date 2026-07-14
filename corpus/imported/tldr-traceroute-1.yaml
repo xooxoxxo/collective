@@ -1,0 +1,12 @@
+id: tldr-traceroute-1
+title: 'traceroute: Traceroute to a host'
+cmd: traceroute <example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the route packets trace to network host
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/traceroute.md (CC-BY-4.0)
+tags:
+- traceroute

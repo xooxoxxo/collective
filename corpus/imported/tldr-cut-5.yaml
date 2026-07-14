@@ -1,0 +1,12 @@
+id: tldr-cut-5
+title: 'cut: Use space as a [d]elimiter and print only the first 3 [f]ields'
+cmd: <command> | cut -d " " -f -3
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Cut out fields from `stdin` or files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/cut.md (CC-BY-4.0)
+tags:
+- cut

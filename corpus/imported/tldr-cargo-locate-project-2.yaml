@@ -1,0 +1,13 @@
+id: tldr-cargo-locate-project-2
+title: 'cargo-locate-project: Display the project path in the specified format'
+cmd: cargo locate-project --message-format <plain|json>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the full path to the `Cargo.toml` manifest of a project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-locate-project.md
+  (CC-BY-4.0)
+tags:
+- cargo-locate-project

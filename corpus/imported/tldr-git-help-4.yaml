@@ -1,0 +1,12 @@
+id: tldr-git-help-4
+title: 'git-help: List the available guides'
+cmd: git help <[-g|--guides]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display help information about Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-help.md (CC-BY-4.0)
+tags:
+- git-help

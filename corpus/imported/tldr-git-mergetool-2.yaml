@@ -1,0 +1,13 @@
+id: tldr-git-mergetool-2
+title: 'git-mergetool: List valid merge tools'
+cmd: git mergetool --tool-help
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run merge conflict resolution tools to resolve merge conflicts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mergetool.md
+  (CC-BY-4.0)
+tags:
+- git-mergetool

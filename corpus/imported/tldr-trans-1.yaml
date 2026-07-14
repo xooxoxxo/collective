@@ -1,0 +1,12 @@
+id: tldr-trans-1
+title: 'trans: Translate a word (language is detected automatically)'
+cmd: trans "<word_or_sentence_to_translate>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Translate Shell, a command-line translator
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trans.md (CC-BY-4.0)
+tags:
+- trans

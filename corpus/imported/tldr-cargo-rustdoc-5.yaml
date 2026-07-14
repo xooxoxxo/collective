@@ -1,0 +1,13 @@
+id: tldr-cargo-rustdoc-5
+title: 'cargo-rustdoc: Document the specified binary'
+cmd: cargo rustdoc --bin <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustdoc.md
+  (CC-BY-4.0)
+tags:
+- cargo-rustdoc

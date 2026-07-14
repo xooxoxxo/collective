@@ -1,0 +1,14 @@
+id: tldr-trdsql-6
+title: 'trdsql: Create table data to MySQL database from CSV file'
+cmd: trdsql -driver mysql -dsn "<username>:<password>@<hostname>/<database>" -ih "CREATE
+  TABLE <table> (<column1> int, <column2> varchar(20)) AS SELECT <column3> AS <column1>,<column2>
+  FROM <path/to/header_file.csv>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

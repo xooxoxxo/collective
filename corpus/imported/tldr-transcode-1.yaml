@@ -1,0 +1,12 @@
+id: tldr-transcode-1
+title: 'transcode: Create stabilization file to be able to remove camera shakes'
+cmd: transcode -J stabilize -i <input_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transcode video and audio codecs, and convert between media formats
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transcode.md (CC-BY-4.0)
+tags:
+- transcode

@@ -1,0 +1,13 @@
+id: tldr-git-mergetool-3
+title: 'git-mergetool: Launch the merge tool identified by a name'
+cmd: git mergetool <[-t|--tool]> <tool_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run merge conflict resolution tools to resolve merge conflicts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mergetool.md
+  (CC-BY-4.0)
+tags:
+- git-mergetool

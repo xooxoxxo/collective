@@ -1,0 +1,12 @@
+id: tldr-cargo-run-3
+title: 'cargo-run: Run the specified example'
+cmd: cargo <[r|run]> --example <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run the current Cargo package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-run.md (CC-BY-4.0)
+tags:
+- cargo-run

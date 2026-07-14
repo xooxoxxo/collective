@@ -1,0 +1,12 @@
+id: tldr-ssh-keyscan-1
+title: 'ssh-keyscan: Retrieve all public SSH keys of a remote host'
+cmd: ssh-keyscan <hostname>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Get the public SSH keys of remote hosts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-keyscan.md (CC-BY-4.0)
+tags:
+- ssh-keyscan

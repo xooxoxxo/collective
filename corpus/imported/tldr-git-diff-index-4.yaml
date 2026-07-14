@@ -1,0 +1,13 @@
+id: tldr-git-diff-index-4
+title: 'git-diff-index: Suppress output and return an exit status to check for differences'
+cmd: git diff-index --quiet <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compare the working directory with a commit or tree object
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff-index.md
+  (CC-BY-4.0)
+tags:
+- git-diff-index

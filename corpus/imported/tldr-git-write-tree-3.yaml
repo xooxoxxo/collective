@@ -1,0 +1,14 @@
+id: tldr-git-write-tree-3
+title: 'git-write-tree: Create a tree object that represents a subdirectory (used
+  to write the tree object for a subproject in the named subdirectory)'
+cmd: git write-tree --prefix <subdirectory>/
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Low level utility to create a tree object from the current index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-write-tree.md
+  (CC-BY-4.0)
+tags:
+- git-write-tree

@@ -1,0 +1,14 @@
+id: tldr-git-checkout-8
+title: 'git-checkout: Replace a file in the current directory with the version of
+  it committed in a given branch'
+cmd: git checkout <branch_name> -- <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

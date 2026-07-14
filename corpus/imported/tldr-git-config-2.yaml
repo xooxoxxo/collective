@@ -1,0 +1,13 @@
+id: tldr-git-config-2
+title: 'git-config: List local, global, or system configuration entries and show their
+  file location'
+cmd: git config --<local|global|system> <[-l|--list]> --show-origin
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage custom configuration options for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-config.md (CC-BY-4.0)
+tags:
+- git-config

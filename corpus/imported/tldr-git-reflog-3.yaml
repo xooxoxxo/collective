@@ -1,0 +1,12 @@
+id: tldr-git-reflog-3
+title: 'git-reflog: Show only the 5 latest entries in the reflog'
+cmd: git reflog <[-n|--max-count]> 5
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a log of changes to local references like HEAD, branches, or tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reflog.md (CC-BY-4.0)
+tags:
+- git-reflog

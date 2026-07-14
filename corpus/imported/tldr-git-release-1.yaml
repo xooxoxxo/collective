@@ -1,0 +1,12 @@
+id: tldr-git-release-1
+title: 'git-release: Create and push a release'
+cmd: git release <tag_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a Git tag for a release
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-release.md (CC-BY-4.0)
+tags:
+- git-release

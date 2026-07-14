@@ -1,0 +1,13 @@
+id: tldr-git-bundle-5
+title: 'git-bundle: Verify that a bundle file is valid and can be applied to the current
+  repository'
+cmd: git bundle verify <path/to/file.bundle>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Package objects and references into an archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bundle.md (CC-BY-4.0)
+tags:
+- git-bundle

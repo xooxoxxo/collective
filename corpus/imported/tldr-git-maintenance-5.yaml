@@ -1,0 +1,13 @@
+id: tldr-git-maintenance-5
+title: 'git-maintenance: Run a specific maintenance task on the current repository'
+cmd: git maintenance run --task <commit-graph|gc|incremental-repack|loose-objects|pack-refs|prefetch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run tasks to optimize Git repository data
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-maintenance.md
+  (CC-BY-4.0)
+tags:
+- git-maintenance

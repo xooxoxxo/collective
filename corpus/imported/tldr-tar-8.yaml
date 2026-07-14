@@ -1,0 +1,12 @@
+id: tldr-tar-8
+title: 'tar: E[x]tract files matching a pattern from an archive [f]ile'
+cmd: tar xf <path/to/source.tar> --wildcards "<*.html>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

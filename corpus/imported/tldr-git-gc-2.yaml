@@ -1,0 +1,12 @@
+id: tldr-git-gc-2
+title: 'git-gc: Aggressively optimise, takes more time'
+cmd: git gc --aggressive
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Optimise the local repository by cleaning unnecessary files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gc.md (CC-BY-4.0)
+tags:
+- git-gc

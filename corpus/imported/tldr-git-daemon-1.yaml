@@ -1,0 +1,12 @@
+id: tldr-git-daemon-1
+title: 'git-daemon: Launch a Git daemon with a whitelisted set of directories'
+cmd: git daemon --export-all <path/to/directory1 path/to/directory2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A really simple server for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-daemon.md (CC-BY-4.0)
+tags:
+- git-daemon

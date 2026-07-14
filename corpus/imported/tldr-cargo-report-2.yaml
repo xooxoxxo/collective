@@ -1,0 +1,13 @@
+id: tldr-cargo-report-2
+title: 'cargo-report: Display a report with the specified Cargo-generated ID'
+cmd: cargo report future-incompatibilities --id <id>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display various kinds of reports
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-report.md
+  (CC-BY-4.0)
+tags:
+- cargo-report

@@ -1,0 +1,12 @@
+id: tldr-cargo-deb-1
+title: 'cargo-deb: Create a Debian package from a project'
+cmd: cargo deb
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create Debian packages from Cargo projects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-deb.md (CC-BY-4.0)
+tags:
+- cargo-deb

@@ -1,0 +1,12 @@
+id: tldr-cargo-build-5
+title: 'cargo-build: Build a specific package'
+cmd: cargo <[b|build]> <[-p|--package]> <package>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile a local package and all of its dependencies
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-build.md (CC-BY-4.0)
+tags:
+- cargo-build

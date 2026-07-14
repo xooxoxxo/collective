@@ -1,0 +1,13 @@
+id: tldr-git-daemon-2
+title: 'git-daemon: Launch a Git daemon with a specific base directory and allow pulling
+  from all sub-directories that look like Git repositories'
+cmd: git daemon --base-path=<path/to/directory> --export-all --reuseaddr
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A really simple server for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-daemon.md (CC-BY-4.0)
+tags:
+- git-daemon

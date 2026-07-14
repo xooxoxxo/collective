@@ -1,0 +1,12 @@
+id: tldr-cargo-add-1
+title: 'cargo-add: Add the latest version of a dependency to the current project'
+cmd: cargo add <dependency>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add dependencies to a Rust project's `Cargo.toml` manifest
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-add.md (CC-BY-4.0)
+tags:
+- cargo-add

@@ -1,0 +1,12 @@
+id: tldr-git-help-2
+title: 'git-help: Display help about a specific Git subcommand in a web browser'
+cmd: git help <[-w|--web]> <subcommand>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display help information about Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-help.md (CC-BY-4.0)
+tags:
+- git-help

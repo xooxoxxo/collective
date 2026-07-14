@@ -1,0 +1,12 @@
+id: tldr-defaults-5
+title: 'defaults: Speed up Mission Control animations'
+cmd: defaults write com.apple.Dock expose-animation-duration -float 0.1
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Read and write macOS user configuration for applications
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/defaults.md (CC-BY-4.0)
+tags:
+- defaults

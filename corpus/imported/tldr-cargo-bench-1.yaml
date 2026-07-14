@@ -1,0 +1,12 @@
+id: tldr-cargo-bench-1
+title: 'cargo-bench: Execute all benchmarks of a package'
+cmd: cargo bench
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile and execute benchmarks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-bench.md (CC-BY-4.0)
+tags:
+- cargo-bench

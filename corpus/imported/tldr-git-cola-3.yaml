@@ -1,0 +1,12 @@
+id: tldr-git-cola-3
+title: 'git-cola: Prompt for a Git repository. Defaults to the current directory'
+cmd: git cola --prompt
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A powerful Git GUI with a slick and intuitive user interface
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cola.md (CC-BY-4.0)
+tags:
+- git-cola

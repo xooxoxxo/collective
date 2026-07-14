@@ -1,0 +1,14 @@
+id: tldr-xargs-4
+title: 'xargs: Raise the parallel process limit to 10 (default is 1; 0 means as many
+  processes as possible)'
+cmd: <arguments_source> | xargs <[-P|--max-procs]> 10 <[-n|--max-args]> <1> <command>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command with piped arguments coming from another command, a
+  file, etc
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/xargs.md (CC-BY-4.0)
+tags:
+- xargs

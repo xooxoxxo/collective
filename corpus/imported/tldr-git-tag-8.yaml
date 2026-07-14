@@ -1,0 +1,12 @@
+id: tldr-git-tag-8
+title: 'git-tag: List all tags which contain a given commit (`HEAD` if not specified)'
+cmd: git tag --contains <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, delete, or verify tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-tag.md (CC-BY-4.0)
+tags:
+- git-tag

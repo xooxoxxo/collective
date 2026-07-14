@@ -1,0 +1,14 @@
+id: tldr-git-reauthor-2
+title: 'git-reauthor: Change the email and name to the ones defined in the Git config'
+cmd: git reauthor <[-o|--old-email]> <old@example.com> <[-c|--use-config]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change details about an author identity. Since this command rewrites
+  the Git history, `--force` will be needed when pushing next time
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reauthor.md
+  (CC-BY-4.0)
+tags:
+- git-reauthor

@@ -1,0 +1,14 @@
+id: tldr-git-annotate-1
+title: 'git-annotate: Print a file with the author name and commit hash prepended
+  to each line'
+cmd: git annotate <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show commit hash and last author on each line of a file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-annotate.md
+  (CC-BY-4.0)
+tags:
+- git-annotate

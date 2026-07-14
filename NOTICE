@@ -1,0 +1,3 @@
+Portions of the corpus under corpus/imported/ are derived from tldr-pages
+(https://github.com/tldr-pages/tldr), licensed CC-BY-4.0. Each derived entry
+links its source page in its `source` field.

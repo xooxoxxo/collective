@@ -1,0 +1,12 @@
+id: tldr-brew-list-2
+title: 'brew-list: List files belonging to an installed formula'
+cmd: brew <[ls|list]> <formula>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List installed formulae/casks or their files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-list.md (CC-BY-4.0)
+tags:
+- brew-list

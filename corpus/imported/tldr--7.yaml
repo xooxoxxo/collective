@@ -1,0 +1,12 @@
+id: tldr--7
+title: '{: Recursively expand a `variable`'
+cmd: echo $<{!variable>}
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Multipurpose shell syntax
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/{.md (CC-BY-4.0)
+tags:
+- ''

@@ -1,0 +1,14 @@
+id: tldr-git-name-rev-5
+title: 'git-name-rev: Exit with a non-zero status code instead of printing `undefined`
+  for unknown commits'
+cmd: git name-rev --no-undefined <commit-ish>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Describe a commit using existing ref names
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-name-rev.md
+  (CC-BY-4.0)
+tags:
+- git-name-rev

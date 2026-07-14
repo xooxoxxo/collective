@@ -1,0 +1,13 @@
+id: tldr-git-rename-remote-1
+title: 'git-rename-remote: Change the upstream remote to origin'
+cmd: git rename-remote <upstream> <origin>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change remote for pulling and pushing
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rename-remote.md
+  (CC-BY-4.0)
+tags:
+- git-rename-remote

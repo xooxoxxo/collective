@@ -1,0 +1,12 @@
+id: tldr-cargo-add-5
+title: 'cargo-add: Add a local crate as a dependency'
+cmd: cargo add --path <path/to/crate_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add dependencies to a Rust project's `Cargo.toml` manifest
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-add.md (CC-BY-4.0)
+tags:
+- cargo-add

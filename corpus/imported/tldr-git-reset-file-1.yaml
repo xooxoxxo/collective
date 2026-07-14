@@ -1,0 +1,13 @@
+id: tldr-git-reset-file-1
+title: 'git-reset-file: Reset a file to `HEAD`'
+cmd: git reset-file <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Revert a file to `HEAD` or a commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reset-file.md
+  (CC-BY-4.0)
+tags:
+- git-reset-file

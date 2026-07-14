@@ -1,0 +1,14 @@
+id: tldr-git-reset-5
+title: 'git-reset: Undo the last two commits, adding their changes to the index, i.e.
+  staged for commit'
+cmd: git reset --soft HEAD~2
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Undo commits or unstage changes by resetting the current Git HEAD to
+  the specified state
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reset.md (CC-BY-4.0)
+tags:
+- git-reset

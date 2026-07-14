@@ -1,0 +1,12 @@
+id: tldr-git-svn-5
+title: 'git-svn: Commit back to the SVN repository'
+cmd: git svn commit
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bidirectional operation between a Subversion repository and Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-svn.md (CC-BY-4.0)
+tags:
+- git-svn

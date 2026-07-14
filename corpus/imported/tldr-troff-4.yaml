@@ -1,0 +1,12 @@
+id: tldr-troff-4
+title: 'troff: Format output as a pdf file, saving the output to a file'
+cmd: troff -T <pdf> <path/to/input.roff> | gropdf > <path/to/output.pdf>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Typesetting processor for the groff (GNU Troff) document formatting system
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/troff.md (CC-BY-4.0)
+tags:
+- troff

@@ -1,0 +1,13 @@
+id: tldr-git-rename-branch-1
+title: 'git-rename-branch: Rename the branch you are currently on'
+cmd: git rename-branch <new_branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Rename a Git branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rename-branch.md
+  (CC-BY-4.0)
+tags:
+- git-rename-branch

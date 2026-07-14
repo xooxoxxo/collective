@@ -1,0 +1,12 @@
+id: tldr-git-svn-3
+title: 'git-svn: Update local clone from the remote SVN repository'
+cmd: git svn rebase
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bidirectional operation between a Subversion repository and Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-svn.md (CC-BY-4.0)
+tags:
+- git-svn

@@ -1,0 +1,13 @@
+id: tldr-trivy-6
+title: 'trivy: Scan a local or remote Git repository for vulnerabilities'
+cmd: trivy repo <path/to/local_repository_directory|remote_repository_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Scanner for vulnerabilities in container images, filesystems, and Git
+  repositories, as well as for configuration issues
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trivy.md (CC-BY-4.0)
+tags:
+- trivy

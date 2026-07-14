@@ -1,0 +1,14 @@
+id: tldr-git-fast-export-1
+title: 'git-fast-export: Export the entire Git repository history to `stdout`'
+cmd: git fast-export --all
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Export the contents and history of a Git repository in a streamable,
+  plain-text format
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fast-export.md
+  (CC-BY-4.0)
+tags:
+- git-fast-export

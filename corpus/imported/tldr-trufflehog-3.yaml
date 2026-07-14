@@ -1,0 +1,14 @@
+id: tldr-trufflehog-3
+title: 'trufflehog: Scan a GitHub repository for verified keys and get JSON output'
+cmd: trufflehog git <https://github.com/trufflesecurity/test_keys> --only-verified
+  --json
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find and verify credentials in files, Git repositories, S3 buckets, and
+  Docker images
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trufflehog.md (CC-BY-4.0)
+tags:
+- trufflehog

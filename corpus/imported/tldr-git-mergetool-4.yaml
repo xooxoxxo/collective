@@ -1,0 +1,13 @@
+id: tldr-git-mergetool-4
+title: 'git-mergetool: Don''t prompt before each invocation of the merge tool'
+cmd: git mergetool <[-y|--no-prompt]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run merge conflict resolution tools to resolve merge conflicts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mergetool.md
+  (CC-BY-4.0)
+tags:
+- git-mergetool

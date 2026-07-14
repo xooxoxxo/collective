@@ -1,0 +1,12 @@
+id: tldr-git-lfs-2
+title: 'git-lfs: Track files that match a glob'
+cmd: git lfs track '<*.bin>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Work with large files in Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-lfs.md (CC-BY-4.0)
+tags:
+- git-lfs

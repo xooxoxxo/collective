@@ -1,0 +1,13 @@
+id: tldr-git-show-ref-1
+title: 'git-show-ref: Show all refs in the repository'
+cmd: git show-ref
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for listing references
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-ref.md
+  (CC-BY-4.0)
+tags:
+- git-show-ref

@@ -1,0 +1,13 @@
+id: tldr-git-log-6
+title: 'git-log: Show only commits with messages that include a specific string, ignoring
+  case'
+cmd: git log <[-i|--regexp-ignore-case]> --grep <search_string>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

@@ -1,0 +1,12 @@
+id: tldr-git-archive-3
+title: 'git-archive: Output the Zip archive to a specific file'
+cmd: git archive <[-v|--verbose]> <[-o|--output]> <path/to/file.zip> HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create an archive of files from a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-archive.md (CC-BY-4.0)
+tags:
+- git-archive

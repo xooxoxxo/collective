@@ -1,0 +1,12 @@
+id: tldr-git-flow-2
+title: 'git-flow: Start developing on a feature branch based on `develop`'
+cmd: git flow feature start <feature>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of Git extensions to provide high-level repository operations
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-flow.md (CC-BY-4.0)
+tags:
+- git-flow

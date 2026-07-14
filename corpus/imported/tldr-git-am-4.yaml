@@ -1,0 +1,14 @@
+id: tldr-git-am-4
+title: 'git-am: Apply as much of a patch file as possible, saving failed hunks to
+  reject files'
+cmd: git am --reject <path/to/file.patch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Apply patch files and create a commit. Useful when receiving commits
+  via email
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-am.md (CC-BY-4.0)
+tags:
+- git-am

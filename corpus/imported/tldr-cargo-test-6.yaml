@@ -1,0 +1,12 @@
+id: tldr-cargo-test-6
+title: 'cargo-test: Run tests without hiding output from test executions'
+cmd: cargo <[t|test]> -- --nocapture
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute the unit and integration tests of a Rust package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-test.md (CC-BY-4.0)
+tags:
+- cargo-test

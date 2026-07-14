@@ -1,0 +1,13 @@
+id: tldr-git-diff-files-4
+title: 'git-diff-files: Output a summary of extended header information'
+cmd: git diff-files --summary
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compare files using their sha1 hashes and modes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-diff-files.md
+  (CC-BY-4.0)
+tags:
+- git-diff-files

@@ -1,0 +1,12 @@
+id: tldr-ssh-5
+title: 'ssh: SSH tunneling: [D]ynamic port forwarding (SOCKS proxy on `localhost:1080`)'
+cmd: ssh <username>@<remote_host> -D <1080>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure Shell is a protocol used to securely log onto remote systems
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh.md (CC-BY-4.0)
+tags:
+- ssh

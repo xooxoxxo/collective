@@ -1,0 +1,13 @@
+id: tldr-trivy-7
+title: 'trivy: Scan a Git repository up to a specific commit hash'
+cmd: trivy repo --commit <commit_hash> <repository>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Scanner for vulnerabilities in container images, filesystems, and Git
+  repositories, as well as for configuration issues
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trivy.md (CC-BY-4.0)
+tags:
+- trivy

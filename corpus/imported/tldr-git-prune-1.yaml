@@ -1,0 +1,12 @@
+id: tldr-git-prune-1
+title: 'git-prune: Report what would be removed by Git prune without removing it'
+cmd: git prune <[-n|--dry-run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for pruning all unreachable objects from the object database
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-prune.md (CC-BY-4.0)
+tags:
+- git-prune

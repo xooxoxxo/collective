@@ -1,0 +1,14 @@
+id: tldr-brew-services-2
+title: 'brew-services: List more information about all managed services'
+cmd: brew services info --all
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage background services with `launchctl` on macOS or `systemctl` on
+  Linux
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-services.md
+  (CC-BY-4.0)
+tags:
+- brew-services

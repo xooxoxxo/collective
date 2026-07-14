@@ -1,0 +1,12 @@
+id: tldr-cargo-fix-2
+title: 'cargo-fix: Fix code even if the working directory has changes'
+cmd: cargo fix --allow-dirty
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Automatically fix lint warnings reported by `rustc`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fix.md (CC-BY-4.0)
+tags:
+- cargo-fix

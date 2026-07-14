@@ -1,0 +1,13 @@
+id: tldr-tr-5
+title: 'tr: Compress a series of identical characters to a single character'
+cmd: tr < <path/to/file> <[-s|--squeeze-repeats]> '<input_characters>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: 'Translate characters: run replacements based on single characters and
+  character sets'
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tr.md (CC-BY-4.0)
+tags:
+- tr

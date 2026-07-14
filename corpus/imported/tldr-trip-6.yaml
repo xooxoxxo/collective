@@ -1,0 +1,12 @@
+id: tldr-trip-6
+title: 'trip: Use custom source port `5000` for `udp` tracing'
+cmd: sudo trip <example.com> --protocol <udp> --source-port <5000>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A network diagnostic tool
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trip.md (CC-BY-4.0)
+tags:
+- trip

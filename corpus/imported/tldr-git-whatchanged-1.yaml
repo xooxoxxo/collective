@@ -1,0 +1,14 @@
+id: tldr-git-whatchanged-1
+title: 'git-whatchanged: View documentation for the original command'
+cmd: tldr git log
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `git log --raw --no-merges` (log with raw
+  diffs for each commit)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-whatchanged.md
+  (CC-BY-4.0)
+tags:
+- git-whatchanged

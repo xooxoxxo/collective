@@ -1,0 +1,13 @@
+id: tldr-git-contrib-1
+title: 'git-contrib: Display all commit hashes and their corresponding commit messages
+  from a specific author'
+cmd: git contrib <author>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display commits from an author
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-contrib.md (CC-BY-4.0)
+tags:
+- git-contrib

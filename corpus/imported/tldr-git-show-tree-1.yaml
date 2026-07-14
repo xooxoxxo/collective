@@ -1,0 +1,15 @@
+id: tldr-git-show-tree-1
+title: 'git-show-tree: Show a decorated tree graph for all branches annotated with
+  tags and branch names'
+cmd: git show-tree
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a decorated tree graph with all branches of a Git repository, showing
+  annotations
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-tree.md
+  (CC-BY-4.0)
+tags:
+- git-show-tree

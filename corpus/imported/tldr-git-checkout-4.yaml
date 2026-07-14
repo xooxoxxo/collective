@@ -1,0 +1,13 @@
+id: tldr-git-checkout-4
+title: 'git-checkout: Switch to the previously checked out branch'
+cmd: git checkout -
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

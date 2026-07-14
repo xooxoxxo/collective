@@ -1,0 +1,14 @@
+id: tldr-xargs-6
+title: 'xargs: Prompt user for confirmation before executing command (confirm with
+  `y` or `Y`)'
+cmd: <arguments_source> | xargs <[-p|--interactive]> <command>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command with piped arguments coming from another command, a
+  file, etc
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/xargs.md (CC-BY-4.0)
+tags:
+- xargs

@@ -1,0 +1,13 @@
+id: tldr-git-create-branch-3
+title: 'git-create-branch: Create a branch locally and on upstream (through forks)'
+cmd: git create-branch <[-r|--remote]> upstream <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a Git branch in a repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-create-branch.md
+  (CC-BY-4.0)
+tags:
+- git-create-branch

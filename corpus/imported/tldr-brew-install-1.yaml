@@ -1,0 +1,13 @@
+id: tldr-brew-install-1
+title: 'brew-install: Install a formula/cask'
+cmd: brew install <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Install a Homebrew formula or cask
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-install.md
+  (CC-BY-4.0)
+tags:
+- brew-install

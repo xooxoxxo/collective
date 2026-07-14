@@ -1,0 +1,12 @@
+id: tldr-git-mr-4
+title: 'git-mr: Clean up old merge request branches'
+cmd: git mr clean
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out GitLab merge requests locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mr.md (CC-BY-4.0)
+tags:
+- git-mr

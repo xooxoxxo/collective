@@ -1,0 +1,13 @@
+id: tldr-git-authors-2
+title: 'git-authors: Append the list of committers to the `AUTHORS` file and open
+  it in the default editor'
+cmd: git authors
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a list of committers of a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-authors.md (CC-BY-4.0)
+tags:
+- git-authors

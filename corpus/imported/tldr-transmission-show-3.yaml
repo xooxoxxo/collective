@@ -1,0 +1,14 @@
+id: tldr-transmission-show-3
+title: 'transmission-show: Query a torrent''s trackers and print the current number
+  of peers'
+cmd: transmission-show <[-s|--scrape]> <path/to/file.torrent>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Get information about a torrent file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-show.md
+  (CC-BY-4.0)
+tags:
+- transmission-show

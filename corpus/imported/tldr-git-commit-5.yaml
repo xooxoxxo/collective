@@ -1,0 +1,13 @@
+id: tldr-git-commit-5
+title: 'git-commit: Commit staged files and sign them with the specified GPG key (or
+  the one defined in the configuration file if no `key_id` is specified)'
+cmd: git commit <[-S|--gpg-sign]> <key_id> <[-m|--message]> "<message>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Commit files to the repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit.md (CC-BY-4.0)
+tags:
+- git-commit

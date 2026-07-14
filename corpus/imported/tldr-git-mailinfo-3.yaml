@@ -1,0 +1,14 @@
+id: tldr-git-mailinfo-3
+title: 'git-mailinfo: Remove everything from the body before a scissors line (e.g.
+  "-->* --") and retrieve the message or patch'
+cmd: git mailinfo --scissors <message|patch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Extract patch and authorship information from a single email message
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mailinfo.md
+  (CC-BY-4.0)
+tags:
+- git-mailinfo

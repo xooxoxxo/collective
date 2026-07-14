@@ -1,0 +1,13 @@
+id: tldr-git-merge-tree-1
+title: 'git-merge-tree: Show the result of a merge between two branches'
+cmd: git merge-tree <branch1> <branch2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches without changing files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-tree.md
+  (CC-BY-4.0)
+tags:
+- git-merge-tree

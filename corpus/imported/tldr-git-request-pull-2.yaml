@@ -1,0 +1,15 @@
+id: tldr-git-request-pull-2
+title: 'git-request-pull: Produce a request summarizing the changes between the v0.1
+  release on the `foo` branch and the local `bar` branch'
+cmd: git request-pull <v0.1> <https://example.com/project> <foo:bar>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a request asking the upstream project to pull changes into its
+  tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-request-pull.md
+  (CC-BY-4.0)
+tags:
+- git-request-pull

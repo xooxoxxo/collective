@@ -1,0 +1,12 @@
+id: tldr-git-fame-3
+title: 'git-fame: Calculate contributions made after the specified date'
+cmd: git fame --since "<3 weeks ago|2021-05-13>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Pretty-print Git repository contributions
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fame.md (CC-BY-4.0)
+tags:
+- git-fame

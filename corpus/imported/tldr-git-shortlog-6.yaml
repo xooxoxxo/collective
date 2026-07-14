@@ -1,0 +1,13 @@
+id: tldr-git-shortlog-6
+title: 'git-shortlog: View all users, emails, and the number of commits in all branches'
+cmd: git shortlog <[-sne|--summary --numbered --email]> --all
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Summarizes the `git log` output
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-shortlog.md
+  (CC-BY-4.0)
+tags:
+- git-shortlog

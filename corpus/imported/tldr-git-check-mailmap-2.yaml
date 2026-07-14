@@ -1,0 +1,13 @@
+id: tldr-git-check-mailmap-2
+title: 'git-check-mailmap: Use the specified mailmap file in addition to the defaults'
+cmd: git check-mailmap --mailmap-file <path/to/file> <email@example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show canonical names and email addresses of contacts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-check-mailmap.md
+  (CC-BY-4.0)
+tags:
+- git-check-mailmap

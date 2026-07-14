@@ -1,0 +1,12 @@
+id: tldr-makensis-2
+title: 'makensis: Compile a NSIS script in strict mode (treat warnings as errors)'
+cmd: makensis -WX <path/to/file.nsi>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Cross-platform compiler for NSIS installers
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/makensis.md (CC-BY-4.0)
+tags:
+- makensis

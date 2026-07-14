@@ -1,0 +1,13 @@
+id: tldr-brew-tap-3
+title: 'brew-tap: Tap a Git repository hosted outside of GitHub'
+cmd: brew tap <username>/<repository_name> <git_clone_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Tap a Homebrew formula repository. If no arguments are provided, list
+  all installed Homebrew taps
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-tap.md (CC-BY-4.0)
+tags:
+- brew-tap

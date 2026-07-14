@@ -1,0 +1,12 @@
+id: tldr-git-feature-1
+title: 'git-feature: Create and switch to a new feature branch'
+cmd: git feature <feature_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create or merge feature branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-feature.md (CC-BY-4.0)
+tags:
+- git-feature

@@ -1,0 +1,12 @@
+id: tldr-clangd-2
+title: 'clangd: List of available options'
+cmd: clangd --help-list
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Language server that provides IDE-like features to editors
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clangd.md (CC-BY-4.0)
+tags:
+- clangd

@@ -1,0 +1,12 @@
+id: tldr-tred-1
+title: 'tred: Construct the transitive reduction graph of one or more directed graphs'
+cmd: tred <path/to/input1.gv path/to/input2.gv ...> > <path/to/output.gv>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compute the transitive reduction of directed graphs
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tred.md (CC-BY-4.0)
+tags:
+- tred

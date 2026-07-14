@@ -1,0 +1,12 @@
+id: tldr-git-alias-1
+title: 'git-alias: List all aliases'
+cmd: git alias
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create shortcuts for Git commands
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-alias.md (CC-BY-4.0)
+tags:
+- git-alias

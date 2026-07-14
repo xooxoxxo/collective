@@ -1,0 +1,14 @@
+id: tldr-git-check-attr-4
+title: 'git-check-attr: Check the value of a specific attribute on one or more files'
+cmd: git check-attr <attribute> <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: For every pathname, list if each attribute is unspecified, set, or unset
+  as a gitattribute on that pathname
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-check-attr.md
+  (CC-BY-4.0)
+tags:
+- git-check-attr

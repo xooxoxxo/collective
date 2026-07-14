@@ -1,0 +1,14 @@
+id: tldr-cargo-update-2
+title: 'cargo-update: Display what would be updated, but don''t actually write the
+  lockfile'
+cmd: cargo update <[-n|--dry-run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Update dependencies as recorded in `Cargo.lock`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-update.md
+  (CC-BY-4.0)
+tags:
+- cargo-update

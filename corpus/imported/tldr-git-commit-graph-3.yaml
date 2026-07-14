@@ -1,0 +1,14 @@
+id: tldr-git-commit-graph-3
+title: 'git-commit-graph: Write a commit-graph file containing all commits in the
+  current commit-graph file along with those reachable from `HEAD`'
+cmd: git rev-parse <HEAD> | git commit-graph write --stdin-commits --append
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Write and verify Git commit-graph files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit-graph.md
+  (CC-BY-4.0)
+tags:
+- git-commit-graph

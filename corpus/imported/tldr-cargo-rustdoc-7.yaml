@@ -1,0 +1,13 @@
+id: tldr-cargo-rustdoc-7
+title: 'cargo-rustdoc: Document the specified integration test'
+cmd: cargo rustdoc --test <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustdoc.md
+  (CC-BY-4.0)
+tags:
+- cargo-rustdoc

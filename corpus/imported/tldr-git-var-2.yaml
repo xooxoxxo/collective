@@ -1,0 +1,12 @@
+id: tldr-git-var-2
+title: 'git-var: [l]ist all Git logical variables'
+cmd: git var -l
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print a Git logical variable's value
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-var.md (CC-BY-4.0)
+tags:
+- git-var

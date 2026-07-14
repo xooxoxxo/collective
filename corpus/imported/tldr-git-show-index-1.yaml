@@ -1,0 +1,14 @@
+id: tldr-git-show-index-1
+title: 'git-show-index: Read an IDX file for a Git packfile and dump its contents
+  to `stdout`'
+cmd: git show-index <path/to/file.idx>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the packed archive index of a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-index.md
+  (CC-BY-4.0)
+tags:
+- git-show-index

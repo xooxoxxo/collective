@@ -1,0 +1,12 @@
+id: tldr-brew-abv-1
+title: 'brew-abv: View documentation for the original command'
+cmd: tldr brew info
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `brew info`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-abv.md (CC-BY-4.0)
+tags:
+- brew-abv

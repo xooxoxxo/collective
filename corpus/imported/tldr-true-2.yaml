@@ -1,0 +1,12 @@
+id: tldr-true-2
+title: 'true: Make a command always exit with 0'
+cmd: <command> || true
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Returns a successful exit status code of 0
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/true.md (CC-BY-4.0)
+tags:
+- 'true'

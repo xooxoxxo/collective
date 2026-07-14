@@ -1,0 +1,14 @@
+id: tldr-git-paste-2
+title: 'git-paste: Pass options to `git format-patch` in order to select a different
+  set of commits (`@^` selects the parent of `HEAD`, and so the currently checked
+  out commit is sent)'
+cmd: git paste <@^>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Send commits to a pastebin site using `pastebinit`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-paste.md (CC-BY-4.0)
+tags:
+- git-paste

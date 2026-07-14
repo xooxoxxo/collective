@@ -1,0 +1,14 @@
+id: tldr-git-merge-repo-2
+title: 'git-merge-repo: Merge a remote repository''s branch into the current repository''s
+  directory, not preserving history'
+cmd: git merge-repo <path/to/remote_repo> <branch_name> .
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge two repository histories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-repo.md
+  (CC-BY-4.0)
+tags:
+- git-merge-repo

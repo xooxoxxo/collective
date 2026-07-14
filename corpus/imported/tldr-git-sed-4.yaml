@@ -1,0 +1,12 @@
+id: tldr-git-sed-4
+title: 'git-sed: Replace a specific text in all files under a given directory'
+cmd: git sed '<find_text>' '<replace_text>' -- <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Replace patterns in git-controlled files using sed
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sed.md (CC-BY-4.0)
+tags:
+- git-sed

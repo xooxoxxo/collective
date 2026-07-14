@@ -1,0 +1,13 @@
+id: tldr-tarsnap-4
+title: 'tarsnap: [d]elete a specific archive'
+cmd: tarsnap -d --keyfile <path/to/key_file> --cachedir <path/to/cache_directory>
+  -f <archive_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manipulate remote Tarsnap encrypted backups
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap.md (CC-BY-4.0)
+tags:
+- tarsnap

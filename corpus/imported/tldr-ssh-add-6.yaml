@@ -1,0 +1,12 @@
+id: tldr-ssh-add-6
+title: 'ssh-add: Add a key to the `ssh-agent` and the keychain'
+cmd: ssh-add -K <path/to/private_key>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage loaded SSH keys in the `ssh-agent`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-add.md (CC-BY-4.0)
+tags:
+- ssh-add

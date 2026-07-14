@@ -1,0 +1,12 @@
+id: tldr-git-cherry-2
+title: 'git-cherry: Specify a different upstream and topic branch'
+cmd: git cherry <origin> <topic>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find commits that have yet to be applied upstream
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cherry.md (CC-BY-4.0)
+tags:
+- git-cherry

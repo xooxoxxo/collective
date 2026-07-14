@@ -1,0 +1,13 @@
+id: tldr-gcc-6
+title: 'gcc: Compile source code into an object file without linking'
+cmd: gcc <[-c|--compile]> <path/to/source.c>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Preprocess and compile C and C++ source files, then assemble and link
+  them together
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gcc.md (CC-BY-4.0)
+tags:
+- gcc

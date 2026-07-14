@@ -1,0 +1,12 @@
+id: tldr-git-merge-3
+title: 'git-merge: Merge a branch and create a merge commit'
+cmd: git merge --no-ff <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge.md (CC-BY-4.0)
+tags:
+- git-merge

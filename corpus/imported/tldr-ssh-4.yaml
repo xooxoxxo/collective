@@ -1,0 +1,13 @@
+id: tldr-ssh-4
+title: 'ssh: Run a command on a remote server with a [t]ty allocation allowing interaction
+  with the remote command'
+cmd: ssh <username>@<remote_host> -t <command> <command_arguments>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure Shell is a protocol used to securely log onto remote systems
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh.md (CC-BY-4.0)
+tags:
+- ssh

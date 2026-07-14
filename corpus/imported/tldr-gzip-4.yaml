@@ -1,0 +1,12 @@
+id: tldr-gzip-4
+title: 'gzip: Compress a file, keeping the original file'
+cmd: gzip <[-k|--keep]> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

@@ -1,0 +1,13 @@
+id: tldr-git-merge-4
+title: 'git-merge: Copy the state of a branch into the working tree and stage it (Note:
+  Use `git commit` to create the actual commit)'
+cmd: git merge --squash <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge.md (CC-BY-4.0)
+tags:
+- git-merge

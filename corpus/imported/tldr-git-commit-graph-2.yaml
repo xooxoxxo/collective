@@ -1,0 +1,13 @@
+id: tldr-git-commit-graph-2
+title: 'git-commit-graph: Write a commit-graph file containing all reachable commits'
+cmd: git show-ref <[-s|--hash]> | git commit-graph write --stdin-commits
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Write and verify Git commit-graph files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit-graph.md
+  (CC-BY-4.0)
+tags:
+- git-commit-graph

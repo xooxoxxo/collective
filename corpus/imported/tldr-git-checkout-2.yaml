@@ -1,0 +1,14 @@
+id: tldr-git-checkout-2
+title: 'git-checkout: Create and switch to a new branch based on a specific reference
+  (branch, remote/branch, tag are examples of valid references)'
+cmd: git checkout -b <branch_name> <reference>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

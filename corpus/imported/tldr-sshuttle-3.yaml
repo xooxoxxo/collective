@@ -1,0 +1,13 @@
+id: tldr-sshuttle-3
+title: 'sshuttle: Forward all traffic except that which is bound for a specific subnet'
+cmd: sshuttle <[-r|--remote]> <username>@<sshserver> <0.0.0.0/0> <[-x|--exclude]>
+  <192.168.0.1/24>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transparent proxy server that tunnels traffic over an SSH connection
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshuttle.md (CC-BY-4.0)
+tags:
+- sshuttle

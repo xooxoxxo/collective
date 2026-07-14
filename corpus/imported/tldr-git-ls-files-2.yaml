@@ -1,0 +1,13 @@
+id: tldr-git-ls-files-2
+title: 'git-ls-files: Show modified and deleted files'
+cmd: git ls-files <[-m|--modified]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show information about files in the index and the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ls-files.md
+  (CC-BY-4.0)
+tags:
+- git-ls-files

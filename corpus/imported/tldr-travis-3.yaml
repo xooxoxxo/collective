@@ -1,0 +1,12 @@
+id: tldr-travis-3
+title: 'travis: Encrypt values in `.travis.yml`'
+cmd: travis encrypt <token>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Interface with Travis CI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/travis.md (CC-BY-4.0)
+tags:
+- travis

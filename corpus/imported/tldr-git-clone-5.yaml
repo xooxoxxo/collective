@@ -1,0 +1,12 @@
+id: tldr-git-clone-5
+title: 'git-clone: Clone quietly'
+cmd: git clone <[-q|--quiet]> <remote_repository_location>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Clone an existing repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clone.md (CC-BY-4.0)
+tags:
+- git-clone

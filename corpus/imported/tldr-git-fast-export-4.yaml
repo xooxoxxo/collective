@@ -1,0 +1,15 @@
+id: tldr-git-fast-export-4
+title: 'git-fast-export: Export with `progress` statements every `n` objects (for
+  showing progress during `git fast-import`)'
+cmd: git fast-export --progress <n> --all > <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Export the contents and history of a Git repository in a streamable,
+  plain-text format
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fast-export.md
+  (CC-BY-4.0)
+tags:
+- git-fast-export

@@ -1,0 +1,14 @@
+id: tldr-xargs-5
+title: 'xargs: Execute the command once for each input line, replacing any occurrences
+  of the placeholder (here marked as `_`) with the input line'
+cmd: <arguments_source> | xargs -I _ <command> _ <optional_extra_arguments>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command with piped arguments coming from another command, a
+  file, etc
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/xargs.md (CC-BY-4.0)
+tags:
+- xargs

@@ -1,0 +1,12 @@
+id: tldr-git-ignore-1
+title: 'git-ignore: Show the content of all global and local `.gitignore` files'
+cmd: git ignore
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show/update `.gitignore` files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ignore.md (CC-BY-4.0)
+tags:
+- git-ignore
