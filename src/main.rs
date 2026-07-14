@@ -1,10 +1,8 @@
 mod entry;
 mod corpus;
 mod search;
-#[allow(dead_code)]
-mod sm2; // consumed by drill (Tasks 6-7)
-#[allow(dead_code)]
-mod drill; // session loop lands in Task 7
+mod sm2;
+mod drill;
 
 use clap::{Parser, Subcommand};
 
@@ -25,6 +23,11 @@ enum Cmd {
     Copy { id: String },
     /// Print one random gem
     Random,
+    /// Flashcard drill session (SM-2 spaced repetition)
+    Drill {
+        #[arg(long)]
+        domain: Option<String>,
+    },
 }
 
 fn main() {
@@ -35,6 +38,7 @@ fn main() {
         Cmd::Show { id } => cmd_show(&entries, &id),
         Cmd::Copy { id } => cmd_copy(&entries, &id),
         Cmd::Random => cmd_show(&entries, &random_id(&entries)),
+        Cmd::Drill { domain } => drill::run(&entries, domain.as_deref()),
     }
 }
 

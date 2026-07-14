@@ -1,7 +1,10 @@
-use crate::sm2::Card;
+use crate::entry::Entry;
+use crate::sm2::{self, Card};
 use std::collections::HashMap;
 use std::fs;
+use std::io::{self, Write};
 use std::path::{Path, PathBuf};
+use std::time::{SystemTime, UNIX_EPOCH};
 
 pub fn default_state_path() -> PathBuf {
     directories::BaseDirs::new()
@@ -27,10 +30,71 @@ pub fn save_state(path: &Path, state: &HashMap<String, Card>) -> std::io::Result
     fs::write(path, serde_json::to_string_pretty(state).expect("state serializes"))
 }
 
+pub fn pick_due<'a>(
+    entries: &'a [Entry],
+    state: &HashMap<String, Card>,
+    domain: Option<&str>,
+    now: u64,
+) -> Vec<&'a Entry> {
+    let mut due: Vec<&Entry> = entries
+        .iter()
+        .filter(|e| domain.is_none_or(|d| e.domains.iter().any(|x| x == d)))
+        .filter(|e| state.get(&e.id).is_none_or(|c| c.due <= now))
+        .collect();
+    due.truncate(20);
+    due
+}
+
+pub fn run(entries: &[Entry], domain: Option<&str>) {
+    let now = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("clock before 1970")
+        .as_secs();
+    let path = default_state_path();
+    let mut state = load_state(&path);
+    let due = pick_due(entries, &state, domain, now);
+    if due.is_empty() {
+        println!("nothing due. come back later.");
+        return;
+    }
+    println!("{} card(s) due. recall the command, Enter reveals.\n", due.len());
+    let stdin = io::stdin();
+    for e in due {
+        println!("── {}", e.title);
+        print!("your answer (or Enter to reveal): ");
+        io::stdout().flush().unwrap();
+        let mut buf = String::new();
+        stdin.read_line(&mut buf).unwrap();
+        let typed = buf.trim();
+        println!("  {}", e.cmd);
+        if !typed.is_empty() {
+            let mark = if typed == e.cmd { "✓ exact" } else { "✗ differs" };
+            println!("  you typed: {typed}  {mark}");
+        }
+        let grade = loop {
+            print!("grade  1=again 2=hard 3=good 4=easy: ");
+            io::stdout().flush().unwrap();
+            let mut g = String::new();
+            stdin.read_line(&mut g).unwrap();
+            match g.trim().parse::<u8>() {
+                Ok(n @ 1..=4) => break n,
+                _ => continue,
+            }
+        };
+        let card = state.get(&e.id).copied().unwrap_or_default();
+        state.insert(e.id.clone(), sm2::review(card, grade, now));
+        if let Err(err) = save_state(&path, &state) {
+            eprintln!("warning: could not save drill state: {err}");
+        }
+        println!();
+    }
+    println!("session done.");
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::sm2::Card;
+    use crate::corpus;
 
     fn tmp(name: &str) -> std::path::PathBuf {
         std::env::temp_dir().join(format!("col-drill-test-{name}.json"))
@@ -61,5 +125,28 @@ mod tests {
         std::fs::write(&p, "{ not json !!").unwrap();
         assert!(load_state(&p).is_empty());
         let _ = std::fs::remove_file(&p);
+    }
+
+    #[test]
+    fn pick_due_includes_unseen_and_excludes_future() {
+        let entries = corpus::load();
+        let now = 1_800_000_000u64;
+        let mut state = std::collections::HashMap::new();
+        // one card scheduled far in the future -> excluded
+        let future = sm2::review(Card::default(), 4, now);
+        state.insert("pmset-disable-sleep".to_string(), future);
+        let due = pick_due(&entries, &state, None, now);
+        assert!(due.len() <= 20);
+        assert!(due.iter().all(|e| e.id != "pmset-disable-sleep"));
+        assert!(due.iter().any(|e| e.id == "flush-dns-cache")); // unseen = due
+    }
+
+    #[test]
+    fn pick_due_filters_by_domain() {
+        let entries = corpus::load();
+        let state = std::collections::HashMap::new();
+        let due = pick_due(&entries, &state, Some("git"), 0);
+        assert!(!due.is_empty());
+        assert!(due.iter().all(|e| e.domains.iter().any(|d| d == "git")));
     }
 }
