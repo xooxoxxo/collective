@@ -3,6 +3,8 @@ mod corpus;
 mod search;
 #[allow(dead_code)]
 mod sm2; // consumed by drill (Tasks 6-7)
+#[allow(dead_code)]
+mod drill; // session loop lands in Task 7
 
 use clap::{Parser, Subcommand};
 
