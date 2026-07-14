@@ -1,0 +1,14 @@
+id: shell-xargs-parallel-exec
+title: 'Run command on multiple inputs in parallel'
+cmd: cat <list.txt> | xargs -P <n_procs> -I {} <command> {}
+undo: ''
+platform: [macos, linux]
+domains: [shell, files, power]
+danger: low
+explanation: >
+  xargs reads stdin and executes <command> on each argument.
+  -P <n> sets parallelism (e.g., -P 4 for 4 parallel jobs).
+  -I {} lets you place each item at {} instead of appending to the command.
+  Way faster than a for loop for I/O-bound tasks.
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/xargs.html
+tags: [xargs, parallelism, bulk-operation, one-liner]

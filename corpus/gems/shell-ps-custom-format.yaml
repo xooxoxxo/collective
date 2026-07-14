@@ -1,0 +1,13 @@
+id: shell-ps-custom-format
+title: 'Show process info in custom columns'
+cmd: ps aux | awk 'NR==1 || /<pattern>/'
+undo: ''
+platform: [macos, linux]
+domains: [debugging, shell, power]
+danger: low
+explanation: >
+  ps aux lists all processes; pipe to awk to filter by pattern or extract columns.
+  Use ps -eo pid,user,vsz,rss,comm to show specific fields (memory-heavy processes especially).
+  On macOS, ps uses BSD-style options; on Linux, POSIX.
+source: https://man7.org/linux/man-pages/man1/ps.1.html
+tags: [ps, process-inspection, awk, one-liner]

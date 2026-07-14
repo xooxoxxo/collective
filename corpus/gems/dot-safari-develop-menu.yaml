@@ -1,0 +1,13 @@
+id: dot-safari-develop-menu
+title: "Enable Safari Developer menu and web inspector"
+cmd: "defaults write com.apple.Safari IncludeDevelopMenu -bool true && defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true"
+undo: "defaults write com.apple.Safari IncludeDevelopMenu -bool false && defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool false"
+platform: [macos]
+domains: [debugging, macos-admin]
+danger: low
+explanation: >
+  Activates Developer menu in Safari with full web inspector, debugger, and console.
+  Required for debugging Safari-specific issues and web development.
+  Access via Safari menu bar; also enable with Cmd+Option+U.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [safari, debugging, development, web-inspector, devtools]

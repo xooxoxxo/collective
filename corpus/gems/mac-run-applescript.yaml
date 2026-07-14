@@ -1,0 +1,13 @@
+id: mac-run-applescript
+title: Execute AppleScript from command line
+cmd: osascript -e '<applescript-code>'
+undo: ""
+platform: [macos]
+domains: [macos-admin, debugging]
+danger: medium
+explanation: >
+  Runs AppleScript inline or from file ('-f'). Useful for automating Finder, Mail,
+  or other GUI apps, or triggering Automator workflows. Use 'osascript -e "tell app \"Finder\" to activate"'
+  to bring apps to foreground. Requires accessibility permissions.
+source: https://ss64.com/mac/osascript.html
+tags: [osascript, applescript, automation, gui, macos]

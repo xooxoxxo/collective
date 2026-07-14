@@ -1,0 +1,14 @@
+id: shell-git-bisect-automate
+title: 'Automatically find the commit that broke something'
+cmd: git bisect start && git bisect bad HEAD && git bisect good <good-commit> && git bisect run <test-script>
+undo: git bisect reset
+platform: [macos, linux]
+domains: [git, debugging]
+danger: low
+explanation: >
+  git bisect run executes a test script at each bisected commit.
+  Your script returns 0 (good) or non-zero (bad).
+  git identifies the culprit in O(log n) commits instead of linear search.
+  Invaluable for pinpointing regressions across hundreds of commits.
+source: https://git-scm.com/docs/git-bisect#_bisect_run
+tags: [git, bisect, debugging, regression]

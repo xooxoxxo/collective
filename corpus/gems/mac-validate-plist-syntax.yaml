@@ -1,0 +1,13 @@
+id: mac-validate-plist-syntax
+title: Validate plist file syntax without converting
+cmd: plutil -lint <file>
+undo: ""
+platform: [macos]
+domains: [files, macos-admin, debugging]
+danger: low
+explanation: >
+  Checks plist syntax and reports errors without modifying the file. Useful after
+  manual edits to Info.plist or defaults files. Returns 0 if valid, 1 if broken.
+  Essential before deployment or reloading launchd services.
+source: https://ss64.com/mac/plutil.html
+tags: [plist, plutil, validation, syntax, debugging]

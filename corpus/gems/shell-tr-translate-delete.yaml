@@ -1,0 +1,14 @@
+id: shell-tr-translate-delete
+title: 'Translate, squeeze, or delete characters'
+cmd: tr '<old>' '<new>'
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  tr performs character-by-character substitution; tr a-z A-Z uppercases, tr -d removes.
+  -s squeezes repeated characters (tr -s ' ' collapses multiple spaces).
+  Stupidly fast on huge files since it's a single-pass stream.
+  Use tr -c to invert (complement) the character set.
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/tr.html
+tags: [tr, character-translation, deletion, one-liner]

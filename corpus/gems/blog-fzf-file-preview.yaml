@@ -1,0 +1,14 @@
+id: blog-fzf-file-preview
+title: 'Preview files while searching in fzf'
+cmd: 'fzf --preview ''cat {}'' | xargs $EDITOR'
+undo: ''
+platform: [macos, linux]
+domains: [shell, files, power]
+danger: low
+explanation: >
+  fzf --preview runs a command (cat, bat, ls, etc.) on each selected file, showing a live preview.
+  Use `bat --file-name {}` instead of cat for syntax highlighting.
+  Pipe to $EDITOR to open matched files, or to | xargs rm to delete.
+  Essential for exploring unfamiliar codebases; beats `find . | head` by miles.
+source: https://github.com/junegunn/fzf#preview-window
+tags: [fzf, preview, file-exploration, interactive]

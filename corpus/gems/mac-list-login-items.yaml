@@ -1,0 +1,13 @@
+id: mac-list-login-items
+title: List startup login items
+cmd: osascript -e 'tell application "System Events" to get the name of every login item'
+undo: ""
+platform: [macos]
+domains: [macos-admin, debugging]
+danger: low
+explanation: >
+  Shows all apps set to launch at login via System Preferences. Alternative (simpler):
+  check ~/Library/LaunchAgents for plist files. AppleScript approach works on all macOS versions.
+  Use with Automator or direct AppleScript to add/remove login items programmatically.
+source: https://ss64.com/mac/osascript.html
+tags: [login-items, startup, automation, osascript, macos]

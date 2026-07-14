@@ -1,0 +1,14 @@
+id: blog-fzf-git-preview
+title: 'Fuzzy search git log with commit preview'
+cmd: git log --oneline | fzf --preview 'git show {1}'
+undo: ''
+platform: [macos, linux]
+domains: [git, shell, power]
+danger: low
+explanation: >
+  Combine fzf with git log to interactively search commits and preview diffs.
+  Type a keyword, see matching commits; arrow keys show full diff in the preview pane.
+  Pipe result to xargs git show to open the selected commit.
+  Way faster than git log --grep for finding a specific change.
+source: https://github.com/junegunn/fzf/wiki/Examples#git
+tags: [fzf, git, preview, log-search, workflow]

@@ -1,0 +1,14 @@
+id: shell-nc-port-scan
+title: 'Test if a port is open'
+cmd: nc -zv <host> <port>
+undo: ''
+platform: [macos, linux]
+domains: [network, debugging]
+danger: low
+explanation: >
+  nc (netcat) connects to host:port and reports success/failure.
+  -z scans without sending data; -v is verbose.
+  Faster than curl for raw connectivity tests (no HTTP overhead).
+  Useful before troubleshooting a service.
+source: https://linux.die.net/man/1/nc
+tags: [netcat, network, port-test, debugging]

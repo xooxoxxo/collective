@@ -1,0 +1,13 @@
+id: dot-keyboard-repeat
+title: "Set maximum keyboard repeat rate with minimal initial delay"
+cmd: "defaults write NSGlobalDomain KeyRepeat -int 1 && defaults write NSGlobalDomain InitialKeyRepeat -int 10"
+undo: "defaults write NSGlobalDomain KeyRepeat -int 6 && defaults write NSGlobalDomain InitialKeyRepeat -int 25"
+platform: [macos]
+domains: [macos-admin]
+danger: low
+explanation: >
+  Sets KeyRepeat to 1 (fastest) and InitialKeyRepeat to 10 (minimal delay before repeat).
+  Dramatically speeds up typing for power users; requires adjustment for some.
+  Relaunch apps to apply; values range from 1-120 for KeyRepeat and 10-120 for InitialKeyRepeat.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [keyboard, input, productivity, speed]

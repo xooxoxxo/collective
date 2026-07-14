@@ -1,0 +1,14 @@
+id: blog-bat-syntax-highlighting
+title: 'Display files with syntax highlighting'
+cmd: bat <file>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  bat is cat with syntax highlighting, line numbers, and git diff markers.
+  Install: `brew install bat`. Use `bat -r 10:20` to show specific line ranges.
+  Alias cat=bat in your shell for instant improvement.
+  Respects your terminal theme (dark/light); use `bat --list-languages` for supported types.
+source: https://github.com/sharkdp/bat
+tags: [bat, cat, syntax-highlighting, must-have, modern]

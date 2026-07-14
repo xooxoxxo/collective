@@ -1,0 +1,13 @@
+id: dot-no-network-ds-store
+title: "Prevent .DS_Store metadata files on network volumes and USB drives"
+cmd: "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true"
+undo: "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool false && defaults write com.apple.desktopservices DSDontWriteUSBStores -bool false"
+platform: [macos]
+domains: [files, disk]
+danger: low
+explanation: >
+  Stops macOS from creating .DS_Store index files on shared/removable volumes.
+  Prevents file clutter on NAS, shared drives, and USB devices; reduces network traffic.
+  Critical for team collaboration to avoid merge conflicts from metadata.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [cleanup, network, usb, files, metadata]

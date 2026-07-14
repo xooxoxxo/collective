@@ -1,0 +1,13 @@
+id: dot-safari-disable-autofill
+title: "Disable Safari AutoFill for passwords and credit cards"
+cmd: "defaults write com.apple.Safari AutoFillPasswords -bool false && defaults write com.apple.Safari AutoFillCreditCardData -bool false && defaults write com.apple.Safari AutoFillFromAddressBook -bool false"
+undo: "defaults write com.apple.Safari AutoFillPasswords -bool true && defaults write com.apple.Safari AutoFillCreditCardData -bool true && defaults write com.apple.Safari AutoFillFromAddressBook -bool true"
+platform: [macos]
+domains: [security, macos-admin]
+danger: low
+explanation: >
+  Disables automatic form filling for sensitive data in Safari.
+  Prevents credentials from being accidentally filled on phishing pages or shared Macs.
+  Requires Safari restart; trade convenience for security.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [security, safari, privacy, autofill, passwords]

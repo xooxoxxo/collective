@@ -1,0 +1,13 @@
+id: shell-pgrep-find-by-name
+title: 'Find process IDs by name'
+cmd: pgrep -f <pattern>
+undo: ''
+platform: [macos, linux]
+domains: [debugging, power]
+danger: low
+explanation: >
+  pgrep searches the process list and returns PIDs matching the pattern.
+  -f matches against the full command line (including args), not just the executable name.
+  Use pkill -f <pattern> to kill matching processes in one shot.
+source: https://man7.org/linux/man-pages/man1/pgrep.1.html
+tags: [pgrep, process-inspection, debugging]

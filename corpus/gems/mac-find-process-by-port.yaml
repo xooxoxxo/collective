@@ -1,0 +1,13 @@
+id: mac-find-process-by-port
+title: Find process listening on a specific port
+cmd: lsof -i :<port>
+undo: ""
+platform: [macos]
+domains: [network, debugging]
+danger: low
+explanation: >
+  Instantly identifies what's bound to a port. Returns PID, command, user. Use this before
+  'kill -9 <pid>' to free a port. Much faster than 'netstat' on modern macOS.
+  Works for TCP and UDP.
+source: https://ss64.com/mac/lsof.html
+tags: [lsof, port, network, process, debugging, localhost]

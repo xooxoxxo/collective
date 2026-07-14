@@ -1,0 +1,13 @@
+id: shell-git-worktree-parallel
+title: 'Check out a branch in a separate directory without stashing'
+cmd: git worktree add ../<branch-name> <branch>
+undo: git worktree remove ../<branch-name> && git worktree prune
+platform: [macos, linux]
+domains: [git, power]
+danger: low
+explanation: >
+  git worktree creates a new directory with a checked-out branch, sharing the git database.
+  No need to stash or switch contexts—work in parallel across multiple branches.
+  Perfect for running long tests on a side branch while continuing on main.
+source: https://git-scm.com/docs/git-worktree
+tags: [git, worktree, parallel-work]

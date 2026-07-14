@@ -1,0 +1,14 @@
+id: hn-reverse-search
+title: 'Search backward through command history'
+cmd: Ctrl+R
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  Readline shortcut that opens an interactive history search. Type part of a
+  command and press Ctrl+R again to cycle backward through matches. When enhanced
+  with fzf, it becomes a fuzzy picker. Most forgotten despite being a core power-user
+  feature in bash, zsh, and most REPLs.
+source: https://news.ycombinator.com/item?id=47525243
+tags: [history, search, productivity, readline]

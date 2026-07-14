@@ -1,0 +1,13 @@
+id: dot-monitor-port
+title: "Monitor connections to specific port in real-time"
+cmd: "sudo lsof -i :<port-number> && sudo lsof -i :<port-number> -r 2"
+undo: ""
+platform: [macos, linux]
+domains: [network, debugging]
+danger: low
+explanation: >
+  Lists all processes using a specific port; -r flag repeats every 2 seconds for live monitoring.
+  Critical for debugging port conflicts and understanding network activity.
+  Without sudo, only shows your own processes; add sudo for system-wide visibility.
+source: "https://osxhub.com/macos-network-diagnostic-commands-guide/"
+tags: [network, debugging, ports, lsof, monitoring]

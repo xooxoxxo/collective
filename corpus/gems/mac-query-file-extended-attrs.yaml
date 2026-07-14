@@ -1,0 +1,13 @@
+id: mac-query-file-extended-attrs
+title: List extended attributes of a file
+cmd: xattr -l <file>
+undo: ""
+platform: [macos]
+domains: [files, debugging, security]
+danger: low
+explanation: >
+  Displays all extended attributes (quarantine flags, code signatures, metadata) on a file.
+  Critical for debugging "cannot open" warnings on downloaded files, and understanding
+  what macOS attached to a binary during quarantine.
+source: https://ss64.com/mac/xattr.html
+tags: [xattr, quarantine, code-signing, debugging, security]

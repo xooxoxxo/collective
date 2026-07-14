@@ -1,0 +1,13 @@
+id: mac-query-system-architecture
+title: Query system architecture and CPU info
+cmd: uname -m && sysctl -n hw.ncpu && sysctl -n hw.memsize
+undo: ""
+platform: [macos]
+domains: [debugging, macos-admin]
+danger: low
+explanation: >
+  Shows CPU architecture (arm64 vs x86_64), core count, and total RAM in bytes.
+  Use 'system_profiler SPHardwareDataType' for more detail. Critical for debugging
+  M1/Apple Silicon vs Intel build issues.
+source: https://ss64.com/mac/sysctl.html
+tags: [system-info, architecture, cpu, memory, m1-apple-silicon]

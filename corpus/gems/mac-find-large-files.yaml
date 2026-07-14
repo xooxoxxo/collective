@@ -1,0 +1,13 @@
+id: mac-find-large-files
+title: Find files larger than specified size
+cmd: find <path> -type f -size +<size>
+undo: ""
+platform: [macos]
+domains: [files, disk, debugging]
+danger: low
+explanation: >
+  Locates large files quickly without indexing. Syntax: '+100m' for >100MB, '+1g' for
+  >1GB, '+50k' for >50KB. Use to identify disk space hogs, bloated caches, or stale
+  downloads. Much faster on unindexed paths.
+source: https://ss64.com/mac/find.html
+tags: [find, disk-space, large-files, cleanup, storage]

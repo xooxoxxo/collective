@@ -1,0 +1,14 @@
+id: blog-ncdu-disk-usage
+title: "Find what's eating your disk space"
+cmd: ncdu <dir>
+undo: ''
+platform: [macos, linux]
+domains: [disk, power, debugging]
+danger: low
+explanation: >
+  ncdu shows an interactive disk usage breakdown; way better than du -sh.
+  Install: `brew install ncdu`. Navigate with arrows, d to delete, q to quit.
+  Sorted by size by default; press s to toggle sorting.
+  Perfect for finding large log directories or build artifacts hogging space.
+source: https://dev.yorhel.nl/ncdu
+tags: [ncdu, du, disk-usage, interactive, space-management]

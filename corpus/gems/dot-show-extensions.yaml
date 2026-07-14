@@ -1,0 +1,13 @@
+id: dot-show-extensions
+title: "Show all file extensions in Finder by default"
+cmd: "defaults write NSGlobalDomain AppleShowAllExtensions -bool true"
+undo: "defaults write NSGlobalDomain AppleShowAllExtensions -bool false"
+platform: [macos]
+domains: [files, macos-admin]
+danger: low
+explanation: >
+  Displays file extensions for all files, not just unknown types.
+  Essential for developers; prevents renaming mistakes (losing .js, .sh, etc).
+  Requires Finder restart; applies to all volumes.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [finder, files, extensions, visibility, macos-admin]

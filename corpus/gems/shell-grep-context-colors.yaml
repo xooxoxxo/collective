@@ -1,0 +1,14 @@
+id: shell-grep-context-colors
+title: 'Show context and highlight matches'
+cmd: grep -C <n> --color=always <pattern> <file>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files, debugging]
+danger: low
+explanation: >
+  grep -C (context) shows n lines before and after each match.
+  --color=always highlights the match red even in pipelines.
+  Use -B/-A for before/after separately (grep -A 3 for 3 lines after).
+  --color is aliased in most shells, but explicit flag works everywhere.
+source: https://man7.org/linux/man-pages/man1/grep.1.html
+tags: [grep, context, highlighting, one-liner]

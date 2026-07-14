@@ -1,0 +1,14 @@
+id: blog-ripgrep-faster-grep
+title: 'Search code faster than grep (respects .gitignore)'
+cmd: rg <pattern>
+undo: ''
+platform: [macos, linux]
+domains: [shell, debugging, power]
+danger: low
+explanation: >
+  ripgrep (rg) is 10-100x faster than grep on large codebases.
+  Automatically skips .gitignore'd files and binary files without flags.
+  Install: `brew install ripgrep`. Try `rg -A 2 <pattern>` for context.
+  Supports regex, file type filtering (-t<type>), and colored output by default.
+source: https://github.com/BurntSushi/ripgrep
+tags: [ripgrep, grep, search, must-have, performance]

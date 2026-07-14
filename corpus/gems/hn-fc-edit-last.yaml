@@ -1,0 +1,14 @@
+id: hn-fc-edit-last
+title: 'Edit last command in your editor'
+cmd: fc
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  The `fc` (fix command) builtin opens your last command in $EDITOR (usually vi).
+  Exit the editor and it re-executes with changes. Perfect for multi-line commands
+  or when you need to tweak a long invocation. `fc -l` lists history; `fc -n <num>`
+  edits a specific line.
+source: https://shapeshed.com/unix-fc/
+tags: [history, editing, shell, vi]

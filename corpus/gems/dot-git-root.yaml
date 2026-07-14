@@ -1,0 +1,13 @@
+id: dot-git-root
+title: "Jump to git repository root directory"
+cmd: "alias gr='cd $(git rev-parse --show-cdup || pwd)'"
+undo: "unalias gr"
+platform: [macos, linux]
+domains: [git, files]
+danger: low
+explanation: >
+  Instantly navigate to root of current git repo, or stays in pwd if not in repo.
+  Essential for working across deep nested project structures.
+  Prevents getting lost in monorepos; faster than cd ../../../..
+source: "https://github.com/paulirish/dotfiles"
+tags: [git, navigation, directories, productivity]

@@ -1,0 +1,13 @@
+id: dot-cleanup-dsstore
+title: "Recursively find and delete all .DS_Store files"
+cmd: "alias cleanup_dsstore='find . -name \"*.DS_Store\" -type f -ls -delete'"
+undo: "unalias cleanup_dsstore"
+platform: [macos]
+domains: [files, cleanup]
+danger: medium
+explanation: >
+  Finds and removes all macOS metadata files recursively from current dir.
+  Essential before committing to repos or archiving; prevents clutter.
+  Uses -ls flag to show what's deleted; pipe to head to preview first.
+source: "https://github.com/paulirish/dotfiles"
+tags: [cleanup, files, macos, metadata, maintenance]

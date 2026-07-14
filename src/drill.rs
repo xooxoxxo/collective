@@ -36,11 +36,17 @@ pub fn pick_due<'a>(
     domain: Option<&str>,
     now: u64,
 ) -> Vec<&'a Entry> {
+    use rand::seq::SliceRandom;
     let mut due: Vec<&Entry> = entries
         .iter()
         .filter(|e| domain.is_none_or(|d| e.domains.iter().any(|x| x == d)))
         .filter(|e| state.get(&e.id).is_none_or(|c| c.due <= now))
         .collect();
+    // Shuffle first, then stable-sort by due date: most-overdue cards come
+    // first, ties (e.g. all-unseen due=0) resolve randomly so a large corpus
+    // does not always drill the same alphabetically-first 20.
+    due.shuffle(&mut rand::thread_rng());
+    due.sort_by_key(|e| state.get(&e.id).map_or(0, |c| c.due));
     due.truncate(20);
     due
 }
@@ -148,9 +154,14 @@ mod tests {
         let future = sm2::review(Card::default(), 4, now);
         state.insert("pmset-disable-sleep".to_string(), future);
         let due = pick_due(&entries, &state, None, now);
+        assert!(!due.is_empty());
         assert!(due.len() <= 20);
+        // the future-scheduled card is excluded
         assert!(due.iter().all(|e| e.id != "pmset-disable-sleep"));
-        assert!(due.iter().any(|e| e.id == "flush-dns-cache")); // unseen = due
+        // everything returned is genuinely due: unseen, or due at/before now
+        assert!(due
+            .iter()
+            .all(|e| state.get(&e.id).is_none_or(|c| c.due <= now)));
     }
 
     #[test]

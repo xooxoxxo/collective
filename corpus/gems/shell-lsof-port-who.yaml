@@ -1,0 +1,13 @@
+id: shell-lsof-port-who
+title: 'Find what process is listening on a port'
+cmd: lsof -i :<port>
+undo: ''
+platform: [macos, linux]
+domains: [network, debugging, power]
+danger: low
+explanation: >
+  lsof lists open file descriptors; -i :<port> filters for network sockets on that port.
+  Shows PID, process name, user, and state (LISTEN/ESTABLISHED).
+  Way clearer than netstat for spotting port conflicts.
+source: https://linux.die.net/man/8/lsof
+tags: [lsof, network, port, debugging]

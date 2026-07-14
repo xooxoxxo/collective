@@ -1,0 +1,13 @@
+id: mac-list-network-interfaces
+title: List all network interfaces and their current status
+cmd: networksetup -listallhardwareports
+undo: ""
+platform: [macos]
+domains: [network, debugging, macos-admin]
+danger: low
+explanation: >
+  Shows all network adapters (Ethernet, Wi-Fi, USB, etc.) with their service names.
+  The service names are required input for most networksetup commands, making this
+  essential first step for network troubleshooting.
+source: https://ss64.com/mac/networksetup.html
+tags: [network, hardware, interfaces, ethernet, wifi]

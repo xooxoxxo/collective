@@ -1,0 +1,13 @@
+id: dot-tmux-attach-dir
+title: "Attach or create tmux session named after current directory"
+cmd: "alias tat='tmux attach-session -t $(basename $(pwd)) || tmux new-session -s $(basename $(pwd))'"
+undo: "unalias tat"
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  Auto-creates or reattaches to tmux session named after your current directory.
+  One-command setup for project-scoped terminal sessions; prevents session collisions.
+  Dramatically improves multi-project workflow; pair with tmux resurrect plugin.
+source: "https://github.com/thoughtbot/dotfiles"
+tags: [tmux, sessions, productivity, workflow]

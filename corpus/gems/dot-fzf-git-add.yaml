@@ -1,0 +1,13 @@
+id: dot-fzf-git-add
+title: "Multi-select unstaged files and stage them with fzf"
+cmd: "git add $(git status -s | fzf -m | awk '{print $2}')"
+undo: "git restore --staged <files>"
+platform: [macos, linux]
+domains: [git, shell]
+danger: low
+explanation: >
+  Uses fzf to interactively select multiple files from git status, then stages all selections.
+  Requires fzf; -m flag enables multi-select (spacebar). Beats manual git add -p for batch ops.
+  Essential for selective staging in repos with many changes.
+source: "https://dev.to/hayden/optimizing-your-workflow-with-fzf-ripgrep-2eai"
+tags: [git, fzf, staging, interactive, shell]

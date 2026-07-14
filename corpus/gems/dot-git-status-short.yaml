@@ -1,0 +1,13 @@
+id: dot-git-status-short
+title: "Show compact git status as default g command"
+cmd: "alias g='git status' && alias gi='git'"
+undo: "unalias g gi"
+platform: [macos, linux]
+domains: [git, shell]
+danger: low
+explanation: >
+  Single 'g' shows status, 'gi' for git subcommands; saves keystrokes on the most-used command.
+  Reduces friction in development workflow; status is the default mental model.
+  Pair with git config for alias.st shortcuts in git itself.
+source: "https://github.com/thoughtbot/dotfiles"
+tags: [git, alias, productivity, shell]

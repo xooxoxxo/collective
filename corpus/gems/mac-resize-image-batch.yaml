@@ -1,0 +1,13 @@
+id: mac-resize-image-batch
+title: Batch resize images without ImageMagick
+cmd: sips -Z <width> <image>
+undo: ""
+platform: [macos]
+domains: [media, files]
+danger: low
+explanation: >
+  Built-in image processor. '-Z' scales to max width/height while preserving aspect ratio.
+  Use '-s width <w> height <h>' for exact dimensions. Glob for batch: 'for f in *.jpg; do sips -Z 800 "$f"; done'.
+  Preserves EXIF by default.
+source: https://ss64.com/mac/sips.html
+tags: [sips, image, resize, batch, media]

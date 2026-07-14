@@ -1,0 +1,13 @@
+id: dot-finder-posix-path
+title: "Show full POSIX file path in Finder window title bar"
+cmd: "defaults write com.apple.finder _FXShowPosixPathInTitle -bool true"
+undo: "defaults write com.apple.finder _FXShowPosixPathInTitle -bool false"
+platform: [macos]
+domains: [files, macos-admin]
+danger: low
+explanation: >
+  Displays the complete filesystem path in Finder title bar instead of just folder name.
+  Essential for debugging file locations and understanding directory nesting.
+  Activate with: killall Finder
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [finder, navigation, files, visibility]

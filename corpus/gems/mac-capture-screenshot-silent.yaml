@@ -1,0 +1,13 @@
+id: mac-capture-screenshot-silent
+title: Take screenshot to file without sound
+cmd: screencapture -x <output.png>
+undo: ""
+platform: [macos]
+domains: [media, macos-admin]
+danger: low
+explanation: >
+  Captures screenshot and saves to file. '-x' disables the shutter sound (useful in
+  meetings). '-i' lets you select area, '-m' captures mouse cursor, '-R x,y,w,h' captures
+  region. Replaces 'defaults write com.apple.screencapture disable-sound'.
+source: https://ss64.com/mac/screencapture.html
+tags: [screencapture, screenshot, media, silent, automation]

@@ -1,0 +1,13 @@
+id: mac-disable-launchd-service
+title: Disable a launchd service (user or system)
+cmd: launchctl disable gui/<uid>/<service>
+undo: launchctl enable gui/<uid>/<service>
+platform: [macos]
+domains: [macos-admin]
+danger: medium
+explanation: >
+  Prevents a service from loading at login. Replace <uid> with output of 'id -u'.
+  Modern approach (replaces deprecated 'unload'). Useful to disable update checkers,
+  analytics, or development services. Enable to restore.
+source: https://ss64.com/mac/launchctl.html
+tags: [launchctl, services, startup, disable, background-processes]

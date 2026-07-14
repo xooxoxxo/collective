@@ -1,0 +1,13 @@
+id: mac-query-metadata-tags
+title: Query file metadata attributes
+cmd: mdls <file>
+undo: ""
+platform: [macos]
+domains: [files, debugging, metadata]
+danger: low
+explanation: >
+  Displays all Spotlight metadata (tags, created date, creator, color label, etc.)
+  for a file. More human-readable than xattr. Shows Finder color labels, custom metadata,
+  and filesystem attributes indexed by Spotlight.
+source: https://ss64.com/mac/mdls.html
+tags: [metadata, spotlight, mdls, tags, file-attributes]

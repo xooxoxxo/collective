@@ -1,0 +1,13 @@
+id: dot-fzf-kill-process
+title: "Interactively select and kill process with fuzzy search"
+cmd: "alias fkill='ps aux | fzf --multi | awk '{print $2}' | xargs kill -9'"
+undo: "unalias fkill"
+platform: [macos, linux]
+domains: [shell, debugging]
+danger: high
+explanation: >
+  Fuzzy searches process list and multi-selects (spacebar) processes to forcefully kill.
+  Dramatically faster than hunting down PID manually or kill -9 by name.
+  DANGEROUS: -9 SIGKILL is forceful; use without -9 for graceful SIGTERM first.
+source: "https://dev.to/hayden/optimizing-your-workflow-with-fzf-ripgrep-2eai"
+tags: [fzf, processes, kill, debugging, dangerous]

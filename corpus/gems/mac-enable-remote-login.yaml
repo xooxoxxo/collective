@@ -1,0 +1,13 @@
+id: mac-enable-remote-login
+title: Enable SSH remote login from command line
+cmd: sudo systemsetup -setremotelogin on
+undo: sudo systemsetup -setremotelogin off
+platform: [macos]
+domains: [network, macos-admin, security]
+danger: medium
+explanation: >
+  Enables SSH daemon (port 22) for remote access. Prefer 'systemsetup' over direct
+  launchctl manipulation. Also useful: 'sudo systemsetup -getremotelogin' to check status.
+  Requires admin password. Consider firewall and key-based auth.
+source: https://ss64.com/mac/systemsetup.html
+tags: [ssh, remote-login, network, security, administration]

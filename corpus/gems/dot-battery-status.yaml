@@ -1,0 +1,13 @@
+id: dot-battery-status
+title: "Display detailed battery status and health information"
+cmd: "pmset -g batt && echo && system_profiler SPPowerDataType | grep -E 'Cycle Count|Serial|Health'"
+undo: ""
+platform: [macos]
+domains: [power, debugging, macos-admin]
+danger: low
+explanation: >
+  Shows current charge %, discharge rate, and full battery health data (cycle count, serial).
+  Essential for MacBook troubleshooting and tracking battery degradation over time.
+  Negative amps = discharging; check charge cycles to estimate replacement timing.
+source: "https://github.com/ephico2real2/macos-battery-monitoring"
+tags: [battery, power, monitoring, health, hardware]

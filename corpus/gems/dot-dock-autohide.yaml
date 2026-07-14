@@ -1,0 +1,13 @@
+id: dot-dock-autohide
+title: "Auto-hide Dock and remove animation delay"
+cmd: "defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 0"
+undo: "defaults write com.apple.dock autohide -bool false && defaults write com.apple.dock autohide-delay -float 0.5"
+platform: [macos]
+domains: [macos-admin]
+danger: low
+explanation: >
+  Hides Dock off-screen and removes the delay when moving cursor to edge to reveal it.
+  Instant access when needed; reclaims vertical screen space.
+  Activate with: killall Dock
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [dock, ui, screen-space, productivity]

@@ -1,0 +1,14 @@
+id: blog-htop-process-monitor
+title: 'Monitor processes interactively (better than top)'
+cmd: htop
+undo: ''
+platform: [macos, linux]
+domains: [power, debugging]
+danger: low
+explanation: >
+  htop beats top with colors, tree view, and mouse support.
+  Install: `brew install htop`. Press F to filter, T for tree view, k to kill a process.
+  Sort by CPU (press P) or memory (M) to spot hogs.
+  Way more approachable than top's cryptic interface.
+source: https://htop.dev/
+tags: [htop, top, process-monitoring, interactive, must-have]

@@ -1,0 +1,14 @@
+id: shell-sort-unique-dedup
+title: 'Sort and remove duplicates in one pass'
+cmd: sort -u <file>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  sort -u combines sorting and deduplication.
+  Way faster than sort | uniq since uniq requires a separate pass.
+  Use sort -k<n> to sort on a specific field; sort -rn for numeric reverse.
+  For large files, sort's memory-mapped I/O beats pipeline overhead.
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sort.html
+tags: [sort, unique, dedup, one-liner]

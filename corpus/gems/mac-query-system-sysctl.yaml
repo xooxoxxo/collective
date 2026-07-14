@@ -1,0 +1,13 @@
+id: mac-query-system-sysctl
+title: Query system tuning parameters via sysctl
+cmd: sysctl -a | grep <pattern>
+undo: ""
+platform: [macos]
+domains: [debugging, macos-admin]
+danger: low
+explanation: >
+  Shows all kernel/system parameters. Examples: 'sysctl kern.maxfiles' (open file limit),
+  'sysctl net.inet.tcp.msl' (TIME_WAIT duration), 'sysctl hw.physicalcpu' (physical cores).
+  Can modify with 'sysctl -w' but changes don't persist; use /etc/sysctl.conf or launchd plist.
+source: https://ss64.com/mac/sysctl.html
+tags: [sysctl, kernel, tuning, performance, debugging]

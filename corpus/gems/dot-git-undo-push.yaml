@@ -1,0 +1,13 @@
+id: dot-git-undo-push
+title: "Force push to undo last commit on remote (destructive)"
+cmd: "git push -f origin HEAD^:$(git rev-parse --abbrev-ref HEAD)"
+undo: "git push origin +<original-commit-hash>:$(git rev-parse --abbrev-ref HEAD)"
+platform: [macos, linux]
+domains: [git]
+danger: high
+explanation: >
+  Forcefully moves remote branch pointer back one commit, effectively undoing last push.
+  DANGEROUS on shared branches; only safe on personal feature branches before merge.
+  Requires force push permissions; will fail on protected branches (use carefully!).
+source: "https://github.com/paulirish/dotfiles"
+tags: [git, undo, dangerous, force-push, recovery]

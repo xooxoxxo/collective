@@ -1,0 +1,13 @@
+id: dot-git-main-or-master
+title: "Detect and checkout main/master branch regardless of name"
+cmd: "alias gitmainormaster='git branch --format \"%(refname:short)\" --sort=-committerdate --list master main | head -n1' && alias main='git checkout $(gitmainormaster)'"
+undo: "unalias gitmainormaster && unalias main"
+platform: [macos, linux]
+domains: [git]
+danger: low
+explanation: >
+  Intelligently detects whether default branch is named 'main' or 'master' based on age.
+  Solves the GitHub rename issue; single alias works across all repos.
+  Avoids branch-not-found errors when switching between old/new projects.
+source: "https://github.com/paulirish/dotfiles"
+tags: [git, branches, compatibility, automation]

@@ -1,0 +1,13 @@
+id: dot-system-restart-freeze
+title: "Enable automatic restart on kernel panic or freeze"
+cmd: "sudo systemsetup -setrestartfreeze on"
+undo: "sudo systemsetup -setrestartfreeze off"
+platform: [macos]
+domains: [macos-admin, power, debugging]
+danger: medium
+explanation: >
+  Mac automatically reboots if kernel panics or system becomes completely unresponsive.
+  Critical for servers and remote machines; prevents indefinite hangs.
+  May hide underlying issues; check panic logs in /Library/Logs/DiagnosticMessages.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [system, restart, panic, reliability, macos-admin]

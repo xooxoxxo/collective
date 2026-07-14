@@ -1,0 +1,13 @@
+id: shell-git-rev-parse-alias
+title: 'Expand git refs to full SHAs for scripts'
+cmd: git rev-parse <ref>
+undo: ''
+platform: [macos, linux]
+domains: [git, shell]
+danger: low
+explanation: >
+  git rev-parse converts refs (HEAD, main, v1.0) to full commit SHAs.
+  Essential in shell scripts: you can't pass @{-1} into a var and use it directly.
+  Try `git rev-parse HEAD~2..HEAD` to list commits in a range as SHAs.
+source: https://git-scm.com/docs/git-rev-parse
+tags: [git, rev-parse, scripting]

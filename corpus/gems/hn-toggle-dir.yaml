@@ -1,0 +1,13 @@
+id: hn-toggle-dir
+title: 'Toggle between two directories'
+cmd: cd -
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  The hyphen `-` refers to the previous working directory. Flips back and forth
+  between two directories like a channel remote. Beats retyping long paths or
+  hunting in history. Works in most shells (bash, zsh, ksh).
+source: https://news.ycombinator.com/item?id=47525243
+tags: [navigation, cd, bash, productivity]

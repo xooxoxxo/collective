@@ -1,0 +1,13 @@
+id: mac-disable-spotlight-indexing
+title: Disable Spotlight indexing for specific paths
+cmd: sudo mdutil -i off <path>
+undo: sudo mdutil -i on <path>
+platform: [macos]
+domains: [macos-admin, files]
+danger: medium
+explanation: >
+  Stops Spotlight from indexing specified directories, useful for large project folders,
+  node_modules, or .git directories that consume indexing resources. Significantly speeds
+  up disk I/O on those paths. Re-enabling with 'on' restores indexing.
+source: https://ss64.com/mac/mdutil.html
+tags: [spotlight, indexing, performance, disk-io, metadata]

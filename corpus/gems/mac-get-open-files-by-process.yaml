@@ -1,0 +1,13 @@
+id: mac-get-open-files-by-process
+title: List open files for a running process
+cmd: lsof -p <pid>
+undo: ""
+platform: [macos]
+domains: [debugging]
+danger: low
+explanation: >
+  Shows all file descriptors, sockets, pipes, and memory-mapped regions for a process.
+  Use 'lsof -i :<port>' to find which process owns a network port, or 'lsof +D <path>'
+  to find all processes accessing a directory. Essential for debugging hangs or I/O.
+source: https://ss64.com/mac/lsof.html
+tags: [lsof, process, file-descriptors, debugging, ports]

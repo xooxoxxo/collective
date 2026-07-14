@@ -1,0 +1,14 @@
+id: blog-delta-diff-highlighting
+title: 'Beautiful diffs with syntax highlighting'
+cmd: git diff | delta
+undo: ''
+platform: [macos, linux]
+domains: [git, shell]
+danger: low
+explanation: >
+  delta is a pager for diffs with syntax highlighting, side-by-side view, and line numbers.
+  Install: `brew install git-delta`. Configure git: `git config core.pager delta`.
+  Use `delta --side-by-side` for split view; much clearer than standard git diff.
+  Also works with `diff`, `cd`, or any pager-using command via aliases.
+source: https://github.com/dandavison/delta
+tags: [delta, diff, pager, git, syntax-highlighting, modern]

@@ -1,0 +1,14 @@
+id: blog-tmux-sessions
+title: 'Manage terminal sessions that persist across disconnects'
+cmd: tmux new-session -s <name>
+undo: tmux kill-session -t <name>
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  tmux creates sessions that survive network disconnects; ideal for remote work.
+  Install: `brew install tmux`. `tmux new-s <name>` creates a session; `tmux attach -t <name>` reconnects.
+  `tmux list-sessions` shows active sessions.
+  Way better than nohup for long-running processes; also enables multi-window workflows.
+source: https://github.com/tmux/tmux/wiki
+tags: [tmux, sessions, persistence, remote-work, must-have]

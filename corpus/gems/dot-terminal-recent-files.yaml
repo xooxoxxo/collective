@@ -1,0 +1,13 @@
+id: dot-terminal-recent-files
+title: "List most recently modified files in current directory"
+cmd: "alias lh='ls -alt | head -20'"
+undo: "unalias lh"
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  Shows last 20 modified files in reverse chronological order (newest first).
+  Essential for tracking recent changes; faster than visual inspection.
+  Pair with grep to find specific file types by date.
+source: "https://github.com/skwp/dotfiles"
+tags: [shell, alias, files, sorting, productivity]

@@ -1,0 +1,14 @@
+id: blog-entr-rerun-on-change
+title: 'Re-run a command when files change'
+cmd: ls <file> | entr <command>
+undo: ''
+platform: [macos, linux]
+domains: [shell, debugging, power]
+danger: low
+explanation: >
+  entr watches files and re-runs a command when any change.
+  Install: `brew install entr`. Use `ls src/*.rs | entr cargo test` to re-test on Rust file saves.
+  Perfect for TDD workflows; way less context-switching than manual reruns.
+  `-r` restarts the command (kills the old process); `-c` clears the screen.
+source: https://eradman.com/entrproject/
+tags: [entr, file-watch, rerun, testing, productivity]

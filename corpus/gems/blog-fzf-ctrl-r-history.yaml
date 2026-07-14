@@ -1,0 +1,14 @@
+id: blog-fzf-ctrl-r-history
+title: 'Fuzzy search command history'
+cmd: 'Control+R (in bash/zsh with fzf enabled)'
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  fzf replaces the default Ctrl+R history search with fuzzy matching.
+  Type a substring—fzf scores and ranks your commands instantly.
+  Install: `brew install fzf` then `$(fzf --bash)` in .bashrc or `eval "$(fzf --zsh)"` in .zshrc.
+  Way better than Ctrl+R's incremental search; also works with kill (Ctrl+T for filenames, Alt+C for cd).
+source: https://github.com/junegunn/fzf#installation
+tags: [fzf, history, interactive, must-have]

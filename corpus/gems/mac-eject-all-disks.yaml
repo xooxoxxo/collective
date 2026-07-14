@@ -1,0 +1,13 @@
+id: mac-eject-all-disks
+title: Eject all mounted external disks
+cmd: diskutil eject all
+undo: ""
+platform: [macos]
+domains: [disk, files]
+danger: medium
+explanation: >
+  Safely ejects all external drives/USB devices at once. Useful cleanup before
+  unplugging or prior to disk maintenance. Unlike Finder's Eject button, this
+  ensures all processes have released the device safely.
+source: https://ss64.com/mac/diskutil.html
+tags: [disk, eject, usb, external-drive, storage]

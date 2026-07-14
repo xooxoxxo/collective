@@ -1,0 +1,14 @@
+id: blog-tldr-quick-examples
+title: 'Get practical examples for CLI tools (beats man pages)'
+cmd: tldr <command>
+undo: ''
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  tldr shows concise, real-world examples for commands (no bloat like man pages).
+  Install: `brew install tldr`. Examples: `tldr tar`, `tldr find`, `tldr ssh-keygen`.
+  Community-driven; offline cache updates daily.
+  Hit Ctrl+C if you want to quit paging; way faster than man for learning.
+source: https://tldr.sh/
+tags: [tldr, help, examples, documentation, must-have]

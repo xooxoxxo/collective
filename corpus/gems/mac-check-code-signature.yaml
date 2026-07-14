@@ -1,0 +1,13 @@
+id: mac-check-code-signature
+title: Verify code signature of a binary
+cmd: codesign -v -v <binary>
+undo: ""
+platform: [macos]
+domains: [security, debugging]
+danger: low
+explanation: >
+  Checks whether a binary has a valid code signature. The second '-v' increases verbosity.
+  Returns 0 if valid. Useful for debugging unsigned binaries, tampered apps, or
+  understanding signature requirements for distribution.
+source: https://ss64.com/mac/codesign.html
+tags: [codesign, signature, binary, security, gatekeeper]

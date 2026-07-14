@@ -1,0 +1,14 @@
+id: shell-git-log-oneline-graph
+title: 'Show commit history with branch graph'
+cmd: git log --oneline --graph --all --decorate
+undo: ''
+platform: [macos, linux]
+domains: [git, debugging]
+danger: low
+explanation: >
+  A visual commit graph shows merges and branch structures at a glance.
+  --oneline shortens commits to one line; --all shows all branches; --decorate labels them.
+  Alias: git lga (if you set it in config).
+  Way clearer than git log -p for understanding history flow.
+source: https://git-scm.com/docs/git-log
+tags: [git, log, visualization, one-liner]

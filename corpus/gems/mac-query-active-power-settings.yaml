@@ -1,0 +1,13 @@
+id: mac-query-active-power-settings
+title: Query active power management settings
+cmd: pmset -g
+undo: ""
+platform: [macos]
+domains: [power, macos-admin, debugging]
+danger: low
+explanation: >
+  Displays all current power management settings including sleep timers, CPU throttling,
+  GPU switching, and thermal profiles. Useful for debugging battery drain or confirming
+  custom pmset configurations were applied.
+source: https://ss64.com/mac/pmset.html
+tags: [power, battery, performance, debugging, settings]
