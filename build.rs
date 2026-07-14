@@ -1,5 +1,7 @@
 // Validates every corpus/*.yaml at build time. Bad entry = no binary.
 #[path = "src/entry.rs"]
+#[allow(dead_code)]
+// build script reads only `id`; the binary uses every field
 mod entry;
 
 use std::{collections::HashSet, fs, path::Path};
