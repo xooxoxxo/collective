@@ -54,6 +54,8 @@ def main():
             seen_pages.add(name)
             page_desc, examples = parse_page(page.read_text(encoding="utf-8"))
             slug = sanitize(name)
+            if not slug:  # page name is all punctuation (e.g. ~, {) -> skip
+                continue
             for i, ex in enumerate(examples, start=1):
                 entry = {
                     "id": f"tldr-{slug}-{i}",
