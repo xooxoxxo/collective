@@ -1,6 +1,8 @@
 mod entry;
 mod corpus;
 mod search;
+#[allow(dead_code)]
+mod sm2; // consumed by drill (Tasks 6-7)
 
 use clap::{Parser, Subcommand};
 
