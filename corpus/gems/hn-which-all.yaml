@@ -1,0 +1,12 @@
+id: hn-which-all
+title: Find all versions of a command in PATH
+cmd: "which -a <command> (or type -a <command>)"
+undo: ""
+platform: [macos, linux]
+domains: [shell, debugging]
+danger: low
+explanation: >
+  which -a shows all occurrences of a command in PATH (not just first hit).
+  Solves "why is the wrong version running?" Problems with shadowing or multiple Python/Node versions.
+tags: [path-resolution, shadowing, shell-debugging]
+source: "https://news.ycombinator.com/item?id=25898881"

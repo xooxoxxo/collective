@@ -1,0 +1,12 @@
+id: hn-time-measure
+title: Measure command execution time and resource usage
+cmd: "time <command>"
+undo: ""
+platform: [macos, linux]
+domains: [debugging, power]
+danger: low
+explanation: >
+  Built-in shell command (not /usr/bin/time). Shows real, user, and sys time; useful for profiling.
+  macOS: use /usr/bin/time -l for detailed output (pages faulted, max RSS, I/O stats).
+tags: [profiling, benchmarking, performance]
+source: "https://news.ycombinator.com/item?id=25898881"

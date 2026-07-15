@@ -1,0 +1,12 @@
+id: hn-yes
+title: Pipe endless 'y' answers to a command
+cmd: "yes | <command>"
+undo: "Ctrl-C to stop the endless stream"
+platform: [macos, linux]
+domains: [shell, power]
+danger: medium
+explanation: >
+  yes outputs 'y' (or a custom string) forever. Pipe to interactive command to auto-accept all prompts.
+  Useful for automated testing or unattended script runs. Dangerous if command has destructive defaults.
+tags: [automation, interactive-scripts, batch-mode]
+source: "https://news.ycombinator.com/item?id=25898881"

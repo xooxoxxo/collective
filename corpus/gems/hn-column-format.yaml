@@ -1,0 +1,12 @@
+id: hn-column-format
+title: Format tabular output into aligned columns
+cmd: "cat <file> | column -t (or column -t -s: for custom separator)"
+undo: ""
+platform: [macos, linux]
+domains: [power, files]
+danger: low
+explanation: >
+  Aligns whitespace-separated or delimiter-separated columns for readability. Great for /etc/passwd (column -t -s:),
+  custom log parsing, or making ps output readable. No need for complex awk/printf formatting.
+tags: [formatting, column-alignment, text-processing]
+source: "https://news.ycombinator.com/item?id=25898881"

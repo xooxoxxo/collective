@@ -1,0 +1,12 @@
+id: hn-history-prefix
+title: Re-run last command starting with a prefix
+cmd: "!<prefix>"
+undo: ""
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  !abc re-runs the last command that started with 'abc'. Useful when you know command prefix but forgot details.
+  Bash/zsh history expansion. Related: !abc? to search (with confirmation), !!?string to search in args.
+tags: [history-expansion, prefix-search, shell-trick]
+source: "https://news.ycombinator.com/item?id=25898881"

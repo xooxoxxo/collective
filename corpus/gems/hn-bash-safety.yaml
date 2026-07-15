@@ -1,0 +1,12 @@
+id: hn-bash-safety
+title: Enable safer bash script defaults
+cmd: "set -euo pipefail"
+undo: "set +euo pipefail"
+platform: [macos, linux]
+domains: [shell, security]
+danger: low
+explanation: >
+  -e: exit on error, -u: error on undefined variable, -o pipefail: fail if any pipe stage fails.
+  Prevents silent failures and makes scripts more robust. Add at top of production scripts; catches bugs early.
+tags: [bash-safety, defensive-scripting, error-handling]
+source: "https://news.ycombinator.com/item?id=25898881"

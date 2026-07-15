@@ -1,0 +1,12 @@
+id: hn-mkfifo
+title: Create named pipe for inter-process communication
+cmd: "mkfifo <pipe_name> && producer > <pipe_name> & consumer < <pipe_name>"
+undo: "rm <pipe_name>"
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  Named pipe (FIFO) acts like a file but streams data between processes. Useful for complex shell pipelines,
+  connecting unrelated commands, or avoiding temp files. Blocks until both reader and writer connect.
+tags: [inter-process-communication, pipes, advanced]
+source: "https://news.ycombinator.com/item?id=25898881"

@@ -1,0 +1,12 @@
+id: hn-disown
+title: Detach background job from shell
+cmd: "disown %<job_id> (or disown -a for all)"
+undo: "fg (if still running)"
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  Severs link between job and shell; process survives shell exit (unlike bg).
+  Solves "nohup forgotten" problem after the fact. Useful when you want long-running task immune to SIGHUP.
+tags: [background-jobs, process-management, shell]
+source: "https://news.ycombinator.com/item?id=25898881"

@@ -1,0 +1,12 @@
+id: hn-last-arg
+title: Use last argument from previous command
+cmd: "!$ (or Esc+. in vi mode)"
+undo: ""
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  !$ expands to the last argument of the previous command. Faster than re-typing paths or filenames.
+  Works in bash/zsh history expansion. Alternative: press Esc then . (period) to insert it interactively.
+tags: [history-expansion, productivity, shell-trick]
+source: "https://news.ycombinator.com/item?id=25898881"

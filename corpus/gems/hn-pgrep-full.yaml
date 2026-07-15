@@ -1,0 +1,12 @@
+id: hn-pgrep-full
+title: Find processes by name with full command line
+cmd: "pgrep -fl <pattern>"
+undo: ""
+platform: [macos, linux]
+domains: [power, debugging]
+danger: low
+explanation: >
+  Faster and cleaner than ps aux | grep <pattern> (avoids grep appearing in results).
+  -f matches full command line (not just executable name). -l lists. Returns PIDs suitable for xargs.
+tags: [process-search, pgrep, ps-alternative]
+source: "https://news.ycombinator.com/item?id=25898881"

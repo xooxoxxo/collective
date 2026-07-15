@@ -1,0 +1,12 @@
+id: hn-dirname-expand
+title: Use directory of last argument via history expansion
+cmd: "!$:h"
+undo: ""
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  History expansion modifier :h strips filename, leaving directory. Example: cat /path/to/file.txt; cd !$:h
+  goes to /path/to. Related: :t for tail (basename), :r for remove suffix. Bash/zsh only.
+tags: [history-expansion, path-manipulation, shell-modifiers]
+source: "https://news.ycombinator.com/item?id=25898881"

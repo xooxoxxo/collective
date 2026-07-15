@@ -1,0 +1,13 @@
+id: hn-tee-sudo
+title: Write to protected file without shell re-spawning
+cmd: "echo '<content>' | sudo tee <protected_file>"
+undo: "rm <protected_file>"
+platform: [macos, linux]
+domains: [security, files, shell]
+danger: medium
+explanation: >
+  Avoids shell redirection (sudo echo > file fails; > runs as user, not root).
+  tee runs as root and writes to file while echoing to stdout. Common use: adding lines to /etc/hosts or sudoers.
+  Use carefully—writing to system files can break things.
+tags: [privilege-escalation, file-writing, sudoers]
+source: "https://news.ycombinator.com/item?id=25898881"

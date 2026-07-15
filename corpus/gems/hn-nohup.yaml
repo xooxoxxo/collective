@@ -1,0 +1,12 @@
+id: hn-nohup
+title: Run command immune to hangup signal
+cmd: "nohup <command> &"
+undo: "kill %<job_id>"
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  Ignores SIGHUP (hangup signal) when terminal closes, so process survives logout.
+  Output redirected to nohup.out by default. Combine with & to background it. Essential for durable background tasks.
+tags: [background-jobs, process-management, durability]
+source: "https://news.ycombinator.com/item?id=25898881"

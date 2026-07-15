@@ -1,0 +1,12 @@
+id: hn-watch-diff
+title: Monitor command output with highlighting of changes
+cmd: "watch -d <command>"
+undo: "Ctrl-C"
+platform: [macos, linux]
+domains: [power, debugging]
+danger: low
+explanation: >
+  Runs command repeatedly (default 2s interval) and highlights lines that changed in inverse video.
+  -d flag shows diffs; -n <sec> to change interval. Great for watching logs, process status, or test output.
+tags: [monitoring, live-output, debugging]
+source: "https://news.ycombinator.com/item?id=25898881"

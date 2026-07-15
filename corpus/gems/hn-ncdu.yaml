@@ -1,0 +1,12 @@
+id: hn-ncdu
+title: Interactive disk usage explorer
+cmd: "ncdu <path> (or ncdu -r for read-only, no delete)"
+undo: ""
+platform: [macos, linux]
+domains: [disk, files]
+danger: low
+explanation: >
+  NCurses Disk Usage: interactive drill-down explorer. Shows largest files/folders and allows deletion
+  (default) or read-only scan. Much faster and more useful than du -sh * for finding space hogs.
+tags: [disk-usage, space-management, interactive]
+source: "https://news.ycombinator.com/item?id=18518072"

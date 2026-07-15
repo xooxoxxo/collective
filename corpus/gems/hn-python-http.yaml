@@ -1,0 +1,12 @@
+id: hn-python-http
+title: Serve current directory via HTTP
+cmd: "python3 -m http.server <port>"
+undo: "Ctrl-C"
+platform: [macos, linux]
+domains: [network]
+danger: low
+explanation: >
+  Quick one-liner to serve files in CWD over HTTP (default port 8000). No dependencies, works with any Python 3.
+  Great for testing web content, sharing files, or quick demos. Not for production.
+tags: [http-server, file-sharing, development]
+source: "https://news.ycombinator.com/item?id=25898881"

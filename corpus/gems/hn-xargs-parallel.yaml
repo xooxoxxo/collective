@@ -1,0 +1,12 @@
+id: hn-xargs-parallel
+title: Run xargs commands in parallel
+cmd: "cat <file> | xargs -P <num_procs> -I {} <command> {}"
+undo: ""
+platform: [macos, linux]
+domains: [power, shell]
+danger: low
+explanation: >
+  -P <n> runs up to n jobs in parallel (default 1 = serial). Example: find . -name '*.txt' | xargs -P 4 -I {} wc -l {}
+  Much faster for I/O-bound tasks than serial xargs. CPU-bound tasks may not benefit.
+tags: [parallelism, xargs, batch-processing]
+source: "https://news.ycombinator.com/item?id=25898881"
