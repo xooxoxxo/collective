@@ -7,7 +7,7 @@ mod drill;
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
-#[command(name = "col", about = "hacky script directory + console drills")]
+#[command(name = "collective", about = "hacky script directory + console drills")]
 struct Cli {
     #[command(subcommand)]
     cmd: Cmd,
@@ -64,7 +64,7 @@ fn truncate(s: &str, n: usize) -> String {
 
 fn find<'a>(entries: &'a [entry::Entry], id: &str) -> &'a entry::Entry {
     entries.iter().find(|e| e.id == id).unwrap_or_else(|| {
-        eprintln!("no entry '{id}' — try: col search {id}");
+        eprintln!("no entry '{id}' — try: collective search {id}");
         std::process::exit(1);
     })
 }
