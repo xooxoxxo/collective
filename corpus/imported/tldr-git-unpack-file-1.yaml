@@ -1,0 +1,14 @@
+id: tldr-git-unpack-file-1
+title: 'git-unpack-file: Create a file holding the contents of the blob specified
+  by its ID then print the name of the temporary file'
+cmd: git unpack-file <blob_id>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a temporary file with a blob's contents
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-unpack-file.md
+  (CC-BY-4.0)
+tags:
+- git-unpack-file

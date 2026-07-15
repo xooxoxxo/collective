@@ -1,0 +1,14 @@
+id: tldr-git-update-index-1
+title: 'git-update-index: Pretend that a modified file is unchanged (`git status`
+  will not show this as changed)'
+cmd: git update-index --skip-worktree <path/to/modified_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for manipulating the index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-update-index.md
+  (CC-BY-4.0)
+tags:
+- git-update-index

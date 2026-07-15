@@ -1,0 +1,13 @@
+id: tldr-cargo-4
+title: 'cargo: Create a new binary or library Rust project in the specified directory
+  (or the current working directory by default)'
+cmd: cargo init --<bin|lib> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage Rust projects and their module dependencies (crates)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo.md (CC-BY-4.0)
+tags:
+- cargo

@@ -1,0 +1,14 @@
+id: tldr-git-range-diff-2
+title: 'git-range-diff: Diff the changes of ours and theirs from their common ancestor,
+  e.g. after an interactive rebase'
+cmd: git range-diff <theirs>...<ours>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compare two commit ranges (e.g. two versions of a branch)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-range-diff.md
+  (CC-BY-4.0)
+tags:
+- git-range-diff

@@ -1,0 +1,14 @@
+id: tldr-git-maintenance-1
+title: 'git-maintenance: Register the current repository in the user''s list of repositories
+  to daily have maintenance run'
+cmd: git maintenance register
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run tasks to optimize Git repository data
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-maintenance.md
+  (CC-BY-4.0)
+tags:
+- git-maintenance

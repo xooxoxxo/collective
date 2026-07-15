@@ -1,0 +1,12 @@
+id: tldr-bash-2
+title: 'bash: Start an interactive shell session without loading startup configs'
+cmd: bash --norc
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bourne-Again SHell, an `sh`-compatible command-line interpreter
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash.md (CC-BY-4.0)
+tags:
+- bash

@@ -1,0 +1,16 @@
+id: tldr-git-reauthor-3
+title: 'git-reauthor: Change the email and name of all commits, regardless of their
+  original author'
+cmd: git reauthor <[-a|--all]> <[-e|--correct-email]> <name@example.com> <[-n|--correct-name]>
+  <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change details about an author identity. Since this command rewrites
+  the Git history, `--force` will be needed when pushing next time
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reauthor.md
+  (CC-BY-4.0)
+tags:
+- git-reauthor

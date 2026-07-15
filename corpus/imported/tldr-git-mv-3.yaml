@@ -1,0 +1,12 @@
+id: tldr-git-mv-3
+title: 'git-mv: Overwrite the file or directory in the target path if it exists'
+cmd: git mv <[-f|--force]> <path/to/file_or_directory> <path/to/destination>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Move or rename files and update the Git index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mv.md (CC-BY-4.0)
+tags:
+- git-mv

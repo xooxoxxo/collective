@@ -1,0 +1,12 @@
+id: tldr-git-restore-2
+title: 'git-restore: Restore an unstaged file to the version of a specific commit'
+cmd: git restore <[-s|--source]> <commit> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Restore working tree files. Requires Git version 2.23+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-restore.md (CC-BY-4.0)
+tags:
+- git-restore

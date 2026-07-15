@@ -1,0 +1,14 @@
+id: tldr-git-local-commits-1
+title: 'git-local-commits: Show commits that haven''t been pushed'
+cmd: git local-commits
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show local commits that haven't been pushed to origin. Any additional
+  arguments will be passed directly to `git log`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-local-commits.md
+  (CC-BY-4.0)
+tags:
+- git-local-commits

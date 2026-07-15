@@ -1,0 +1,13 @@
+id: tldr-git-delete-tag-1
+title: 'git-delete-tag: Delete a tag'
+cmd: git delete-tag <tag_version>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Delete existing local and remote tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-delete-tag.md
+  (CC-BY-4.0)
+tags:
+- git-delete-tag

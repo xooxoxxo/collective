@@ -1,0 +1,13 @@
+id: tldr-git-show-5
+title: 'git-show: Show a commit''s message in a single line, suppressing the diff
+  output'
+cmd: git show --oneline <[-s|--no-patch]> <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show various types of Git objects (commits, tags, etc.)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show.md (CC-BY-4.0)
+tags:
+- git-show

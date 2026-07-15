@@ -1,0 +1,14 @@
+id: tldr-git-send-email-5
+title: 'git-send-email: Review and edit the email message for each patch you''re about
+  to send'
+cmd: git send-email -<number_of_commits> --annotate
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Send a collection of patches as emails
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-send-email.md
+  (CC-BY-4.0)
+tags:
+- git-send-email

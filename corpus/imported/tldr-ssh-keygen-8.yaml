@@ -1,0 +1,13 @@
+id: tldr-ssh-keygen-8
+title: 'ssh-keygen: Retrieve public key from private key'
+cmd: ssh-keygen -f <~/.ssh/OpenSSH_private_key> -y
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate SSH keys used for authentication, password-less logins, and
+  other things
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-keygen.md (CC-BY-4.0)
+tags:
+- ssh-keygen

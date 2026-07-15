@@ -1,0 +1,12 @@
+id: tldr-clang-check-2
+title: 'clang-check: Dump the Abstract Syntax Tree for debugging'
+cmd: clang-check <path/to/file.cpp> -ast-dump --
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check basic errors and work with Clang's Abstract Syntax Tree (AST)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang-check.md (CC-BY-4.0)
+tags:
+- clang-check

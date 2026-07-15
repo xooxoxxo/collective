@@ -1,0 +1,14 @@
+id: tldr-cargo-clippy-6
+title: 'cargo-clippy: Treat warnings as errors'
+cmd: cargo clippy -- <[-D|--deny]> warnings
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of lints to catch common mistakes and improve your Rust
+  code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-clippy.md
+  (CC-BY-4.0)
+tags:
+- cargo-clippy

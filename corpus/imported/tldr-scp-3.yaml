@@ -1,0 +1,12 @@
+id: tldr-scp-3
+title: 'scp: Copy a file from a remote host to a local directory'
+cmd: scp <remote_host>:<path/to/remote_file> <path/to/local_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure copy
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/scp.md (CC-BY-4.0)
+tags:
+- scp

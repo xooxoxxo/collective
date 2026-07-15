@@ -1,0 +1,12 @@
+id: tldr-git-notes-3
+title: 'git-notes: Show the notes attached to a given object (defaults to `HEAD`)'
+cmd: git notes show <object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add or inspect object notes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-notes.md (CC-BY-4.0)
+tags:
+- git-notes

@@ -1,0 +1,13 @@
+id: tldr-cargo-report-1
+title: 'cargo-report: Display a report of crates which will eventually stop compiling'
+cmd: cargo report future-incompatibilities
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display various kinds of reports
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-report.md
+  (CC-BY-4.0)
+tags:
+- cargo-report

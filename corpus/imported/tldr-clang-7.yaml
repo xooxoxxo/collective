@@ -1,0 +1,13 @@
+id: tldr-clang-7
+title: 'clang: Optimize the compiled program for performance'
+cmd: clang <path/to/source.c> -O<1|2|3|fast> <[-o|--output]> <path/to/output_executable>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile C, C++, and Objective-C source files. Can be used as a drop-in
+  replacement for GCC
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang.md (CC-BY-4.0)
+tags:
+- clang

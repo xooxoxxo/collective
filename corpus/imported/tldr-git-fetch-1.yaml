@@ -1,0 +1,13 @@
+id: tldr-git-fetch-1
+title: 'git-fetch: Fetch the latest changes from the default remote upstream repository
+  (if set)'
+cmd: git fetch
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Download objects and refs from a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fetch.md (CC-BY-4.0)
+tags:
+- git-fetch

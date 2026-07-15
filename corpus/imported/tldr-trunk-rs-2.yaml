@@ -1,0 +1,12 @@
+id: tldr-trunk-rs-2
+title: 'trunk.rs: Build the application and serve it on a specific port'
+cmd: trunk serve <[-p|--port]> <port>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bundle and serve Rust WASM web applications
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.rs.md (CC-BY-4.0)
+tags:
+- trunk-rs

@@ -1,0 +1,12 @@
+id: tldr-git-ls-tree-2
+title: 'git-ls-tree: List the contents of the tree on a commit, recursing into subtrees'
+cmd: git ls-tree -r <commit_hash>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List the contents of a tree object
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ls-tree.md (CC-BY-4.0)
+tags:
+- git-ls-tree

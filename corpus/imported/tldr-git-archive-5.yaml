@@ -1,0 +1,12 @@
+id: tldr-git-archive-5
+title: 'git-archive: Use the contents of a specific directory'
+cmd: git archive <[-o|--output]> <path/to/file.tar> HEAD:<path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create an archive of files from a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-archive.md (CC-BY-4.0)
+tags:
+- git-archive

@@ -1,0 +1,14 @@
+id: tldr-tarsnap-keygen-1
+title: 'tarsnap-keygen: Register a machine with the Tarsnap server'
+cmd: sudo tarsnap-keygen --keyfile <path/to/file.key> --user <user_email> --machine
+  <machine_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a key file for use with Tarsnap, an online backup service
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap-keygen.md
+  (CC-BY-4.0)
+tags:
+- tarsnap-keygen

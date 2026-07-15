@@ -1,0 +1,13 @@
+id: tldr-transmission-cli-2
+title: 'transmission-cli: Download a torrent to a specific directory'
+cmd: transmission-cli <[-w|--download-dir]> <path/to/download_directory> <url|magnet|path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A lightweight, command-line BitTorrent client
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-cli.md
+  (CC-BY-4.0)
+tags:
+- transmission-cli

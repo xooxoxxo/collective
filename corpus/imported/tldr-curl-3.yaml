@@ -1,0 +1,13 @@
+id: tldr-curl-3
+title: 'curl: Download a file, saving the output under the filename indicated by the
+  URL'
+cmd: curl <[-O|--remote-name]> <https://example.com/filename.zip>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

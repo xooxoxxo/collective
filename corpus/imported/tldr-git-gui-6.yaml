@@ -1,0 +1,13 @@
+id: tldr-git-gui-6
+title: 'git-gui: Open `git gui citool` in the "Amend Last Commit" mode'
+cmd: git gui citool --amend
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A GUI for Git to manage branches, commits, and remotes, and perform local
+  merges
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gui.md (CC-BY-4.0)
+tags:
+- git-gui

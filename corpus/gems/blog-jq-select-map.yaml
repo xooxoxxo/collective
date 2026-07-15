@@ -1,0 +1,14 @@
+id: blog-jq-select-map
+title: 'Transform JSON: extract and filter fields'
+cmd: jq '.[] | select(.<field> > <value>) | {name, age}'
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  jq map and select enable SQL-like queries on JSON.
+  `.[] | select(...) | {name, age}` filters objects and extracts specific fields.
+  Use `map(select(...))` to avoid intermediate items; faster on large files.
+  Chain with | to refine; jq .[] | group_by(.category) for grouping.
+source: https://stedolan.github.io/jq/manual/#builtins
+tags: [jq, json, filter, transform, data-processing]

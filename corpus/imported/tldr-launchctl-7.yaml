@@ -1,0 +1,14 @@
+id: tldr-launchctl-7
+title: 'launchctl: Manually kill the process associated with a known agent/daemon,
+  if it is running'
+cmd: launchctl stop <script_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Control Apple's `launchd` manager for launch daemons (system-wide services)
+  and launch agents (per-user programs)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/launchctl.md (CC-BY-4.0)
+tags:
+- launchctl

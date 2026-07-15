@@ -1,0 +1,12 @@
+id: tldr-git-bulk-1
+title: 'git-bulk: Register the current directory as a workspace'
+cmd: git bulk --addcurrent <workspace_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute operations on multiple Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bulk.md (CC-BY-4.0)
+tags:
+- git-bulk

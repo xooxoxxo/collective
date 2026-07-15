@@ -1,0 +1,12 @@
+id: tldr-cargo-deb-2
+title: 'cargo-deb: Write the `.deb` file to the specified file or directory'
+cmd: cargo deb <[-o|--output]> <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create Debian packages from Cargo projects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-deb.md (CC-BY-4.0)
+tags:
+- cargo-deb

@@ -1,0 +1,13 @@
+id: tldr-git-merge-index-3
+title: 'git-merge-index: Merge multiple files, continuing on failures'
+cmd: git merge-index -o git-merge-one-file -- <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run a merge program on files that need merging
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-index.md
+  (CC-BY-4.0)
+tags:
+- git-merge-index

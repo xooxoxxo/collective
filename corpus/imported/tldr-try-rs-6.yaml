@@ -1,0 +1,12 @@
+id: tldr-try-rs-6
+title: 'try-rs: Generate shell integration for the specified shell'
+cmd: try-rs --setup <bash|fish|zsh|nu-shell|power-shell>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage temporary project workspaces with an interactive TUI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/try-rs.md (CC-BY-4.0)
+tags:
+- try-rs

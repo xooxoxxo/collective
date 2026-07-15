@@ -1,0 +1,14 @@
+id: tldr-git-browse-ci-2
+title: 'git-browse-ci: Open the current repository''s CI configuration on its upstream
+  website for a specific remote'
+cmd: git browse-ci <remote>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Open the current Git repository's CI website in the default web browser
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-browse-ci.md
+  (CC-BY-4.0)
+tags:
+- git-browse-ci

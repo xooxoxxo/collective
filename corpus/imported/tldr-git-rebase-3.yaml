@@ -1,0 +1,13 @@
+id: tldr-git-rebase-3
+title: 'git-rebase: Continue a rebase that was interrupted by a merge failure, after
+  editing conflicting files'
+cmd: git rebase --continue
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

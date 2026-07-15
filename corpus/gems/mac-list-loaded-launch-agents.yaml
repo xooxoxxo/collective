@@ -1,0 +1,13 @@
+id: mac-list-loaded-launch-agents
+title: List all loaded launch agents and daemons
+cmd: launchctl list
+undo: ""
+platform: [macos]
+domains: [macos-admin, debugging]
+danger: low
+explanation: >
+  Shows all currently active launchd services. Left column is PID (0 = not running or failed),
+  middle is exit code. Use 'launchctl list | grep <name>' to find a specific service.
+  Pair with 'launchctl unload' or 'disable' to stop services.
+source: https://ss64.com/mac/launchctl.html
+tags: [launchctl, background-processes, daemons, agents, startup]

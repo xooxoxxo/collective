@@ -1,0 +1,14 @@
+id: blog-watch-poll-command
+title: 'Run a command repeatedly and show updates'
+cmd: watch -n <seconds> '<command>'
+undo: ''
+platform: [macos, linux]
+domains: [shell, power, debugging]
+danger: low
+explanation: >
+  watch runs a command at intervals and shows the output with highlights on changes.
+  Install: `brew install watch` (may be pre-installed on Linux).
+  Use `watch -n 2 'ps aux | grep node'` to monitor processes, or `watch -d uptime` to highlight diffs.
+  Press q to quit; way better than a loop with sleep for quick polling.
+source: https://linux.die.net/man/1/watch
+tags: [watch, poll, monitoring, periodic, debugging]

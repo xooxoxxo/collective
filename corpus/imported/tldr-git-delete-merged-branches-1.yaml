@@ -1,0 +1,13 @@
+id: tldr-git-delete-merged-branches-1
+title: 'git-delete-merged-branches: Delete merged branches'
+cmd: git delete-merged-branches
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Delete branches that are listed in `git branch --merged` excluding master
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-delete-merged-branches.md
+  (CC-BY-4.0)
+tags:
+- git-delete-merged-branches

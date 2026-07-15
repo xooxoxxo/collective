@@ -1,0 +1,13 @@
+id: tldr-tree-5
+title: 'tree: Print the size of each file and the cumulative size of each directory,
+  in human-readable format'
+cmd: tree -s -h --du
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tree.md (CC-BY-4.0)
+tags:
+- tree

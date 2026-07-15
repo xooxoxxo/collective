@@ -1,0 +1,13 @@
+id: tldr-git-unlock-1
+title: 'git-unlock: Enable the ability to commit changes of a previously-locked local
+  file'
+cmd: git unlock <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Unlock a file in a Git repository so it can be modified by a commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-unlock.md (CC-BY-4.0)
+tags:
+- git-unlock

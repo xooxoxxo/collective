@@ -1,0 +1,12 @@
+id: tldr-awk-1
+title: 'awk: Print the fifth column (a.k.a. field) in a space-separated file'
+cmd: awk '{print $5}' <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile programming language for working on files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/awk.md (CC-BY-4.0)
+tags:
+- awk

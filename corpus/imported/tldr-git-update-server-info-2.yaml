@@ -1,0 +1,14 @@
+id: tldr-git-update-server-info-2
+title: 'git-update-server-info: Rebuild the auxiliary info files from scratch'
+cmd: git update-server-info <[-f|--force]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Update auxiliary repository information for dumb servers (a regular web
+  server that only serves files)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-update-server-info.md
+  (CC-BY-4.0)
+tags:
+- git-update-server-info

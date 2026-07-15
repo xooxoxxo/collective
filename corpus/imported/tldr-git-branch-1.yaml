@@ -1,0 +1,13 @@
+id: tldr-git-branch-1
+title: 'git-branch: List all branches (local and remote; the current branch is highlighted
+  by `*`)'
+cmd: git branch <[-a|--all]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Main Git command for working with branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-branch.md (CC-BY-4.0)
+tags:
+- git-branch

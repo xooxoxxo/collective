@@ -1,0 +1,15 @@
+id: tldr-brew-reinstall-2
+title: 'brew-reinstall: Reinstall a formula/cask and show verification and post-install
+  steps'
+cmd: brew reinstall <[-v|--verbose]> <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Uninstall and then reinstall a formula or cask using the same options
+  it was originally installed with
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-reinstall.md
+  (CC-BY-4.0)
+tags:
+- brew-reinstall

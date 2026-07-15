@@ -1,0 +1,13 @@
+id: tldr-git-scp-2
+title: 'git-scp: Copy staged and unstaged files to a remote'
+cmd: git scp <remote_name> HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Copy files from the current working tree to the working directory of
+  a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-scp.md (CC-BY-4.0)
+tags:
+- git-scp

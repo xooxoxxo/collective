@@ -1,0 +1,12 @@
+id: tldr-cargo-fmt-1
+title: 'cargo-fmt: Format all source files'
+cmd: cargo fmt
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run `rustfmt` on all source files in a Rust project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fmt.md (CC-BY-4.0)
+tags:
+- cargo-fmt

@@ -1,0 +1,13 @@
+id: tldr-cargo-owner-4
+title: 'cargo-owner: Use the specified registry (registry names can be defined in
+  the configuration - the default is <https://crates.io>)'
+cmd: cargo owner --registry <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage the owners of a crate on the registry
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-owner.md (CC-BY-4.0)
+tags:
+- cargo-owner

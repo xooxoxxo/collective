@@ -1,0 +1,13 @@
+id: tldr-git-flow-3
+title: 'git-flow: Finish development on a feature branch, merging it into the `develop`
+  branch and deleting it'
+cmd: git flow feature finish <feature>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of Git extensions to provide high-level repository operations
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-flow.md (CC-BY-4.0)
+tags:
+- git-flow

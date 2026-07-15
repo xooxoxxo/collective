@@ -1,0 +1,13 @@
+id: tldr-git-branch-6
+title: 'git-branch: Rename a branch (you must switch to a different branch before
+  doing this)'
+cmd: git branch <[-m|--move]> <old_branch_name> <new_branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Main Git command for working with branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-branch.md (CC-BY-4.0)
+tags:
+- git-branch

@@ -1,0 +1,12 @@
+id: flush-dns-cache
+title: Flush the macOS DNS cache
+cmd: sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
+undo: ""
+platform: [macos]
+domains: [network]
+danger: low
+explanation: >
+  Clears stale DNS entries after switching VPNs, editing /etc/hosts, or fighting
+  a "this site moved but my Mac disagrees" situation.
+source: https://support.apple.com/en-us/101694
+tags: [dns, network, cache, vpn]

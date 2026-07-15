@@ -1,0 +1,13 @@
+id: tldr-makepasswd-4
+title: 'makepasswd: Generate a password containing only the characters "b", "a", or
+  "r"'
+cmd: makepasswd --string <bar>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate and encrypt passwords
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/makepasswd.md (CC-BY-4.0)
+tags:
+- makepasswd

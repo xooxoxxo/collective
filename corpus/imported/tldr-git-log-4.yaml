@@ -1,0 +1,13 @@
+id: tldr-git-log-4
+title: 'git-log: Show a graph of commits in the current branch using only the first
+  line of each commit message'
+cmd: git log --oneline --graph
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

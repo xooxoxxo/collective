@@ -1,0 +1,14 @@
+id: tldr-git-hash-object-1
+title: 'git-hash-object: Compute the object ID without storing it'
+cmd: git hash-object <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Computes the unique hash key of content and optionally creates an object
+  with specified type
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-hash-object.md
+  (CC-BY-4.0)
+tags:
+- git-hash-object

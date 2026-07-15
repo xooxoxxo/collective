@@ -1,0 +1,12 @@
+id: tldr-brew-info-3
+title: 'brew-info: Display verbose information about a formula or cask'
+cmd: brew info <[-v|--verbose]> <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display information for Homebrew installation and formulae
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-info.md (CC-BY-4.0)
+tags:
+- brew-info

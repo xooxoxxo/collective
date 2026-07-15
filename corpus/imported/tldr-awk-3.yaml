@@ -1,0 +1,13 @@
+id: tldr-awk-3
+title: 'awk: Print the last column of each line in a file, using a comma (instead
+  of space) as a field separator'
+cmd: awk -F ',' '{print $NF}' <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile programming language for working on files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/awk.md (CC-BY-4.0)
+tags:
+- awk

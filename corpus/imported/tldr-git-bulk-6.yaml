@@ -1,0 +1,12 @@
+id: tldr-git-bulk-6
+title: 'git-bulk: Run a Git command on the repositories of the current workspace'
+cmd: git bulk <command> <command_arguments>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute operations on multiple Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bulk.md (CC-BY-4.0)
+tags:
+- git-bulk

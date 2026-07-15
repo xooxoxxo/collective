@@ -1,0 +1,14 @@
+id: blog-fd-find-replacement
+title: 'Find files with simpler syntax than find'
+cmd: fd <pattern>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files, power]
+danger: low
+explanation: >
+  fd is find's friendlier cousin: `fd foo` searches recursively (no need for -r or .).
+  Respects .gitignore by default; supports colors, parallel execution (-x), and is faster.
+  Install: `brew install fd`. Use `fd -e<ext>` for extension matching (fd -e rs).
+  Replaces 90% of find usage without needing --exec syntax.
+source: https://github.com/sharkdp/fd
+tags: [fd, find, file-search, must-have, modern]

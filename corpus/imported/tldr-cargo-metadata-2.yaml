@@ -1,0 +1,14 @@
+id: tldr-cargo-metadata-2
+title: 'cargo-metadata: Print only the workspace members and do not fetch dependencies'
+cmd: cargo metadata --no-deps
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Output the workspace members and resolved dependencies of current package
+  as JSON
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-metadata.md
+  (CC-BY-4.0)
+tags:
+- cargo-metadata

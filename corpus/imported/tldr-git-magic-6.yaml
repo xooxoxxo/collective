@@ -1,0 +1,12 @@
+id: tldr-git-magic-6
+title: 'git-magic: Commit changes with a [f]orce [p]ush to remote'
+cmd: git magic -fp
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Automate add, commit, and push routines
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-magic.md (CC-BY-4.0)
+tags:
+- git-magic

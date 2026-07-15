@@ -1,0 +1,13 @@
+id: tldr-cargo-msrv-2
+title: 'cargo-msrv: Find the MSRV of the project by trying to compile it with various
+  toolchains'
+cmd: cargo msrv find
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage the Minimum Supported Rust Version (MSRV) of a project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-msrv.md (CC-BY-4.0)
+tags:
+- cargo-msrv

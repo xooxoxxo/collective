@@ -1,0 +1,12 @@
+id: tldr-make-3
+title: 'make: Call a specific target, executing 4 jobs at a time in parallel'
+cmd: make <[-j|--jobs]> 4 <target>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Task runner for targets described in Makefile
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/make.md (CC-BY-4.0)
+tags:
+- make

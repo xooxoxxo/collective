@@ -1,0 +1,12 @@
+id: tldr-trash-3
+title: 'trash: Move files to the trash with verbose output'
+cmd: trash <[-v|--verbose]> <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Move files and directories to the user trash folder
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/trash.md (CC-BY-4.0)
+tags:
+- trash

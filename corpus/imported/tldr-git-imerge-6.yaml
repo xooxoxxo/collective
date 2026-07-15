@@ -1,0 +1,12 @@
+id: tldr-git-imerge-6
+title: 'git-imerge: Abort imerge operation, and return to the previous branch'
+cmd: git imerge remove && git checkout <previous_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Perform a merge or rebase between two Git branches incrementally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-imerge.md (CC-BY-4.0)
+tags:
+- git-imerge

@@ -1,0 +1,14 @@
+id: tldr-cargo-locate-project-1
+title: 'cargo-locate-project: Display the JSON object with full path to the `Cargo.toml`
+  manifest'
+cmd: cargo locate-project
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the full path to the `Cargo.toml` manifest of a project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-locate-project.md
+  (CC-BY-4.0)
+tags:
+- cargo-locate-project

@@ -1,0 +1,12 @@
+id: tldr-truncate-4
+title: 'truncate: Empty the file''s content'
+cmd: truncate <[-s|--size]> 0 <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Shrink or extend the size of a file to the specified size
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truncate.md (CC-BY-4.0)
+tags:
+- truncate

@@ -1,0 +1,13 @@
+id: tldr-git-check-ignore-3
+title: 'git-check-ignore: Use pathnames, one per line, from `stdin`'
+cmd: git < <path/to/file_list> check-ignore --stdin
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Analyze and debug Git ignore/exclude (`.gitignore`) files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-check-ignore.md
+  (CC-BY-4.0)
+tags:
+- git-check-ignore

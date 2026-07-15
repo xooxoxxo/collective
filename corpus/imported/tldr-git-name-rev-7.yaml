@@ -1,0 +1,13 @@
+id: tldr-git-name-rev-7
+title: 'git-name-rev: Restrict names to branch refs'
+cmd: git name-rev --refs refs/heads/ <commit-ish>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Describe a commit using existing ref names
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-name-rev.md
+  (CC-BY-4.0)
+tags:
+- git-name-rev

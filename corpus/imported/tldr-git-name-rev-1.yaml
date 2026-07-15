@@ -1,0 +1,13 @@
+id: tldr-git-name-rev-1
+title: 'git-name-rev: Show the name for `HEAD`'
+cmd: git name-rev HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Describe a commit using existing ref names
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-name-rev.md
+  (CC-BY-4.0)
+tags:
+- git-name-rev

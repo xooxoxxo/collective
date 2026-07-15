@@ -1,0 +1,13 @@
+id: mac-query-wifi-network-info
+title: Query detailed current Wi-Fi connection info
+cmd: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
+undo: ""
+platform: [macos]
+domains: [network, debugging]
+danger: low
+explanation: >
+  Shows SSID, BSSID, transmit rate, signal strength, noise level, and security type
+  of the current Wi-Fi connection. Much more detailed than `networksetup`. Path is
+  long but stable; alias it as 'airport' in shell profile.
+source: https://ss64.com/mac/
+tags: [wifi, network, signal, debugging, bssid]

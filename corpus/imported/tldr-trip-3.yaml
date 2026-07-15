@@ -1,0 +1,12 @@
+id: tldr-trip-3
+title: 'trip: Trace using `IPv6` only'
+cmd: sudo trip <example.com> --ipv6
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A network diagnostic tool
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trip.md (CC-BY-4.0)
+tags:
+- trip

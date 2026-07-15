@@ -1,0 +1,12 @@
+id: tldr-tred-2
+title: 'tred: Display help'
+cmd: tred -?
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compute the transitive reduction of directed graphs
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tred.md (CC-BY-4.0)
+tags:
+- tred

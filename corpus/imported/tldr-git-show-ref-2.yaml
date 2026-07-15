@@ -1,0 +1,13 @@
+id: tldr-git-show-ref-2
+title: 'git-show-ref: Show only heads references'
+cmd: git show-ref --branches
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for listing references
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-ref.md
+  (CC-BY-4.0)
+tags:
+- git-show-ref

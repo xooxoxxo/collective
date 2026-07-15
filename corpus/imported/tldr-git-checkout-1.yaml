@@ -1,0 +1,13 @@
+id: tldr-git-checkout-1
+title: 'git-checkout: Create and switch to a new branch'
+cmd: git checkout -b <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

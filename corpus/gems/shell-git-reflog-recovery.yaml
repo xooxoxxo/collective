@@ -1,0 +1,13 @@
+id: shell-git-reflog-recovery
+title: 'Recover a deleted branch from the reflog'
+cmd: git reflog && git checkout -b <branch> <reflog-hash>
+undo: ''
+platform: [macos, linux]
+domains: [git, debugging]
+danger: low
+explanation: >
+  git reflog shows all HEAD movements, including deleted branches.
+  Find the commit hash you want and check it out to a new branch.
+  Your "lost" work is usually still here—reflog retains entries for 90 days by default.
+source: https://git-scm.com/docs/git-reflog
+tags: [git, recovery, reflog, debugging]

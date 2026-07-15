@@ -1,0 +1,12 @@
+id: tldr-ssh-agent-2
+title: 'ssh-agent: Kill the currently running agent'
+cmd: ssh-agent -k
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Spawn an SSH Agent process
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-agent.md (CC-BY-4.0)
+tags:
+- ssh-agent

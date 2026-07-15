@@ -1,0 +1,13 @@
+id: tldr-git-instaweb-1
+title: 'git-instaweb: Launch a GitWeb server for the current Git repository'
+cmd: git instaweb --start
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Helper to launch a GitWeb server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-instaweb.md
+  (CC-BY-4.0)
+tags:
+- git-instaweb

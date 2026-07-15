@@ -1,0 +1,12 @@
+id: tldr-traceroute-3
+title: 'traceroute: Specify wait time in seconds for response'
+cmd: traceroute <[-w|--wait]> <0.5> <example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the route packets trace to network host
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/traceroute.md (CC-BY-4.0)
+tags:
+- traceroute

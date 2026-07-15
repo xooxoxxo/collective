@@ -1,0 +1,12 @@
+id: tldr-git-stage-1
+title: 'git-stage: View documentation for the original command'
+cmd: tldr git add
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `git add`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-stage.md (CC-BY-4.0)
+tags:
+- git-stage

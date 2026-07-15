@@ -1,0 +1,13 @@
+id: tldr-git-show-index-2
+title: 'git-show-index: Specify the hash algorithm for the index file (experimental)'
+cmd: git show-index --object-format <sha1|sha256> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the packed archive index of a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-index.md
+  (CC-BY-4.0)
+tags:
+- git-show-index

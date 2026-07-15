@@ -1,0 +1,12 @@
+id: tldr-git-clean-1
+title: 'git-clean: Interactively delete untracked files'
+cmd: git clean <[-i|--interactive]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files not tracked by Git from the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clean.md (CC-BY-4.0)
+tags:
+- git-clean

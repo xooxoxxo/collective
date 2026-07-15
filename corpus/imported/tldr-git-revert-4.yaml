@@ -1,0 +1,12 @@
+id: tldr-git-revert-4
+title: 'git-revert: Revert multiple commits'
+cmd: git revert <branch_name~5>..<branch_name~2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create new commits which reverse the effect of earlier ones
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-revert.md (CC-BY-4.0)
+tags:
+- git-revert

@@ -1,0 +1,13 @@
+id: tldr-git-rev-list-5
+title: 'git-rev-list: Print the number of commits since a specific tag'
+cmd: git rev-list <tag_name>..HEAD --count
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List revisions (commits) in reverse chronological order
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rev-list.md
+  (CC-BY-4.0)
+tags:
+- git-rev-list

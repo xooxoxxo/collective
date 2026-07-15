@@ -1,0 +1,13 @@
+id: tldr-cut-3
+title: 'cut: Split each line in a file by a delimiter into fields and print [f]ields
+  two and six (default delimiter is `TAB`)'
+cmd: cut -f 2,6 <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Cut out fields from `stdin` or files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/cut.md (CC-BY-4.0)
+tags:
+- cut

@@ -1,0 +1,13 @@
+id: tldr-git-annotate-3
+title: 'git-annotate: Print only rows that match a `regex`'
+cmd: git annotate -L :<regexp> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show commit hash and last author on each line of a file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-annotate.md
+  (CC-BY-4.0)
+tags:
+- git-annotate

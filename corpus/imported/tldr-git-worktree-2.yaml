@@ -1,0 +1,14 @@
+id: tldr-git-worktree-2
+title: 'git-worktree: Create a new directory with the specified branch checked out
+  into it'
+cmd: git worktree add <path/to/directory> <branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage multiple working trees attached to the same repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-worktree.md
+  (CC-BY-4.0)
+tags:
+- git-worktree

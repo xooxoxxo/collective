@@ -1,0 +1,12 @@
+id: tldr-git-config-5
+title: 'git-config: Use an alias'
+cmd: git <unstage>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage custom configuration options for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-config.md (CC-BY-4.0)
+tags:
+- git-config

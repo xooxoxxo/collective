@@ -1,0 +1,14 @@
+id: tldr-cargo-install-1
+title: 'cargo-install: Install a package from <https://crates.io> (the version is
+  optional - latest by default)'
+cmd: cargo install <package>@<version>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build and install a Rust binary
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-install.md
+  (CC-BY-4.0)
+tags:
+- cargo-install

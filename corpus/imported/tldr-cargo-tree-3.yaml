@@ -1,0 +1,13 @@
+id: tldr-cargo-tree-3
+title: 'cargo-tree: Do not display the given package (and its dependencies) in the
+  tree'
+cmd: cargo tree --prune <package_spec>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display a tree visualization of a dependency graph
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-tree.md (CC-BY-4.0)
+tags:
+- cargo-tree

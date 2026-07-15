@@ -1,0 +1,12 @@
+id: tldr-gzip-5
+title: 'gzip: Compress a file, specifying the output filename'
+cmd: gzip <[-c|--stdout]> <path/to/file> > <path/to/compressed_file.gz>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

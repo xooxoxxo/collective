@@ -1,0 +1,12 @@
+id: tldr-cargo-help-2
+title: 'cargo-help: Display help for a subcommand'
+cmd: cargo help <subcommand>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display help on `cargo` and its subcommands
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-help.md (CC-BY-4.0)
+tags:
+- cargo-help

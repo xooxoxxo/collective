@@ -1,0 +1,12 @@
+id: tldr-git-merge-5
+title: 'git-merge: Abort a merge in case of conflicts'
+cmd: git merge --abort
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge.md (CC-BY-4.0)
+tags:
+- git-merge

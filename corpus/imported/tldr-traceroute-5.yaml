@@ -1,0 +1,12 @@
+id: tldr-traceroute-5
+title: 'traceroute: Specify size in bytes of probing packet'
+cmd: traceroute <example.com> <42>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the route packets trace to network host
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/traceroute.md (CC-BY-4.0)
+tags:
+- traceroute

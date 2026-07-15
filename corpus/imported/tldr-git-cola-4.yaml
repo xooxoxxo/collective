@@ -1,0 +1,12 @@
+id: tldr-git-cola-4
+title: 'git-cola: Open the Git repository at mentioned path'
+cmd: git cola <[-r|--repo]> <path/to/git-repository>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A powerful Git GUI with a slick and intuitive user interface
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cola.md (CC-BY-4.0)
+tags:
+- git-cola

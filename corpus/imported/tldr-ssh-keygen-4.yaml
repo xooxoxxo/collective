@@ -1,0 +1,14 @@
+id: tldr-ssh-keygen-4
+title: 'ssh-keygen: Remove the keys of a host from the `known_hosts` file (useful
+  when a known host has a new key)'
+cmd: ssh-keygen -R <remote_host>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate SSH keys used for authentication, password-less logins, and
+  other things
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-keygen.md (CC-BY-4.0)
+tags:
+- ssh-keygen

@@ -1,0 +1,13 @@
+id: tldr-git-checkout-5
+title: 'git-checkout: Switch to an existing remote branch'
+cmd: git checkout <[-t|--track]> <remote_name>/<branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

@@ -1,0 +1,13 @@
+id: shell-comm-set-ops
+title: 'Find lines common to two sorted files (set operations)'
+cmd: comm <file1> <file2>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  comm compares two sorted files line-by-line and outputs three columns: unique to file1, unique to file2, common.
+  Use -1, -2, -3 to suppress columns (comm -12 shows only common lines).
+  Much faster than diff or grep for large files since it's O(n) instead of O(n²).
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/comm.html
+tags: [comm, set-operations, comparison, one-liner]

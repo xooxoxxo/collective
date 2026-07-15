@@ -1,0 +1,12 @@
+id: tldr-git-mr-1
+title: 'git-mr: Check out a specific merge request'
+cmd: git mr <mr_number>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out GitLab merge requests locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mr.md (CC-BY-4.0)
+tags:
+- git-mr

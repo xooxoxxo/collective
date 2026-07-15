@@ -1,0 +1,13 @@
+id: tldr-trafilatura-4
+title: 'trafilatura: Extract text from multiple URLs listed in a file'
+cmd: trafilatura <[-i|--input-file]> <path/to/url_list.txt>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A Python tool for web scraping and crawling that extracts main text,
+  metadata, and comments from web pages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trafilatura.md (CC-BY-4.0)
+tags:
+- trafilatura

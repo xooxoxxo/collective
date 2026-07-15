@@ -1,0 +1,12 @@
+id: tldr-cargo-check-1
+title: 'cargo-check: Check the current package'
+cmd: cargo <[c|check]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check a local package and all of its dependencies for errors
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-check.md (CC-BY-4.0)
+tags:
+- cargo-check

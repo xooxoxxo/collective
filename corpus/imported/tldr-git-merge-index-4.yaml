@@ -1,0 +1,13 @@
+id: tldr-git-merge-index-4
+title: 'git-merge-index: Quietly merge all files with a custom program'
+cmd: git merge-index -q <merge-program> -a
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run a merge program on files that need merging
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-index.md
+  (CC-BY-4.0)
+tags:
+- git-merge-index

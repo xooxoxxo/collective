@@ -1,0 +1,13 @@
+id: dot-display-sleep-battery
+title: "Set display sleep and machine sleep times for battery/AC"
+cmd: "sudo pmset -a displaysleep 15 && sudo pmset -b sleep 5 && sudo pmset -c sleep 0"
+undo: "sudo pmset -a displaysleep 10 && sudo pmset -b sleep 10 && sudo pmset -c sleep 0"
+platform: [macos]
+domains: [power, macos-admin]
+danger: medium
+explanation: >
+  Sets display to sleep after 15min on any power, machine to sleep after 5min on battery, never on AC.
+  Critical for battery life optimization on laptops; reduces idle energy drain.
+  Requires sudo; changes persist across reboots. Use pmset -g to view current settings.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [power, battery, sleep, energy, macos-admin]

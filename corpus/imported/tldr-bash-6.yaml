@@ -1,0 +1,12 @@
+id: tldr-bash-6
+title: 'bash: Execute a specific script and stop at the first [e]rror'
+cmd: bash -e <path/to/script.sh>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bourne-Again SHell, an `sh`-compatible command-line interpreter
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash.md (CC-BY-4.0)
+tags:
+- bash

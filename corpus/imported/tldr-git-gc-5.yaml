@@ -1,0 +1,12 @@
+id: tldr-git-gc-5
+title: 'git-gc: Display help'
+cmd: git gc --help
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Optimise the local repository by cleaning unnecessary files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gc.md (CC-BY-4.0)
+tags:
+- git-gc

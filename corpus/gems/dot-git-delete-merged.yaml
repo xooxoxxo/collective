@@ -1,0 +1,13 @@
+id: dot-git-delete-merged
+title: "Delete all merged local branches in one command"
+cmd: "alias gdmb='git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d'"
+undo: "unalias gdmb"
+platform: [macos, linux]
+domains: [git]
+danger: medium
+explanation: >
+  Removes all local branches that have been merged to current branch.
+  Critical cleanup after merges to prevent local branch bloat.
+  Only deletes merged branches; use -D flag to force-delete unmerged ones.
+source: "https://github.com/skwp/dotfiles"
+tags: [git, cleanup, branches, maintenance]

@@ -1,0 +1,12 @@
+id: tldr-sed-4
+title: 'sed: Print just a first line to `stdout`'
+cmd: <command> | sed -n '1p'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Edit text in a scriptable manner
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/sed.md (CC-BY-4.0)
+tags:
+- sed

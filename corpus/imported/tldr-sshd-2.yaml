@@ -1,0 +1,13 @@
+id: tldr-sshd-2
+title: 'sshd: Run sshd in the foreground'
+cmd: sshd -D
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure Shell Daemon - allows remote machines to securely log in to the
+  current machine
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshd.md (CC-BY-4.0)
+tags:
+- sshd

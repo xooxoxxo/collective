@@ -1,0 +1,13 @@
+id: tldr-git-cat-file-2
+title: 'git-cat-file: Get the [t]ype (blob, tree, commit, tag) of a given Git object'
+cmd: git cat-file -t <8c442dc3>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Provide content or type and size information for Git repository objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cat-file.md
+  (CC-BY-4.0)
+tags:
+- git-cat-file

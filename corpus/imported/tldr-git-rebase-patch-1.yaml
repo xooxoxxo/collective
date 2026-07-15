@@ -1,0 +1,13 @@
+id: tldr-git-rebase-patch-1
+title: 'git-rebase-patch: Find the commit the patch applies to and do a rebase'
+cmd: git rebase-patch <patch_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find the commit the patch applies to and do a rebase
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase-patch.md
+  (CC-BY-4.0)
+tags:
+- git-rebase-patch

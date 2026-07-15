@@ -1,0 +1,12 @@
+id: tldr-tarsnap-3
+title: 'tarsnap: List stored archives'
+cmd: tarsnap --list-archives --keyfile <path/to/key_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manipulate remote Tarsnap encrypted backups
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap.md (CC-BY-4.0)
+tags:
+- tarsnap

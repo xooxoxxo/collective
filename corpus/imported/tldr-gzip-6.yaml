@@ -1,0 +1,12 @@
+id: tldr-gzip-6
+title: 'gzip: Decompress a `gzip` archive specifying the output filename'
+cmd: gzip <[-cd|--stdout --decompress]> <path/to/file.gz> > <path/to/uncompressed_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

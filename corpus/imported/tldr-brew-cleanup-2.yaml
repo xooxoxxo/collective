@@ -1,0 +1,14 @@
+id: tldr-brew-cleanup-2
+title: 'brew-cleanup: Remove stale lock files and outdated downloads for a specific
+  formula/cask'
+cmd: brew cleanup <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove stale lock files and outdated downloads for all formulas and casks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-cleanup.md
+  (CC-BY-4.0)
+tags:
+- brew-cleanup

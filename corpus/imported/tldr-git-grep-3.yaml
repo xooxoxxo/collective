@@ -1,0 +1,12 @@
+id: tldr-git-grep-3
+title: 'git-grep: Search for a string, including submodules'
+cmd: git grep --recurse-submodules "<search_string>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find strings inside tracked files in a repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-grep.md (CC-BY-4.0)
+tags:
+- git-grep

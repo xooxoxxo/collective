@@ -1,0 +1,13 @@
+id: tldr-git-commit-tree-1
+title: 'git-commit-tree: Create a commit object with the specified message'
+cmd: git commit-tree <tree> -m "<message>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Low level utility to create commit objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit-tree.md
+  (CC-BY-4.0)
+tags:
+- git-commit-tree

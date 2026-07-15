@@ -1,0 +1,12 @@
+id: tldr-cargo-doc-3
+title: 'cargo-doc: Build and open the documentation in a browser'
+cmd: cargo <[d|doc]> --open
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-doc.md (CC-BY-4.0)
+tags:
+- cargo-doc

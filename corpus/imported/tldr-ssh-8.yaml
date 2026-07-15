@@ -1,0 +1,12 @@
+id: tldr-ssh-8
+title: 'ssh: Close a hanged session'
+cmd: <Enter><~><.>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure Shell is a protocol used to securely log onto remote systems
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh.md (CC-BY-4.0)
+tags:
+- ssh

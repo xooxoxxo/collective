@@ -1,0 +1,13 @@
+id: mac-prevent-sleep-while-charging
+title: Prevent Mac from sleeping while plugged in
+cmd: sudo pmset -c sleep 0
+undo: sudo pmset -c sleep 10
+platform: [macos]
+domains: [power, macos-admin]
+danger: medium
+explanation: >
+  Disables sleep when AC power is connected; useful during builds, long uploads, or server
+  mode operation. The '0' means never sleep on AC. Undo returns to 10-minute default.
+  Note: does not affect clamshell sleep; use 'clamshell 0' to disable that separately.
+source: https://ss64.com/mac/pmset.html
+tags: [power, sleep, ac-power, builds, development]

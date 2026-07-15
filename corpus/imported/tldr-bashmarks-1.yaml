@@ -1,0 +1,12 @@
+id: tldr-bashmarks-1
+title: 'bashmarks: Add the bashmark aliases to your shell'
+cmd: source /usr/share/bashmarks/bashmarks.sh
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Save and jump to commonly used directories using 1 character commands
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bashmarks.md (CC-BY-4.0)
+tags:
+- bashmarks

@@ -1,0 +1,12 @@
+id: tldr-sshfs-3
+title: 'sshfs: Mount remote directory from server with specific port'
+cmd: sshfs <username>@<remote_host>:<remote_directory> -p <2222>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Filesystem client based on SSH
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/sshfs.md (CC-BY-4.0)
+tags:
+- sshfs

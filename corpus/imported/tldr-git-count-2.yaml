@@ -1,0 +1,13 @@
+id: tldr-git-count-2
+title: 'git-count: Print the number of commits per contributor and the total number
+  of commits'
+cmd: git count --all
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the total number of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-count.md (CC-BY-4.0)
+tags:
+- git-count

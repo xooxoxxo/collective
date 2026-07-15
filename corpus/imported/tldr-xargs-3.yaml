@@ -1,0 +1,13 @@
+id: tldr-xargs-3
+title: 'xargs: Execute a new command with each argument'
+cmd: <arguments_source> | xargs <[-n|--max-args]> 1 <command>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command with piped arguments coming from another command, a
+  file, etc
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/xargs.md (CC-BY-4.0)
+tags:
+- xargs

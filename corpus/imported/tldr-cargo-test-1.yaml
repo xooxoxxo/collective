@@ -1,0 +1,12 @@
+id: tldr-cargo-test-1
+title: 'cargo-test: Only run tests containing a specific string in their names'
+cmd: cargo <[t|test]> <test_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute the unit and integration tests of a Rust package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-test.md (CC-BY-4.0)
+tags:
+- cargo-test

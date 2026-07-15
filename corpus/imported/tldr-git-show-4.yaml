@@ -1,0 +1,12 @@
+id: tldr-git-show-4
+title: 'git-show: Show information about the 3rd commit from the `HEAD` of a branch'
+cmd: git show <branch>~<3>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show various types of Git objects (commits, tags, etc.)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show.md (CC-BY-4.0)
+tags:
+- git-show

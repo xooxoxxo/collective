@@ -1,0 +1,13 @@
+id: mac-dump-system-database
+title: Query system preferences database
+cmd: sqlite3 ~/Library/Preferences/<domain>.plist 'SELECT * FROM properties;'
+undo: ""
+platform: [macos]
+domains: [debugging, macos-admin, files]
+danger: medium
+explanation: >
+  Some macOS preferences are stored as SQLite databases (newer macOS versions). Direct
+  access is risky—always backup ~/Library/Preferences first. Use with extreme caution;
+  corrupting this breaks app configs. For safe access use 'defaults read <domain>' instead.
+source: https://ss64.com/mac/sqlite3.html
+tags: [sqlite3, preferences, database, debugging, careful]

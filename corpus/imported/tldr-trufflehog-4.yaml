@@ -1,0 +1,14 @@
+id: tldr-trufflehog-4
+title: 'trufflehog: Scan a GitHub repository along with its Issues and Pull Requests'
+cmd: trufflehog github --repo <https://github.com/trufflesecurity/test_keys> --issue-comments
+  --pr-comments
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find and verify credentials in files, Git repositories, S3 buckets, and
+  Docker images
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trufflehog.md (CC-BY-4.0)
+tags:
+- trufflehog

@@ -1,0 +1,12 @@
+id: tldr-tar-2
+title: 'tar: [c]reate a g[z]ipped archive and write it to a [f]ile'
+cmd: tar czf <path/to/target.tar.gz> <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

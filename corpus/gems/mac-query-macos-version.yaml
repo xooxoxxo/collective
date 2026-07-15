@@ -1,0 +1,12 @@
+id: mac-query-macos-version
+title: Get macOS version details
+cmd: sw_vers
+undo: ""
+platform: [macos]
+domains: [debugging, macos-admin]
+danger: low
+explanation: >
+  Shows ProductName, ProductVersion, and BuildVersion. Alternative: 'defaults read /System/Library/CoreServices/SystemVersion ProductVersion'.
+  Useful in scripts to conditionally run commands based on OS version.
+source: https://ss64.com/mac/sw_vers.html
+tags: [version, macos, build, system-info, debugging]

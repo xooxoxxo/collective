@@ -1,0 +1,12 @@
+id: tldr-cargo-doc-2
+title: 'cargo-doc: Do not build documentation for dependencies'
+cmd: cargo <[d|doc]> --no-deps
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-doc.md (CC-BY-4.0)
+tags:
+- cargo-doc

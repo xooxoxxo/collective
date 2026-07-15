@@ -1,0 +1,13 @@
+id: dot-mkdir-cd
+title: "Create directory and change into it atomically"
+cmd: "mcd() { mkdir -p \"$@\" && cd \"${@:$#}\"; }"
+undo: "unset -f mcd"
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  Combines mkdir -p with cd in a single function; typical workflow in 1 keystroke.
+  Handles multiple dir creation with final dir as destination.
+  Saves countless two-command sequences during project setup.
+source: "https://github.com/thoughtbot/dotfiles"
+tags: [shell-function, navigation, directories, productivity]

@@ -1,0 +1,12 @@
+id: tldr-cargo-deb-4
+title: 'cargo-deb: Select which package to use in a Cargo workspace'
+cmd: cargo deb <[-p|--package]> <package_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create Debian packages from Cargo projects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-deb.md (CC-BY-4.0)
+tags:
+- cargo-deb

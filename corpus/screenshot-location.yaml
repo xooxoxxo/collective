@@ -1,0 +1,12 @@
+id: screenshot-location
+title: Change where macOS saves screenshots
+cmd: defaults write com.apple.screencapture location ~/Screenshots && killall SystemUIServer
+undo: defaults delete com.apple.screencapture location && killall SystemUIServer
+platform: [macos]
+domains: [macos-admin]
+danger: low
+explanation: >
+  Stops screenshots from littering the Desktop. Folder must exist first
+  (mkdir -p ~/Screenshots).
+source: https://macos-defaults.com/screenshots/location.html
+tags: [screenshot, defaults, desktop]

@@ -1,0 +1,13 @@
+id: tldr-git-delete-submodule-1
+title: 'git-delete-submodule: Delete a specific submodule'
+cmd: git delete-submodule <path/to/submodule>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Delete a submodule from a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-delete-submodule.md
+  (CC-BY-4.0)
+tags:
+- git-delete-submodule

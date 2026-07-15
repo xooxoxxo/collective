@@ -1,0 +1,13 @@
+id: tldr-tre-3
+title: 'tre: Print files and directories up to the specified depth limit (where 1
+  means the current directory)'
+cmd: tre <[-l|--limit]> <depth>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

@@ -1,0 +1,12 @@
+id: tldr-git-branch-8
+title: 'git-branch: Delete a remote branch'
+cmd: git push <remote_name> <[-d|--delete]> <remote_branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Main Git command for working with branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-branch.md (CC-BY-4.0)
+tags:
+- git-branch

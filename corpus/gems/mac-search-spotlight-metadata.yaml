@@ -1,0 +1,13 @@
+id: mac-search-spotlight-metadata
+title: Search files by Spotlight metadata
+cmd: mdfind <query>
+undo: ""
+platform: [macos]
+domains: [files, debugging]
+danger: low
+explanation: >
+  Fast metadata search using Spotlight index. Examples: 'mdfind -name "*.swift"',
+  'mdfind "kMDItemFSSize > 100000000"', 'mdfind "kMDItemContentType == com.apple.bundle"'.
+  Returns results from indexed file properties instantly.
+source: https://ss64.com/mac/mdfind.html
+tags: [mdfind, spotlight, search, metadata, file-queries]

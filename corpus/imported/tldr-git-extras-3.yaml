@@ -1,0 +1,12 @@
+id: tldr-git-extras-3
+title: 'git-extras: Display version'
+cmd: git extras <[-v|--version]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git extension pack
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-extras.md (CC-BY-4.0)
+tags:
+- git-extras

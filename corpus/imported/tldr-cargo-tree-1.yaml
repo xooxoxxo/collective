@@ -1,0 +1,12 @@
+id: tldr-cargo-tree-1
+title: 'cargo-tree: Show a dependency tree of the current project'
+cmd: cargo tree
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display a tree visualization of a dependency graph
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-tree.md (CC-BY-4.0)
+tags:
+- cargo-tree

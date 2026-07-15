@@ -1,0 +1,13 @@
+id: tldr-git-ignore-io-2
+title: 'git-ignore-io: Generate a `.gitignore` template'
+cmd: git ignore-io <item_a,item_b,...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate `.gitignore` files from predefined templates
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ignore-io.md
+  (CC-BY-4.0)
+tags:
+- git-ignore-io

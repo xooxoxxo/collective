@@ -1,0 +1,13 @@
+id: tldr-git-bundle-1
+title: 'git-bundle: Create a bundle file that contains all objects and references
+  of a specific branch'
+cmd: git bundle create <path/to/file.bundle> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Package objects and references into an archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bundle.md (CC-BY-4.0)
+tags:
+- git-bundle

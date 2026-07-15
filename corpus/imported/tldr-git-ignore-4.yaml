@@ -1,0 +1,12 @@
+id: tldr-git-ignore-4
+title: 'git-ignore: Ignore file(s) globally, updating global `.gitignore` file'
+cmd: git ignore <file_pattern> <[-g|--global]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show/update `.gitignore` files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-ignore.md (CC-BY-4.0)
+tags:
+- git-ignore

@@ -1,0 +1,12 @@
+id: tldr-git-fsck-2
+title: 'git-fsck: List all tags found'
+cmd: git fsck --tags
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Verify the validity and connectivity of nodes in a Git repository index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fsck.md (CC-BY-4.0)
+tags:
+- git-fsck

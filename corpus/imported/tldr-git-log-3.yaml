@@ -1,0 +1,12 @@
+id: tldr-git-log-3
+title: 'git-log: Show an overview of which file(s) changed in each commit'
+cmd: git log --stat
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

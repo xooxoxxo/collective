@@ -1,0 +1,12 @@
+id: tldr-cargo-fix-4
+title: 'cargo-fix: Fix the package''s library'
+cmd: cargo fix --lib
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Automatically fix lint warnings reported by `rustc`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fix.md (CC-BY-4.0)
+tags:
+- cargo-fix

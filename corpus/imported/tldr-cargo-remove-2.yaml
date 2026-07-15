@@ -1,0 +1,13 @@
+id: tldr-cargo-remove-2
+title: 'cargo-remove: Remove a development or build dependency'
+cmd: cargo remove --<dev|build> <dependency>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove dependencies from a Rust project's `Cargo.toml` manifest
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-remove.md
+  (CC-BY-4.0)
+tags:
+- cargo-remove

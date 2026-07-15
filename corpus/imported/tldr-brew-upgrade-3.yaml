@@ -1,0 +1,13 @@
+id: tldr-brew-upgrade-3
+title: 'brew-upgrade: Print what would be upgraded, but don''t actually upgrade anything'
+cmd: brew upgrade <[-n|--dry-run]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Upgrade outdated formulae and casks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-upgrade.md
+  (CC-BY-4.0)
+tags:
+- brew-upgrade

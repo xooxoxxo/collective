@@ -1,0 +1,13 @@
+id: shell-awk-field-arithmetic
+title: 'Extract and sum numeric fields across records'
+cmd: awk '{sum += $<n>} END {print sum}' <file>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  awk processes text line-by-line, extracting columns by position ($1, $2, etc.) and accumulating sums in a single pass.
+  Way faster than piping to sort/uniq/paste.
+  Use for log analysis (sum column of timings), CSV stats, or counting occurrences.
+source: https://www.gnu.org/software/gawk/manual/gawk.html#Getting-Started
+tags: [awk, columnar, statistics, one-liner]

@@ -1,0 +1,14 @@
+id: blog-btop-resource-dashboard
+title: 'Modern system resource dashboard'
+cmd: btop
+undo: ''
+platform: [macos, linux]
+domains: [power, debugging]
+danger: low
+explanation: >
+  btop (BPytop++) is a modern alternative to top/htop with GPU and disk I/O views.
+  Install: `brew install btop`. Shows real-time CPU, memory, network, disk, and processes.
+  Press q to quit, h for help. More colorful and information-dense than htop.
+  Great for spotting I/O bottlenecks and understanding system load at a glance.
+source: https://github.com/aristocratos/btop
+tags: [btop, top, monitoring, dashboard, modern, system]

@@ -1,0 +1,12 @@
+id: tldr-brew-1
+title: 'brew: Install the latest stable version of a formula or cask'
+cmd: brew install <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Homebrew - a package manager for macOS and Linux
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew.md (CC-BY-4.0)
+tags:
+- brew

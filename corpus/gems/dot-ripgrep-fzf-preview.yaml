@@ -1,0 +1,13 @@
+id: dot-ripgrep-fzf-preview
+title: "Search files with ripgrep and preview with syntax highlighting via fzf"
+cmd: "rg --files --color=always | fzf --ansi --preview 'bat --color=always {} 2>/dev/null | head -100'"
+undo: ""
+platform: [macos, linux]
+domains: [shell, files, debugging]
+danger: low
+explanation: >
+  Combines ripgrep's fast search with fzf's interactive picker and bat's syntax highlighting.
+  Requires rg, fzf, and bat; shows live previews of file content while searching.
+  Essential for navigating large codebases; beats grep + less.
+source: "https://kindatechnical.com/shell-scripting-bash/modern-cli-tools-fzf-ripgrep-bat-fd-eza/"
+tags: [ripgrep, fzf, bat, files, search, preview]

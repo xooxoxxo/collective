@@ -1,0 +1,12 @@
+id: tldr-awk-4
+title: 'awk: Sum the values in the first column of a file and print the total'
+cmd: awk '{s+=$1} END {print s}' <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile programming language for working on files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/awk.md (CC-BY-4.0)
+tags:
+- awk

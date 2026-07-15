@@ -1,0 +1,12 @@
+id: tldr-tarsnap-7
+title: 'tarsnap: Copy an archive'
+cmd: tarsnap -c --keyfile <path/to/key_file> -f <new_archive_name> @@<source_archive_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manipulate remote Tarsnap encrypted backups
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap.md (CC-BY-4.0)
+tags:
+- tarsnap

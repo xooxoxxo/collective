@@ -1,0 +1,13 @@
+id: tldr-git-lfs-3
+title: 'git-lfs: Change the Git LFS endpoint URL (useful if the LFS server is separate
+  from the Git server)'
+cmd: git config <[-f|--file]> .lfsconfig lfs.url <lfs_endpoint_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Work with large files in Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-lfs.md (CC-BY-4.0)
+tags:
+- git-lfs

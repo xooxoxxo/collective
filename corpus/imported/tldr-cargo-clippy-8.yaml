@@ -1,0 +1,14 @@
+id: tldr-cargo-clippy-8
+title: 'cargo-clippy: Apply Clippy suggestions automatically'
+cmd: cargo clippy --fix
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of lints to catch common mistakes and improve your Rust
+  code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-clippy.md
+  (CC-BY-4.0)
+tags:
+- cargo-clippy

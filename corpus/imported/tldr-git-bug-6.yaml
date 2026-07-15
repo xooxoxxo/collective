@@ -1,0 +1,13 @@
+id: tldr-git-bug-6
+title: 'git-bug: Filter and sort bugs using a query'
+cmd: git bug ls "<status>:<open> <sort>:<edit>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A distributed bug tracker that uses Git's internal storage, so no files
+  are added in your project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bug.md (CC-BY-4.0)
+tags:
+- git-bug

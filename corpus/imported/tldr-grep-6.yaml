@@ -1,0 +1,12 @@
+id: tldr-grep-6
+title: 'grep: Print only the matched text'
+cmd: grep <[-o|--only-matching]> "<search_pattern>" <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

@@ -1,0 +1,12 @@
+id: tldr-git-add-8
+title: 'git-add: Interactively stage a file'
+cmd: git add <[-i|--interactive]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Stage changed files for a commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-add.md (CC-BY-4.0)
+tags:
+- git-add

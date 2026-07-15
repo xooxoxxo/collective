@@ -1,0 +1,12 @@
+id: tldr-git-log-5
+title: 'git-log: Show a graph of all commits, tags, and branches in the entire repo'
+cmd: git log --oneline --decorate --all --graph
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

@@ -1,0 +1,14 @@
+id: tldr-git-sparse-checkout-2
+title: 'git-sparse-checkout: Disable sparse-checkout and restore full repository'
+cmd: git sparse-checkout disable
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out only part of a repository's files instead of cloning or checking
+  out everything
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sparse-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-sparse-checkout

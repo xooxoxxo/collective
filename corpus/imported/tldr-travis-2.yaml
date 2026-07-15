@@ -1,0 +1,12 @@
+id: tldr-travis-2
+title: 'travis: List repositories the user has permissions on'
+cmd: travis repos
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Interface with Travis CI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/travis.md (CC-BY-4.0)
+tags:
+- travis

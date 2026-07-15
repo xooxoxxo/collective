@@ -1,0 +1,12 @@
+id: tldr-git-repl-4
+title: 'git-repl: Exit the interactive Git shell (or press `<Ctrl d>`)'
+cmd: exit
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git REPL (read-evaluate-print-loop) - an interactive Git shell
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-repl.md (CC-BY-4.0)
+tags:
+- git-repl

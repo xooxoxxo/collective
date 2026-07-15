@@ -1,0 +1,12 @@
+id: tldr-git-tag-3
+title: 'git-tag: Create a tag with the given name pointing to a given commit'
+cmd: git tag <tag_name> <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, delete, or verify tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-tag.md (CC-BY-4.0)
+tags:
+- git-tag

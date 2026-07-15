@@ -1,0 +1,13 @@
+id: tldr-curl-7
+title: 'curl: Pass client certificate and private key for the request, skipping certificate
+  validation'
+cmd: curl <[-E|--cert]> <client.pem> --key <key.pem> <[-k|--insecure]> <https://example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

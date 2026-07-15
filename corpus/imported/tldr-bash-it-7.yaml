@@ -1,0 +1,14 @@
+id: tldr-bash-it-7
+title: 'bash-it: Search for Bash-it aliases/plugins/completions and enable/disable
+  all found items'
+cmd: bash-it search --<enable|disable> <alias|plugin|completion>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of community contributed Bash commands and scripts for Bash
+  3.2+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash-it.md (CC-BY-4.0)
+tags:
+- bash-it

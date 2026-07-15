@@ -1,0 +1,14 @@
+id: tldr-find-7
+title: 'find: Find all files modified today and pass the results to a single command
+  as arguments'
+cmd: find <path/to/directory> -daystart -mtime <-1> -exec <tar -cvf archive.tar> {}
+  \+
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find files or directories under a directory tree, recursively
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/find.md (CC-BY-4.0)
+tags:
+- find

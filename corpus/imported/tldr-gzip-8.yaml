@@ -1,0 +1,12 @@
+id: tldr-gzip-8
+title: 'gzip: List the contents of a compressed file'
+cmd: gzip <[-l|--list]> <path/to/file.txt.gz>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

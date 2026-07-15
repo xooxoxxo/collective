@@ -1,0 +1,15 @@
+id: tldr-git-bugreport-3
+title: 'git-bugreport: Create a new bug report file with the specified filename suffix
+  in `strftime` format'
+cmd: git bugreport <[-s|--suffix]> <%m%d%y>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Capture debug information from the system and user, generating a text
+  file to aid in the reporting of a bug in Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bugreport.md
+  (CC-BY-4.0)
+tags:
+- git-bugreport

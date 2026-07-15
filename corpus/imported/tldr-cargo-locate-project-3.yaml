@@ -1,0 +1,14 @@
+id: tldr-cargo-locate-project-3
+title: 'cargo-locate-project: Display the `Cargo.toml` manifest located at the root
+  of the workspace as opposed to the current workspace member'
+cmd: cargo locate-project --workspace
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the full path to the `Cargo.toml` manifest of a project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-locate-project.md
+  (CC-BY-4.0)
+tags:
+- cargo-locate-project

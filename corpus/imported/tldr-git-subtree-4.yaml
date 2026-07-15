@@ -1,0 +1,12 @@
+id: tldr-git-subtree-4
+title: 'git-subtree: Push commits to a subtree repository'
+cmd: git subtree push <[-P|--prefix]> <path/to/directory> <repository_url> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge subtrees together or split repository into subtrees
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-subtree.md (CC-BY-4.0)
+tags:
+- git-subtree

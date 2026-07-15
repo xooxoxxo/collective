@@ -1,0 +1,13 @@
+id: dot-disk-space-report
+title: "Show disk space usage in human-readable format"
+cmd: "alias diskspace_report='df -h /'"
+undo: "unalias diskspace_report"
+platform: [macos, linux]
+domains: [disk, debugging]
+danger: low
+explanation: >
+  Displays disk usage on root volume in human-readable units (GB, MB).
+  One-off check for available space; more detailed analysis with du -sh.
+  Common first diagnostic for out-of-space issues.
+source: "https://github.com/paulirish/dotfiles"
+tags: [disk, storage, monitoring, debugging]

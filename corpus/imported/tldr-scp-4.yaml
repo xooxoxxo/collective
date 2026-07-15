@@ -1,0 +1,13 @@
+id: tldr-scp-4
+title: 'scp: Recursively copy the contents of a directory from a remote host to a
+  local directory'
+cmd: scp -r <remote_host>:<path/to/remote_directory> <path/to/local_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure copy
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/scp.md (CC-BY-4.0)
+tags:
+- scp

@@ -1,0 +1,13 @@
+id: tldr-cargo-login-2
+title: 'cargo-login: Use the specified registry (registry names can be defined in
+  the configuration - the default is <https://crates.io>)'
+cmd: cargo login --registry <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Save an API token from the registry locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-login.md (CC-BY-4.0)
+tags:
+- cargo-login

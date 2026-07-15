@@ -1,0 +1,12 @@
+id: tldr-cut-1
+title: 'cut: Print the fifth [c]haracter on each line'
+cmd: <command> | cut -c 5
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Cut out fields from `stdin` or files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/cut.md (CC-BY-4.0)
+tags:
+- cut

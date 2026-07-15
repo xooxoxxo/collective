@@ -1,0 +1,14 @@
+id: tldr-cargo-verify-project-2
+title: 'cargo-verify-project: Check the correctness of the specified manifest file'
+cmd: cargo verify-project --manifest-path <path/to/Cargo.toml>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check the correctness of the `Cargo.toml` manifest and print the result
+  as a JSON object
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-verify-project.md
+  (CC-BY-4.0)
+tags:
+- cargo-verify-project

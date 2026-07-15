@@ -1,0 +1,12 @@
+id: tldr-find-1
+title: 'find: Find files by extension'
+cmd: find <path/to/directory> -name '<*.ext>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find files or directories under a directory tree, recursively
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/find.md (CC-BY-4.0)
+tags:
+- find

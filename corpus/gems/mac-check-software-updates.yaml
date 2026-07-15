@@ -1,0 +1,13 @@
+id: mac-check-software-updates
+title: Check available software updates without installing
+cmd: softwareupdate -l
+undo: ""
+platform: [macos]
+domains: [macos-admin, debugging]
+danger: low
+explanation: >
+  Lists available updates without downloading. Use '-d' to download without installing,
+  or '-i -a' to download and install all. Useful for CI/CD or scheduled update checks.
+  Requires admin privileges.
+source: https://ss64.com/mac/softwareupdate.html
+tags: [softwareupdate, updates, macos-updates, system-maintenance]

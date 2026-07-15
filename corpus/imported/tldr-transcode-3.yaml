@@ -1,0 +1,13 @@
+id: tldr-transcode-3
+title: 'transcode: Resize the video to 640x480 pixels and convert to MPEG4 codec using
+  XviD'
+cmd: transcode -Z 640x480 -i <input_file> -y xvid -o <output_file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transcode video and audio codecs, and convert between media formats
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transcode.md (CC-BY-4.0)
+tags:
+- transcode

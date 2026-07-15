@@ -1,0 +1,12 @@
+id: tldr-git-annex-6
+title: 'git-annex: Display help'
+cmd: git annex help
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage files with Git, without checking their contents in
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-annex.md (CC-BY-4.0)
+tags:
+- git-annex

@@ -1,0 +1,13 @@
+id: tldr-git-merge-one-file-3
+title: 'git-merge-one-file: Handle a binary file merge'
+cmd: git merge-one-file -p <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Resolve a single file merge after a trivial merge
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-one-file.md
+  (CC-BY-4.0)
+tags:
+- git-merge-one-file

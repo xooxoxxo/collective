@@ -1,0 +1,15 @@
+id: tldr-brew-services-5
+title: 'brew-services: Stop (if necessary) and start the service immediately and register
+  it to launch at login (or boot)'
+cmd: brew services restart <formula>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage background services with `launchctl` on macOS or `systemctl` on
+  Linux
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-services.md
+  (CC-BY-4.0)
+tags:
+- brew-services

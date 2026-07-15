@@ -1,0 +1,12 @@
+id: tldr-traceroute-2
+title: 'traceroute: Disable IP address and host name mapping'
+cmd: traceroute -n <example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the route packets trace to network host
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/traceroute.md (CC-BY-4.0)
+tags:
+- traceroute

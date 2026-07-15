@@ -1,0 +1,15 @@
+id: tldr-cargo-metadata-3
+title: 'cargo-metadata: Print metadata in a specific format based on the specified
+  version'
+cmd: cargo metadata --format-version <version>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Output the workspace members and resolved dependencies of current package
+  as JSON
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-metadata.md
+  (CC-BY-4.0)
+tags:
+- cargo-metadata

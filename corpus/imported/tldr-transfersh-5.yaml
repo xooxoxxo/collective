@@ -1,0 +1,12 @@
+id: tldr-transfersh-5
+title: 'transfersh: Upload all files from a directory recursively'
+cmd: transfersh <[-r|--recursive]> <path/to/directory>/
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An unofficial client for transfer.sh
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transfersh.md (CC-BY-4.0)
+tags:
+- transfersh

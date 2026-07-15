@@ -1,0 +1,13 @@
+id: tldr-transmission-1
+title: 'transmission: View documentation for running Transmission''s daemon'
+cmd: tldr transmission-daemon
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A simple torrent client
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission.md
+  (CC-BY-4.0)
+tags:
+- transmission

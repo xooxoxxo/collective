@@ -1,0 +1,12 @@
+id: tldr-cargo-init-5
+title: 'cargo-init: Set the package name (default: directory name)'
+cmd: cargo init --name <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a new Cargo package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-init.md (CC-BY-4.0)
+tags:
+- cargo-init

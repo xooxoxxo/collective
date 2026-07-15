@@ -1,0 +1,13 @@
+id: tldr-git-merge-base-3
+title: 'git-merge-base: Check if a commit is an ancestor of a specific commit'
+cmd: git merge-base --is-ancestor <ancestor_commit> <commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find a common ancestor of two commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-base.md
+  (CC-BY-4.0)
+tags:
+- git-merge-base

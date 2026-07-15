@@ -1,0 +1,13 @@
+id: tldr-git-bundle-7
+title: 'git-bundle: Unbundle a specific branch from a bundle file into the current
+  repository'
+cmd: git pull <path/to/file.bundle> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Package objects and references into an archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bundle.md (CC-BY-4.0)
+tags:
+- git-bundle

@@ -1,0 +1,12 @@
+id: tldr-try-rs-3
+title: 'try-rs: Clone a repository into a dated folder'
+cmd: try-rs <https://github.com/user/repository>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage temporary project workspaces with an interactive TUI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/try-rs.md (CC-BY-4.0)
+tags:
+- try-rs

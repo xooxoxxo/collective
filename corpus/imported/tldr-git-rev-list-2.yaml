@@ -1,0 +1,14 @@
+id: tldr-git-rev-list-2
+title: 'git-rev-list: Print the latest commit that changed (add/edit/remove) a specific
+  file on the current branch'
+cmd: git rev-list <[-n|--max-count]> 1 HEAD -- <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List revisions (commits) in reverse chronological order
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rev-list.md
+  (CC-BY-4.0)
+tags:
+- git-rev-list

@@ -1,0 +1,12 @@
+id: tldr-transcrypt-5
+title: 'transcrypt: Rekey to change the encryption cipher or password'
+cmd: transcrypt <[-r|--rekey]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transparently encrypt files within a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transcrypt.md (CC-BY-4.0)
+tags:
+- transcrypt

@@ -1,0 +1,14 @@
+id: tldr-git-submodule-7
+title: 'git-submodule: Unregister a submodule (e.g. before removing it from the repository
+  with `git rm`)'
+cmd: git submodule deinit <path/to/submodule>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Inspect, update, and manage submodules
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-submodule.md
+  (CC-BY-4.0)
+tags:
+- git-submodule

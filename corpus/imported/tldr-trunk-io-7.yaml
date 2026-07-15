@@ -1,0 +1,12 @@
+id: tldr-trunk-io-7
+title: 'trunk.io: Print an action''s execution history'
+cmd: trunk actions history <action>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run linters, formatters, and security analyzers on code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.io.md (CC-BY-4.0)
+tags:
+- trunk-io

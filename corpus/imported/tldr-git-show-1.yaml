@@ -1,0 +1,13 @@
+id: tldr-git-show-1
+title: 'git-show: Show information about the latest commit (hash, message, changes,
+  and other metadata)'
+cmd: git show
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show various types of Git objects (commits, tags, etc.)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show.md (CC-BY-4.0)
+tags:
+- git-show

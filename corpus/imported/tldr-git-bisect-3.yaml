@@ -1,0 +1,12 @@
+id: tldr-git-bisect-3
+title: 'git-bisect: End the bisect session and return to the previous branch'
+cmd: git bisect reset
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Use binary search to find the commit that introduced a bug
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bisect.md (CC-BY-4.0)
+tags:
+- git-bisect

@@ -1,0 +1,13 @@
+id: tldr-trufflehog-6
+title: 'trufflehog: Scan S3 buckets using IAM Roles'
+cmd: trufflehog s3 --role-arn <iam-role-arn>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find and verify credentials in files, Git repositories, S3 buckets, and
+  Docker images
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trufflehog.md (CC-BY-4.0)
+tags:
+- trufflehog

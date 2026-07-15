@@ -1,0 +1,14 @@
+id: tldr-cargo-yank-3
+title: 'cargo-yank: Use the specified registry (registry names can be defined in the
+  configuration - the default is <https://crates.io>)'
+cmd: cargo yank --registry <name> <crate>@<version>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove a pushed crate from the index. This should only be used when you
+  accidentally release a significantly broken crate
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-yank.md (CC-BY-4.0)
+tags:
+- cargo-yank

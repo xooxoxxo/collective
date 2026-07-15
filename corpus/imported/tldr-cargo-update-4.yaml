@@ -1,0 +1,13 @@
+id: tldr-cargo-update-4
+title: 'cargo-update: Set a specific dependency to a specific version'
+cmd: cargo update --package <dependency> --precise <1.2.3>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Update dependencies as recorded in `Cargo.lock`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-update.md
+  (CC-BY-4.0)
+tags:
+- cargo-update

@@ -1,0 +1,12 @@
+id: tldr-git-remote-1
+title: 'git-remote: List existing remotes with their names and URLs'
+cmd: git remote <[-v|--verbose]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage set of tracked repositories ("remotes")
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-remote.md (CC-BY-4.0)
+tags:
+- git-remote

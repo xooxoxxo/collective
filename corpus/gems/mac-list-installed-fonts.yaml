@@ -1,0 +1,13 @@
+id: mac-list-installed-fonts
+title: List all installed fonts
+cmd: fc-list
+undo: ""
+platform: [macos]
+domains: [macos-admin, media]
+danger: low
+explanation: >
+  Uses FontConfig to list every available font (requires 'brew install fontconfig').
+  Alternative: 'ls /Library/Fonts' shows only user fonts. fc-list is more complete
+  and shows system, user, and app-specific fonts.
+source: https://ss64.com/mac/
+tags: [fonts, typography, fontconfig, system-fonts, media]

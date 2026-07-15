@@ -1,0 +1,13 @@
+id: tldr-curl-8
+title: 'curl: Resolve a hostname to a custom IP address, with verbose output (similar
+  to editing the `/etc/hosts` file for custom DNS resolution)'
+cmd: curl <[-v|--verbose]> --resolve <example.com>:<80>:<127.0.0.1> <http://example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

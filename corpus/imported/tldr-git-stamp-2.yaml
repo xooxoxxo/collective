@@ -1,0 +1,13 @@
+id: tldr-git-stamp-2
+title: 'git-stamp: Stamp the last commit message linking it to its review page'
+cmd: git stamp <Review https://example.org/path/to/review>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Stamp the last commit message, with the possibility to reference the
+  issues numbers from your bug tracker or link to its review page
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-stamp.md (CC-BY-4.0)
+tags:
+- git-stamp

@@ -1,0 +1,12 @@
+id: tldr-git-brv-1
+title: 'git-brv: List each branch showing date, latest commit hash, and message'
+cmd: git brv
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print a list of branches, sorted by last commit date
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-brv.md (CC-BY-4.0)
+tags:
+- git-brv

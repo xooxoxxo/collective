@@ -1,0 +1,14 @@
+id: tldr-git-stripspace-2
+title: 'git-stripspace: Trim whitespace and Git comments from a file'
+cmd: cat <path/to/file> | git stripspace <[-s|--strip-comments]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Read text (e.g. commit messages, notes, tags, and branch descriptions)
+  from `stdin` and clean it into the manner used by Git
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-stripspace.md
+  (CC-BY-4.0)
+tags:
+- git-stripspace

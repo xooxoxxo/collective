@@ -1,0 +1,12 @@
+id: tldr-curl-1
+title: 'curl: Make an HTTP GET request and dump the contents in `stdout`'
+cmd: curl <https://example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

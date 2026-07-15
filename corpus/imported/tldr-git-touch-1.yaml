@@ -1,0 +1,12 @@
+id: tldr-git-touch-1
+title: 'git-touch: Create new files and add them to the index'
+cmd: git touch <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create new files and add them to the index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-touch.md (CC-BY-4.0)
+tags:
+- git-touch

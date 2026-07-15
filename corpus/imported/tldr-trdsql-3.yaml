@@ -1,0 +1,14 @@
+id: tldr-trdsql-3
+title: 'trdsql: Manipulate complex SQL query with data from multiple CSV files with
+  first line is header (`-ih`)'
+cmd: trdsql -icsv -ih "SELECT <column1,column2> FROM <path/to/file*.csv> WHERE column2
+  != '' ORDER BY <column1> GROUP BY <column1>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

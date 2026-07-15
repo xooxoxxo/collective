@@ -1,0 +1,13 @@
+id: tldr-tr-4
+title: 'tr: Delete all occurrences of the specified set of characters from the input'
+cmd: tr < <path/to/file> <[-d|--delete]> '<input_characters>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: 'Translate characters: run replacements based on single characters and
+  character sets'
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tr.md (CC-BY-4.0)
+tags:
+- tr

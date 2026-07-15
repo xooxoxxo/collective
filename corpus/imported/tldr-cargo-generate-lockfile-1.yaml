@@ -1,0 +1,15 @@
+id: tldr-cargo-generate-lockfile-1
+title: 'cargo-generate-lockfile: Generate a `Cargo.lock` file with the latest version
+  of every package'
+cmd: cargo generate-lockfile
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate the `Cargo.lock` file for the current package. Similar to `cargo
+  update`, but has less options
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-generate-lockfile.md
+  (CC-BY-4.0)
+tags:
+- cargo-generate-lockfile

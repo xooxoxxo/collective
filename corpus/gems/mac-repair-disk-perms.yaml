@@ -1,0 +1,13 @@
+id: mac-repair-disk-perms
+title: Repair disk permissions (APFS volumes)
+cmd: diskutil verifyVolume /
+undo: ""
+platform: [macos]
+domains: [disk, macos-admin]
+danger: low
+explanation: >
+  Checks the system volume for filesystem errors without repairing (read-only verify).
+  For actual repair use 'diskutil repairVolume /'. Modern APFS doesn't support traditional
+  permission repair like older HFS+, but this checks integrity.
+source: https://ss64.com/mac/diskutil.html
+tags: [disk, filesystem, apfs, verify, maintenance]

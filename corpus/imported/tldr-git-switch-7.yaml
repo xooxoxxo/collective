@@ -1,0 +1,12 @@
+id: tldr-git-switch-7
+title: 'git-switch: Switch to a tag or commit'
+cmd: git switch <[-d|--detach]> <tag|commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Switch between Git branches. Requires Git version 2.23+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-switch.md (CC-BY-4.0)
+tags:
+- git-switch

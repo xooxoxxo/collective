@@ -1,0 +1,15 @@
+id: tldr-curl-5
+title: 'curl: Send a request with an extra header, using a custom HTTP method and
+  over a proxy (such as BurpSuite), ignoring insecure self-signed certificates'
+cmd: 'curl <[-k|--insecure]> <[-x|--proxy]> <http://127.0.0.1:8080> <[-H|--header]>
+  ''<Authorization: Bearer token>'' <[-X|--request]> <GET|PUT|POST|DELETE|PATCH|...>
+  <https://example.com>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transfers data from or to a server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/curl.md (CC-BY-4.0)
+tags:
+- curl

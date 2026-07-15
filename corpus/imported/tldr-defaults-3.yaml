@@ -1,0 +1,12 @@
+id: tldr-defaults-3
+title: 'defaults: Search for a keyword in domain names, keys, and values'
+cmd: defaults find "<keyword>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Read and write macOS user configuration for applications
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/defaults.md (CC-BY-4.0)
+tags:
+- defaults

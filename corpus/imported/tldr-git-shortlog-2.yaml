@@ -1,0 +1,14 @@
+id: tldr-git-shortlog-2
+title: 'git-shortlog: View a summary of all the commits made, sorted by the number
+  of commits made'
+cmd: git shortlog <[-n|--numbered]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Summarizes the `git log` output
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-shortlog.md
+  (CC-BY-4.0)
+tags:
+- git-shortlog

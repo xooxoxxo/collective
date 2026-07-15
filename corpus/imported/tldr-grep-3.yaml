@@ -1,0 +1,13 @@
+id: tldr-grep-3
+title: 'grep: Search for a pattern in all files recursively in a directory, ignoring
+  binary files'
+cmd: grep <[-rI|--recursive --binary-files=without-match]> "<search_pattern>" <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

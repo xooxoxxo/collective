@@ -1,0 +1,13 @@
+id: tldr-git-mktree-1
+title: 'git-mktree: Build a tree object and verify that each tree entry''s hash identifies
+  an existing object'
+cmd: git mktree
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build a tree object using `ls-tree` formatted text
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mktree.md (CC-BY-4.0)
+tags:
+- git-mktree

@@ -1,0 +1,14 @@
+id: tldr-trdsql-1
+title: 'trdsql: Convert object data from multiple JSON files to a CSV file with header
+  (`-oh`) and double quote'
+cmd: trdsql -ocsv -oh "SELECT * FROM <path/to/directory/*.json>" | sed 's/\([^,]*\)/"&"/g'
+  > <path/to/file.csv>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

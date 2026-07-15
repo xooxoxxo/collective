@@ -1,0 +1,13 @@
+id: mac-rebuild-launch-database
+title: Rebuild the launch services database
+cmd: /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+undo: ""
+platform: [macos]
+domains: [macos-admin, debugging]
+danger: medium
+explanation: >
+  Rebuilds the database of file associations and launch handlers. Fixes "cannot open
+  with" menus, broken file icons, or apps not appearing in Spotlight. Rebuilds are
+  triggered automatically but this forces immediate rebuild. Takes 1-2 minutes.
+source: https://ss64.com/mac/lsregister.html
+tags: [launchservices, file-associations, apps, database, icons]

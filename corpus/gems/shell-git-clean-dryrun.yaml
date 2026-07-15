@@ -1,0 +1,13 @@
+id: shell-git-clean-dryrun
+title: 'Show what git clean will delete (always preview first)'
+cmd: git clean -n -d -x
+undo: ''
+platform: [macos, linux]
+domains: [git, files]
+danger: high
+explanation: >
+  git clean -n shows what will be deleted without doing it; -d includes directories; -x includes ignored files.
+  Always run with -n first to verify you're not nuking something important.
+  Remove -n (git clean -d -x -f) to actually delete. Use interactively (-i) if unsure.
+source: https://git-scm.com/docs/git-clean
+tags: [git, clean, destructive, preview]

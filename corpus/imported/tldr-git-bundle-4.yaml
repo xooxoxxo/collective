@@ -1,0 +1,12 @@
+id: tldr-git-bundle-4
+title: 'git-bundle: Create a bundle file of the latest 7 days'
+cmd: git bundle create <path/to/file.bundle> --since 7.days <HEAD>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Package objects and references into an archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bundle.md (CC-BY-4.0)
+tags:
+- git-bundle

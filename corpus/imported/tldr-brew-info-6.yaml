@@ -1,0 +1,12 @@
+id: tldr-brew-info-6
+title: 'brew-info: Display help'
+cmd: brew info <[-h|--help]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display information for Homebrew installation and formulae
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-info.md (CC-BY-4.0)
+tags:
+- brew-info

@@ -1,0 +1,13 @@
+id: tldr-gzip-7
+title: 'gzip: Specify the compression level. 1 is the fastest (low compression), 9
+  is the slowest (high compression), 6 is the default'
+cmd: gzip -<1..9> <[-c|--stdout]> <path/to/file> > <path/to/compressed_file.gz>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

@@ -1,0 +1,13 @@
+id: dot-reduce-transparency
+title: "Disable macOS transparency effects for faster rendering"
+cmd: "defaults write com.apple.universalaccess reduceTransparency -bool true"
+undo: "defaults write com.apple.universalaccess reduceTransparency -bool false"
+platform: [macos]
+domains: [macos-admin, power]
+danger: low
+explanation: >
+  Removes visual transparency/blur effects from menu bar, windows, and UI elements.
+  Improves rendering performance on older Macs and reduces GPU load.
+  Requires logout/restart to take effect.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [performance, ui, rendering, accessibility]

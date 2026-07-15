@@ -1,0 +1,14 @@
+id: tldr-launchctl-1
+title: 'launchctl: Activate a user-specific agent to be loaded into `launchd` whenever
+  the user logs in'
+cmd: launchctl load ~/Library/LaunchAgents/<my_script>.plist
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Control Apple's `launchd` manager for launch daemons (system-wide services)
+  and launch agents (per-user programs)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/launchctl.md (CC-BY-4.0)
+tags:
+- launchctl

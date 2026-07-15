@@ -1,0 +1,13 @@
+id: tldr-transmission-daemon-3
+title: 'transmission-daemon: Dump daemon settings in JSON format'
+cmd: transmission-daemon <[-d|--dump-settings]> > <path/to/file.json>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Daemon controlled with `transmission-remote` or its web interface
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-daemon.md
+  (CC-BY-4.0)
+tags:
+- transmission-daemon

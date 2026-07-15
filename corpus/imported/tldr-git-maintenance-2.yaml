@@ -1,0 +1,14 @@
+id: tldr-git-maintenance-2
+title: 'git-maintenance: Schedule maintenance tasks to run on the current repository
+  every hour'
+cmd: git maintenance start
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run tasks to optimize Git repository data
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-maintenance.md
+  (CC-BY-4.0)
+tags:
+- git-maintenance

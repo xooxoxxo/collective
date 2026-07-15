@@ -1,0 +1,13 @@
+id: tldr-tree-7
+title: 'tree: Print directories within the tree hierarchy, using the wildcard (glob)
+  pattern, and pruning out directories that aren''t ancestors of the wanted one'
+cmd: tree -P <directory_name> --matchdirs --prune
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tree.md (CC-BY-4.0)
+tags:
+- tree

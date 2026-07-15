@@ -1,0 +1,14 @@
+id: tldr-git-show-unmerged-branches-1
+title: 'git-show-unmerged-branches: Print all branches which are not merged into the
+  current `HEAD`'
+cmd: git show-unmerged-branches
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print all branches which are not merged into the current `HEAD`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-unmerged-branches.md
+  (CC-BY-4.0)
+tags:
+- git-show-unmerged-branches

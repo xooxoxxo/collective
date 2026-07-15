@@ -1,0 +1,12 @@
+id: tldr-git-repack-1
+title: 'git-repack: Pack unpacked objects in the current directory'
+cmd: git repack
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Pack unpacked objects in a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-repack.md (CC-BY-4.0)
+tags:
+- git-repack

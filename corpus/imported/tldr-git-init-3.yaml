@@ -1,0 +1,13 @@
+id: tldr-git-init-3
+title: 'git-init: Initialize a repository using SHA256 for object hashes (requires
+  Git version 2.29+)'
+cmd: git init --object-format sha256
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Initialize a new local Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-init.md (CC-BY-4.0)
+tags:
+- git-init

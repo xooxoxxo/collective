@@ -1,0 +1,13 @@
+id: tldr-grep-8
+title: 'grep: Use extended `regex`es (supports `?`, `+`, `{}`, `()`, and `|`), in
+  case-insensitive mode'
+cmd: grep <[-Ei|--extended-regexp --ignore-case]> "<search_pattern>" <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

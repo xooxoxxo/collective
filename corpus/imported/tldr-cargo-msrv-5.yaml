@@ -1,0 +1,13 @@
+id: tldr-cargo-msrv-5
+title: 'cargo-msrv: Verify whether the MSRV is satisfiable by compiling the project
+  using the specified version of Rust'
+cmd: cargo msrv verify
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage the Minimum Supported Rust Version (MSRV) of a project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-msrv.md (CC-BY-4.0)
+tags:
+- cargo-msrv

@@ -1,0 +1,12 @@
+id: tldr-git-clean-5
+title: 'git-clean: Delete only untracked files matching specific paths or glob patterns'
+cmd: git clean <[-f|--force]> -- <path/to/directory> '<*.ext>'
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files not tracked by Git from the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clean.md (CC-BY-4.0)
+tags:
+- git-clean

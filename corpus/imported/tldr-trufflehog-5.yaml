@@ -1,0 +1,13 @@
+id: tldr-trufflehog-5
+title: 'trufflehog: Scan an S3 bucket for verified keys'
+cmd: trufflehog s3 --bucket <bucket name> --only-verified
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find and verify credentials in files, Git repositories, S3 buckets, and
+  Docker images
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trufflehog.md (CC-BY-4.0)
+tags:
+- trufflehog

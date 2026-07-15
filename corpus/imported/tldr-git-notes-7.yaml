@@ -1,0 +1,12 @@
+id: tldr-git-notes-7
+title: 'git-notes: Copy a note from one object to another'
+cmd: git notes copy <source_object> <target_object>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add or inspect object notes
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-notes.md (CC-BY-4.0)
+tags:
+- git-notes

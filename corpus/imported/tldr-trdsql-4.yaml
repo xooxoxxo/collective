@@ -1,0 +1,13 @@
+id: tldr-trdsql-4
+title: 'trdsql: Merge content of 2 CSV files to one CSV file'
+cmd: trdsql "SELECT <column1,column2> FROM <path/to/file1.csv> UNION SELECT <column1,column2>
+  FROM <path/to/file2.csv>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

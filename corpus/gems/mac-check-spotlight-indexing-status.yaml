@@ -1,0 +1,13 @@
+id: mac-check-spotlight-indexing-status
+title: Check Spotlight indexing progress
+cmd: mdutil -s /
+undo: ""
+platform: [macos]
+domains: [debugging, macos-admin, files]
+danger: low
+explanation: >
+  Reports indexing status of volumes. Shows 'Indexing enabled' or 'Indexing disabled',
+  and current progress. Useful after system updates or when Spotlight appears stuck.
+  Use 'mdutil -i on /' to force re-index if needed.
+source: https://ss64.com/mac/mdutil.html
+tags: [spotlight, indexing, metadata, debugging]

@@ -1,0 +1,12 @@
+id: tldr-git-bisect-8
+title: 'git-bisect: Show remaining candidate commits to be checked'
+cmd: git bisect visualize
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Use binary search to find the commit that introduced a bug
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bisect.md (CC-BY-4.0)
+tags:
+- git-bisect

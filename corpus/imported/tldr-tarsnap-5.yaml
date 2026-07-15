@@ -1,0 +1,12 @@
+id: tldr-tarsnap-5
+title: 'tarsnap: Lis[t] the contents of a specific archive in [v]erbose mode'
+cmd: tarsnap -tv --keyfile <path/to/key_file> -f <archive_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manipulate remote Tarsnap encrypted backups
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap.md (CC-BY-4.0)
+tags:
+- tarsnap

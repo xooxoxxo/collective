@@ -1,0 +1,12 @@
+id: tldr-git-gc-3
+title: 'git-gc: Do not prune loose objects (prunes by default)'
+cmd: git gc --no-prune
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Optimise the local repository by cleaning unnecessary files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gc.md (CC-BY-4.0)
+tags:
+- git-gc

@@ -1,0 +1,15 @@
+id: tldr-git-utimes-2
+title: 'git-utimes: Change files modification time that are newer than their last
+  commit date, preserving original modification time of files that were committed
+  from the local repository'
+cmd: git utimes --newer
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Change files modification time to their last commit date. Does not touch
+  files that are in the working tree or index
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-utimes.md (CC-BY-4.0)
+tags:
+- git-utimes

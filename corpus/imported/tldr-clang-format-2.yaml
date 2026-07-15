@@ -1,0 +1,13 @@
+id: tldr-clang-format-2
+title: 'clang-format: Format a file in-place'
+cmd: clang-format -i <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Auto-format C/C++/Java/JavaScript/Objective-C/Protobuf/C# code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang-format.md
+  (CC-BY-4.0)
+tags:
+- clang-format

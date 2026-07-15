@@ -1,0 +1,14 @@
+id: blog-tmux-panes
+title: 'Split tmux window into side-by-side panes'
+cmd: 'Ctrl+B % (split vertical); Ctrl+B " (split horizontal)'
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  tmux panes let you run multiple commands in one window side-by-side.
+  Ctrl+B % splits vertically, Ctrl+B " splits horizontally; Ctrl+B arrow keys navigate.
+  Ctrl+B q shows pane numbers; Ctrl+B x closes the current pane.
+  Essential for simultaneous editing, testing, and monitoring workflows.
+source: https://github.com/tmux/tmux/wiki/Advanced-Use#panes
+tags: [tmux, panes, windows, multitasking, productivity]

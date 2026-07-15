@@ -1,0 +1,12 @@
+id: tldr-sed-2
+title: 'sed: Execute a specific script [f]ile and print the result to `stdout`'
+cmd: <command> | sed -f <path/to/script_file.sed>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Edit text in a scriptable manner
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/sed.md (CC-BY-4.0)
+tags:
+- sed

@@ -1,0 +1,12 @@
+id: tldr-cargo-bench-5
+title: 'cargo-bench: Benchmark with the given profile (default: `bench`)'
+cmd: cargo bench --profile <profile>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile and execute benchmarks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-bench.md (CC-BY-4.0)
+tags:
+- cargo-bench

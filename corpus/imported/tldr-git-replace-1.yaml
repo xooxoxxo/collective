@@ -1,0 +1,13 @@
+id: tldr-git-replace-1
+title: 'git-replace: Replace any commit with a different one, leaving other commits
+  unchanged'
+cmd: git replace <object> <replacement>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create, list, and delete refs to replace objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-replace.md (CC-BY-4.0)
+tags:
+- git-replace

@@ -1,0 +1,14 @@
+id: tldr-cargo-logout-2
+title: 'cargo-logout: Use the specified registry (registry names can be defined in
+  the configuration - the default is <https://crates.io>)'
+cmd: cargo logout --registry <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove an API token from the registry locally
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-logout.md
+  (CC-BY-4.0)
+tags:
+- cargo-logout

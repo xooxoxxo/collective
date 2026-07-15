@@ -1,0 +1,12 @@
+id: tldr-make-7
+title: 'make: Override a variable defined in the Makefile'
+cmd: make <target> <variable>=<new_value>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Task runner for targets described in Makefile
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/make.md (CC-BY-4.0)
+tags:
+- make

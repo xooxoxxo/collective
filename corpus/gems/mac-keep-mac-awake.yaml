@@ -1,0 +1,13 @@
+id: mac-keep-mac-awake
+title: Keep Mac from sleeping (caffeinate)
+cmd: caffeinate -u -t <seconds>
+undo: ""
+platform: [macos]
+domains: [power, development]
+danger: low
+explanation: >
+  Prevents sleep for specified duration (in seconds). Useful wrapper around pmset for
+  one-off scenarios. '-u' keeps screen on; '-m' ignores disk sleep; '-d' ignores
+  display sleep. Ctrl+C stops early.
+source: https://ss64.com/mac/caffeinate.html
+tags: [sleep, power, builds, long-running, development]

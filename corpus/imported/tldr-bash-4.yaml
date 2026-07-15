@@ -1,0 +1,12 @@
+id: tldr-bash-4
+title: 'bash: Execute a specific script'
+cmd: bash <path/to/script.sh>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Bourne-Again SHell, an `sh`-compatible command-line interpreter
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash.md (CC-BY-4.0)
+tags:
+- bash

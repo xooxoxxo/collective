@@ -1,0 +1,13 @@
+id: tldr-git-submodule-3
+title: 'git-submodule: Add a Git repository as a submodule of the current one'
+cmd: git submodule add <repository_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Inspect, update, and manage submodules
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-submodule.md
+  (CC-BY-4.0)
+tags:
+- git-submodule

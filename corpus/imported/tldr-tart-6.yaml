@@ -1,0 +1,13 @@
+id: tldr-tart-6
+title: 'tart: List VMs'
+cmd: tart list
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build, run, and manage macOS and Linux virtual machines (VMs) on Apple
+  Silicon
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/tart.md (CC-BY-4.0)
+tags:
+- tart

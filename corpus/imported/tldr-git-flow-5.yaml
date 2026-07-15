@@ -1,0 +1,12 @@
+id: tldr-git-flow-5
+title: 'git-flow: Get a feature published by another user'
+cmd: git flow feature pull origin <feature>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of Git extensions to provide high-level repository operations
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-flow.md (CC-BY-4.0)
+tags:
+- git-flow

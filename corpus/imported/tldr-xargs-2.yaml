@@ -1,0 +1,13 @@
+id: tldr-xargs-2
+title: 'xargs: Run multiple chained commands on the input data'
+cmd: <arguments_source> | xargs sh -c "<command1> && <command2> | <command3>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command with piped arguments coming from another command, a
+  file, etc
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/xargs.md (CC-BY-4.0)
+tags:
+- xargs

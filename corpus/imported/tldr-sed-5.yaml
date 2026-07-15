@@ -1,0 +1,13 @@
+id: tldr-sed-5
+title: 'sed: Replace all `apple` (basic `regex`) occurrences with `mango` (basic `regex`)
+  in a `file` and save a backup of the original to `file.bak`'
+cmd: sed -i bak 's/apple/mango/g' <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Edit text in a scriptable manner
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/sed.md (CC-BY-4.0)
+tags:
+- sed

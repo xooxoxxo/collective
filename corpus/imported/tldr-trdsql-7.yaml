@@ -1,0 +1,12 @@
+id: tldr-trdsql-7
+title: 'trdsql: Show data from compress log files'
+cmd: trdsql -iltsv "SELECT * FROM <path/to/access.log.gz>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute SQL on CSV, LTSV, JSON, YAML, and TBLN files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trdsql.md (CC-BY-4.0)
+tags:
+- trdsql

@@ -1,0 +1,13 @@
+id: tldr-git-name-rev-4
+title: 'git-name-rev: Use only tags to name the commit'
+cmd: git name-rev --tags HEAD
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Describe a commit using existing ref names
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-name-rev.md
+  (CC-BY-4.0)
+tags:
+- git-name-rev

@@ -1,0 +1,13 @@
+id: tldr-git-gui-2
+title: 'git-gui: Show a specific file with author name and commit hash on each line'
+cmd: git gui blame <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A GUI for Git to manage branches, commits, and remotes, and perform local
+  merges
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gui.md (CC-BY-4.0)
+tags:
+- git-gui

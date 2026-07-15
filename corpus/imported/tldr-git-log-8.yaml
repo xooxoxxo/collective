@@ -1,0 +1,12 @@
+id: tldr-git-log-8
+title: 'git-log: Show commits between two dates (yyyy-mm-dd)'
+cmd: git log --before "<2017-01-29>" --after "<2017-01-17>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

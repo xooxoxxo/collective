@@ -1,0 +1,13 @@
+id: tldr-ssh-keygen-5
+title: 'ssh-keygen: Retrieve the fingerprint of a key in MD5 Hex'
+cmd: ssh-keygen -f <~/.ssh/filename> -l -E md5
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate SSH keys used for authentication, password-less logins, and
+  other things
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-keygen.md (CC-BY-4.0)
+tags:
+- ssh-keygen

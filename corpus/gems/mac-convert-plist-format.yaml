@@ -1,0 +1,13 @@
+id: mac-convert-plist-format
+title: Convert between plist formats (binary/XML/JSON)
+cmd: plutil -convert <format> <file>
+undo: plutil -convert <original-format> <file>
+platform: [macos]
+domains: [files, macos-admin]
+danger: low
+explanation: >
+  Converts macOS plist files. Use '-p' for pretty-print. Formats: 'xml1', 'binary1', 'json'.
+  Essential for editing system plists (Info.plist, defaults) or debugging serialized app state.
+  Always backup before modifying; use '-o <outfile>' to test conversions safely.
+source: https://ss64.com/mac/plutil.html
+tags: [plist, plutil, xml, json, binary, defaults]

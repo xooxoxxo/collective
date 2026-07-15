@@ -1,0 +1,12 @@
+id: tldr-git-subtree-2
+title: 'git-subtree: Update subtree repository to its latest commit'
+cmd: git subtree pull <[-P|--prefix]> <path/to/directory> <repository_url> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge subtrees together or split repository into subtrees
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-subtree.md (CC-BY-4.0)
+tags:
+- git-subtree

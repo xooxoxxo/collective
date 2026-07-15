@@ -1,0 +1,14 @@
+id: tldr-git-rev-list-3
+title: 'git-rev-list: List commits more recent than a specific date, on a specific
+  branch'
+cmd: git rev-list --since "<2019-12-01 00:00:00>" <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List revisions (commits) in reverse chronological order
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rev-list.md
+  (CC-BY-4.0)
+tags:
+- git-rev-list

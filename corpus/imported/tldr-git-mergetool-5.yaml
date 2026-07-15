@@ -1,0 +1,14 @@
+id: tldr-git-mergetool-5
+title: 'git-mergetool: Explicitly use the GUI merge tool (see the `merge.guitool`
+  configuration variable)'
+cmd: git mergetool <[-g|--gui]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run merge conflict resolution tools to resolve merge conflicts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mergetool.md
+  (CC-BY-4.0)
+tags:
+- git-mergetool

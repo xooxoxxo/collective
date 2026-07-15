@@ -1,0 +1,12 @@
+id: tldr-git-squash-3
+title: 'git-squash: Squash the `n` latest commits and commit with a message'
+cmd: git squash HEAD~<n> "<message>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Squash multiple commits into a single commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-squash.md (CC-BY-4.0)
+tags:
+- git-squash

@@ -1,0 +1,13 @@
+id: tldr-git-archive-file-1
+title: 'git-archive-file: Pack the currently checked out commit into a Zip archive'
+cmd: git archive-file
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Export all the files of the current Git branch into a Zip archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-archive-file.md
+  (CC-BY-4.0)
+tags:
+- git-archive-file

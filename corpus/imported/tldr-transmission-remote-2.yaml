@@ -1,0 +1,13 @@
+id: tldr-transmission-remote-2
+title: 'transmission-remote: Change the default download directory'
+cmd: transmission-remote <hostname> <[-w|--download-dir]> /<path/to/download_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

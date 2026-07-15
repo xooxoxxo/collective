@@ -1,0 +1,12 @@
+id: tldr-grep-4
+title: 'grep: Print 3 lines of [C]ontext around, [B]efore, or [A]fter each match'
+cmd: grep <--context|--before-context|--after-context> 3 "<search_pattern>" <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

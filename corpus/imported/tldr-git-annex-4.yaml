@@ -1,0 +1,12 @@
+id: tldr-git-annex-4
+title: 'git-annex: Synchronize a local repository with a remote'
+cmd: git annex <remote>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage files with Git, without checking their contents in
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-annex.md (CC-BY-4.0)
+tags:
+- git-annex

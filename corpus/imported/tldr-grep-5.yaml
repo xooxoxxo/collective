@@ -1,0 +1,13 @@
+id: tldr-grep-5
+title: 'grep: Print file name and line number for each match with color output'
+cmd: grep <[-Hn|--with-filename --line-number]> --color=always "<search_pattern>"
+  <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find patterns in files using `regex`es
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/grep.md (CC-BY-4.0)
+tags:
+- grep

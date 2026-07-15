@@ -1,0 +1,13 @@
+id: tldr-git-mktree-5
+title: 'git-mktree: Sort and build a tree from `stdin` (non-recursive `git ls-tree`
+  output format is required)'
+cmd: git < <path/to/tree.txt> mktree
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build a tree object using `ls-tree` formatted text
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mktree.md (CC-BY-4.0)
+tags:
+- git-mktree

@@ -1,0 +1,14 @@
+id: tldr-git-show-branch-8
+title: 'git-show-branch: Keep going a given number of commits past the common ancestor'
+cmd: git show-branch --more <5> <branch_name1|ref1|commit1 branch_name2|ref2|commit2
+  ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show branches and their commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-branch.md
+  (CC-BY-4.0)
+tags:
+- git-show-branch

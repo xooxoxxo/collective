@@ -1,0 +1,15 @@
+id: tldr-git-psykorebase-1
+title: 'git-psykorebase: Rebase the current branch on top of another using a merge
+  commit and only one conflict handling'
+cmd: git psykorebase <upstream_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Rebase a branch on top of another using a merge commit and only one conflict
+  handling
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-psykorebase.md
+  (CC-BY-4.0)
+tags:
+- git-psykorebase

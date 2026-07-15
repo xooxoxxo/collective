@@ -1,0 +1,12 @@
+id: tldr-ssh-agent-1
+title: 'ssh-agent: Start an SSH Agent for the current shell'
+cmd: eval $(ssh-agent)
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Spawn an SSH Agent process
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-agent.md (CC-BY-4.0)
+tags:
+- ssh-agent

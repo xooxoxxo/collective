@@ -1,0 +1,13 @@
+id: tldr-gcc-2
+title: 'gcc: Activate output of all errors and warnings'
+cmd: gcc <path/to/source.c> -Wall <[-o|--output]> <output_executable>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Preprocess and compile C and C++ source files, then assemble and link
+  them together
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gcc.md (CC-BY-4.0)
+tags:
+- gcc

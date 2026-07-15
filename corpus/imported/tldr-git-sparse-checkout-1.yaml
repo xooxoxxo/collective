@@ -1,0 +1,14 @@
+id: tldr-git-sparse-checkout-1
+title: 'git-sparse-checkout: Enable sparse checkout'
+cmd: git sparse-checkout init
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out only part of a repository's files instead of cloning or checking
+  out everything
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sparse-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-sparse-checkout

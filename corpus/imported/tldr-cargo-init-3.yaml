@@ -1,0 +1,13 @@
+id: tldr-cargo-init-3
+title: 'cargo-init: Initialize a Rust project with a library target in the current
+  directory'
+cmd: cargo init --lib
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a new Cargo package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-init.md (CC-BY-4.0)
+tags:
+- cargo-init

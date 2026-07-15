@@ -1,0 +1,12 @@
+id: tldr-git-remote-4
+title: 'git-remote: Change the URL of a remote (use `--add` to keep the existing URL)'
+cmd: git remote set-url <remote_name> <new_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage set of tracked repositories ("remotes")
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-remote.md (CC-BY-4.0)
+tags:
+- git-remote

@@ -1,0 +1,13 @@
+id: tldr-git-merge-base-1
+title: 'git-merge-base: Print the best common ancestor of two commits'
+cmd: git merge-base <commit_1> <commit_2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find a common ancestor of two commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-base.md
+  (CC-BY-4.0)
+tags:
+- git-merge-base

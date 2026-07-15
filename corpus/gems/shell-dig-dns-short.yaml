@@ -1,0 +1,13 @@
+id: shell-dig-dns-short
+title: 'Query DNS with minimal output'
+cmd: dig <domain> +short
+undo: ''
+platform: [macos, linux]
+domains: [network, debugging]
+danger: low
+explanation: >
+  dig is more powerful than nslookup; +short skips decorative output and shows just records.
+  Add @<nameserver> to query a specific DNS server.
+  Try +noall +answer for even tighter formatting.
+source: https://linux.die.net/man/1/dig
+tags: [dig, dns, debugging, one-liner]

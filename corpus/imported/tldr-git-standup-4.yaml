@@ -1,0 +1,12 @@
+id: tldr-git-standup-4
+title: 'git-standup: Display help'
+cmd: git standup -h
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: See commits from a specified user
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-standup.md (CC-BY-4.0)
+tags:
+- git-standup

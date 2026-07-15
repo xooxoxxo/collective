@@ -1,0 +1,12 @@
+id: tldr-git-rebase-1
+title: 'git-rebase: Rebase the current branch on top of another specified branch'
+cmd: git rebase <new_base_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

@@ -1,0 +1,14 @@
+id: tldr-git-verify-commit-2
+title: 'git-verify-commit: Check commits for a GPG signature and show details of each
+  commit'
+cmd: git verify-commit <commit_hash1 optional_commit_hash2 ...> <[-v|--verbose]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check for GPG verification of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-verify-commit.md
+  (CC-BY-4.0)
+tags:
+- git-verify-commit

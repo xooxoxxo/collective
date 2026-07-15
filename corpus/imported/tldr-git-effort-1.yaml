@@ -1,0 +1,14 @@
+id: tldr-git-effort-1
+title: 'git-effort: Display each file in the repository, showing commits and active
+  days'
+cmd: git effort
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display how much activity a file has had, showing commits per file and
+  "active days" i.e. total number of days that contributed to the file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-effort.md (CC-BY-4.0)
+tags:
+- git-effort

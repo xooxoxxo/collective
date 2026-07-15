@@ -1,0 +1,13 @@
+id: tldr-ssh-keygen-3
+title: 'ssh-keygen: Generate an RSA 4096-bit key with email as a comment'
+cmd: ssh-keygen -t rsa -b 4096 -C "<comment|email>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate SSH keys used for authentication, password-less logins, and
+  other things
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-keygen.md (CC-BY-4.0)
+tags:
+- ssh-keygen

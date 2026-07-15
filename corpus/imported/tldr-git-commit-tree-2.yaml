@@ -1,0 +1,14 @@
+id: tldr-git-commit-tree-2
+title: 'git-commit-tree: Create a commit object reading the message from a file (use
+  `-` for `stdin`)'
+cmd: git commit-tree <tree> -F <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Low level utility to create commit objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit-tree.md
+  (CC-BY-4.0)
+tags:
+- git-commit-tree

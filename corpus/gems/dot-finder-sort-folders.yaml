@@ -1,0 +1,13 @@
+id: dot-finder-sort-folders
+title: "Keep folders on top when sorting files in Finder"
+cmd: "defaults write com.apple.finder _FXSortFoldersFirst -bool true"
+undo: "defaults write com.apple.finder _FXSortFoldersFirst -bool false"
+platform: [macos]
+domains: [files, macos-admin]
+danger: low
+explanation: >
+  Ensures directories appear before files in alphabetical sorting within Finder.
+  Improves navigation efficiency; prevents scrolling past files to reach subdirs.
+  Requires Finder restart to apply.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [finder, sorting, files, navigation, organization]

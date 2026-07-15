@@ -1,0 +1,13 @@
+id: tldr-zsh-6
+title: 'zsh: Execute a specific script, printing each command in the script before
+  executing it'
+cmd: zsh <[-x|--xtrace]> <path/to/script.zsh>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Z SHell, a Bash-compatible command-line interpreter
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/zsh.md (CC-BY-4.0)
+tags:
+- zsh

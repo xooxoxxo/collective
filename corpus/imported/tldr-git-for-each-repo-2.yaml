@@ -1,0 +1,14 @@
+id: tldr-git-for-each-repo-2
+title: 'git-for-each-repo: Run `git pull` on each repository listed in a global configuration
+  variable'
+cmd: git for-each-repo --config <global_configuration_variable> <pull>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run a Git command on a list of repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-for-each-repo.md
+  (CC-BY-4.0)
+tags:
+- git-for-each-repo

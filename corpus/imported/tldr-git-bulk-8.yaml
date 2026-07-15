@@ -1,0 +1,12 @@
+id: tldr-git-bulk-8
+title: 'git-bulk: Remove all workspaces'
+cmd: git bulk --purge
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute operations on multiple Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bulk.md (CC-BY-4.0)
+tags:
+- git-bulk

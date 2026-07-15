@@ -1,0 +1,12 @@
+id: tldr-git-add-2
+title: 'git-add: Add all files (tracked and untracked)'
+cmd: git add <[-A|--all]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Stage changed files for a commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-add.md (CC-BY-4.0)
+tags:
+- git-add

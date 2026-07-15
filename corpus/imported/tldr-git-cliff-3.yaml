@@ -1,0 +1,13 @@
+id: tldr-git-cliff-3
+title: 'git-cliff: Generate a changelog from commits that belong to the current tag
+  (use `git checkout` on a tag before this)'
+cmd: git cliff --current
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A highly customizable changelog generator
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cliff.md (CC-BY-4.0)
+tags:
+- git-cliff

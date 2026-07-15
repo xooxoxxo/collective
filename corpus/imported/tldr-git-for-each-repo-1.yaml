@@ -1,0 +1,14 @@
+id: tldr-git-for-each-repo-1
+title: 'git-for-each-repo: Run maintenance on each of a list of repositories stored
+  in the `maintenance.repo` user configuration variable'
+cmd: git for-each-repo --config maintenance.repo <maintenance run>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run a Git command on a list of repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-for-each-repo.md
+  (CC-BY-4.0)
+tags:
+- git-for-each-repo

@@ -1,0 +1,13 @@
+id: tldr-cargo-binstall-2
+title: 'cargo-binstall: Install a specific version of a package (latest by default)'
+cmd: cargo binstall <package>@<version>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Install Rust binaries from CI artifacts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-binstall.md
+  (CC-BY-4.0)
+tags:
+- cargo-binstall

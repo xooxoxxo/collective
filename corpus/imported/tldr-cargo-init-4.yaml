@@ -1,0 +1,13 @@
+id: tldr-cargo-init-4
+title: 'cargo-init: Initialize a version control system repository in the project
+  directory (default: `git`)'
+cmd: cargo init --vcs <git|hg|pijul|fossil|none>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a new Cargo package
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-init.md (CC-BY-4.0)
+tags:
+- cargo-init

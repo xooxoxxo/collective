@@ -1,0 +1,12 @@
+id: tldr-cargo-6
+title: 'cargo: Build the Rust project in the current directory using the release profile'
+cmd: cargo <[b|build]> <[-r|--release]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage Rust projects and their module dependencies (crates)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo.md (CC-BY-4.0)
+tags:
+- cargo

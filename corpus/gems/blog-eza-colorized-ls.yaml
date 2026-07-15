@@ -1,0 +1,14 @@
+id: blog-eza-colorized-ls
+title: 'List directories with colors and icons'
+cmd: eza --long --group-dirs=first
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  eza (formerly exa) is a modern ls replacement with colors, icons, and tree view.
+  Install: `brew install eza`. Try `eza -la` for long format, `eza -T` for tree.
+  Nerd fonts recommended for icons; `eza --group-dirs=first` puts directories at top.
+  Way prettier and faster than ls; git status support shows modified files inline.
+source: https://github.com/eza-community/eza
+tags: [eza, exa, ls, colors, modern, must-have]

@@ -1,0 +1,13 @@
+id: tldr-ssh-keyscan-4
+title: 'ssh-keyscan: Manually update the SSH known_hosts file with the fingerprint
+  of a given host'
+cmd: ssh-keyscan -H <hostname> >> ~/.ssh/known_hosts
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Get the public SSH keys of remote hosts
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-keyscan.md (CC-BY-4.0)
+tags:
+- ssh-keyscan

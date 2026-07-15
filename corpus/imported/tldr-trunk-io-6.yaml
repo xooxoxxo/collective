@@ -1,0 +1,12 @@
+id: tldr-trunk-io-6
+title: 'trunk.io: Enable a tool at a specific version'
+cmd: trunk tools enable <tool>@<version>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run linters, formatters, and security analyzers on code
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trunk.io.md (CC-BY-4.0)
+tags:
+- trunk-io

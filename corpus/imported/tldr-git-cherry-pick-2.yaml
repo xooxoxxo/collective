@@ -1,0 +1,14 @@
+id: tldr-git-cherry-pick-2
+title: 'git-cherry-pick: Apply a range of commits to the current branch (see also:
+  `git rebase --onto`)'
+cmd: git cherry-pick <start_commit>~..<end_commit>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Apply the changes introduced by existing commits to the current branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cherry-pick.md
+  (CC-BY-4.0)
+tags:
+- git-cherry-pick

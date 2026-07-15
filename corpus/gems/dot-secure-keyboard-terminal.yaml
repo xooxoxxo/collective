@@ -1,0 +1,13 @@
+id: dot-secure-keyboard-terminal
+title: "Enable Secure Keyboard Entry in Terminal to prevent keyloggers"
+cmd: "defaults write com.apple.terminal SecureKeyboardEntry -bool true"
+undo: "defaults write com.apple.terminal SecureKeyboardEntry -bool false"
+platform: [macos]
+domains: [security, macos-admin]
+danger: low
+explanation: >
+  Prevents other applications from monitoring keyboard input in Terminal windows.
+  Critical for password entry and sensitive commands; minimal performance impact.
+  Disables clipboard shortcuts in Terminal but protects against local keyloggers.
+source: "https://github.com/mathiasbynens/dotfiles/blob/main/.macos"
+tags: [security, terminal, keyboard, privacy, passwords]

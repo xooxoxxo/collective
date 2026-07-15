@@ -1,0 +1,13 @@
+id: tldr-transmission-remote-3
+title: 'transmission-remote: List all torrents'
+cmd: transmission-remote <hostname> <[-l|--list]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remote control utility for `transmission-daemon` and `transmission`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-remote.md
+  (CC-BY-4.0)
+tags:
+- transmission-remote

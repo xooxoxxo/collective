@@ -1,0 +1,13 @@
+id: tldr-git-mailinfo-1
+title: 'git-mailinfo: Extract the patch and author data from an email message'
+cmd: git mailinfo <message|patch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Extract patch and authorship information from a single email message
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mailinfo.md
+  (CC-BY-4.0)
+tags:
+- git-mailinfo

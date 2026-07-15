@@ -1,0 +1,12 @@
+id: tldr-cargo-tree-5
+title: 'cargo-tree: Only show normal/build/development dependencies'
+cmd: cargo tree <[-e|--edges]> <normal|build|dev>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display a tree visualization of a dependency graph
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-tree.md (CC-BY-4.0)
+tags:
+- cargo-tree

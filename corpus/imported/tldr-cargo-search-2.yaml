@@ -1,0 +1,13 @@
+id: tldr-cargo-search-2
+title: 'cargo-search: Show `n` results (default: 10, max: 100)'
+cmd: cargo search --limit <n> <query>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Search for packages on <https://crates.io>
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-search.md
+  (CC-BY-4.0)
+tags:
+- cargo-search

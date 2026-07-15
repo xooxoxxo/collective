@@ -1,0 +1,13 @@
+id: tldr-brew-4
+title: 'brew: Fetch the newest version of Homebrew and of all formulae and casks from
+  the Homebrew source repository'
+cmd: brew update
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Homebrew - a package manager for macOS and Linux
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew.md (CC-BY-4.0)
+tags:
+- brew

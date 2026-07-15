@@ -1,0 +1,14 @@
+id: blog-tree-directory-structure
+title: 'Show directory structure as a tree'
+cmd: tree -L <depth> -I '<ignore-pattern>'
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  tree displays a hierarchical directory structure; way clearer than ls -R.
+  Install: `brew install tree`. Use -L 2 to limit depth; -I 'node_modules|*.pyc' to skip clutter.
+  -h shows human-readable sizes; -du shows size of each directory.
+  Perfect for understanding unfamiliar project layouts.
+source: https://linux.die.net/man/1/tree
+tags: [tree, directory, structure, visualization, navigation]

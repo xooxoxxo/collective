@@ -1,0 +1,12 @@
+id: tldr-git-merge-2
+title: 'git-merge: Edit the merge message'
+cmd: git merge <[-e|--edit]> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Merge branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge.md (CC-BY-4.0)
+tags:
+- git-merge

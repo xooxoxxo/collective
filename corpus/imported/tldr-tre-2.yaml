@@ -1,0 +1,13 @@
+id: tldr-tre-2
+title: 'tre: Print JSON containing files in the tree hierarchy instead of the normal
+  tree diagram'
+cmd: tre <[-j|--json]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the contents of the current directory as a tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tre.md (CC-BY-4.0)
+tags:
+- tre

@@ -1,0 +1,12 @@
+id: tldr-git-prune-2
+title: 'git-prune: Prune unreachable objects and display what has been pruned to `stdout`'
+cmd: git prune <[-v|--verbose]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for pruning all unreachable objects from the object database
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-prune.md (CC-BY-4.0)
+tags:
+- git-prune

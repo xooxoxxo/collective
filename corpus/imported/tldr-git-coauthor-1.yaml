@@ -1,0 +1,14 @@
+id: tldr-git-coauthor-1
+title: 'git-coauthor: Insert an additional author to the last Git commit'
+cmd: git coauthor <name> <name@example.com>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add another author to the latest commit. Since this command rewrites
+  the Git history, `--force` will be needed when pushing next time
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-coauthor.md
+  (CC-BY-4.0)
+tags:
+- git-coauthor

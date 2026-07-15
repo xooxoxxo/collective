@@ -1,0 +1,13 @@
+id: tldr-cargo-rustc-2
+title: 'cargo-rustc: Build artifacts in release mode, with optimizations'
+cmd: cargo rustc <[-r|--release]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile a Rust package. Similar to `cargo build`, but you can pass extra
+  options to the compiler
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustc.md (CC-BY-4.0)
+tags:
+- cargo-rustc

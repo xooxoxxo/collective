@@ -1,0 +1,13 @@
+id: shell-column-align-pretty
+title: 'Align text into columns for readability'
+cmd: column -t -s <delimiter> <file>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  column formats text into nicely aligned columns.
+  -t assumes tab-delimited input; -s <delimiter> overrides (e.g., -s: for colon-separated).
+  Great for making ps output, log files, or CSV more readable without altering the data.
+source: https://man7.org/linux/man-pages/man1/column.1.html
+tags: [column, alignment, formatting, one-liner]

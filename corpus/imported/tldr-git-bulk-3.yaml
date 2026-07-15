@@ -1,0 +1,13 @@
+id: tldr-git-bulk-3
+title: 'git-bulk: Clone a repository inside a specific directory, then register the
+  repository as a workspace'
+cmd: git bulk --addworkspace <workspace_name> /<path/to/parent_directory> --from <remote_repository_location>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute operations on multiple Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bulk.md (CC-BY-4.0)
+tags:
+- git-bulk

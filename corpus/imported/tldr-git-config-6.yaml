@@ -1,0 +1,12 @@
+id: tldr-git-config-6
+title: 'git-config: Revert a global configuration entry to its default value'
+cmd: git config --global --unset <alias.unstage>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage custom configuration options for Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-config.md (CC-BY-4.0)
+tags:
+- git-config

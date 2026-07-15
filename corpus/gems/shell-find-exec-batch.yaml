@@ -1,0 +1,13 @@
+id: shell-find-exec-batch
+title: 'Execute command on found files, batching for efficiency'
+cmd: find <dir> -name <pattern> -exec <command> {} +
+undo: ''
+platform: [macos, linux]
+domains: [shell, files, power]
+danger: medium
+explanation: >
+  find -exec ... + batches arguments (like xargs) instead of calling once per file.
+  Much faster than -exec ... ; which spawns a process for each match.
+  Use for cleanup: find . -name '*.tmp' -exec rm {} +
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html
+tags: [find, exec, batching, one-liner]

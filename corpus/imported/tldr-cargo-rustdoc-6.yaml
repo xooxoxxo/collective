@@ -1,0 +1,13 @@
+id: tldr-cargo-rustdoc-6
+title: 'cargo-rustdoc: Document the specified example'
+cmd: cargo rustdoc --example <name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build the documentation of Rust packages
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-rustdoc.md
+  (CC-BY-4.0)
+tags:
+- cargo-rustdoc

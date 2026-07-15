@@ -1,0 +1,12 @@
+id: tldr-cargo-add-7
+title: 'cargo-add: Add a dependency with all default features disabled'
+cmd: cargo add <dependency> --no-default-features
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add dependencies to a Rust project's `Cargo.toml` manifest
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-add.md (CC-BY-4.0)
+tags:
+- cargo-add

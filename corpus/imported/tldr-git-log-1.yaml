@@ -1,0 +1,13 @@
+id: tldr-git-log-1
+title: 'git-log: Show the sequence of commits starting from the current one, in reverse
+  chronological order of the Git repository in the current working directory'
+cmd: git log
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

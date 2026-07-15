@@ -1,0 +1,13 @@
+id: tldr-ssh-3
+title: 'ssh: Connect to a remote server with IP `10.0.0.1` and using a specific [p]ort
+  (Note: `10.0.0.1` can be shortened to `10.1`)'
+cmd: ssh <username>@10.0.0.1 -p <2222>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Secure Shell is a protocol used to securely log onto remote systems
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh.md (CC-BY-4.0)
+tags:
+- ssh

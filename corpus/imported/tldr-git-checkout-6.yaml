@@ -1,0 +1,14 @@
+id: tldr-git-checkout-6
+title: 'git-checkout: Discard all unstaged changes in the current directory (see `git
+  reset` for more undo-like commands)'
+cmd: git checkout .
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

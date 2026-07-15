@@ -1,0 +1,14 @@
+id: blog-ripgrep-context-types
+title: 'Search by file type with context'
+cmd: rg -t <type> -C <n> <pattern>
+undo: ''
+platform: [macos, linux]
+domains: [shell, debugging, power]
+danger: low
+explanation: >
+  rg -t limits search to a file type (rg -t py, -t js, -t go).
+  -C shows context lines (like grep -C).
+  rg --type-list shows all available types.
+  Avoids spurious matches in comments, docs, or compiled files.
+source: https://github.com/BurntSushi/ripgrep#user-guide
+tags: [ripgrep, file-type, context, filtering]

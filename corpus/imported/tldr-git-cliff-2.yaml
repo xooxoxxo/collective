@@ -1,0 +1,13 @@
+id: tldr-git-cliff-2
+title: 'git-cliff: Generate a changelog from commits starting from the latest tag
+  and print it to `stdout`'
+cmd: git cliff <[-l|--latest]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A highly customizable changelog generator
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cliff.md (CC-BY-4.0)
+tags:
+- git-cliff

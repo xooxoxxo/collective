@@ -1,0 +1,13 @@
+id: tldr-git-pull-4
+title: 'git-pull: Download changes from given remote repository and branch, then merge
+  them into `HEAD`'
+cmd: git pull <remote_name> <branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Fetch branch from a remote repository and merge it to local repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-pull.md (CC-BY-4.0)
+tags:
+- git-pull

@@ -1,0 +1,13 @@
+id: tldr-tarsnap-6
+title: 'tarsnap: Restore one or more files or directories from a specific archive'
+cmd: tarsnap -x --keyfile <path/to/key_file> -f <archive_name> <path/to/file_or_directory1
+  path/to/file_or_directory2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manipulate remote Tarsnap encrypted backups
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap.md (CC-BY-4.0)
+tags:
+- tarsnap

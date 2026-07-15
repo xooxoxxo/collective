@@ -1,0 +1,14 @@
+id: tldr-trufflehog-7
+title: 'trufflehog: Scan individual files or directories'
+cmd: trufflehog filesystem <path/to/file_or_directory1 path/to/file_or_directory2
+  ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find and verify credentials in files, Git repositories, S3 buckets, and
+  Docker images
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trufflehog.md (CC-BY-4.0)
+tags:
+- trufflehog

@@ -1,0 +1,13 @@
+id: tldr-git-blame-7
+title: 'git-blame: Annotate 10 lines of a file starting at the first line matching
+  a given text'
+cmd: git blame -L '/<text>/',+10 <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show what commit and author last modified each line of a file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-blame.md (CC-BY-4.0)
+tags:
+- git-blame

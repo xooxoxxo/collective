@@ -1,0 +1,14 @@
+id: tldr-git-sparse-checkout-4
+title: 'git-sparse-checkout: Add more paths later'
+cmd: git sparse-checkout add <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check out only part of a repository's files instead of cloning or checking
+  out everything
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-sparse-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-sparse-checkout

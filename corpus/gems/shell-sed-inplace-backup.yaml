@@ -1,0 +1,13 @@
+id: shell-sed-inplace-backup
+title: 'Replace text in files with automatic backup'
+cmd: sed -i .bak 's/<pattern>/<replacement>/g' <file>
+undo: mv <file>.bak <file>
+platform: [macos, linux]
+domains: [shell, files]
+danger: medium
+explanation: >
+  sed -i edits files in-place; the .bak suffix creates a backup before the replacement.
+  Use when you need the safety of a backup but want to preserve the original filename.
+  BSD sed (macOS) requires the extension; GNU sed (Linux) can omit it with `sed -i ''`.
+source: https://www.gnu.org/software/sed/manual/sed.html#The-_0022s_0022-Command
+tags: [sed, text-replacement, backup, one-liner]

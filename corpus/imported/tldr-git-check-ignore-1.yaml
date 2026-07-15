@@ -1,0 +1,13 @@
+id: tldr-git-check-ignore-1
+title: 'git-check-ignore: Check whether a file or directory is ignored'
+cmd: git check-ignore <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Analyze and debug Git ignore/exclude (`.gitignore`) files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-check-ignore.md
+  (CC-BY-4.0)
+tags:
+- git-check-ignore

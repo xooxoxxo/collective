@@ -1,0 +1,13 @@
+id: tldr-git-lfs-6
+title: 'git-lfs: Push all Git LFS objects to the remote server (useful if errors are
+  encountered)'
+cmd: git lfs push --all <remote_name> <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Work with large files in Git repositories
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-lfs.md (CC-BY-4.0)
+tags:
+- git-lfs

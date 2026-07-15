@@ -1,0 +1,12 @@
+id: tldr-gzip-2
+title: 'gzip: Decompress a file, replacing it with the original uncompressed version'
+cmd: gzip <[-d|--decompress]> <path/to/file.gz>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

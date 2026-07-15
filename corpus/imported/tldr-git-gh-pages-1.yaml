@@ -1,0 +1,14 @@
+id: tldr-git-gh-pages-1
+title: 'git-gh-pages: Create the GitHub pages branch inside the repository in the
+  current directory'
+cmd: git gh-pages
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create a new branch inside the current repository called `gh-pages`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-gh-pages.md
+  (CC-BY-4.0)
+tags:
+- git-gh-pages

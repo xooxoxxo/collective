@@ -1,0 +1,14 @@
+id: tldr-git-symbolic-ref-5
+title: 'git-symbolic-ref: For scripting, hide errors with `--quiet` and use `--short`
+  to simplify ("refs/heads/X" prints as "X")'
+cmd: git symbolic-ref <[-q|--quiet]> --short refs/<name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Read, change, or delete files that store references
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-symbolic-ref.md
+  (CC-BY-4.0)
+tags:
+- git-symbolic-ref

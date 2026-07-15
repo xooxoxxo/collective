@@ -1,0 +1,13 @@
+id: tldr-git-rebase-2
+title: 'git-rebase: Start an interactive rebase, which allows the commits to be reordered,
+  omitted, combined, or modified'
+cmd: git rebase <[-i|--interactive]> <target_base_branch_or_commit_hash>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Reapply commits from one branch on top of another branch
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rebase.md (CC-BY-4.0)
+tags:
+- git-rebase

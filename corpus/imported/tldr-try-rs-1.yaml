@@ -1,0 +1,12 @@
+id: tldr-try-rs-1
+title: 'try-rs: Open the interactive TUI'
+cmd: try-rs
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Manage temporary project workspaces with an interactive TUI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/try-rs.md (CC-BY-4.0)
+tags:
+- try-rs

@@ -1,0 +1,12 @@
+id: tldr-git-standup-3
+title: 'git-standup: Show all the commits from all contributors for the last 10 days'
+cmd: git standup -a all -d 10
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: See commits from a specified user
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-standup.md (CC-BY-4.0)
+tags:
+- git-standup

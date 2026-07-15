@@ -1,0 +1,13 @@
+id: tldr-cargo-install-2
+title: 'cargo-install: Install a package from the specified Git repository'
+cmd: cargo install --git <repo_url>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build and install a Rust binary
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-install.md
+  (CC-BY-4.0)
+tags:
+- cargo-install

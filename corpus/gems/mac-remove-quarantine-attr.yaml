@@ -1,0 +1,13 @@
+id: mac-remove-quarantine-attr
+title: Remove quarantine attribute from downloaded file
+cmd: xattr -d com.apple.quarantine <file>
+undo: xattr -w com.apple.quarantine '0081;' <file>
+platform: [macos]
+domains: [security, files, macos-admin]
+danger: low
+explanation: >
+  Strips the quarantine flag that macOS attaches to downloaded files, removing "cannot open"
+  warnings. Use when you trust the source. The undo is approximate—full quarantine state
+  is difficult to restore exactly, so verify the file's safety before removing.
+source: https://ss64.com/mac/xattr.html
+tags: [quarantine, downloaded-files, gatekeeper, security, macOS]

@@ -1,0 +1,13 @@
+id: tldr-git-lfs-transfer-2
+title: 'git-lfs-transfer: Download large files tracked by Git LFS from a repository'
+cmd: git-lfs-transfer <path/to/repo.git> download
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Server-side implementation of the Git LFS pure SSH transfer protocol
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-lfs-transfer.md
+  (CC-BY-4.0)
+tags:
+- git-lfs-transfer

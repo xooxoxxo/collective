@@ -1,0 +1,13 @@
+id: tldr-git-clone-6
+title: 'git-clone: Clone an existing repository only fetching the 10 most recent commits
+  on the default branch (useful to save time)'
+cmd: git clone --depth 10 <remote_repository_location>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Clone an existing repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clone.md (CC-BY-4.0)
+tags:
+- git-clone

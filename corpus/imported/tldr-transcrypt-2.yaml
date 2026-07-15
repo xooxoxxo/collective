@@ -1,0 +1,12 @@
+id: tldr-transcrypt-2
+title: 'transcrypt: List the currently encrypted files'
+cmd: git ls-crypt
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Transparently encrypt files within a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transcrypt.md (CC-BY-4.0)
+tags:
+- transcrypt

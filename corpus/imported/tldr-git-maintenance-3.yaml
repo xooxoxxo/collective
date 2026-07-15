@@ -1,0 +1,14 @@
+id: tldr-git-maintenance-3
+title: 'git-maintenance: Halt the background maintenance schedule for the current
+  repository'
+cmd: git maintenance stop
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run tasks to optimize Git repository data
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-maintenance.md
+  (CC-BY-4.0)
+tags:
+- git-maintenance

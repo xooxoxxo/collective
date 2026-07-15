@@ -1,0 +1,13 @@
+id: tldr-git-checkout-7
+title: 'git-checkout: Discard unstaged changes to a given file'
+cmd: git checkout <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

@@ -1,0 +1,12 @@
+id: tldr-ssh-copy-id-2
+title: 'ssh-copy-id: Copy the given public key to the remote'
+cmd: ssh-copy-id -i <path/to/certificate> <username>@<remote_host>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Install your public key in a remote machine's authorized_keys
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/ssh-copy-id.md (CC-BY-4.0)
+tags:
+- ssh-copy-id

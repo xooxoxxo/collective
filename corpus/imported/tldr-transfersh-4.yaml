@@ -1,0 +1,12 @@
+id: tldr-transfersh-4
+title: 'transfersh: Upload a file to a custom transfer.sh server'
+cmd: transfersh <[-sn|--servername]> <upload.server.name> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An unofficial client for transfer.sh
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transfersh.md (CC-BY-4.0)
+tags:
+- transfersh

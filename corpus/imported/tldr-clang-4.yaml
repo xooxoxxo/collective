@@ -1,0 +1,14 @@
+id: tldr-clang-4
+title: 'clang: Include libraries from a different path'
+cmd: clang <path/to/source.c> <[-o|--output]> <path/to/output_executable> -I<path/to/header>
+  -L<path/to/library> -l<library_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compile C, C++, and Objective-C source files. Can be used as a drop-in
+  replacement for GCC
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang.md (CC-BY-4.0)
+tags:
+- clang

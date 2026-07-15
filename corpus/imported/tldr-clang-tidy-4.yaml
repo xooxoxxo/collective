@@ -1,0 +1,13 @@
+id: tldr-clang-tidy-4
+title: 'clang-tidy: Specify defines and includes as compilation options (after `--`)'
+cmd: clang-tidy <path/to/file.cpp> -- -I<my_project/include> -D<definitions>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An LLVM-based C/C++ linter to find style violations, bugs, and security
+  flaws through static analysis
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/clang-tidy.md (CC-BY-4.0)
+tags:
+- clang-tidy

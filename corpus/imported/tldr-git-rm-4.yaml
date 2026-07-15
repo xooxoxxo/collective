@@ -1,0 +1,12 @@
+id: tldr-git-rm-4
+title: 'git-rm: Reduce the repository to only the `.git` directory'
+cmd: git rm -r .
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files from repository index and local filesystem
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rm.md (CC-BY-4.0)
+tags:
+- git-rm

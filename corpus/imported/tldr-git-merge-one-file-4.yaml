@@ -1,0 +1,13 @@
+id: tldr-git-merge-one-file-4
+title: 'git-merge-one-file: Apply after read-tree in a scripted merge'
+cmd: git read-tree -m <branch1> <branch2> && git merge-index git-merge-one-file <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Resolve a single file merge after a trivial merge
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-one-file.md
+  (CC-BY-4.0)
+tags:
+- git-merge-one-file

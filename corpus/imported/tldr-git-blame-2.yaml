@@ -1,0 +1,12 @@
+id: tldr-git-blame-2
+title: 'git-blame: Print the author''s email instead of their name'
+cmd: git blame <[-e|--show-email]> <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show what commit and author last modified each line of a file
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-blame.md (CC-BY-4.0)
+tags:
+- git-blame

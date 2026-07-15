@@ -1,0 +1,13 @@
+id: tldr-git-instaweb-3
+title: 'git-instaweb: Listen on a specific port'
+cmd: git instaweb --start <[-p|--port]> <1234>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Helper to launch a GitWeb server
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-instaweb.md
+  (CC-BY-4.0)
+tags:
+- git-instaweb

@@ -1,0 +1,12 @@
+id: tldr-git-status-7
+title: 'git-status: Don''t show untracked files in the output'
+cmd: git status <[-uno|--untracked-files=no]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show the changes to files in a Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-status.md (CC-BY-4.0)
+tags:
+- git-status

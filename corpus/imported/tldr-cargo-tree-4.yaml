@@ -1,0 +1,12 @@
+id: tldr-cargo-tree-4
+title: 'cargo-tree: Show all occurrences of repeated dependencies'
+cmd: cargo tree --no-dedupe
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Display a tree visualization of a dependency graph
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-tree.md (CC-BY-4.0)
+tags:
+- cargo-tree

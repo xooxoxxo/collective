@@ -1,0 +1,14 @@
+id: tldr-cargo-pkgid-1
+title: 'cargo-pkgid: Print the fully qualified package specification for the current
+  project'
+cmd: cargo pkgid
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Print the fully qualified package ID specifier for a package or dependency
+  in the current workspace
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-pkgid.md (CC-BY-4.0)
+tags:
+- cargo-pkgid

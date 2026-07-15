@@ -1,0 +1,13 @@
+id: tldr-git-checkout-3
+title: 'git-checkout: Switch to an existing local branch'
+cmd: git checkout <branch_name>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Checkout a branch or paths to the working tree
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-checkout.md
+  (CC-BY-4.0)
+tags:
+- git-checkout

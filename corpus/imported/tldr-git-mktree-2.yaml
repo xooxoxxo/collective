@@ -1,0 +1,12 @@
+id: tldr-git-mktree-2
+title: 'git-mktree: Allow missing objects'
+cmd: git mktree --missing
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build a tree object using `ls-tree` formatted text
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-mktree.md (CC-BY-4.0)
+tags:
+- git-mktree

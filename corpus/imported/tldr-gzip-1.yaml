@@ -1,0 +1,12 @@
+id: tldr-gzip-1
+title: 'gzip: Compress a file, replacing it with a `gzip` archive'
+cmd: gzip <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Compress/uncompress files with `gzip` compression (LZ77)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/gzip.md (CC-BY-4.0)
+tags:
+- gzip

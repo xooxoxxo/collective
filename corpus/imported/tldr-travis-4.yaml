@@ -1,0 +1,12 @@
+id: tldr-travis-4
+title: 'travis: Generate a `.travis.yml` file and enable the project'
+cmd: travis init
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Interface with Travis CI
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/travis.md (CC-BY-4.0)
+tags:
+- travis

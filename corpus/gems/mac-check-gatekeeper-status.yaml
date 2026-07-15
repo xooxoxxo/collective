@@ -1,0 +1,13 @@
+id: mac-check-gatekeeper-status
+title: Check Gatekeeper status
+cmd: spctl -status
+undo: ""
+platform: [macos]
+domains: [security, debugging]
+danger: low
+explanation: >
+  Shows Gatekeeper status (active/disabled). Use 'spctl -a -v -t install' to check
+  installer security settings, 'spctl --add <binary>' to allowlist a binary.
+  Essential before distributing unsigned apps or debugging quarantine issues.
+source: https://ss64.com/mac/spctl.html
+tags: [gatekeeper, security, spctl, codesign, unsigned-apps]

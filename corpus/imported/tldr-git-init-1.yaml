@@ -1,0 +1,12 @@
+id: tldr-git-init-1
+title: 'git-init: Initialize a new local repository'
+cmd: git init
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Initialize a new local Git repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-init.md (CC-BY-4.0)
+tags:
+- git-init

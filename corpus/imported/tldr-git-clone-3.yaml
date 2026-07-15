@@ -1,0 +1,12 @@
+id: tldr-git-clone-3
+title: 'git-clone: Clone only the `.git` directory of an existing repository'
+cmd: git clone <[-n|--no-checkout]> <remote_repository_location>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Clone an existing repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-clone.md (CC-BY-4.0)
+tags:
+- git-clone

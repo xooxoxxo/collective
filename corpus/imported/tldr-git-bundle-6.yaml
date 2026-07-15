@@ -1,0 +1,12 @@
+id: tldr-git-bundle-6
+title: 'git-bundle: Print to `stdout` the list of references contained in a bundle'
+cmd: git bundle unbundle <path/to/file.bundle>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Package objects and references into an archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bundle.md (CC-BY-4.0)
+tags:
+- git-bundle

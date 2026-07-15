@@ -1,0 +1,12 @@
+id: tldr-cargo-check-4
+title: 'cargo-check: Check the current package with the features `feature1` and `feature2`'
+cmd: cargo <[c|check]> <[-F|--features]> <feature1,feature2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check a local package and all of its dependencies for errors
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-check.md (CC-BY-4.0)
+tags:
+- cargo-check

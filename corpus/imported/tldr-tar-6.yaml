@@ -1,0 +1,13 @@
+id: tldr-tar-6
+title: 'tar: [c]reate a compressed archive and write it to a [f]ile, using the file
+  extension to [a]utomatically determine the compression program'
+cmd: tar caf <path/to/target.tar.xz> <path/to/file1 path/to/file2 ...>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Archiving utility
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md (CC-BY-4.0)
+tags:
+- tar

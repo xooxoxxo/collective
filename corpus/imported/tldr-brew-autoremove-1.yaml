@@ -1,0 +1,13 @@
+id: tldr-brew-autoremove-1
+title: 'brew-autoremove: Remove all unused formulae'
+cmd: brew autoremove
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove unused formulae previously installed as dependencies
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-autoremove.md
+  (CC-BY-4.0)
+tags:
+- brew-autoremove

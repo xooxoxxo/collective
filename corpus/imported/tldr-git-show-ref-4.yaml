@@ -1,0 +1,13 @@
+id: tldr-git-show-ref-4
+title: 'git-show-ref: Verify that a given reference exists'
+cmd: git show-ref --verify <path/to/ref>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Git command for listing references
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-show-ref.md
+  (CC-BY-4.0)
+tags:
+- git-show-ref

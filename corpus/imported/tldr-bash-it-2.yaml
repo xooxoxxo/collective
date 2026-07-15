@@ -1,0 +1,14 @@
+id: tldr-bash-it-2
+title: 'bash-it: Reload Bash profile (set `$BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE`
+  to non-empty value for an automatic reload)'
+cmd: bash-it reload
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A collection of community contributed Bash commands and scripts for Bash
+  3.2+
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/bash-it.md (CC-BY-4.0)
+tags:
+- bash-it

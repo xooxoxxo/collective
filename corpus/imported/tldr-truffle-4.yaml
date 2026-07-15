@@ -1,0 +1,12 @@
+id: tldr-truffle-4
+title: 'truffle: Run migrations to deploy contracts'
+cmd: truffle migrate
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Develop smart contracts for running services on the Ethereum blockchain
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truffle.md (CC-BY-4.0)
+tags:
+- truffle

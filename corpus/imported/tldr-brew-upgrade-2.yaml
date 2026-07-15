@@ -1,0 +1,13 @@
+id: tldr-brew-upgrade-2
+title: 'brew-upgrade: Upgrade a specific formula/cask'
+cmd: brew upgrade <formula|cask>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Upgrade outdated formulae and casks
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-upgrade.md
+  (CC-BY-4.0)
+tags:
+- brew-upgrade

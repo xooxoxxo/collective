@@ -1,0 +1,12 @@
+id: tldr-make-6
+title: 'make: Force making of a target, even if source files are unchanged'
+cmd: make <[-B|--always-make]> <target>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Task runner for targets described in Makefile
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/make.md (CC-BY-4.0)
+tags:
+- make

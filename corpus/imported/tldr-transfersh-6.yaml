@@ -1,0 +1,12 @@
+id: tldr-transfersh-6
+title: 'transfersh: Upload a specific directory as an uncompressed tar'
+cmd: transfersh <[-rt|--recursive --tar]> <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: An unofficial client for transfer.sh
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transfersh.md (CC-BY-4.0)
+tags:
+- transfersh

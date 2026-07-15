@@ -1,0 +1,13 @@
+id: hn-sudo-repeat
+title: 'Re-run last command with sudo'
+cmd: sudo !!
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: medium
+explanation: >
+  Bash history expansion: `!!` expands to the last command, so `sudo !!` executes
+  it again with elevated privileges. Saves retyping long commands when you realize
+  you needed root. Use carefully—always review what you're sudoing.
+source: https://news.ycombinator.com/item?id=47525243
+tags: [history, sudo, productivity, admin]

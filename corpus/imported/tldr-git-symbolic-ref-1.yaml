@@ -1,0 +1,13 @@
+id: tldr-git-symbolic-ref-1
+title: 'git-symbolic-ref: Store a reference by a name'
+cmd: git symbolic-ref refs/<name> <ref>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Read, change, or delete files that store references
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-symbolic-ref.md
+  (CC-BY-4.0)
+tags:
+- git-symbolic-ref

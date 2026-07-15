@@ -1,0 +1,13 @@
+id: tldr-git-continue-1
+title: 'git-continue: View documentation for the original command'
+cmd: tldr git abort
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: This command is an alias of `git abort`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-continue.md
+  (CC-BY-4.0)
+tags:
+- git-continue

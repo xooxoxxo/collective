@@ -1,0 +1,14 @@
+id: shell-git-stash-pop-vs-apply
+title: 'Understand the difference: pop removes, apply keeps'
+cmd: git stash apply stash@{<n>} && git stash drop stash@{<n>}
+undo: git stash list
+platform: [macos, linux]
+domains: [git]
+danger: low
+explanation: >
+  git stash pop = apply + drop (removes from stash list).
+  git stash apply keeps the stash (useful if you want to reuse it multiple branches).
+  Combine apply + drop if you want pop's semantics with control.
+  List stashes with git stash list and reference by index.
+source: https://git-scm.com/docs/git-stash
+tags: [git, stash, gotcha]

@@ -1,0 +1,15 @@
+id: tldr-cargo-metadata-1
+title: 'cargo-metadata: Print the workspace members and resolved dependencies of the
+  current package'
+cmd: cargo metadata
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Output the workspace members and resolved dependencies of current package
+  as JSON
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-metadata.md
+  (CC-BY-4.0)
+tags:
+- cargo-metadata

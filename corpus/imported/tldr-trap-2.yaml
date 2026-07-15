@@ -1,0 +1,12 @@
+id: tldr-trap-2
+title: 'trap: Execute a command when a signal is received'
+cmd: trap 'echo "Caught signal <SIGHUP>"' <HUP>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Execute a command upon an event
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trap.md (CC-BY-4.0)
+tags:
+- trap

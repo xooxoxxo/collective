@@ -1,0 +1,14 @@
+id: blog-jq-group-by
+title: 'Group JSON objects by key'
+cmd: "jq 'group_by(.<field>) | map({key: .[0].<field>, count: length})'"
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  group_by partitions an array into sub-arrays by a key field.
+  Combine with map to compute aggregates (length for count, add for sum).
+  Replaces SQL GROUP BY for quick analysis of JSON logs, API responses.
+  `unique_by` is similar but removes duplicates instead of grouping.
+source: https://stedolan.github.io/jq/manual/#group_by(f)
+tags: [jq, json, group-by, aggregation, data-analysis]

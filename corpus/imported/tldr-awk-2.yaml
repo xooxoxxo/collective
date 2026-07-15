@@ -1,0 +1,13 @@
+id: tldr-awk-2
+title: 'awk: Print the second column of the lines containing "foo" in a space-separated
+  file'
+cmd: awk '/<foo>/ {print $2}' <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile programming language for working on files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/awk.md (CC-BY-4.0)
+tags:
+- awk

@@ -1,0 +1,15 @@
+id: tldr-transmission-create-2
+title: 'transmission-create: Create a private torrent with a specific piece size (in
+  KB)'
+cmd: transmission-create <[-p|--private]> <[-o|--outfile]> <path/to/example.torrent>
+  <[-t|--tracker]> <tracker_announce_url> <[-s|--piecesize]> <2048> <path/to/file_or_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create BitTorrent `.torrent` files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/transmission-create.md
+  (CC-BY-4.0)
+tags:
+- transmission-create

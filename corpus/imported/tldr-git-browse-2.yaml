@@ -1,0 +1,12 @@
+id: tldr-git-browse-2
+title: 'git-browse: Open a specific upstream in the default browser'
+cmd: git browse <upstream>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: View an upstream repository in the default browser
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-browse.md (CC-BY-4.0)
+tags:
+- git-browse

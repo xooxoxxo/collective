@@ -1,0 +1,14 @@
+id: tldr-launchctl-4
+title: 'launchctl: Show all loaded agents/daemons, with the PID if the process they
+  specify is currently running, and the exit code returned the last time they ran'
+cmd: launchctl list
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Control Apple's `launchd` manager for launch daemons (system-wide services)
+  and launch agents (per-user programs)
+source: https://github.com/tldr-pages/tldr/blob/main/pages/osx/launchctl.md (CC-BY-4.0)
+tags:
+- launchctl

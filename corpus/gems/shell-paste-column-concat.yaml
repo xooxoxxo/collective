@@ -1,0 +1,14 @@
+id: shell-paste-column-concat
+title: 'Merge lines from multiple files side-by-side'
+cmd: paste <file1> <file2> | column -t
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  paste concatenates lines from multiple files horizontally (side-by-side).
+  Default separator is TAB; use -d to change (e.g., paste -d, for CSV).
+  Piping to column -t aligns into columns for readability.
+  Useful for combining results, building CSV headers with data.
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/paste.html
+tags: [paste, column, merge, one-liner]

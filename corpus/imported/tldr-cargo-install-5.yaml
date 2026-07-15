@@ -1,0 +1,13 @@
+id: tldr-cargo-install-5
+title: 'cargo-install: List all installed packages and their versions'
+cmd: cargo install --list
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Build and install a Rust binary
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-install.md
+  (CC-BY-4.0)
+tags:
+- cargo-install

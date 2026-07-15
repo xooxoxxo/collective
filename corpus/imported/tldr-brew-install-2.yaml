@@ -1,0 +1,14 @@
+id: tldr-brew-install-2
+title: 'brew-install: Build and install a formula from source (dependencies will still
+  be installed from bottles)'
+cmd: brew install <[-s|--build-from-source]> <formula>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Install a Homebrew formula or cask
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-install.md
+  (CC-BY-4.0)
+tags:
+- brew-install

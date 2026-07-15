@@ -1,0 +1,14 @@
+id: tldr-tarsnap-keygen-2
+title: 'tarsnap-keygen: Encrypt the key file (a passphrase will be requested twice)'
+cmd: sudo tarsnap-keygen --keyfile <path/to/file.key> --user <user_email> --machine
+  <machine_name> --passphrased
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a key file for use with Tarsnap, an online backup service
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/tarsnap-keygen.md
+  (CC-BY-4.0)
+tags:
+- tarsnap-keygen

@@ -1,0 +1,13 @@
+id: tldr-find-5
+title: 'find: Find files matching a given size range, limiting the recursive depth
+  to "1"'
+cmd: find <path/to/directory> -maxdepth 1 -size <+500k> -size <-10M>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Find files or directories under a directory tree, recursively
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/find.md (CC-BY-4.0)
+tags:
+- find

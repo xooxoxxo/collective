@@ -1,0 +1,13 @@
+id: tldr-git-commit-1
+title: 'git-commit: Open an editor to write a message and commit staged files to the
+  repository'
+cmd: git commit
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Commit files to the repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-commit.md (CC-BY-4.0)
+tags:
+- git-commit

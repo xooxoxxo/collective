@@ -1,0 +1,13 @@
+id: tldr-truncate-2
+title: 'truncate: Extend the file size by 50 MiB, fill with holes (which reads as
+  zero bytes)'
+cmd: truncate <[-s|--size]> +50M <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Shrink or extend the size of a file to the specified size
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/truncate.md (CC-BY-4.0)
+tags:
+- truncate

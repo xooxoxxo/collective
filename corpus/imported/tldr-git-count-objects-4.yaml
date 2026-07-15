@@ -1,0 +1,14 @@
+id: tldr-git-count-objects-4
+title: 'git-count-objects: Display more verbose information, displaying sizes in human-readable
+  units'
+cmd: git count-objects <[-H|--human-readable]> <[-v|--verbose]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Count the number of unpacked objects and their disk consumption
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-count-objects.md
+  (CC-BY-4.0)
+tags:
+- git-count-objects

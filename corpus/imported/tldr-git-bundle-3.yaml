@@ -1,0 +1,12 @@
+id: tldr-git-bundle-3
+title: 'git-bundle: Create a bundle file of the last 5 commits of the current branch'
+cmd: git bundle create <path/to/file.bundle> -5 <HEAD>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Package objects and references into an archive
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-bundle.md (CC-BY-4.0)
+tags:
+- git-bundle

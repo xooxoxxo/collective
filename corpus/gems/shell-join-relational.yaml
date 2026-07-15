@@ -1,0 +1,14 @@
+id: shell-join-relational
+title: 'Join lines on a common key (like SQL JOIN)'
+cmd: join -1 <field1> -2 <field2> <file1> <file2>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  join matches lines from two files on a key field (default: first field) and outputs both.
+  Files must be sorted by the join key first.
+  Syntax: join -1 <col_in_file1> -2 <col_in_file2> file1 file2.
+  SQL-like behavior without needing a database.
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/join.html
+tags: [join, relational, two-file, one-liner]

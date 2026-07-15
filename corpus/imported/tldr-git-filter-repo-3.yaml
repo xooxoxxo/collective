@@ -1,0 +1,13 @@
+id: tldr-git-filter-repo-3
+title: 'git-filter-repo: Remove a single folder, keeping history'
+cmd: git filter-repo --path <path/to/folder> --invert-paths
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile tool for rewriting Git history
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-filter-repo.md
+  (CC-BY-4.0)
+tags:
+- git-filter-repo

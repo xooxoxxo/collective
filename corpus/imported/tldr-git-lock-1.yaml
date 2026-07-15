@@ -1,0 +1,12 @@
+id: tldr-git-lock-1
+title: 'git-lock: Disable the ability to commit changes of a local file'
+cmd: git lock <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Lock a file in a Git repository from being modified by a commit
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-lock.md (CC-BY-4.0)
+tags:
+- git-lock

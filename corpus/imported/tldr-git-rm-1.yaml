@@ -1,0 +1,12 @@
+id: tldr-git-rm-1
+title: 'git-rm: Remove file from repository index and filesystem'
+cmd: git rm <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files from repository index and local filesystem
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rm.md (CC-BY-4.0)
+tags:
+- git-rm

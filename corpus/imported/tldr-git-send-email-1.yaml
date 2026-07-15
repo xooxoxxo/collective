@@ -1,0 +1,13 @@
+id: tldr-git-send-email-1
+title: 'git-send-email: Send the last commit in the current branch interactively'
+cmd: git send-email -1
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Send a collection of patches as emails
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-send-email.md
+  (CC-BY-4.0)
+tags:
+- git-send-email

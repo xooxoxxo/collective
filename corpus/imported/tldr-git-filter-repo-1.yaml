@@ -1,0 +1,13 @@
+id: tldr-git-filter-repo-1
+title: 'git-filter-repo: Replace a sensitive string in all files'
+cmd: git filter-repo --replace-text <(echo '<find>==><replacement>')
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile tool for rewriting Git history
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-filter-repo.md
+  (CC-BY-4.0)
+tags:
+- git-filter-repo

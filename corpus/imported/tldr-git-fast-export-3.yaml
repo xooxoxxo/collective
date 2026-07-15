@@ -1,0 +1,14 @@
+id: tldr-git-fast-export-3
+title: 'git-fast-export: Export a specific branch only'
+cmd: git fast-export <main>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Export the contents and history of a Git repository in a streamable,
+  plain-text format
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-fast-export.md
+  (CC-BY-4.0)
+tags:
+- git-fast-export

@@ -1,0 +1,13 @@
+id: mac-enable-hidpi-screenshot
+title: Take HiDPI screenshot in native resolution
+cmd: defaults write com.apple.screencapture disable-shadow -bool true && killall SystemUIServer
+undo: defaults delete com.apple.screencapture disable-shadow && killall SystemUIServer
+platform: [macos]
+domains: [macos-admin, media]
+danger: low
+explanation: >
+  Removes the drop shadow from screenshots, reducing file size. Related: also disables
+  the shadow for display captures. Some devs disable this permanently; restart
+  SystemUIServer to apply immediately.
+source: https://macos-defaults.com/
+tags: [screenshot, media, disk-space, defaults]

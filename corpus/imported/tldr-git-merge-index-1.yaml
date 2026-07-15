@@ -1,0 +1,13 @@
+id: tldr-git-merge-index-1
+title: 'git-merge-index: Merge all files needing resolution using the standard helper'
+cmd: git merge-index git-merge-one-file -a
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run a merge program on files that need merging
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-merge-index.md
+  (CC-BY-4.0)
+tags:
+- git-merge-index

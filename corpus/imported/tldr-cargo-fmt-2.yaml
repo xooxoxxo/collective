@@ -1,0 +1,12 @@
+id: tldr-cargo-fmt-2
+title: 'cargo-fmt: Check for formatting errors without writing to the files'
+cmd: cargo fmt --check
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Run `rustfmt` on all source files in a Rust project
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-fmt.md (CC-BY-4.0)
+tags:
+- cargo-fmt

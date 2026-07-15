@@ -1,0 +1,13 @@
+id: mac-check-time-machine-status
+title: Check Time Machine backup status and last run
+cmd: tmutil status
+undo: ""
+platform: [macos]
+domains: [disk, macos-admin, debugging]
+danger: low
+explanation: >
+  Shows whether Time Machine is running, when the last backup completed, and the state
+  of the current backup. Use 'tmutil destinationinfo' to list backup destinations.
+  Essential for verifying backups are actually happening.
+source: https://ss64.com/mac/tmutil.html
+tags: [time-machine, backup, status, verification, disk]

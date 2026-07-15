@@ -1,0 +1,14 @@
+id: blog-zoxide-smarter-cd
+title: 'Jump to frequently-used directories'
+cmd: z <partial-path>
+undo: ''
+platform: [macos, linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  zoxide (z) learns your directory patterns and jumps to matches with fuzzy scoring.
+  Install: `brew install zoxide` then hook it into your shell (.bashrc: `eval "$(zoxide init bash)"`).
+  Type `z foo` and it picks the most-accessed directory matching "foo".
+  Way smarter than cd; also `zoxide query` to list ranked directories.
+source: https://github.com/ajeetdsouza/zoxide
+tags: [zoxide, z, directory-jumping, must-have, productivity]

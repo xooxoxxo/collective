@@ -1,0 +1,13 @@
+id: tldr-cargo-add-4
+title: 'cargo-add: Add an optional dependency, which then gets exposed as a feature
+  of the crate'
+cmd: cargo add <dependency> --optional
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Add dependencies to a Rust project's `Cargo.toml` manifest
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-add.md (CC-BY-4.0)
+tags:
+- cargo-add

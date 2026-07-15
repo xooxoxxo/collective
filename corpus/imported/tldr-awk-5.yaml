@@ -1,0 +1,12 @@
+id: tldr-awk-5
+title: 'awk: Print every third line starting from the first line'
+cmd: awk 'NR%3==1' <path/to/file>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A versatile programming language for working on files
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/awk.md (CC-BY-4.0)
+tags:
+- awk

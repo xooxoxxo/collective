@@ -1,0 +1,13 @@
+id: tldr-git-submodule-2
+title: 'git-submodule: Install a repository''s submodules (listed in `.gitmodules`)'
+cmd: git submodule update --init --recursive
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Inspect, update, and manage submodules
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-submodule.md
+  (CC-BY-4.0)
+tags:
+- git-submodule

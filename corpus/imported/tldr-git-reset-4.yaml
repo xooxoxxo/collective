@@ -1,0 +1,14 @@
+id: tldr-git-reset-4
+title: 'git-reset: Undo the last commit, keeping its changes (and any further uncommitted
+  changes) in the filesystem'
+cmd: git reset HEAD~
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Undo commits or unstage changes by resetting the current Git HEAD to
+  the specified state
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-reset.md (CC-BY-4.0)
+tags:
+- git-reset

@@ -1,0 +1,12 @@
+id: tldr-cargo-check-5
+title: 'cargo-check: Check the current package with default features disabled'
+cmd: cargo <[c|check]> --no-default-features
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Check a local package and all of its dependencies for errors
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-check.md (CC-BY-4.0)
+tags:
+- cargo-check

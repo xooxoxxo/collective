@@ -1,0 +1,13 @@
+id: tldr-trivy-1
+title: 'trivy: Scan a Docker image for vulnerabilities and exposed secrets'
+cmd: trivy image <image:tag>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Scanner for vulnerabilities in container images, filesystems, and Git
+  repositories, as well as for configuration issues
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trivy.md (CC-BY-4.0)
+tags:
+- trivy

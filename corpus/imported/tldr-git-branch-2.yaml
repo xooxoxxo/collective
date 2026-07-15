@@ -1,0 +1,12 @@
+id: tldr-git-branch-2
+title: 'git-branch: List which branches include a specific Git commit in their history'
+cmd: git branch <[-a|--all]> --contains <commit_hash>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Main Git command for working with branches
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-branch.md (CC-BY-4.0)
+tags:
+- git-branch

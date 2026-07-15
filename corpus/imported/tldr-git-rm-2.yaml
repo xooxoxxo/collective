@@ -1,0 +1,12 @@
+id: tldr-git-rm-2
+title: 'git-rm: Remove directory [r]ecursively'
+cmd: git rm -r <path/to/directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove files from repository index and local filesystem
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-rm.md (CC-BY-4.0)
+tags:
+- git-rm

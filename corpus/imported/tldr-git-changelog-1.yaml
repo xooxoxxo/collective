@@ -1,0 +1,14 @@
+id: tldr-git-changelog-1
+title: 'git-changelog: Update existing file or create a new `History.md` file with
+  the commit messages since the latest Git tag'
+cmd: git changelog
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Generate a changelog report from repository commits and tags
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-changelog.md
+  (CC-BY-4.0)
+tags:
+- git-changelog

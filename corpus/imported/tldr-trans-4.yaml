@@ -1,0 +1,12 @@
+id: tldr-trans-4
+title: 'trans: Translate a word from German to English'
+cmd: trans <de>:<en> <Schmetterling>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Translate Shell, a command-line translator
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trans.md (CC-BY-4.0)
+tags:
+- trans

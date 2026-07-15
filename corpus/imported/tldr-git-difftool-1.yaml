@@ -1,0 +1,14 @@
+id: tldr-git-difftool-1
+title: 'git-difftool: List available diff tools'
+cmd: git difftool --tool-help
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show file changes using external diff tools. Accepts the same options
+  and arguments as `git diff`
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-difftool.md
+  (CC-BY-4.0)
+tags:
+- git-difftool

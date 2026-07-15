@@ -1,0 +1,12 @@
+id: tldr-cargo-clean-1
+title: 'cargo-clean: Remove the entire `target` directory'
+cmd: cargo clean
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Remove generated artifacts in the `target` directory
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/cargo-clean.md (CC-BY-4.0)
+tags:
+- cargo-clean

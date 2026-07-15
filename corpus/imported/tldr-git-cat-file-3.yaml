@@ -1,0 +1,14 @@
+id: tldr-git-cat-file-3
+title: 'git-cat-file: Pretty-[p]rint the contents of a given Git object based on its
+  type'
+cmd: git cat-file -p <HEAD~2>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Provide content or type and size information for Git repository objects
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-cat-file.md
+  (CC-BY-4.0)
+tags:
+- git-cat-file

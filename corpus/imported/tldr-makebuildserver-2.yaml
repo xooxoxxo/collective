@@ -1,0 +1,13 @@
+id: tldr-makebuildserver-2
+title: 'makebuildserver: Force creating a fresh virtual machine'
+cmd: makebuildserver <[-c|--clean]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Create an F-Droid build server virtual machine
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/makebuildserver.md
+  (CC-BY-4.0)
+tags:
+- makebuildserver

@@ -444,7 +444,7 @@ git commit -m "feat: entry schema, build-time corpus validation, 10 seed entries
 
 **Interfaces:**
 - Consumes: `entry::Entry`, `Entry::validate`
-- Produces: `corpus::load() -> Vec<Entry>` (sorted by id, overlay entries from `~/.collective/corpus/` override embedded ones by id), and `corpus::parse_dir_yaml(texts: &[(String, String)]) -> Vec<Entry>` helper used by tests.
+- Produces: `corpus::load() -> Vec<Entry>` (sorted by id, overlay entries from `~/.collective/corpus/` override embedded ones by id).
 
 - [ ] **Step 1: Write failing tests in `src/corpus.rs`**
 

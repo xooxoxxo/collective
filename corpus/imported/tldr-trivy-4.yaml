@@ -1,0 +1,13 @@
+id: tldr-trivy-4
+title: 'trivy: Scan the filesystem for vulnerabilities and misconfigurations'
+cmd: trivy fs --scanners <vuln,misconfig> <path/to/project_directory>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Scanner for vulnerabilities in container images, filesystems, and Git
+  repositories, as well as for configuration issues
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trivy.md (CC-BY-4.0)
+tags:
+- trivy

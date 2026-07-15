@@ -1,0 +1,12 @@
+id: tldr-trip-5
+title: 'trip: Use custom destination port `443` for `tcp` tracing'
+cmd: sudo trip <example.com> --protocol <tcp> --target-port <443>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: A network diagnostic tool
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/trip.md (CC-BY-4.0)
+tags:
+- trip

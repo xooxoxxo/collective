@@ -1,0 +1,12 @@
+id: tldr-git-push-2
+title: 'git-push: Send changes from a specific local branch to its remote counterpart'
+cmd: git push <remote_name> <local_branch>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Push commits to a remote repository
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-push.md (CC-BY-4.0)
+tags:
+- git-push

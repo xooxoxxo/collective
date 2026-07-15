@@ -1,0 +1,13 @@
+id: tldr-brew-6
+title: 'brew: Search for available formulae (i.e. packages) and casks (i.e. native
+  macOS `.app` packages)'
+cmd: brew search <text>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Homebrew - a package manager for macOS and Linux
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew.md (CC-BY-4.0)
+tags:
+- brew

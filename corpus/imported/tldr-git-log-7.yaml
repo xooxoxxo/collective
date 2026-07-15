@@ -1,0 +1,12 @@
+id: tldr-git-log-7
+title: 'git-log: Show the last `n` number of commits from a certain author'
+cmd: git log <[-n|--max-count]> <n> --author "<author>"
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: Show a history of commits
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/git-log.md (CC-BY-4.0)
+tags:
+- git-log

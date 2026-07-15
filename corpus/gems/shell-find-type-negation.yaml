@@ -1,0 +1,14 @@
+id: shell-find-type-negation
+title: 'Find all files except directories'
+cmd: find <dir> ! -type d
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  find ! -type d negates a condition (the ! operator).
+  Useful: find . ! -type d -name '*.log' to skip directories in a pattern search.
+  Combine with -type f, -type l (symlinks) for precise filtering.
+  Way cleaner than piping to grep ^-; also respects symlinks correctly.
+source: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html
+tags: [find, negation, type-filter, one-liner]

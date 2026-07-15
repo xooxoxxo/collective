@@ -1,0 +1,13 @@
+id: shell-jq-select-filter
+title: 'Filter JSON objects by condition'
+cmd: jq '.[] | select(.<field> == <value>)' <file.json>
+undo: ''
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  jq select() tests each object and only emits those matching the condition.
+  Chain with | to refine further (select(. > 5) | .name).
+  Much faster than grep on JSON since it respects structure.
+source: https://stedolan.github.io/jq/manual/#select(f)
+tags: [jq, json, filtering, one-liner]

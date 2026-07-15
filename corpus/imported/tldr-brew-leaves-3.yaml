@@ -1,0 +1,13 @@
+id: tldr-brew-leaves-3
+title: 'brew-leaves: Only list leaves that were installed as dependencies'
+cmd: brew leaves <[-p|--installed-as-dependency]>
+platform:
+- macos
+domains:
+- tldr-import
+danger: low
+explanation: List installed formulas that are not dependencies of another installed
+  formula or cask
+source: https://github.com/tldr-pages/tldr/blob/main/pages/common/brew-leaves.md (CC-BY-4.0)
+tags:
+- brew-leaves
