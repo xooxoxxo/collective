@@ -1,0 +1,12 @@
+id: hn-process-substitution
+title: Use command output as file argument with process substitution
+cmd: "diff <(cmd1) <(cmd2)"
+undo: ""
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  <(...) creates a pseudo-file from a command's output. Eliminates need for temp files when comparing output,
+  feeding data to tools that expect files, or diff-ing remote vs local. Bash only (not POSIX sh).
+tags: [process-substitution, bash-only, pseudo-files]
+source: "https://news.ycombinator.com/item?id=25898881"

@@ -1,0 +1,12 @@
+id: hn-last-var
+title: Access last argument via $_ variable
+cmd: "cmd arg; echo $_"
+undo: ""
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  $_ expands to the last argument of the previous command. Like !$ but as a variable (more reliable in scripts).
+  Works in bash, zsh, and other shells. Useful in scripts and interactive use where history expansion may not work.
+tags: [shell-variables, last-argument, scripting]
+source: "https://news.ycombinator.com/item?id=25898881"

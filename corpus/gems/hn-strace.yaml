@@ -1,0 +1,13 @@
+id: hn-strace
+title: Trace system calls made by a process
+cmd: "strace <command> (or dtruss on macOS)"
+undo: ""
+platform: [linux]
+domains: [debugging, power]
+danger: low
+explanation: >
+  strace (Linux) / dtruss (macOS) shows all syscalls, signals, and arguments. Essential for debugging,
+  understanding what a binary does, finding permission issues, or tracing file access. Output verbose;
+  filter with -e open,read for specific syscalls.
+tags: [syscall-tracing, debugging, black-box-tools]
+source: "https://news.ycombinator.com/item?id=13027459"

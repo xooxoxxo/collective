@@ -1,0 +1,12 @@
+id: hn-all-args
+title: Use all arguments from previous command
+cmd: "!* (or Ctrl-Alt-Y in vi mode)"
+undo: ""
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  !* expands to all arguments of the previous command (excluding the program name).
+  Useful when you need to reuse multiple arguments in a new command without retyping them.
+tags: [history-expansion, arguments, shell-trick]
+source: "https://news.ycombinator.com/item?id=25898881"

@@ -1,0 +1,12 @@
+id: hn-timeout
+title: Run command with execution time limit
+cmd: "timeout <seconds> <command>"
+undo: ""
+platform: [linux]
+domains: [shell, power]
+danger: low
+explanation: >
+  GNU coreutils timeout: kills process if it exceeds duration. Linux native; macOS users need gtimeout from
+  homebrew coreutils. Useful for preventing hangs in scripts or tests with external dependencies.
+tags: [execution-limit, runaway-process, timeout]
+source: "https://news.ycombinator.com/item?id=25898881"

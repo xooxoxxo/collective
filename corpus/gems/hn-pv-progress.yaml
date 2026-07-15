@@ -1,0 +1,13 @@
+id: hn-pv-progress
+title: Show progress bar for piped data
+cmd: "cat <file> | pv | <command>"
+undo: ""
+platform: [macos, linux]
+domains: [power, files]
+danger: low
+explanation: >
+  Pipe Viewer: displays throughput, ETA, and progress % for data flowing through a pipe.
+  Essential when copying large files over network or running long pipes where you want to see progress.
+  Install via package manager.
+tags: [progress, pipes, monitoring]
+source: "https://news.ycombinator.com/item?id=13027459"

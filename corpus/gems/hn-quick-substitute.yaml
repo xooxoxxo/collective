@@ -1,0 +1,12 @@
+id: hn-quick-substitute
+title: Quick-substitute last command and re-run
+cmd: "^<old>^<new>"
+undo: ""
+platform: [macos, linux]
+domains: [shell]
+danger: low
+explanation: >
+  Bash history expansion: re-runs the last command with <old> replaced by <new>.
+  Faster than pressing up and editing; commonly used to fix typos or switch arguments on long commands.
+tags: [history-expansion, typo-fix, productivity]
+source: "https://news.ycombinator.com/item?id=25898881"

@@ -1,0 +1,12 @@
+id: hn-mtr
+title: Combine traceroute and ping into live display
+cmd: "mtr <host>"
+undo: "Ctrl-C"
+platform: [macos, linux]
+domains: [network, debugging]
+danger: low
+explanation: >
+  Like traceroute but shows rolling stats (loss%, latency, jitter) for each hop continuously.
+  Much better than repeated ping+traceroute. Install via package manager (brew/apt-get).
+tags: [network-diagnostics, traceroute, live-monitoring]
+source: "https://news.ycombinator.com/item?id=13027459"

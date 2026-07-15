@@ -1,0 +1,12 @@
+id: hn-brace-expand
+title: Use brace expansion to avoid repetition
+cmd: "cp file{,.bak} (or mkdir -p dir/{a,b,c})"
+undo: "rm file.bak"
+platform: [macos, linux]
+domains: [shell, files]
+danger: low
+explanation: >
+  {x,y} expands to x and y. {,.bak} expands to empty string and .bak. Eliminates typos when specifying
+  similar paths. Also {a..z} generates ranges. Bash/zsh; useful in loops and complex expansions.
+tags: [brace-expansion, path-generation, shell-trick]
+source: "https://news.ycombinator.com/item?id=25898881"

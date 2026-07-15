@@ -1,0 +1,12 @@
+id: hn-trap
+title: Handle signals and errors in bash scripts
+cmd: "trap '<cleanup_command>' EXIT INT TERM"
+undo: "trap - EXIT INT TERM (remove trap)"
+platform: [macos, linux]
+domains: [shell, security]
+danger: low
+explanation: >
+  trap runs code on signal or exit. Example: trap 'rm -f /tmp/mytemp' EXIT ensures cleanup even if script
+  fails. Essential for resource cleanup (temp files, locks, background jobs). Signal names: EXIT, INT, TERM, etc.
+tags: [signal-handling, cleanup, bash-scripting]
+source: "https://news.ycombinator.com/item?id=25898881"

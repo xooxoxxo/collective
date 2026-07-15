@@ -10,14 +10,15 @@ schema + danger-sanity + build gate.
 |---|---|---|---|
 | macOS internals | `mac-` | 37 | ss64.com/mac, macos-defaults.com, Apple docs |
 | Dotfiles archaeology | `dot-` | 28 | mathiasbynens, paulirish, holman, thoughtbot, skwp dotfiles |
-| HN/Reddit threads | `hn-` | 4 | HN & r/commandline "best one-liner" threads |
+| HN/Reddit threads | `hn-` | 31 | HN & r/commandline "best one-liner" threads |
 | Shell wizardry | `shell-` | 25 | ss64, git-scm docs, awk/jq/git plumbing canon |
 | Blog canon / modern tools | `blog-` | 21 | fzf/rg/fd/bat/eza/zoxide/entr/tmux/jq canon |
 
-The HN/Reddit lens under-delivered (agent hit an API error mid-run after
-writing only 4 entries). Re-mining that thread corpus is the obvious next
-harvest — the recurring "share your best CLI trick" threads have far more than
-4 gems worth keeping.
+The HN/Reddit lens under-delivered on the first sweep (agent hit an API error
+mid-run after writing only 4 entries), then was re-mined to 31: history
+expansion (`!$`, `!*`, `^old^new`, `!abc`), process substitution, job control
+(disown/nohup), mtr/ncdu/pv, `watch -d`, `echo|sudo tee`, defensive bash
+(`set -euo pipefail`, `trap`).
 
 ## Danger distribution
 
@@ -41,11 +42,11 @@ Leads the agents surfaced and excluded, worth revisiting:
 
 ## Known follow-ups
 
-- **HN/Reddit lens is thin (4 entries).** Re-run that lens.
-- **Search ranking:** with ~1470 tldr imports plus 115 gems, fuzzy queries
-  sometimes rank a tldr page above a hand-curated gem. A future scoring tweak
-  (boost `corpus/gems/` and hand-curated entries over `tldr-import` domain)
-  would surface the good stuff first. Tracked as a search-quality task, not a
-  corpus task.
+- ~~HN/Reddit lens is thin (4 entries).~~ **Done** — re-mined to 31.
+- ~~Search ranking floats tldr pages above gems.~~ **Done** — `search::search`
+  now scores `tldr-import` entries at half weight (curated ×2), so gems win on
+  genuine matches while imports stay reachable. The boost is deliberately mild;
+  a query with no strong curated title match (e.g. "kill port") can still
+  surface an import first.
 - The parallel background research agents proved flaky under load (API drops,
   stream stalls). A foreground or smaller-fan-out sweep was more reliable.
