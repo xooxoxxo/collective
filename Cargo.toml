@@ -17,6 +17,9 @@ nucleo-matcher = "0.3"
 arboard = "3"
 directories = "5"
 rand = "0.8"
+ratatui = "0.28"
+crossterm = "0.28"
+ureq = { version = "2", features = ["json"] }
 
 [build-dependencies]
 serde = { version = "1", features = ["derive"] }

@@ -1,6 +1,6 @@
 use serde::Deserialize;
 
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Deserialize, serde::Serialize)]
 #[serde(deny_unknown_fields)]
 pub struct Entry {
     pub id: String,
@@ -17,7 +17,7 @@ pub struct Entry {
     pub tags: Vec<String>,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, serde::Serialize)]
 #[serde(rename_all = "lowercase")]
 pub enum Danger {
     Low,
@@ -51,6 +51,17 @@ impl Entry {
             return Err(format!("{}: at least one domain", self.id));
         }
         Ok(())
+    }
+}
+
+impl Danger {
+    pub fn parse(s: &str) -> Option<Danger> {
+        match s.trim().to_lowercase().as_str() {
+            "low" => Some(Danger::Low),
+            "medium" => Some(Danger::Medium),
+            "high" => Some(Danger::High),
+            _ => None,
+        }
     }
 }
 

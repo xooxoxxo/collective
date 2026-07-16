@@ -3,14 +3,21 @@ mod corpus;
 mod search;
 mod sm2;
 mod drill;
+mod favorites;
+mod tui;
+mod ai; // consumed by collect (Task 6)
+mod collect;
 
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(name = "collective", about = "hacky script directory + console drills")]
 struct Cli {
+    /// Print the shell wrapper for zsh or bash, then exit
+    #[arg(long, value_name = "SHELL")]
+    print_shell: Option<String>,
     #[command(subcommand)]
-    cmd: Cmd,
+    cmd: Option<Cmd>,
 }
 
 #[derive(Subcommand)]
@@ -28,17 +35,43 @@ enum Cmd {
         #[arg(long)]
         domain: Option<String>,
     },
+    /// Capture a command into your personal corpus (overlay)
+    Collect {
+        /// The command to save
+        command: String,
+        /// Skip the AI prompt and enter fields manually
+        #[arg(long)]
+        manual: bool,
+    },
 }
 
 fn main() {
     let cli = Cli::parse();
+    if let Some(shell) = cli.print_shell.as_deref() {
+        match shell {
+            "zsh" => print!("{}", include_str!("../shell/collective.zsh")),
+            "bash" => print!("{}", include_str!("../shell/collective.bash")),
+            other => {
+                eprintln!("unknown shell '{other}' (use zsh or bash)");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
     let entries = corpus::load();
     match cli.cmd {
-        Cmd::Search { query } => cmd_search(&entries, &query.join(" ")),
-        Cmd::Show { id } => cmd_show(&entries, &id),
-        Cmd::Copy { id } => cmd_copy(&entries, &id),
-        Cmd::Random => cmd_show(&entries, &random_id(&entries)),
-        Cmd::Drill { domain } => drill::run(&entries, domain.as_deref()),
+        None => {
+            if let Err(e) = tui::run() {
+                eprintln!("tui error: {e}");
+                std::process::exit(1);
+            }
+        }
+        Some(Cmd::Search { query }) => cmd_search(&entries, &query.join(" ")),
+        Some(Cmd::Show { id }) => cmd_show(&entries, &id),
+        Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
+        Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
+        Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
+        Some(Cmd::Collect { command, manual }) => collect::run(&command, manual),
     }
 }
 
