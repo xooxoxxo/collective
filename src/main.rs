@@ -3,9 +3,7 @@ mod corpus;
 mod search;
 mod sm2;
 mod drill;
-#[allow(dead_code)] // consumed by the TUI (Task 3)
 mod favorites;
-#[allow(dead_code)] // event loop + rendering land in Task 3
 mod tui;
 
 use clap::{Parser, Subcommand};
@@ -14,7 +12,7 @@ use clap::{Parser, Subcommand};
 #[command(name = "collective", about = "hacky script directory + console drills")]
 struct Cli {
     #[command(subcommand)]
-    cmd: Cmd,
+    cmd: Option<Cmd>,
 }
 
 #[derive(Subcommand)]
@@ -38,11 +36,17 @@ fn main() {
     let cli = Cli::parse();
     let entries = corpus::load();
     match cli.cmd {
-        Cmd::Search { query } => cmd_search(&entries, &query.join(" ")),
-        Cmd::Show { id } => cmd_show(&entries, &id),
-        Cmd::Copy { id } => cmd_copy(&entries, &id),
-        Cmd::Random => cmd_show(&entries, &random_id(&entries)),
-        Cmd::Drill { domain } => drill::run(&entries, domain.as_deref()),
+        None => {
+            if let Err(e) = tui::run() {
+                eprintln!("tui error: {e}");
+                std::process::exit(1);
+            }
+        }
+        Some(Cmd::Search { query }) => cmd_search(&entries, &query.join(" ")),
+        Some(Cmd::Show { id }) => cmd_show(&entries, &id),
+        Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
+        Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
+        Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
     }
 }
 

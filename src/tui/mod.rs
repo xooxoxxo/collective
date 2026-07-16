@@ -1,6 +1,15 @@
+mod ui;
+
 use crate::entry::Entry;
+use crate::favorites;
 use crate::search;
+use crossterm::event::{self, Event, KeyCode, KeyEventKind};
+use crossterm::terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen};
+use crossterm::execute;
+use ratatui::backend::CrosstermBackend;
+use ratatui::Terminal;
 use std::collections::HashSet;
+use std::io::{self, Write};
 
 pub struct App {
     pub all: Vec<Entry>,
@@ -138,4 +147,90 @@ mod tests {
         assert_eq!(a.visible().len(), 1);
         assert_eq!(a.visible()[0].id, "pmset-disable-sleep");
     }
+}
+
+fn restore() {
+    let _ = disable_raw_mode();
+    let _ = execute!(io::stdout(), LeaveAlternateScreen);
+}
+
+pub fn run() -> io::Result<()> {
+    // Ensure the terminal is restored even on panic.
+    let prev = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        restore();
+        prev(info);
+    }));
+
+    let fav_path = favorites::default_path();
+    let mut app = App::new(crate::corpus::load(), favorites::load(&fav_path));
+
+    enable_raw_mode()?;
+    execute!(io::stdout(), EnterAlternateScreen)?;
+    let mut terminal = Terminal::new(CrosstermBackend::new(io::stdout()))?;
+
+    let mut picked: Option<String> = None;
+    let result = (|| -> io::Result<()> {
+        loop {
+            terminal.draw(|f| ui::draw(f, &app))?;
+            let Event::Key(key) = event::read()? else { continue };
+            if key.kind != KeyEventKind::Press {
+                continue;
+            }
+            match key.code {
+                KeyCode::Esc => break,
+                KeyCode::Char('q') if app.filter.is_empty() => break,
+                KeyCode::Up => app.move_up(),
+                KeyCode::Down => app.move_down(),
+                KeyCode::Enter => {
+                    if let Some(e) = app.selected_entry() {
+                        picked = Some(e.cmd.clone());
+                    }
+                    break;
+                }
+                KeyCode::Char('\n') => {}
+                KeyCode::Backspace => {
+                    let mut f = app.filter.clone();
+                    f.pop();
+                    app.set_filter(&f);
+                }
+                // Ctrl-less bare keys drive both filter text AND actions:
+                // reserve f/F/y for actions, everything else types into filter.
+                KeyCode::Char('y') => {
+                    if let Some(e) = app.selected_entry() {
+                        let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone()));
+                    }
+                }
+                KeyCode::Char('f') => {
+                    if let Some(_id) = app.toggle_star() {
+                        let _ = favorites::save(&fav_path, &app.favorites);
+                    }
+                }
+                KeyCode::Char('F') => app.toggle_fav_only(),
+                KeyCode::Char(c) => {
+                    let mut f = app.filter.clone();
+                    f.push(c);
+                    app.set_filter(&f);
+                }
+                _ => {}
+            }
+        }
+        Ok(())
+    })();
+
+    restore();
+    let _ = std::panic::take_hook();
+    result?;
+
+    if let Some(cmd) = picked {
+        deliver(&cmd);
+    }
+    Ok(())
+}
+
+fn deliver(cmd: &str) {
+    // Real prefill + clipboard land in Task 4. Print so bare use still works.
+    let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(cmd.to_string()));
+    println!("{cmd}");
+    let _ = io::stdout().flush();
 }
