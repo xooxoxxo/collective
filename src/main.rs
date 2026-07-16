@@ -3,6 +3,8 @@ mod corpus;
 mod search;
 mod sm2;
 mod drill;
+#[allow(dead_code)] // consumed by the TUI (Task 3)
+mod favorites;
 
 use clap::{Parser, Subcommand};
 
