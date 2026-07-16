@@ -5,6 +5,8 @@ mod sm2;
 mod drill;
 #[allow(dead_code)] // consumed by the TUI (Task 3)
 mod favorites;
+#[allow(dead_code)] // event loop + rendering land in Task 3
+mod tui;
 
 use clap::{Parser, Subcommand};
 
