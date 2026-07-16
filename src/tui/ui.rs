@@ -3,7 +3,7 @@ use crate::tui::App;
 use ratatui::layout::{Constraint, Direction, Layout};
 use ratatui::style::{Color, Modifier, Style};
 use ratatui::text::{Line, Span};
-use ratatui::widgets::{Block, Borders, Cell, Paragraph, Row, Table, Wrap};
+use ratatui::widgets::{Block, Borders, Cell, Paragraph, Row, Table, TableState, Wrap};
 use ratatui::Frame;
 
 pub fn draw(f: &mut Frame, app: &App) {
@@ -25,12 +25,12 @@ pub fn draw(f: &mut Frame, app: &App) {
 
     // table
     let visible = app.visible();
-    let rows = visible.iter().enumerate().map(|(i, e)| {
+    let rows = visible.iter().map(|e| {
         let star = if app.favorites.contains(&e.id) { "★" } else { " " };
         let danger = format!("{:?}", e.danger).to_lowercase();
-        let style = if i == app.selected {
-            Style::default().add_modifier(Modifier::REVERSED)
-        } else if e.danger == Danger::High {
+        // Selection highlight is applied by the table's row_highlight_style;
+        // here we only colour danger:high rows red.
+        let style = if e.danger == Danger::High {
             Style::default().fg(Color::Red)
         } else {
             Style::default()
@@ -53,8 +53,16 @@ pub fn draw(f: &mut Frame, app: &App) {
         ],
     )
     .header(Row::new(vec!["", "id", "title", "danger"]).style(Style::default().add_modifier(Modifier::BOLD)))
-    .block(Block::default().borders(Borders::ALL));
-    f.render_widget(table, chunks[1]);
+    .block(Block::default().borders(Borders::ALL))
+    .highlight_style(Style::default().add_modifier(Modifier::REVERSED))
+    .highlight_symbol("> ");
+    // Stateful render tracks the selected row so the viewport scrolls to keep
+    // it visible — a stateless render would leave the cursor off-screen.
+    let mut state = TableState::default();
+    if !visible.is_empty() {
+        state.select(Some(app.selected));
+    }
+    f.render_stateful_widget(table, chunks[1], &mut state);
 
     // detail pane
     let detail = match app.selected_entry() {
