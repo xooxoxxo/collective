@@ -164,13 +164,13 @@ pub fn run() -> io::Result<()> {
 
     let fav_path = favorites::default_path();
     let mut app = App::new(crate::corpus::load(), favorites::load(&fav_path));
-
-    enable_raw_mode()?;
-    execute!(io::stdout(), EnterAlternateScreen)?;
-    let mut terminal = Terminal::new(CrosstermBackend::new(io::stdout()))?;
-
     let mut picked: Option<String> = None;
+
     let result = (|| -> io::Result<()> {
+        enable_raw_mode()?;
+        execute!(io::stdout(), EnterAlternateScreen)?;
+        let mut terminal = Terminal::new(CrosstermBackend::new(io::stdout()))?;
+
         loop {
             terminal.draw(|f| ui::draw(f, &app))?;
             let Event::Key(key) = event::read()? else { continue };
