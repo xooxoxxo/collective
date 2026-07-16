@@ -1,0 +1,83 @@
+# collective
+
+A searchable directory of hacky, nerdy, super-functional developer commands —
+with an interactive TUI and console flashcard training. One offline Rust binary,
+~1600 curated + imported commands baked in.
+
+```
+collective                       # interactive TUI (filter, detail, favorites, prefill)
+collective search "prevent sleep"
+collective show pmset-disable-sleep
+collective copy lsof-listening-port
+collective random
+collective drill --domain git    # SM-2 spaced-repetition flashcards
+collective collect 'pmset -a disablesleep 1'   # add your own (AI or manual)
+```
+
+## Install
+
+```sh
+cargo install --path .
+```
+
+Add `~/.cargo/bin` to your `PATH` if it isn't already.
+
+### Shell prefill (recommended)
+
+The TUI never runs a command for you — selecting one places it on your shell
+prompt, editable, for you to run. That needs a tiny wrapper:
+
+```sh
+collective --print-shell zsh  >> ~/.zshrc     # or: --print-shell bash >> ~/.bashrc
+```
+
+Reload your shell. Now `collective`, pick with `↑/↓`, press `Enter`, and the
+command lands on your prompt.
+
+## TUI keys
+
+| key | action |
+|-----|--------|
+| type | live fuzzy filter |
+| `↑`/`↓`, `j`/`k` | move selection |
+| `Enter` | prefill selected command to your shell + copy |
+| `y` | copy to clipboard, stay open |
+| `f` | toggle favorite (persisted) |
+| `F` | show favorites only |
+| `Esc` / `q` | quit |
+
+## collect
+
+`collective collect '<command>'` captures a command into your personal overlay
+at `~/.collective/corpus/`, so it shows up in search and drills immediately —
+no rebuild. Fields are filled by AI or by hand:
+
+- **AI**: `ANTHROPIC_API_KEY` → Anthropic API; else a local `claude` CLI
+  (`claude -p`); else it falls back to manual entry. Model via
+  `COLLECTIVE_MODEL` (default `claude-haiku-4-5-20251001`).
+- **Manual**: prompts for each field.
+
+## Safety
+
+`collective` shows and copies commands — it never executes them. Dangerous
+entries (`sudo`, destructive, irreversible) render a red banner and show their
+undo. You review and run everything yourself.
+
+## Corpus
+
+- Hand-curated seed gems + a research-mined set across macOS internals,
+  dotfiles, shell wizardry, and modern CLI tools.
+- Bulk command reference imported from
+  [tldr-pages](https://github.com/tldr-pages/tldr) (CC-BY-4.0) — see `NOTICE`.
+- Every entry carries a `source`. Add your own with `collect`.
+
+## Development
+
+```sh
+cargo test    # unit + integration
+cargo build   # also re-validates every corpus YAML at build time
+```
+
+Corpus entries are YAML under `corpus/`, validated by `build.rs` at compile
+time — an invalid entry fails the build. Design docs live in
+`docs/superpowers/`.
