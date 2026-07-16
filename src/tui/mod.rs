@@ -229,8 +229,16 @@ pub fn run() -> io::Result<()> {
 }
 
 fn deliver(cmd: &str) {
-    // Real prefill + clipboard land in Task 4. Print so bare use still works.
     let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(cmd.to_string()));
-    println!("{cmd}");
-    let _ = io::stdout().flush();
+    match std::env::var("COLLECTIVE_PICK") {
+        Ok(path) if !path.is_empty() => {
+            // Wrapper reads this file and places the command on the prompt.
+            let _ = std::fs::write(path, cmd);
+        }
+        _ => {
+            // No wrapper: print so the user can copy/paste.
+            println!("{cmd}");
+            let _ = io::stdout().flush();
+        }
+    }
 }

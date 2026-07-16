@@ -11,6 +11,9 @@ use clap::{Parser, Subcommand};
 #[derive(Parser)]
 #[command(name = "collective", about = "hacky script directory + console drills")]
 struct Cli {
+    /// Print the shell wrapper for zsh or bash, then exit
+    #[arg(long, value_name = "SHELL")]
+    print_shell: Option<String>,
     #[command(subcommand)]
     cmd: Option<Cmd>,
 }
@@ -34,6 +37,17 @@ enum Cmd {
 
 fn main() {
     let cli = Cli::parse();
+    if let Some(shell) = cli.print_shell.as_deref() {
+        match shell {
+            "zsh" => print!("{}", include_str!("../shell/collective.zsh")),
+            "bash" => print!("{}", include_str!("../shell/collective.bash")),
+            other => {
+                eprintln!("unknown shell '{other}' (use zsh or bash)");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
     let entries = corpus::load();
     match cli.cmd {
         None => {

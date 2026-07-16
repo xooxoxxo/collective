@@ -52,3 +52,24 @@ fn drill_with_empty_stdin_exits_cleanly() {
         .assert()
         .success();
 }
+
+#[test]
+fn print_shell_zsh_emits_wrapper() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["--print-shell", "zsh"])
+        .assert()
+        .success()
+        .stdout(str::contains("collective()"))
+        .stdout(str::contains("print -z"));
+}
+
+#[test]
+fn print_shell_bash_emits_wrapper() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["--print-shell", "bash"])
+        .assert()
+        .success()
+        .stdout(str::contains("READLINE_LINE"));
+}
