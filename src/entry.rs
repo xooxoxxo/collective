@@ -54,6 +54,17 @@ impl Entry {
     }
 }
 
+impl Danger {
+    pub fn parse(s: &str) -> Option<Danger> {
+        match s.trim().to_lowercase().as_str() {
+            "low" => Some(Danger::Low),
+            "medium" => Some(Danger::Medium),
+            "high" => Some(Danger::High),
+            _ => None,
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

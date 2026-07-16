@@ -5,8 +5,8 @@ mod sm2;
 mod drill;
 mod favorites;
 mod tui;
-#[allow(dead_code)]
 mod ai; // consumed by collect (Task 6)
+mod collect;
 
 use clap::{Parser, Subcommand};
 
@@ -34,6 +34,14 @@ enum Cmd {
     Drill {
         #[arg(long)]
         domain: Option<String>,
+    },
+    /// Capture a command into your personal corpus (overlay)
+    Collect {
+        /// The command to save
+        command: String,
+        /// Skip the AI prompt and enter fields manually
+        #[arg(long)]
+        manual: bool,
     },
 }
 
@@ -63,6 +71,7 @@ fn main() {
         Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
         Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
         Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
+        Some(Cmd::Collect { command, manual }) => collect::run(&command, manual),
     }
 }
 
