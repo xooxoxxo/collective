@@ -34,9 +34,22 @@ pub fn select_backend(has_api_key: bool, claude_on_path: bool) -> Backend {
 pub fn parse_response(text: &str) -> Result<AiFields, String> {
     let start = text.find('{').ok_or("no JSON object in response")?;
     let mut depth = 0usize;
+    let mut in_string = false;
+    let mut escaped = false;
     let mut end = None;
     for (i, c) in text[start..].char_indices() {
+        if in_string {
+            if escaped {
+                escaped = false;
+            } else if c == '\\' {
+                escaped = true;
+            } else if c == '"' {
+                in_string = false;
+            }
+            continue;
+        }
         match c {
+            '"' => in_string = true,
             '{' => depth += 1,
             '}' => {
                 depth -= 1;
@@ -160,5 +173,11 @@ mod tests {
     fn malformed_json_errors() {
         assert!(parse_response("no json here").is_err());
         assert!(parse_response("{ not valid").is_err());
+    }
+
+    #[test]
+    fn parses_json_with_brace_inside_string() {
+        let f = parse_response(r#"prose {"title":"restore a }brace","domains":["shell"],"danger":"low","explanation":"E","tags":["x"],"undo":"","platform":["macos"]} more"#).unwrap();
+        assert_eq!(f.title, "restore a }brace");
     }
 }
