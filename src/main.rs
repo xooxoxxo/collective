@@ -5,6 +5,8 @@ mod sm2;
 mod drill;
 mod favorites;
 mod tui;
+#[allow(dead_code)]
+mod ai; // consumed by collect (Task 6)
 
 use clap::{Parser, Subcommand};
 
