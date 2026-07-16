@@ -185,6 +185,10 @@ pub fn run(cmd: &str, manual: bool) {
     let existing: HashSet<String> = crate::corpus::load().into_iter().map(|e| e.id).collect();
     entry.id = uniquify(&slug(&entry.title), &existing);
 
+    // Known limitation: an empty or punctuation-only title slugs to "", which
+    // validate() rejects below only after the user has entered every field.
+    // A future improvement is to re-prompt for the title interactively instead
+    // of failing at the end.
     if let Err(e) = entry.validate() {
         eprintln!("cannot save: {e}");
         std::process::exit(1);
