@@ -4,7 +4,7 @@ use nucleo_matcher::{Config, Matcher, Utf32Str};
 
 /// Bulk tldr-pages imports live in this domain; they are ranked below
 /// hand-curated entries so the good stuff surfaces first.
-fn is_bulk_import(e: &Entry) -> bool {
+pub(crate) fn is_bulk_import(e: &Entry) -> bool {
     e.domains.iter().any(|d| d == "tldr-import")
 }
 

@@ -7,8 +7,10 @@ mod favorites;
 mod tui;
 mod ai; // consumed by collect (Task 6)
 mod collect;
+mod placeholder;
 
-use clap::{Parser, Subcommand};
+use clap::{CommandFactory, Parser, Subcommand};
+use clap_complete::{generate, Shell};
 
 #[derive(Parser)]
 #[command(name = "collective", about = "hacky script directory + console drills")]
@@ -23,7 +25,15 @@ struct Cli {
 #[derive(Subcommand)]
 enum Cmd {
     /// Fuzzy-search the corpus
-    Search { query: Vec<String> },
+    Search {
+        query: Vec<String>,
+        /// Only entries in this domain (e.g. git, network)
+        #[arg(long)]
+        domain: Option<String>,
+        /// Exclude bulk tldr imports; curated entries only
+        #[arg(long)]
+        curated: bool,
+    },
     /// Show full entry: cmd, explanation, undo, danger, source
     Show { id: String },
     /// Copy the entry's command to the clipboard
@@ -37,11 +47,19 @@ enum Cmd {
     },
     /// Capture a command into your personal corpus (overlay)
     Collect {
-        /// The command to save
-        command: String,
+        /// The command to save (optional with --last)
+        command: Option<String>,
         /// Skip the AI prompt and enter fields manually
         #[arg(long)]
         manual: bool,
+        /// Capture the previous shell command (needs the shell wrapper)
+        #[arg(long)]
+        last: bool,
+    },
+    /// Print a shell completion script (zsh, bash, fish)
+    Completions {
+        /// Target shell
+        shell: String,
     },
 }
 
@@ -58,6 +76,19 @@ fn main() {
         }
         return;
     }
+    // Handle completions before loading corpus (doesn't need entries)
+    if let Some(Cmd::Completions { shell }) = &cli.cmd {
+        let parsed: Shell = match shell.parse() {
+            Ok(s) => s,
+            Err(_) => {
+                eprintln!("unknown shell '{shell}' (use zsh, bash, or fish)");
+                std::process::exit(1);
+            }
+        };
+        generate(parsed, &mut Cli::command(), "collective", &mut std::io::stdout());
+        return;
+    }
+
     let entries = corpus::load();
     match cli.cmd {
         None => {
@@ -66,17 +97,26 @@ fn main() {
                 std::process::exit(1);
             }
         }
-        Some(Cmd::Search { query }) => cmd_search(&entries, &query.join(" ")),
+        Some(Cmd::Search { query, domain, curated }) => {
+            cmd_search(&entries, &query.join(" "), domain.as_deref(), curated)
+        }
         Some(Cmd::Show { id }) => cmd_show(&entries, &id),
         Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
         Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
         Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
-        Some(Cmd::Collect { command, manual }) => collect::run(&command, manual),
+        Some(Cmd::Collect { command, manual, last }) => collect::run(command, manual, last),
+        Some(Cmd::Completions { .. }) => unreachable!("handled before corpus load"),
     }
 }
 
-fn cmd_search(entries: &[entry::Entry], query: &str) {
-    let hits = search::search(entries, query);
+fn cmd_search(entries: &[entry::Entry], query: &str, domain: Option<&str>, curated: bool) {
+    let filtered: Vec<entry::Entry> = entries
+        .iter()
+        .filter(|e| domain.is_none_or(|d| e.domains.iter().any(|x| x == d)))
+        .filter(|e| !curated || !search::is_bulk_import(e))
+        .cloned()
+        .collect();
+    let hits = search::search(&filtered, query);
     if hits.is_empty() {
         eprintln!("no matches for '{query}'");
         std::process::exit(1);
@@ -124,10 +164,11 @@ fn cmd_show(entries: &[entry::Entry], id: &str) {
 
 fn cmd_copy(entries: &[entry::Entry], id: &str) {
     let e = find(entries, id);
-    match arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone())) {
-        Ok(()) => println!("copied: {}", e.cmd),
+    let cmd = placeholder::fill_interactive(&e.cmd);
+    match arboard::Clipboard::new().and_then(|mut c| c.set_text(cmd.clone())) {
+        Ok(()) => println!("copied: {cmd}"),
         Err(err) => {
-            eprintln!("clipboard failed ({err}); here it is:\n{}", e.cmd);
+            eprintln!("clipboard failed ({err}); here it is:\n{cmd}");
             std::process::exit(1);
         }
     }

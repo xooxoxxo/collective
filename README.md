@@ -34,6 +34,14 @@ collective --print-shell zsh  >> ~/.zshrc     # or: --print-shell bash >> ~/.bas
 Reload your shell. Now `collective`, pick with `↑/↓`, press `Enter`, and the
 command lands on your prompt.
 
+### Shell completions
+
+```sh
+collective completions zsh > ~/.zfunc/_collective   # ensure ~/.zfunc is in $fpath
+collective completions bash > /usr/local/etc/bash_completion.d/collective
+collective completions fish > ~/.config/fish/completions/collective.fish
+```
+
 ## TUI keys
 
 | key | action |
