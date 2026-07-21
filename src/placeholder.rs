@@ -81,4 +81,11 @@ mod tests {
         let answers = vec![("port".to_string(), "3000".to_string()), ("host".to_string(), String::new())];
         assert_eq!(fill(cmd, &answers), "lsof -iTCP:3000 <host>");
     }
+
+    #[test]
+    fn overlapping_token_names_do_not_clobber() {
+        let cmd = "<a> <ab>";
+        let answers = vec![("a".to_string(), "x".to_string()), ("ab".to_string(), "y".to_string())];
+        assert_eq!(fill(cmd, &answers), "x y");
+    }
 }
