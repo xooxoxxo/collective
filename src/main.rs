@@ -7,6 +7,7 @@ mod favorites;
 mod tui;
 mod ai; // consumed by collect (Task 6)
 mod collect;
+mod placeholder;
 
 use clap::{Parser, Subcommand};
 
@@ -124,10 +125,11 @@ fn cmd_show(entries: &[entry::Entry], id: &str) {
 
 fn cmd_copy(entries: &[entry::Entry], id: &str) {
     let e = find(entries, id);
-    match arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone())) {
-        Ok(()) => println!("copied: {}", e.cmd),
+    let cmd = placeholder::fill_interactive(&e.cmd);
+    match arboard::Clipboard::new().and_then(|mut c| c.set_text(cmd.clone())) {
+        Ok(()) => println!("copied: {cmd}"),
         Err(err) => {
-            eprintln!("clipboard failed ({err}); here it is:\n{}", e.cmd);
+            eprintln!("clipboard failed ({err}); here it is:\n{cmd}");
             std::process::exit(1);
         }
     }

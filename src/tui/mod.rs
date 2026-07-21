@@ -223,6 +223,7 @@ pub fn run() -> io::Result<()> {
     result?;
 
     if let Some(cmd) = picked {
+        let cmd = crate::placeholder::fill_interactive(&cmd);
         deliver(&cmd);
     }
     Ok(())
