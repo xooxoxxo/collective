@@ -162,7 +162,25 @@ fn from_manual(cmd: &str) -> Entry {
     }
 }
 
-pub fn run(cmd: &str, manual: bool) {
+pub fn run(command: Option<String>, manual: bool, last: bool) {
+    let cmd: String = if last {
+        match std::env::var("COLLECTIVE_LAST_CMD") {
+            Ok(c) if !c.trim().is_empty() => c.trim().to_string(),
+            _ => {
+                eprintln!("--last needs the shell wrapper — run 'collective --print-shell <shell>' and reload, or pass the command explicitly");
+                std::process::exit(1);
+            }
+        }
+    } else {
+        match command {
+            Some(c) if !c.trim().is_empty() => c,
+            _ => {
+                eprintln!("nothing to collect — pass a command or use --last");
+                std::process::exit(1);
+            }
+        }
+    };
+    let cmd = cmd.as_str();
     let use_ai = if manual {
         false
     } else {

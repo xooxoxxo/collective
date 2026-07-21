@@ -46,11 +46,14 @@ enum Cmd {
     },
     /// Capture a command into your personal corpus (overlay)
     Collect {
-        /// The command to save
-        command: String,
+        /// The command to save (optional with --last)
+        command: Option<String>,
         /// Skip the AI prompt and enter fields manually
         #[arg(long)]
         manual: bool,
+        /// Capture the previous shell command (needs the shell wrapper)
+        #[arg(long)]
+        last: bool,
     },
 }
 
@@ -82,7 +85,7 @@ fn main() {
         Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
         Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
         Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
-        Some(Cmd::Collect { command, manual }) => collect::run(&command, manual),
+        Some(Cmd::Collect { command, manual, last }) => collect::run(command, manual, last),
     }
 }
 
