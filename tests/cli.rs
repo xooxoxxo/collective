@@ -150,3 +150,22 @@ fn collect_last_without_env_errors() {
         .failure()
         .stderr(str::contains("--last needs the shell wrapper"));
 }
+
+#[test]
+fn completions_zsh_emits_script() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["completions", "zsh"])
+        .assert()
+        .success()
+        .stdout(str::contains("_collective"));
+}
+
+#[test]
+fn completions_unknown_shell_errors() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["completions", "tcsh"])
+        .assert()
+        .failure();
+}

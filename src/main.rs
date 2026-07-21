@@ -9,7 +9,8 @@ mod ai; // consumed by collect (Task 6)
 mod collect;
 mod placeholder;
 
-use clap::{Parser, Subcommand};
+use clap::{CommandFactory, Parser, Subcommand};
+use clap_complete::{generate, Shell};
 
 #[derive(Parser)]
 #[command(name = "collective", about = "hacky script directory + console drills")]
@@ -55,6 +56,11 @@ enum Cmd {
         #[arg(long)]
         last: bool,
     },
+    /// Print a shell completion script (zsh, bash, fish)
+    Completions {
+        /// Target shell
+        shell: String,
+    },
 }
 
 fn main() {
@@ -70,6 +76,19 @@ fn main() {
         }
         return;
     }
+    // Handle completions before loading corpus (doesn't need entries)
+    if let Some(Cmd::Completions { shell }) = &cli.cmd {
+        let parsed: Shell = match shell.parse() {
+            Ok(s) => s,
+            Err(_) => {
+                eprintln!("unknown shell '{shell}' (use zsh, bash, or fish)");
+                std::process::exit(1);
+            }
+        };
+        generate(parsed, &mut Cli::command(), "collective", &mut std::io::stdout());
+        return;
+    }
+
     let entries = corpus::load();
     match cli.cmd {
         None => {
@@ -86,6 +105,7 @@ fn main() {
         Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
         Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
         Some(Cmd::Collect { command, manual, last }) => collect::run(command, manual, last),
+        Some(Cmd::Completions { .. }) => unreachable!("handled before corpus load"),
     }
 }
 
