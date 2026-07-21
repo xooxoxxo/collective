@@ -18,6 +18,7 @@ pub struct App {
     pub filter: String,
     pub favorites: HashSet<String>,
     pub fav_only: bool,
+    pub curated_only: bool,
 }
 
 impl App {
@@ -29,6 +30,7 @@ impl App {
             filter: String::new(),
             favorites,
             fav_only: false,
+            curated_only: false,
         };
         app.recompute();
         app
@@ -46,6 +48,9 @@ impl App {
         };
         if self.fav_only {
             idx.retain(|&i| self.favorites.contains(&self.all[i].id));
+        }
+        if self.curated_only {
+            idx.retain(|&i| !crate::search::is_bulk_import(&self.all[i]));
         }
         self.filtered = idx;
         self.selected = 0;
@@ -68,6 +73,11 @@ impl App {
 
     pub fn toggle_fav_only(&mut self) {
         self.fav_only = !self.fav_only;
+        self.recompute();
+    }
+
+    pub fn toggle_curated_only(&mut self) {
+        self.curated_only = !self.curated_only;
         self.recompute();
     }
 
@@ -147,6 +157,16 @@ mod tests {
         assert_eq!(a.visible().len(), 1);
         assert_eq!(a.visible()[0].id, "pmset-disable-sleep");
     }
+
+    #[test]
+    fn curated_only_hides_bulk_imports() {
+        let mut a = App::new(corpus::load(), std::collections::HashSet::new());
+        let before = a.visible().len();
+        a.toggle_curated_only();
+        let after = a.visible().len();
+        assert!(after < before, "curated view should drop bulk imports");
+        assert!(a.visible().iter().all(|e| !crate::search::is_bulk_import(e)));
+    }
 }
 
 fn restore() {
@@ -207,6 +227,7 @@ pub fn run() -> io::Result<()> {
                     }
                 }
                 KeyCode::Char('F') => app.toggle_fav_only(),
+                KeyCode::Char('c') => app.toggle_curated_only(),
                 KeyCode::Char(c) => {
                     let mut f = app.filter.clone();
                     f.push(c);

@@ -95,3 +95,24 @@ fn collect_manual_writes_overlay_file() {
     assert!(text.contains("cmd: echo hello"));
     let _ = std::fs::remove_dir_all(&home);
 }
+
+#[test]
+fn search_curated_excludes_tldr_imports() {
+    let out = Command::cargo_bin("collective")
+        .unwrap()
+        .args(["search", "git", "--curated"])
+        .assert()
+        .success();
+    let stdout = String::from_utf8(out.get_output().stdout.clone()).unwrap();
+    assert!(!stdout.contains("tldr-"), "curated search leaked a tldr import:\n{stdout}");
+}
+
+#[test]
+fn search_domain_filters_to_domain() {
+    // "network" domain entries exist among curated gems (e.g. flush-dns-cache).
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["search", "dns", "--domain", "network"])
+        .assert()
+        .success();
+}

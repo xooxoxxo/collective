@@ -24,7 +24,15 @@ struct Cli {
 #[derive(Subcommand)]
 enum Cmd {
     /// Fuzzy-search the corpus
-    Search { query: Vec<String> },
+    Search {
+        query: Vec<String>,
+        /// Only entries in this domain (e.g. git, network)
+        #[arg(long)]
+        domain: Option<String>,
+        /// Exclude bulk tldr imports; curated entries only
+        #[arg(long)]
+        curated: bool,
+    },
     /// Show full entry: cmd, explanation, undo, danger, source
     Show { id: String },
     /// Copy the entry's command to the clipboard
@@ -67,7 +75,9 @@ fn main() {
                 std::process::exit(1);
             }
         }
-        Some(Cmd::Search { query }) => cmd_search(&entries, &query.join(" ")),
+        Some(Cmd::Search { query, domain, curated }) => {
+            cmd_search(&entries, &query.join(" "), domain.as_deref(), curated)
+        }
         Some(Cmd::Show { id }) => cmd_show(&entries, &id),
         Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
         Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
@@ -76,8 +86,14 @@ fn main() {
     }
 }
 
-fn cmd_search(entries: &[entry::Entry], query: &str) {
-    let hits = search::search(entries, query);
+fn cmd_search(entries: &[entry::Entry], query: &str, domain: Option<&str>, curated: bool) {
+    let filtered: Vec<entry::Entry> = entries
+        .iter()
+        .filter(|e| domain.is_none_or(|d| e.domains.iter().any(|x| x == d)))
+        .filter(|e| !curated || !search::is_bulk_import(e))
+        .cloned()
+        .collect();
+    let hits = search::search(&filtered, query);
     if hits.is_empty() {
         eprintln!("no matches for '{query}'");
         std::process::exit(1);
