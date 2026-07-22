@@ -122,6 +122,10 @@ mod tests {
     fn both_groups_share_the_cap() {
         let entries = corpus::load();
         // "git" is a broad query with both curated and import hits.
+        // Assumes the corpus yields >=6 curated matches for "git"; if the
+        // corpus shrinks below that, backfill legitimately gives imports
+        // more than 4 slots and these cap assertions need relaxing to
+        // import_count <= 10 - first_import.
         let hits = search(&entries, "git");
         assert!(hits.len() <= 10, "result exceeds 10 row cap");
         let has_curated = hits.iter().any(|(e, _)| !is_bulk_import(e));
