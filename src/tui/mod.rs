@@ -3,7 +3,7 @@ mod ui;
 use crate::entry::Entry;
 use crate::favorites;
 use crate::search;
-use crossterm::event::{self, Event, KeyCode, KeyEventKind};
+use crossterm::event::{self, Event, KeyCode, KeyEventKind, KeyModifiers};
 use crossterm::terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen};
 use crossterm::execute;
 use ratatui::backend::CrosstermBackend;
@@ -197,40 +197,41 @@ pub fn run() -> io::Result<()> {
             if key.kind != KeyEventKind::Press {
                 continue;
             }
-            match key.code {
-                KeyCode::Esc => break,
-                KeyCode::Char('q') if app.filter.is_empty() => break,
-                KeyCode::Up => app.move_up(),
-                KeyCode::Down => app.move_down(),
-                KeyCode::Enter => {
+            match (key.code, key.modifiers) {
+                (KeyCode::Esc, _) => break,
+                (KeyCode::Char('c'), KeyModifiers::CONTROL) => break,
+                (KeyCode::Up, _) => app.move_up(),
+                (KeyCode::Down, _) => app.move_down(),
+                (KeyCode::Enter, _) => {
                     if let Some(e) = app.selected_entry() {
                         picked = Some(e.cmd.clone());
                     }
                     break;
                 }
-                KeyCode::Char('\n') => {}
-                KeyCode::Backspace => {
+                (KeyCode::Backspace, _) => {
                     let mut f = app.filter.clone();
                     f.pop();
                     app.set_filter(&f);
                 }
-                // Ctrl-less bare keys drive both filter text AND actions:
-                // reserve f/F/y for actions, everything else types into filter.
-                KeyCode::Char('y') => {
+                (KeyCode::Char('y'), KeyModifiers::CONTROL) => {
                     if let Some(e) = app.selected_entry() {
                         let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone()));
                     }
                 }
-                KeyCode::Char('f') => {
+                (KeyCode::Char('s'), KeyModifiers::CONTROL) => {
                     if let Some(_id) = app.toggle_star() {
                         let _ = favorites::save(&fav_path, &app.favorites);
                     }
                 }
-                KeyCode::Char('F') => app.toggle_fav_only(),
-                KeyCode::Char('c') => app.toggle_curated_only(),
-                KeyCode::Char(c) => {
+                (KeyCode::Char('o'), KeyModifiers::CONTROL) => app.toggle_fav_only(),
+                (KeyCode::Char('u'), KeyModifiers::CONTROL) => app.toggle_curated_only(),
+                // Everything printable types into the filter. SHIFT accompanies
+                // uppercase chars, so allow it; any other modifier is ignored.
+                (KeyCode::Char(ch), m)
+                    if m.is_empty() || m == KeyModifiers::SHIFT =>
+                {
                     let mut f = app.filter.clone();
-                    f.push(c);
+                    f.push(ch);
                     app.set_filter(&f);
                 }
                 _ => {}
