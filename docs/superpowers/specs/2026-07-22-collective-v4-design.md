@@ -90,9 +90,14 @@ are untouched. Verified manually (rendering layer), consistent with v2/v3.
 ## 3. Grouped search results
 
 - `search::search` keeps its signature. Internals: drop the ×2 curated
-  multiplier; sort matches by `(is_bulk_import asc, score desc, id asc)`;
-  truncate to 10 after grouping. All curated matches precede all import
-  matches; a strong import match can no longer outrank a weak curated one.
+  multiplier; sort matches by `(is_bulk_import asc, score desc, id asc)`.
+  All curated matches precede all import matches; a strong import match can
+  no longer outrank a weak curated one.
+- **Per-group cap (amendment, 2026-07-22):** implementation showed loose fuzzy
+  curated matches crowd imports out of the 10-row cap entirely. Decision:
+  10 rows total; when both groups match, imports are guaranteed up to 4 slots
+  (curated capped at 6); if either group has fewer matches, the other backfills
+  to 10. Single-group results fill all 10.
 - CLI `cmd_search`: print a `── tldr imports ──` separator line at the
   curated→import transition, only when both groups are present in the output.
 - TUI: inherits the ordering via `recompute()`; no separator row (selection
