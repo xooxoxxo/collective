@@ -1,5 +1,7 @@
 # collective
 
+[![ci](https://github.com/xooxoxxo/collective/actions/workflows/ci.yml/badge.svg)](https://github.com/xooxoxxo/collective/actions/workflows/ci.yml)
+
 A searchable directory of hacky, nerdy, super-functional developer commands —
 with an interactive TUI and console flashcard training. One offline Rust binary,
 ~1600 curated + imported commands baked in.
