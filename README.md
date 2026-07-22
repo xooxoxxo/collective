@@ -1,5 +1,7 @@
 # collective
 
+[![ci](https://github.com/xooxoxxo/collective/actions/workflows/ci.yml/badge.svg)](https://github.com/xooxoxxo/collective/actions/workflows/ci.yml)
+
 A searchable directory of hacky, nerdy, super-functional developer commands —
 with an interactive TUI and console flashcard training. One offline Rust binary,
 ~1600 curated + imported commands baked in.
@@ -17,6 +19,8 @@ collective collect 'pmset -a disablesleep 1'   # add your own (AI or manual)
 ## Install
 
 ```sh
+brew install xooxoxxo/tap/collective   # macOS + Linux binaries
+# or from source:
 cargo install --path .
 ```
 
@@ -46,13 +50,14 @@ collective completions fish > ~/.config/fish/completions/collective.fish
 
 | key | action |
 |-----|--------|
-| type | live fuzzy filter |
-| `↑`/`↓`, `j`/`k` | move selection |
+| type | live fuzzy filter (every letter types) |
+| `↑`/`↓` | move selection |
 | `Enter` | prefill selected command to your shell + copy |
-| `y` | copy to clipboard, stay open |
-| `f` | toggle favorite (persisted) |
-| `F` | show favorites only |
-| `Esc` / `q` | quit |
+| `Ctrl-Y` | copy to clipboard, stay open |
+| `Ctrl-S` | toggle favorite (persisted) |
+| `Ctrl-O` | show favorites only |
+| `Ctrl-U` | show curated only (hide tldr imports) |
+| `Esc` / `Ctrl-C` | quit |
 
 ## collect
 

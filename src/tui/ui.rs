@@ -89,7 +89,7 @@ pub fn draw(f: &mut Frame, app: &App) {
     f.render_widget(detail, chunks[2]);
 
     // help bar
-    let help = Paragraph::new("↵ prefill  y copy  f ★  F fav-only  c curated  type to filter  q quit")
+    let help = Paragraph::new("↵ prefill  ^Y copy  ^S ★  ^O fav-only  ^U curated  Esc quit")
         .style(Style::default().fg(Color::DarkGray));
     f.render_widget(help, chunks[3]);
 }

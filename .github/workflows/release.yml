@@ -1,0 +1,66 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: macos-14
+            target: aarch64-apple-darwin
+          - os: macos-13
+            target: x86_64-apple-darwin
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+          - os: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build --release
+      - name: package
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          mkdir -p dist
+          cp target/release/collective dist/
+          tar -czf "collective-${VERSION}-${{ matrix.target }}.tar.gz" -C dist collective
+          shasum -a 256 "collective-${VERSION}-${{ matrix.target }}.tar.gz" > "collective-${VERSION}-${{ matrix.target }}.tar.gz.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          path: collective-*.tar.gz*
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - name: create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" artifacts/* \
+            --title "$GITHUB_REF_NAME" --generate-notes
+      - name: update Homebrew tap
+        env:
+          TAP_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          bash scripts/make-formula.sh "$VERSION" artifacts > collective.rb
+          git clone "https://x-access-token:${TAP_TOKEN}@github.com/xooxoxxo/homebrew-tap" tap
+          mkdir -p tap/Formula
+          cp collective.rb tap/Formula/collective.rb
+          cd tap
+          git config user.name "collective-release-bot"
+          git config user.email "noreply@github.com"
+          git add Formula/collective.rb
+          git commit -m "collective ${VERSION}"
+          git push
