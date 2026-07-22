@@ -9,7 +9,8 @@ pub(crate) fn is_bulk_import(e: &Entry) -> bool {
 }
 
 /// Weighted fuzzy search: title 3x, best tag 2x, cmd 1x. Curated matches are
-/// always grouped before bulk tldr imports. Top 10, best first within groups.
+/// always grouped before bulk tldr imports. Top 10: curated first (max 6 when
+/// imports also match), imports fill the rest.
 pub fn search<'a>(entries: &'a [Entry], query: &str) -> Vec<(&'a Entry, u32)> {
     let mut matcher = Matcher::new(Config::DEFAULT);
     let pattern = Pattern::parse(query, CaseMatching::Ignore, Normalization::Smart);
@@ -43,8 +44,17 @@ pub fn search<'a>(entries: &'a [Entry], query: &str) -> Vec<(&'a Entry, u32)> {
             .then(b.1.cmp(&a.1))
             .then(a.0.id.cmp(&b.0.id))
     });
-    scored.truncate(10);
-    scored
+    // Per-group cap: 10 rows total, imports guaranteed up to 4 slots when
+    // both groups match, either group backfills when the other runs short.
+    let (curated, imports): (Vec<(&Entry, u32)>, Vec<(&Entry, u32)>) =
+        scored.into_iter().partition(|(e, _)| !is_bulk_import(e));
+    let import_take = imports.len().min(4);
+    let curated_take = curated.len().min(10 - import_take);
+    let import_take = imports.len().min(10 - curated_take);
+    let mut out = curated;
+    out.truncate(curated_take);
+    out.extend(imports.into_iter().take(import_take));
+    out
 }
 
 #[cfg(test)]
@@ -105,6 +115,25 @@ mod tests {
                 "found a curated hit after an import hit"
             );
             assert!(first_import > 0, "expected at least one curated hit first");
+        }
+    }
+
+    #[test]
+    fn both_groups_share_the_cap() {
+        let entries = corpus::load();
+        // "git" is a broad query with both curated and import hits.
+        let hits = search(&entries, "git");
+        assert!(hits.len() <= 10, "result exceeds 10 row cap");
+        let has_curated = hits.iter().any(|(e, _)| !is_bulk_import(e));
+        let has_imports = hits.iter().any(|(e, _)| is_bulk_import(e));
+        if has_curated && has_imports {
+            // Both groups present: verify grouping and cap enforcement
+            if let Some(first_import) = hits.iter().position(|(e, _)| is_bulk_import(e)) {
+                assert!(first_import > 0, "expected at least one curated hit first");
+                assert!(first_import <= 6, "curated group exceeded 6-slot cap");
+                let import_count = hits[first_import..].len();
+                assert!(import_count <= 4, "import group exceeded 4-slot cap");
+            }
         }
     }
 }

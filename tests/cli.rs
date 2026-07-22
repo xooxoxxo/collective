@@ -174,7 +174,7 @@ fn completions_unknown_shell_errors() {
 fn search_prints_separator_between_groups() {
     Command::cargo_bin("collective")
         .unwrap()
-        .args(["search", "strings"])
+        .args(["search", "port"])
         .assert()
         .success()
         .stdout(str::contains("── tldr imports ──"));
