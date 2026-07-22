@@ -169,3 +169,24 @@ fn completions_unknown_shell_errors() {
         .assert()
         .failure();
 }
+
+#[test]
+fn search_prints_separator_between_groups() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["search", "strings"])
+        .assert()
+        .success()
+        .stdout(str::contains("── tldr imports ──"));
+}
+
+#[test]
+fn search_curated_output_has_no_separator() {
+    let out = Command::cargo_bin("collective")
+        .unwrap()
+        .args(["search", "port", "--curated"])
+        .assert()
+        .success();
+    let stdout = String::from_utf8(out.get_output().stdout.clone()).unwrap();
+    assert!(!stdout.contains("── tldr imports ──"));
+}

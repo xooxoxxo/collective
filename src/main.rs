@@ -121,7 +121,13 @@ fn cmd_search(entries: &[entry::Entry], query: &str, domain: Option<&str>, curat
         eprintln!("no matches for '{query}'");
         std::process::exit(1);
     }
+    let has_curated = hits.iter().any(|(e, _)| !search::is_bulk_import(e));
+    let mut sep_printed = false;
     for (e, _) in hits {
+        if has_curated && !sep_printed && search::is_bulk_import(e) {
+            println!("── tldr imports ──");
+            sep_printed = true;
+        }
         let preview: String = e.cmd.chars().take(48).collect();
         println!("{:<28} {:<44} {}", e.id, truncate(&e.title, 44), preview);
     }

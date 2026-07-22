@@ -8,9 +8,8 @@ pub(crate) fn is_bulk_import(e: &Entry) -> bool {
     e.domains.iter().any(|d| d == "tldr-import")
 }
 
-/// Weighted fuzzy search: title 3x, best tag 2x, cmd 1x. Curated entries score
-/// at full weight; bulk tldr imports at half so they don't drown the gems.
-/// Top 10, best first.
+/// Weighted fuzzy search: title 3x, best tag 2x, cmd 1x. Curated matches are
+/// always grouped before bulk tldr imports. Top 10, best first within groups.
 pub fn search<'a>(entries: &'a [Entry], query: &str) -> Vec<(&'a Entry, u32)> {
     let mut matcher = Matcher::new(Config::DEFAULT);
     let pattern = Pattern::parse(query, CaseMatching::Ignore, Normalization::Smart);
@@ -32,13 +31,18 @@ pub fn search<'a>(entries: &'a [Entry], query: &str) -> Vec<(&'a Entry, u32)> {
                 .unwrap_or(0);
             let cmd = score_of(&e.cmd, &mut matcher);
             let raw = 3 * title + 2 * tag + cmd;
-            // Curated ×2, bulk imports ×1 — a stable integer boost that keeps
-            // curated entries ahead of imports at equal match strength.
-            let s = raw * if is_bulk_import(e) { 1 } else { 2 };
-            (raw > 0).then_some((e, s))
+            (raw > 0).then_some((e, raw))
         })
         .collect();
-    scored.sort_by(|a, b| b.1.cmp(&a.1).then(a.0.id.cmp(&b.0.id)));
+    // Curated entries always precede bulk imports; within a group, best
+    // score first, id as the tie-break. Deterministic — replaces the old
+    // probabilistic x2 score boost.
+    scored.sort_by(|a, b| {
+        is_bulk_import(a.0)
+            .cmp(&is_bulk_import(b.0))
+            .then(b.1.cmp(&a.1))
+            .then(a.0.id.cmp(&b.0.id))
+    });
     scored.truncate(10);
     scored
 }
@@ -87,5 +91,20 @@ mod tests {
             "top hit was a bulk import: {}",
             hits[0].0.id
         );
+    }
+
+    #[test]
+    fn curated_hits_all_precede_imports() {
+        let entries = corpus::load();
+        // "git log" matches curated gems and many tldr imports.
+        let hits = search(&entries, "git log");
+        assert!(!hits.is_empty());
+        if let Some(first_import) = hits.iter().position(|(e, _)| is_bulk_import(e)) {
+            assert!(
+                hits[first_import..].iter().all(|(e, _)| is_bulk_import(e)),
+                "found a curated hit after an import hit"
+            );
+            assert!(first_import > 0, "expected at least one curated hit first");
+        }
     }
 }
