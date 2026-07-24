@@ -9,9 +9,12 @@ jobs:
     strategy:
       matrix:
         include:
+          # Both macOS targets build on Apple-Silicon runners; the x86_64 one
+          # cross-compiles (Intel `macos-13` hosted runners are being retired
+          # and were left unschedulable, cancelling the job).
           - os: macos-14
             target: aarch64-apple-darwin
-          - os: macos-13
+          - os: macos-14
             target: x86_64-apple-darwin
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
@@ -21,13 +24,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
       - uses: Swatinem/rust-cache@v2
-      - run: cargo build --release
+      - run: cargo build --release --target ${{ matrix.target }}
       - name: package
         run: |
           VERSION=${GITHUB_REF_NAME#v}
           mkdir -p dist
-          cp target/release/collective dist/
+          cp "target/${{ matrix.target }}/release/collective" dist/
           tar -czf "collective-${VERSION}-${{ matrix.target }}.tar.gz" -C dist collective
           shasum -a 256 "collective-${VERSION}-${{ matrix.target }}.tar.gz" > "collective-${VERSION}-${{ matrix.target }}.tar.gz.sha256"
       - uses: actions/upload-artifact@v4
