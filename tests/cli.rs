@@ -232,3 +232,64 @@ fn search_curated_output_has_no_separator() {
     assert!(!stdout.contains("── tldr imports ──"));
     let _ = std::fs::remove_dir_all(&home);
 }
+
+#[test]
+fn pack_list_reports_empty_and_then_the_installed_pack() {
+    let home = std::env::temp_dir().join(format!("col-packlist-{}", std::process::id()));
+    let _ = std::fs::remove_dir_all(&home);
+    let dir = home.join(".collective/packs");
+    std::fs::create_dir_all(&dir).unwrap();
+
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["pack", "list"])
+        .env("HOME", &home)
+        .assert()
+        .success()
+        .stdout(str::contains("no packs installed"));
+
+    std::fs::write(
+        dir.join("demo.json"),
+        r#"{"manifest":{"name":"demo","version":"2.1.0","count":1},"entries":[
+            {"id":"demo-entry","title":"Demo","cmd":"echo demo","platform":["macos"],
+             "domains":["shell"],"danger":"low","explanation":"e","source":"s"}]}"#,
+    )
+    .unwrap();
+
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["pack", "list"])
+        .env("HOME", &home)
+        .assert()
+        .success()
+        .stdout(str::contains("demo"))
+        .stdout(str::contains("2.1.0"));
+
+    // The installed pack's entries must be searchable.
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["search", "demo"])
+        .env("HOME", &home)
+        .assert()
+        .success()
+        .stdout(str::contains("demo-entry"));
+
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["pack", "remove", "demo"])
+        .env("HOME", &home)
+        .assert()
+        .success();
+    assert!(!dir.join("demo.json").exists());
+    let _ = std::fs::remove_dir_all(&home);
+}
+
+#[test]
+fn pack_remove_rejects_a_traversing_name() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["pack", "remove", "../../evil"])
+        .assert()
+        .failure()
+        .stderr(str::contains("bad pack name"));
+}

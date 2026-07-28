@@ -57,11 +57,30 @@ enum Cmd {
         #[arg(long)]
         last: bool,
     },
+    /// Manage fetchable corpus packs
+    Pack {
+        #[command(subcommand)]
+        action: PackCmd,
+    },
     /// Print a shell completion script (zsh, bash, fish)
     Completions {
         /// Target shell
         shell: String,
     },
+}
+
+#[derive(Subcommand)]
+enum PackCmd {
+    /// List installed packs
+    List,
+    /// Search the registry for packs
+    Search { query: Vec<String> },
+    /// Install a pack by registry name, <owner>/<repo>, or local .json path
+    Add { source: String },
+    /// Refetch installed packs from their recorded origin
+    Update { name: Option<String> },
+    /// Uninstall a pack
+    Remove { name: String },
 }
 
 fn main() {
@@ -117,6 +136,7 @@ fn main() {
             manual,
             last,
         }) => collect::run(command, manual, last),
+        Some(Cmd::Pack { action }) => cmd_pack(action),
         Some(Cmd::Completions { .. }) => unreachable!("handled before corpus load"),
     }
 }
@@ -199,4 +219,39 @@ fn random_id(entries: &[entry::Entry]) -> String {
         .expect("corpus is never empty")
         .id
         .clone()
+}
+
+fn cmd_pack(action: PackCmd) {
+    let Some(dir) = corpus::packs_dir() else {
+        eprintln!("cannot locate home directory");
+        std::process::exit(1);
+    };
+    let result = match action {
+        PackCmd::List => {
+            let packs = pack::installed(&dir);
+            if packs.is_empty() {
+                println!("no packs installed");
+            }
+            for m in packs {
+                let version = if m.version.is_empty() {
+                    "-"
+                } else {
+                    &m.version
+                };
+                println!(
+                    "{:<20} {:<10} {:>5} entries  {}",
+                    m.name, version, m.count, m.origin
+                );
+            }
+            Ok(())
+        }
+        PackCmd::Remove { name } => pack::remove(&dir, &name).map(|_| println!("removed {name}")),
+        PackCmd::Add { .. } | PackCmd::Update { .. } | PackCmd::Search { .. } => {
+            Err("not implemented yet".to_string())
+        }
+    };
+    if let Err(e) = result {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    }
 }

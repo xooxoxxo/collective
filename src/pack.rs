@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// Pack types and validators are consumed by Tasks 5-7; suppress dead-code warnings
+// Pack types and validators are consumed by Tasks 6-7; suppress dead-code warnings
 // until then. This allow will be removed when those consumers land.
 
 use crate::entry::Entry;
@@ -125,9 +125,59 @@ pub fn parse(text: &str, expected_name: Option<&str>) -> Result<Pack, String> {
     Ok(pack)
 }
 
+/// Manifests of every installed pack, sorted by filename. A pack that fails to
+/// parse is skipped so one bad file cannot break `pack list`.
+pub fn installed(dir: &std::path::Path) -> Vec<Manifest> {
+    let Ok(read) = std::fs::read_dir(dir) else {
+        return vec![];
+    };
+    let mut files: Vec<PathBuf> = read
+        .filter_map(|f| f.ok())
+        .map(|f| f.path())
+        .filter(|p| p.extension().is_some_and(|e| e == "json"))
+        .collect();
+    files.sort();
+    files
+        .iter()
+        .filter_map(|p| {
+            let text = std::fs::read_to_string(p).ok()?;
+            match parse(&text, None) {
+                Ok(pack) => Some(pack.manifest),
+                Err(err) => {
+                    eprintln!("warning: skipping pack {}: {err}", p.display());
+                    None
+                }
+            }
+        })
+        .collect()
+}
+
+pub fn remove(dir: &std::path::Path, name: &str) -> Result<(), String> {
+    validate_pack_name(name)?;
+    let path = dir.join(format!("{name}.json"));
+    if !path.exists() {
+        return Err(format!("pack {name:?} is not installed"));
+    }
+    std::fs::remove_file(&path).map_err(|e| format!("could not remove {name}: {e}"))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn temp_dir(tag: &str) -> PathBuf {
+        let d = std::env::temp_dir().join(format!("col-pk-{tag}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&d);
+        std::fs::create_dir_all(&d).unwrap();
+        d
+    }
+
+    fn seed(dir: &std::path::Path, name: &str) {
+        let json = format!(
+            r#"{{"manifest":{{"name":"{name}","version":"1.0.0","count":0}},"entries":[]}}"#
+        );
+        std::fs::write(dir.join(format!("{name}.json")), json).unwrap();
+    }
 
     #[test]
     fn accepts_plain_pack_names() {
@@ -210,5 +260,45 @@ mod tests {
         );
         assert_eq!(pack.entries.len(), 1);
         assert!(pack.entries[0].validate().is_ok());
+    }
+
+    #[test]
+    fn installed_lists_packs_by_manifest() {
+        let dir = temp_dir("list");
+        seed(&dir, "alpha");
+        seed(&dir, "beta");
+        let found = installed(&dir);
+        let names: Vec<&str> = found.iter().map(|m| m.name.as_str()).collect();
+        assert_eq!(names, vec!["alpha", "beta"], "must list sorted by filename");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn remove_deletes_only_the_named_pack() {
+        let dir = temp_dir("rm");
+        seed(&dir, "alpha");
+        seed(&dir, "beta");
+        remove(&dir, "alpha").unwrap();
+        assert!(!dir.join("alpha.json").exists());
+        assert!(dir.join("beta.json").exists());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn remove_rejects_a_traversing_name_before_touching_disk() {
+        let dir = temp_dir("rmbad");
+        let victim = dir.join("victim.json");
+        std::fs::write(&victim, "{}").unwrap();
+        assert!(remove(&dir, "../victim").is_err());
+        assert!(remove(&dir, "..").is_err());
+        assert!(victim.exists(), "traversing name reached the filesystem");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn remove_reports_a_missing_pack() {
+        let dir = temp_dir("rmmissing");
+        assert!(remove(&dir, "nope").is_err());
+        let _ = std::fs::remove_dir_all(&dir);
     }
 }
