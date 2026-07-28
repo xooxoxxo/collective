@@ -540,21 +540,12 @@ mod tests {
                 "failed to reject escape payload {escape_name:?}"
             );
 
-            // Verify no installed pack was written to the packs directory.
-            // (The source file "evil.json" is still there, but no escaped pack file.)
-            let installed_packs: Vec<_> = std::fs::read_dir(&dir)
-                .unwrap()
-                .filter_map(|e| e.ok())
-                .filter(|e| {
-                    let name = e.file_name();
-                    name.to_str()
-                        .is_some_and(|n| !n.contains(".tmp") && !n.starts_with("evil"))
-                        && e.path().extension().is_some_and(|ext| ext == "json")
-                })
-                .collect();
+            // Verify the exact path a missing-guard implementation would write to does not exist.
+            let escaped = dir.join(format!("{escape_name}.json"));
             assert!(
-                installed_packs.is_empty(),
-                "escape payload {escape_name:?} wrote a pack file to packs dir"
+                !escaped.exists(),
+                "escape payload {escape_name:?} wrote a file to {}",
+                escaped.display()
             );
 
             let _ = std::fs::remove_file(&src);
