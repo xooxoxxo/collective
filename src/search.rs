@@ -109,15 +109,24 @@ mod tests {
     #[test]
     fn curated_outranks_bulk_import() {
         // The import is the better textual match; grouping must still win.
+        // IDs flipped so alphabetic order would put import first without grouping.
         let entries = vec![
-            fixture("import-exact", "git log graph", "tldr-import"),
-            fixture("curated-weak", "git log graph display", "vcs"),
+            fixture("a-import", "git log graph", "tldr-import"),
+            fixture("z-curated", "git log graph display", "vcs"),
         ];
         let hits = search(&entries, "git log graph");
         assert_eq!(hits.len(), 2);
+        // Both score 948; grouping tier sorts curated (false) before import (true).
+        // If grouping were removed, "a-import" would win on id tie-break.
+        assert!(
+            hits[0].1 >= hits[1].1,
+            "import scored higher: {} >= {}",
+            hits[0].1,
+            hits[1].1
+        );
         assert_eq!(
-            hits[0].0.id, "curated-weak",
-            "import outranked a curated entry"
+            hits[0].0.id, "z-curated",
+            "grouping must sort curated before import despite lower id"
         );
     }
 
