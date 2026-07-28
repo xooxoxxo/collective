@@ -58,6 +58,7 @@ impl Entry {
 }
 
 impl Danger {
+    #[allow(dead_code)]
     pub fn parse(s: &str) -> Option<Danger> {
         match s.trim().to_lowercase().as_str() {
             "low" => Some(Danger::Low),

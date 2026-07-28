@@ -27,7 +27,7 @@ jobs:
         with:
           targets: ${{ matrix.target }}
       - uses: Swatinem/rust-cache@v2
-      - run: cargo build --release --target ${{ matrix.target }}
+      - run: cargo build --release --target ${{ matrix.target }} --bin collective
       - name: package
         run: |
           VERSION=${GITHUB_REF_NAME#v}
@@ -44,15 +44,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
           merge-multiple: true
+      - name: Build tldr pack
+        run: |
+          cargo run --release --bin build-pack -- \
+            packs/tldr tldr "${GITHUB_REF_NAME#v}" CC-BY-4.0 "tldr-pages bulk import" \
+            > tldr.json
       - name: create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" artifacts/* \
+          gh release create "$GITHUB_REF_NAME" artifacts/* tldr.json \
             --title "$GITHUB_REF_NAME" --generate-notes
       - name: update Homebrew tap
         env:

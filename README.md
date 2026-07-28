@@ -4,7 +4,8 @@
 
 A searchable directory of hacky, nerdy, super-functional developer commands —
 with an interactive TUI and console flashcard training. One offline Rust binary,
-~1600 curated + imported commands baked in.
+~150 curated commands built in; add packs for more (e.g., `collective pack add tldr`
+restores the full ~1600-entry corpus).
 
 ```
 collective                       # interactive TUI (filter, detail, favorites, prefill)
@@ -59,6 +60,26 @@ collective completions fish > ~/.config/fish/completions/collective.fish
 | `Ctrl-U` | show curated only (hide tldr imports) |
 | `Esc` / `Ctrl-C` | quit |
 
+## pack
+
+Extend the corpus with community or personal packs — each a JSON file of entries,
+publishable by pushing to any GitHub repo:
+
+| command | action |
+|---------|--------|
+| `collective pack list` | show installed packs and entry counts |
+| `collective pack add <source>` | install a pack; `<source>` can be a file path, URL, or `owner/repo` (fetches from GitHub releases) |
+| `collective pack update <name>` | refetch and reinstall a pack |
+| `collective pack remove <name>` | uninstall a pack |
+| `collective pack search <name>` | search installed packs |
+
+Built-in packs:
+
+- **tldr** (1459 entries): restore the full corpus from [tldr-pages](https://github.com/tldr-pages/tldr)
+  ```sh
+  collective pack add tldr    # install
+  ```
+
 ## collect
 
 `collective collect '<command>'` captures a command into your personal overlay
@@ -78,11 +99,11 @@ undo. You review and run everything yourself.
 
 ## Corpus
 
-- Hand-curated seed gems + a research-mined set across macOS internals,
-  dotfiles, shell wizardry, and modern CLI tools.
-- Bulk command reference imported from
-  [tldr-pages](https://github.com/tldr-pages/tldr) (CC-BY-4.0) — see `NOTICE`.
-- Every entry carries a `source`. Add your own with `collect`.
+- **Built-in**: ~150 hand-curated commands across macOS internals, dotfiles, shell
+  wizardry, and modern CLI tools.
+- **Opt-in packs**: extend with community corpus like [tldr-pages](https://github.com/tldr-pages/tldr)
+  (CC-BY-4.0, ~1459 entries) via `collective pack add tldr`. See `NOTICE` for attributions.
+- Every entry carries a `source`. Add your own with `collective collect`.
 
 ## Development
 
