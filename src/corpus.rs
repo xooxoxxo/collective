@@ -109,7 +109,6 @@ fn packs() -> Vec<Entry> {
 
 /// Ids compiled into the binary. Used to warn when an incoming pack would
 /// shadow a starter entry.
-#[allow(dead_code)]
 pub fn embedded_ids() -> std::collections::HashSet<String> {
     embedded().into_iter().map(|e| e.id).collect()
 }

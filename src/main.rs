@@ -246,9 +246,10 @@ fn cmd_pack(action: PackCmd) {
             Ok(())
         }
         PackCmd::Remove { name } => pack::remove(&dir, &name).map(|_| println!("removed {name}")),
-        PackCmd::Add { .. } | PackCmd::Update { .. } | PackCmd::Search { .. } => {
-            Err("not implemented yet".to_string())
+        PackCmd::Add { source } => {
+            pack::add(&dir, &source, &corpus::embedded_ids()).map(|report| println!("{report}"))
         }
+        PackCmd::Update { .. } | PackCmd::Search { .. } => Err("not implemented yet".to_string()),
     };
     if let Err(e) = result {
         eprintln!("error: {e}");

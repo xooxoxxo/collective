@@ -1,9 +1,6 @@
-#![allow(dead_code)]
-// Pack types and validators are consumed by Tasks 6-7; suppress dead-code warnings
-// until then. This allow will be removed when those consumers land.
-
 use crate::entry::Entry;
 use serde::{Deserialize, Serialize};
+use std::io::Read;
 use std::path::PathBuf;
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -161,6 +158,120 @@ pub fn remove(dir: &std::path::Path, name: &str) -> Result<(), String> {
     std::fs::remove_file(&path).map_err(|e| format!("could not remove {name}: {e}"))
 }
 
+/// Packs are data, not archives: 32 MB is far above any plausible corpus and
+/// far below anything that would exhaust memory.
+const MAX_PACK_BYTES: u64 = 32 * 1024 * 1024;
+
+/// One HTTPS GET of one JSON document. Redirects stay at ureq's default cap of
+/// 5 because GitHub release assets 302 to objects.githubusercontent.com. The
+/// body is bounded by `take` rather than by trusting `content-length`, which a
+/// hostile server can understate.
+fn fetch(url: &str) -> Result<String, String> {
+    if !url.starts_with("https://") {
+        return Err(format!("refusing non-https url: {url}"));
+    }
+    let agent = ureq::AgentBuilder::new()
+        .timeout_connect(std::time::Duration::from_secs(10))
+        .timeout_read(std::time::Duration::from_secs(60))
+        .build();
+    let resp = agent
+        .get(url)
+        .call()
+        .map_err(|e| format!("fetch failed: {e}"))?;
+    let mut buf = String::new();
+    resp.into_reader()
+        .take(MAX_PACK_BYTES)
+        .read_to_string(&mut buf)
+        .map_err(|e| format!("read failed: {e}"))?;
+    if buf.len() as u64 >= MAX_PACK_BYTES {
+        return Err(format!("pack exceeds the {MAX_PACK_BYTES} byte limit"));
+    }
+    Ok(buf)
+}
+
+/// Write a validated pack to `<dir>/<name>.json`, refusing to land on a pack
+/// installed from a different origin. Returns the human-facing report.
+pub fn install(
+    dir: &std::path::Path,
+    mut pack: Pack,
+    origin: &str,
+    embedded: &std::collections::HashSet<String>,
+) -> Result<String, String> {
+    validate_pack_name(&pack.manifest.name)?;
+    let name = pack.manifest.name.clone();
+    let path = dir.join(format!("{name}.json"));
+
+    // A pack name is claimable by any publisher, so an incoming pack must not
+    // land on one installed from somewhere else just by reusing its name.
+    if let Ok(existing) = std::fs::read_to_string(&path) {
+        if let Ok(old) = parse(&existing, None) {
+            if old.manifest.origin != origin {
+                return Err(format!(
+                    "pack {name:?} is already installed from {}; \
+                     run `collective pack remove {name}` first",
+                    old.manifest.origin
+                ));
+            }
+        }
+    }
+
+    pack.manifest.origin = origin.to_string();
+    pack.manifest.count = pack.entries.len();
+    let shadowed: Vec<&str> = pack
+        .entries
+        .iter()
+        .filter(|e| embedded.contains(&e.id))
+        .map(|e| e.id.as_str())
+        .collect();
+
+    std::fs::create_dir_all(dir).map_err(|e| format!("cannot create packs dir: {e}"))?;
+    let json = serde_json::to_string(&pack).map_err(|e| e.to_string())?;
+    // Same-directory temp plus rename: one syscall to publish, so an interrupt
+    // or a concurrent add can never leave a half-written pack in place.
+    let tmp = dir.join(format!(".{name}.json.tmp"));
+    std::fs::write(&tmp, &json).map_err(|e| format!("cannot write pack: {e}"))?;
+    std::fs::rename(&tmp, &path).map_err(|e| format!("cannot install pack: {e}"))?;
+
+    let mut report = format!("installed {name} ({} entries)", pack.entries.len());
+    if !shadowed.is_empty() {
+        report.push_str(&format!(
+            "\nwarning: {} entries override starter entries: {}",
+            shadowed.len(),
+            shadowed.join(", ")
+        ));
+    }
+    Ok(report)
+}
+
+/// Resolve a `pack add` argument, retrieve the pack, and install it.
+pub fn add(
+    dir: &std::path::Path,
+    source: &str,
+    embedded: &std::collections::HashSet<String>,
+) -> Result<String, String> {
+    let (text, origin) = match classify(source)? {
+        Arg::Local(path) => {
+            let text = std::fs::read_to_string(&path)
+                .map_err(|e| format!("cannot read {}: {e}", path.display()))?;
+            (text, format!("file://{}", path.display()))
+        }
+        Arg::OwnerRepo(owner, repo) => {
+            let url = owner_repo_url(&owner, &repo);
+            (fetch(&url)?, url)
+        }
+        Arg::Name(name) => {
+            let url = registry_url_for(&name)?;
+            (fetch(&url)?, url)
+        }
+    };
+    let pack = parse(&text, None)?;
+    install(dir, pack, &origin, embedded)
+}
+
+fn registry_url_for(_name: &str) -> Result<String, String> {
+    Err("registry lookup lands in the next task".into())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -299,6 +410,124 @@ mod tests {
     fn remove_reports_a_missing_pack() {
         let dir = temp_dir("rmmissing");
         assert!(remove(&dir, "nope").is_err());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    fn no_embedded() -> std::collections::HashSet<String> {
+        std::collections::HashSet::new()
+    }
+
+    fn pack_with(name: &str, id: &str) -> Pack {
+        parse(
+            &format!(
+                r#"{{"manifest":{{"name":"{name}","count":1}},"entries":[
+                   {{"id":"{id}","title":"T","cmd":"c","platform":["macos"],
+                     "domains":["shell"],"danger":"low","explanation":"e","source":"s"}}]}}"#
+            ),
+            None,
+        )
+        .unwrap()
+    }
+
+    #[test]
+    fn install_writes_the_pack_and_records_origin() {
+        let dir = temp_dir("install");
+        install(
+            &dir,
+            pack_with("demo", "demo-id"),
+            "https://example.test/p.json",
+            &no_embedded(),
+        )
+        .unwrap();
+        let text = std::fs::read_to_string(dir.join("demo.json")).unwrap();
+        let back: Pack = serde_json::from_str(&text).unwrap();
+        assert_eq!(back.manifest.origin, "https://example.test/p.json");
+        assert_eq!(back.entries.len(), 1);
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn install_overwrites_freely_from_the_same_origin() {
+        let dir = temp_dir("sameorigin");
+        let url = "https://example.test/p.json";
+        install(&dir, pack_with("demo", "one"), url, &no_embedded()).unwrap();
+        install(&dir, pack_with("demo", "two"), url, &no_embedded()).unwrap();
+        let text = std::fs::read_to_string(dir.join("demo.json")).unwrap();
+        assert!(text.contains("two"), "same-origin reinstall must overwrite");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn install_refuses_to_overwrite_a_pack_from_a_different_origin() {
+        let dir = temp_dir("crossorigin");
+        install(
+            &dir,
+            pack_with("tldr", "official"),
+            "https://official.test/p.json",
+            &no_embedded(),
+        )
+        .unwrap();
+        let err = install(
+            &dir,
+            pack_with("tldr", "hostile"),
+            "https://raw.githubusercontent.com/someone/tldr/HEAD/pack.json",
+            &no_embedded(),
+        )
+        .unwrap_err();
+        assert!(err.contains("already installed"), "unexpected error: {err}");
+        let text = std::fs::read_to_string(dir.join("tldr.json")).unwrap();
+        assert!(
+            text.contains("official"),
+            "hostile pack clobbered the official one"
+        );
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn install_reports_ids_that_shadow_embedded_entries() {
+        let dir = temp_dir("shadow");
+        let embedded: std::collections::HashSet<String> =
+            ["flush-dns-cache".to_string()].into_iter().collect();
+        let report = install(
+            &dir,
+            pack_with("demo", "flush-dns-cache"),
+            "https://example.test/p.json",
+            &embedded,
+        )
+        .unwrap();
+        assert!(
+            report.contains("flush-dns-cache"),
+            "shadowing not reported: {report}"
+        );
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn add_installs_from_a_local_path() {
+        let dir = temp_dir("addlocal");
+        let src = dir.join("source-pack.json");
+        std::fs::write(
+            &src,
+            r#"{"manifest":{"name":"local","count":1},"entries":[
+                {"id":"local-id","title":"T","cmd":"c","platform":["macos"],
+                 "domains":["shell"],"danger":"low","explanation":"e","source":"s"}]}"#,
+        )
+        .unwrap();
+        add(&dir, src.to_str().unwrap(), &no_embedded()).unwrap();
+        assert!(dir.join("local.json").exists());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn add_rejects_a_manifest_name_that_would_escape_the_packs_dir() {
+        let dir = temp_dir("addescape");
+        let src = dir.join("evil.json");
+        std::fs::write(
+            &src,
+            r#"{"manifest":{"name":"../../pwned","count":0},"entries":[]}"#,
+        )
+        .unwrap();
+        assert!(add(&dir, src.to_str().unwrap(), &no_embedded()).is_err());
         let _ = std::fs::remove_dir_all(&dir);
     }
 }

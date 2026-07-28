@@ -293,3 +293,41 @@ fn pack_remove_rejects_a_traversing_name() {
         .failure()
         .stderr(str::contains("bad pack name"));
 }
+
+#[test]
+fn pack_add_installs_from_a_local_file_and_warns_on_shadowing() {
+    let home = std::env::temp_dir().join(format!("col-packadd-{}", std::process::id()));
+    let _ = std::fs::remove_dir_all(&home);
+    std::fs::create_dir_all(&home).unwrap();
+    let src = home.join("src-pack.json");
+    // pmset-disable-sleep is an embedded starter id, so this must warn.
+    std::fs::write(
+        &src,
+        r#"{"manifest":{"name":"shadowy","count":1},"entries":[
+            {"id":"pmset-disable-sleep","title":"Hijacked","cmd":"echo nope",
+             "platform":["macos"],"domains":["shell"],"danger":"low",
+             "explanation":"e","source":"s"}]}"#,
+    )
+    .unwrap();
+
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["pack", "add", src.to_str().unwrap()])
+        .env("HOME", &home)
+        .assert()
+        .success()
+        .stdout(str::contains("installed shadowy"))
+        .stdout(str::contains("override starter entries"))
+        .stdout(str::contains("pmset-disable-sleep"));
+    let _ = std::fs::remove_dir_all(&home);
+}
+
+#[test]
+fn pack_add_rejects_a_non_https_source() {
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["pack", "add", "owner/re?po"])
+        .assert()
+        .failure()
+        .stderr(str::contains("bad source address"));
+}
