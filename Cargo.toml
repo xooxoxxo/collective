@@ -2,6 +2,8 @@
 name = "collective"
 version = "0.3.0"
 edition = "2021"
+# Two binaries exist (collective, build-pack); name the one `cargo run` means.
+default-run = "collective"
 
 [[bin]]
 name = "collective"
