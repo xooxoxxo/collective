@@ -14,7 +14,11 @@ use clap::{CommandFactory, Parser, Subcommand};
 use clap_complete::{generate, Shell};
 
 #[derive(Parser)]
-#[command(name = "collective", about = "hacky script directory + console drills")]
+#[command(
+    name = "collective",
+    about = "hacky script directory + console drills",
+    version
+)]
 struct Cli {
     /// Print the shell wrapper for zsh or bash, then exit
     #[arg(long, value_name = "SHELL")]
