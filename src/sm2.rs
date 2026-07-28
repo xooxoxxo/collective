@@ -12,7 +12,12 @@ pub struct Card {
 
 impl Default for Card {
     fn default() -> Self {
-        Card { ease: 2.5, interval_days: 0.0, due: 0, reps: 0 }
+        Card {
+            ease: 2.5,
+            interval_days: 0.0,
+            due: 0,
+            reps: 0,
+        }
     }
 }
 

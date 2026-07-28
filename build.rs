@@ -7,9 +7,16 @@ mod entry;
 use std::{collections::HashSet, fs, path::Path};
 
 fn main() {
+    // corpus/ is embedded in the binary; packs/ is published as fetchable
+    // packs. Both are schema-validated here and share one id namespace, so a
+    // pack entry that would break the corpus cannot be published either.
     println!("cargo:rerun-if-changed=corpus");
+    println!("cargo:rerun-if-changed=packs");
     let mut ids = HashSet::new();
-    let mut stack = vec![Path::new("corpus").to_path_buf()];
+    let mut stack = vec![
+        Path::new("corpus").to_path_buf(),
+        Path::new("packs").to_path_buf(),
+    ];
     while let Some(dir) = stack.pop() {
         for f in fs::read_dir(&dir).expect("corpus/ dir missing") {
             let p = f.unwrap().path();

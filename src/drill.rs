@@ -16,7 +16,10 @@ pub fn default_state_path() -> PathBuf {
 pub fn load_state(path: &Path) -> HashMap<String, Card> {
     match fs::read_to_string(path) {
         Ok(text) => serde_json::from_str(&text).unwrap_or_else(|_| {
-            eprintln!("warning: drill state corrupt at {}, resetting", path.display());
+            eprintln!(
+                "warning: drill state corrupt at {}, resetting",
+                path.display()
+            );
             HashMap::new()
         }),
         Err(_) => HashMap::new(),
@@ -27,7 +30,10 @@ pub fn save_state(path: &Path, state: &HashMap<String, Card>) -> std::io::Result
     if let Some(parent) = path.parent() {
         fs::create_dir_all(parent)?;
     }
-    fs::write(path, serde_json::to_string_pretty(state).expect("state serializes"))
+    fs::write(
+        path,
+        serde_json::to_string_pretty(state).expect("state serializes"),
+    )
 }
 
 pub fn pick_due<'a>(
@@ -63,7 +69,10 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
         println!("nothing due. come back later.");
         return;
     }
-    println!("{} card(s) due. recall the command, Enter reveals.\n", due.len());
+    println!(
+        "{} card(s) due. recall the command, Enter reveals.\n",
+        due.len()
+    );
     let stdin = io::stdin();
     for e in due {
         println!("── {}", e.title);
@@ -77,7 +86,11 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
         let typed = buf.trim();
         println!("  {}", e.cmd);
         if !typed.is_empty() {
-            let mark = if typed == e.cmd { "✓ exact" } else { "✗ differs" };
+            let mark = if typed == e.cmd {
+                "✓ exact"
+            } else {
+                "✗ differs"
+            };
             println!("  you typed: {typed}  {mark}");
         }
         let grade = loop {

@@ -4,8 +4,10 @@ use crate::entry::Entry;
 use crate::favorites;
 use crate::search;
 use crossterm::event::{self, Event, KeyCode, KeyEventKind, KeyModifiers};
-use crossterm::terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen};
 use crossterm::execute;
+use crossterm::terminal::{
+    disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen,
+};
 use ratatui::backend::CrosstermBackend;
 use ratatui::Terminal;
 use std::collections::HashSet;
@@ -160,12 +162,55 @@ mod tests {
 
     #[test]
     fn curated_only_hides_bulk_imports() {
-        let mut a = App::new(corpus::load(), std::collections::HashSet::new());
+        // Synthetic fixtures since bulk imports moved to packs/
+        let mut entries = vec![
+            Entry {
+                id: "curated-1".into(),
+                title: "curated entry 1".into(),
+                cmd: "test curated 1".into(),
+                undo: None,
+                platform: vec!["macos".into()],
+                domains: vec!["darwin".into()],
+                danger: crate::entry::Danger::Low,
+                explanation: "test".into(),
+                source: "test".into(),
+                tags: vec![],
+            },
+            Entry {
+                id: "curated-2".into(),
+                title: "curated entry 2".into(),
+                cmd: "test curated 2".into(),
+                undo: None,
+                platform: vec!["macos".into()],
+                domains: vec!["darwin".into()],
+                danger: crate::entry::Danger::Low,
+                explanation: "test".into(),
+                source: "test".into(),
+                tags: vec![],
+            },
+            Entry {
+                id: "tldr-import-1".into(),
+                title: "tldr import 1".into(),
+                cmd: "test import 1".into(),
+                undo: None,
+                platform: vec!["macos".into()],
+                domains: vec!["tldr-import".into()],
+                danger: crate::entry::Danger::Low,
+                explanation: "test".into(),
+                source: "test".into(),
+                tags: vec![],
+            },
+        ];
+        entries.sort_by(|a, b| a.id.cmp(&b.id));
+        let mut a = App::new(entries, std::collections::HashSet::new());
         let before = a.visible().len();
         a.toggle_curated_only();
         let after = a.visible().len();
         assert!(after < before, "curated view should drop bulk imports");
-        assert!(a.visible().iter().all(|e| !crate::search::is_bulk_import(e)));
+        assert!(a
+            .visible()
+            .iter()
+            .all(|e| !crate::search::is_bulk_import(e)));
     }
 }
 
@@ -193,7 +238,9 @@ pub fn run() -> io::Result<()> {
 
         loop {
             terminal.draw(|f| ui::draw(f, &app))?;
-            let Event::Key(key) = event::read()? else { continue };
+            let Event::Key(key) = event::read()? else {
+                continue;
+            };
             if key.kind != KeyEventKind::Press {
                 continue;
             }
@@ -215,7 +262,8 @@ pub fn run() -> io::Result<()> {
                 }
                 (KeyCode::Char('y'), KeyModifiers::CONTROL) => {
                     if let Some(e) = app.selected_entry() {
-                        let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone()));
+                        let _ =
+                            arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone()));
                     }
                 }
                 (KeyCode::Char('s'), KeyModifiers::CONTROL) => {
@@ -227,9 +275,7 @@ pub fn run() -> io::Result<()> {
                 (KeyCode::Char('u'), KeyModifiers::CONTROL) => app.toggle_curated_only(),
                 // Everything printable types into the filter. SHIFT accompanies
                 // uppercase chars, so allow it; any other modifier is ignored.
-                (KeyCode::Char(ch), m)
-                    if m.is_empty() || m == KeyModifiers::SHIFT =>
-                {
+                (KeyCode::Char(ch), m) if m.is_empty() || m == KeyModifiers::SHIFT => {
                     let mut f = app.filter.clone();
                     f.push(ch);
                     app.set_filter(&f);

@@ -33,7 +33,10 @@ impl Entry {
                 .chars()
                 .all(|c| c.is_ascii_lowercase() || c.is_ascii_digit() || c == '-');
         if !id_ok {
-            return Err(format!("bad id {:?}: use lowercase/digits/hyphens", self.id));
+            return Err(format!(
+                "bad id {:?}: use lowercase/digits/hyphens",
+                self.id
+            ));
         }
         if self.title.trim().is_empty() {
             return Err(format!("{}: empty title", self.id));
@@ -93,7 +96,8 @@ tags: [sleep, clamshell]
 
     #[test]
     fn rejects_bad_id_chars() {
-        let e: Entry = serde_yaml::from_str(&GOOD.replace("pmset-disable-sleep", "Bad_ID!")).unwrap();
+        let e: Entry =
+            serde_yaml::from_str(&GOOD.replace("pmset-disable-sleep", "Bad_ID!")).unwrap();
         assert!(e.validate().is_err());
     }
 
@@ -105,7 +109,9 @@ tags: [sleep, clamshell]
 
     #[test]
     fn rejects_empty_cmd() {
-        let e: Entry = serde_yaml::from_str(&GOOD.replace("cmd: sudo pmset -a disablesleep 1", "cmd: \"\"")).unwrap();
+        let e: Entry =
+            serde_yaml::from_str(&GOOD.replace("cmd: sudo pmset -a disablesleep 1", "cmd: \"\""))
+                .unwrap();
         assert!(e.validate().is_err());
     }
 }

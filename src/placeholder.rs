@@ -72,20 +72,29 @@ mod tests {
 
     #[test]
     fn multiple_distinct_tokens_in_order() {
-        assert_eq!(tokens("scp <src> <host>:<dest>"), vec!["src", "host", "dest"]);
+        assert_eq!(
+            tokens("scp <src> <host>:<dest>"),
+            vec!["src", "host", "dest"]
+        );
     }
 
     #[test]
     fn fill_substitutes_and_leaves_empty() {
         let cmd = "lsof -iTCP:<port> <host>";
-        let answers = vec![("port".to_string(), "3000".to_string()), ("host".to_string(), String::new())];
+        let answers = vec![
+            ("port".to_string(), "3000".to_string()),
+            ("host".to_string(), String::new()),
+        ];
         assert_eq!(fill(cmd, &answers), "lsof -iTCP:3000 <host>");
     }
 
     #[test]
     fn overlapping_token_names_do_not_clobber() {
         let cmd = "<a> <ab>";
-        let answers = vec![("a".to_string(), "x".to_string()), ("ab".to_string(), "y".to_string())];
+        let answers = vec![
+            ("a".to_string(), "x".to_string()),
+            ("ab".to_string(), "y".to_string()),
+        ];
         assert_eq!(fill(cmd, &answers), "x y");
     }
 }

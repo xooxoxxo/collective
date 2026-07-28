@@ -24,15 +24,20 @@ fn embedded() -> Vec<Entry> {
 
 /// User overlay: ~/.collective/corpus/*.yaml. Invalid entries warn + skip.
 fn overlay() -> Vec<Entry> {
-    let Some(base) = directories::BaseDirs::new() else { return vec![] };
+    let Some(base) = directories::BaseDirs::new() else {
+        return vec![];
+    };
     let dir = base.home_dir().join(".collective/corpus");
-    let Ok(read) = fs::read_dir(&dir) else { return vec![] };
+    let Ok(read) = fs::read_dir(&dir) else {
+        return vec![];
+    };
     read.filter_map(|f| f.ok())
         .map(|f| f.path())
         .filter(|p| p.extension().is_some_and(|e| e == "yaml"))
         .filter_map(|p| {
             let text = fs::read_to_string(&p).ok()?;
-            match serde_yaml::from_str::<Entry>(&text).map_err(|e| e.to_string())
+            match serde_yaml::from_str::<Entry>(&text)
+                .map_err(|e| e.to_string())
                 .and_then(|e| e.validate().map(|_| e))
             {
                 Ok(e) => Some(e),
@@ -64,10 +69,24 @@ mod tests {
     use super::*;
 
     #[test]
-    fn embedded_corpus_loads_and_contains_seed() {
+    fn embedded_corpus_is_the_starter_only() {
         let entries = embedded();
-        assert!(entries.len() >= 10);
+        assert!(
+            entries.len() >= 100,
+            "starter shrank unexpectedly: {}",
+            entries.len()
+        );
+        assert!(
+            entries.len() < 500,
+            "bulk imports leaked back into the binary"
+        );
         assert!(entries.iter().any(|e| e.id == "pmset-disable-sleep"));
+        assert!(
+            !entries
+                .iter()
+                .any(|e| e.domains.iter().any(|d| d == "tldr-import")),
+            "embedded corpus must contain no bulk imports"
+        );
     }
 
     #[test]

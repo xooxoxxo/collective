@@ -12,7 +12,10 @@ pub fn default_path() -> PathBuf {
 pub fn load(path: &Path) -> HashSet<String> {
     match fs::read_to_string(path) {
         Ok(text) => serde_json::from_str(&text).unwrap_or_else(|_| {
-            eprintln!("warning: favorites corrupt at {}, resetting", path.display());
+            eprintln!(
+                "warning: favorites corrupt at {}, resetting",
+                path.display()
+            );
             HashSet::new()
         }),
         Err(_) => HashSet::new(),
@@ -25,7 +28,10 @@ pub fn save(path: &Path, favs: &HashSet<String>) -> std::io::Result<()> {
     }
     let mut sorted: Vec<&String> = favs.iter().collect();
     sorted.sort();
-    fs::write(path, serde_json::to_string_pretty(&sorted).expect("favorites serialize"))
+    fs::write(
+        path,
+        serde_json::to_string_pretty(&sorted).expect("favorites serialize"),
+    )
 }
 
 #[cfg(test)]

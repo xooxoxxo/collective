@@ -81,7 +81,9 @@ platform (array, e.g. [\"macos\"] or [\"macos\",\"linux\"]). No prose.\n\nComman
 }
 
 pub fn populate(cmd: &str) -> Result<AiFields, String> {
-    let has_key = std::env::var("ANTHROPIC_API_KEY").map(|k| !k.is_empty()).unwrap_or(false);
+    let has_key = std::env::var("ANTHROPIC_API_KEY")
+        .map(|k| !k.is_empty())
+        .unwrap_or(false);
     let claude = which_claude();
     match select_backend(has_key, claude.is_some()) {
         Backend::Api => populate_api(cmd),
@@ -114,14 +116,25 @@ fn populate_api(cmd: &str) -> Result<AiFields, String> {
         .set("content-type", "application/json")
         .send_json(body)
         .map_err(|e| format!("API request failed: {e}"))?;
-    let v: serde_json::Value = resp.into_json().map_err(|e| format!("bad API response: {e}"))?;
-    let text = v["content"][0]["text"].as_str().ok_or("no text in API response")?;
+    let v: serde_json::Value = resp
+        .into_json()
+        .map_err(|e| format!("bad API response: {e}"))?;
+    let text = v["content"][0]["text"]
+        .as_str()
+        .ok_or("no text in API response")?;
     parse_response(text)
 }
 
 fn populate_cli(cmd: &str, claude: &str) -> Result<AiFields, String> {
     let out = std::process::Command::new(claude)
-        .args(["-p", &prompt(cmd), "--output-format", "json", "--model", &model()])
+        .args([
+            "-p",
+            &prompt(cmd),
+            "--output-format",
+            "json",
+            "--model",
+            &model(),
+        ])
         .output()
         .map_err(|e| format!("claude invocation failed: {e}"))?;
     if !out.status.success() {

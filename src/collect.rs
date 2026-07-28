@@ -112,11 +112,18 @@ fn ask(prompt: &str, default: &str) -> String {
         return default.to_string();
     }
     let t = line.trim();
-    if t.is_empty() { default.to_string() } else { t.to_string() }
+    if t.is_empty() {
+        default.to_string()
+    } else {
+        t.to_string()
+    }
 }
 
 fn csv(s: &str) -> Vec<String> {
-    s.split(',').map(|x| x.trim().to_string()).filter(|x| !x.is_empty()).collect()
+    s.split(',')
+        .map(|x| x.trim().to_string())
+        .filter(|x| !x.is_empty())
+        .collect()
 }
 
 /// Build an Entry from AI-populated fields.
@@ -126,8 +133,16 @@ fn from_ai(cmd: &str, f: ai::AiFields) -> Entry {
         title: f.title,
         cmd: cmd.to_string(),
         undo: (!f.undo.is_empty()).then_some(f.undo),
-        platform: if f.platform.is_empty() { vec!["macos".into()] } else { f.platform },
-        domains: if f.domains.is_empty() { vec!["shell".into()] } else { f.domains },
+        platform: if f.platform.is_empty() {
+            vec!["macos".into()]
+        } else {
+            f.platform
+        },
+        domains: if f.domains.is_empty() {
+            vec!["shell".into()]
+        } else {
+            f.domains
+        },
         danger: Danger::parse(&f.danger).unwrap_or(Danger::Low),
         explanation: f.explanation,
         source: format!("collect:{}", hostname()),
@@ -184,7 +199,12 @@ pub fn run(command: Option<String>, manual: bool, last: bool) {
     let use_ai = if manual {
         false
     } else {
-        matches!(ask("Populate with AI, or fill in manually? [a/m]", "a").to_lowercase().as_str(), "a" | "ai" | "")
+        matches!(
+            ask("Populate with AI, or fill in manually? [a/m]", "a")
+                .to_lowercase()
+                .as_str(),
+            "a" | "ai" | ""
+        )
     };
 
     let mut entry = if use_ai {

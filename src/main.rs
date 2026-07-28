@@ -1,13 +1,13 @@
-mod entry;
-mod corpus;
-mod search;
-mod sm2;
-mod drill;
-mod favorites;
-mod tui;
 mod ai; // consumed by collect (Task 6)
 mod collect;
+mod corpus;
+mod drill;
+mod entry;
+mod favorites;
 mod placeholder;
+mod search;
+mod sm2;
+mod tui;
 
 use clap::{CommandFactory, Parser, Subcommand};
 use clap_complete::{generate, Shell};
@@ -85,7 +85,12 @@ fn main() {
                 std::process::exit(1);
             }
         };
-        generate(parsed, &mut Cli::command(), "collective", &mut std::io::stdout());
+        generate(
+            parsed,
+            &mut Cli::command(),
+            "collective",
+            &mut std::io::stdout(),
+        );
         return;
     }
 
@@ -97,14 +102,20 @@ fn main() {
                 std::process::exit(1);
             }
         }
-        Some(Cmd::Search { query, domain, curated }) => {
-            cmd_search(&entries, &query.join(" "), domain.as_deref(), curated)
-        }
+        Some(Cmd::Search {
+            query,
+            domain,
+            curated,
+        }) => cmd_search(&entries, &query.join(" "), domain.as_deref(), curated),
         Some(Cmd::Show { id }) => cmd_show(&entries, &id),
         Some(Cmd::Copy { id }) => cmd_copy(&entries, &id),
         Some(Cmd::Random) => cmd_show(&entries, &random_id(&entries)),
         Some(Cmd::Drill { domain }) => drill::run(&entries, domain.as_deref()),
-        Some(Cmd::Collect { command, manual, last }) => collect::run(command, manual, last),
+        Some(Cmd::Collect {
+            command,
+            manual,
+            last,
+        }) => collect::run(command, manual, last),
         Some(Cmd::Completions { .. }) => unreachable!("handled before corpus load"),
     }
 }

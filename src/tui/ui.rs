@@ -26,7 +26,11 @@ pub fn draw(f: &mut Frame, app: &App) {
     // table
     let visible = app.visible();
     let rows = visible.iter().map(|e| {
-        let star = if app.favorites.contains(&e.id) { "★" } else { " " };
+        let star = if app.favorites.contains(&e.id) {
+            "★"
+        } else {
+            " "
+        };
         let danger = format!("{:?}", e.danger).to_lowercase();
         // Selection highlight is applied by the table's row_highlight_style;
         // here we only colour danger:high rows red.
@@ -52,7 +56,10 @@ pub fn draw(f: &mut Frame, app: &App) {
             Constraint::Length(7),
         ],
     )
-    .header(Row::new(vec!["", "id", "title", "danger"]).style(Style::default().add_modifier(Modifier::BOLD)))
+    .header(
+        Row::new(vec!["", "id", "title", "danger"])
+            .style(Style::default().add_modifier(Modifier::BOLD)),
+    )
     .block(Block::default().borders(Borders::ALL))
     .highlight_style(Style::default().add_modifier(Modifier::REVERSED))
     .highlight_symbol("> ");
@@ -68,7 +75,10 @@ pub fn draw(f: &mut Frame, app: &App) {
     let detail = match app.selected_entry() {
         Some(e) => {
             let mut lines = vec![
-                Line::from(Span::styled(e.title.clone(), Style::default().add_modifier(Modifier::BOLD))),
+                Line::from(Span::styled(
+                    e.title.clone(),
+                    Style::default().add_modifier(Modifier::BOLD),
+                )),
                 Line::from(format!("cmd:  {}", e.cmd)),
             ];
             if let Some(u) = e.undo.as_deref().filter(|u| !u.is_empty()) {
