@@ -89,55 +89,82 @@ mod tests {
         assert!(search(&entries, "zzqqxxnothing").is_empty());
     }
 
+    /// Throwaway entry for ranking tests. `domain` decides curated vs import:
+    /// "tldr-import" makes it a bulk import, anything else makes it curated.
+    fn fixture(id: &str, title: &str, domain: &str) -> Entry {
+        Entry {
+            id: id.into(),
+            title: title.into(),
+            cmd: format!("run {id}"),
+            undo: None,
+            platform: vec!["macos".into()],
+            domains: vec![domain.into()],
+            danger: crate::entry::Danger::Low,
+            explanation: "fixture".into(),
+            source: "fixture".into(),
+            tags: vec![],
+        }
+    }
+
     #[test]
     fn curated_outranks_bulk_import() {
-        // "port" matches curated gems (e.g. mac-find-process-by-port) and many
-        // tldr imports. The first result must be curated, not a bulk import.
-        let entries = corpus::load();
-        let hits = search(&entries, "process listening port");
-        assert!(!hits.is_empty());
-        assert!(
-            !hits[0].0.domains.iter().any(|d| d == "tldr-import"),
-            "top hit was a bulk import: {}",
-            hits[0].0.id
+        // The import is the better textual match; grouping must still win.
+        let entries = vec![
+            fixture("import-exact", "git log graph", "tldr-import"),
+            fixture("curated-weak", "git log graph display", "vcs"),
+        ];
+        let hits = search(&entries, "git log graph");
+        assert_eq!(hits.len(), 2);
+        assert_eq!(
+            hits[0].0.id, "curated-weak",
+            "import outranked a curated entry"
         );
     }
 
     #[test]
     fn curated_hits_all_precede_imports() {
-        let entries = corpus::load();
-        // "git log" matches curated gems and many tldr imports.
-        let hits = search(&entries, "git log");
-        assert!(!hits.is_empty());
-        if let Some(first_import) = hits.iter().position(|(e, _)| is_bulk_import(e)) {
-            assert!(
-                hits[first_import..].iter().all(|(e, _)| is_bulk_import(e)),
-                "found a curated hit after an import hit"
-            );
-            assert!(first_import > 0, "expected at least one curated hit first");
+        let mut entries = vec![];
+        for i in 0..3 {
+            entries.push(fixture(&format!("import-{i}"), "git log", "tldr-import"));
+            entries.push(fixture(&format!("curated-{i}"), "git log", "vcs"));
         }
+        let hits = search(&entries, "git log");
+        let first_import = hits
+            .iter()
+            .position(|(e, _)| is_bulk_import(e))
+            .expect("fixture guarantees at least one import hit");
+        assert_eq!(first_import, 3, "expected all 3 curated hits first");
+        assert!(
+            hits[first_import..].iter().all(|(e, _)| is_bulk_import(e)),
+            "found a curated hit after an import hit"
+        );
     }
 
     #[test]
     fn both_groups_share_the_cap() {
-        let entries = corpus::load();
-        // "git" is a broad query with both curated and import hits.
-        // Assumes the corpus yields >=6 curated matches for "git"; if the
-        // corpus shrinks below that, backfill legitimately gives imports
-        // more than 4 slots and these cap assertions need relaxing to
-        // import_count <= 10 - first_import.
-        let hits = search(&entries, "git");
-        assert!(hits.len() <= 10, "result exceeds 10 row cap");
-        let has_curated = hits.iter().any(|(e, _)| !is_bulk_import(e));
-        let has_imports = hits.iter().any(|(e, _)| is_bulk_import(e));
-        if has_curated && has_imports {
-            // Both groups present: verify grouping and cap enforcement
-            if let Some(first_import) = hits.iter().position(|(e, _)| is_bulk_import(e)) {
-                assert!(first_import > 0, "expected at least one curated hit first");
-                assert!(first_import <= 6, "curated group exceeded 6-slot cap");
-                let import_count = hits[first_import..].len();
-                assert!(import_count <= 4, "import group exceeded 4-slot cap");
-            }
+        // 8 of each: enough that the 6/4 split is forced rather than incidental.
+        let mut entries = vec![];
+        for i in 0..8 {
+            entries.push(fixture(&format!("curated-{i}"), "git log", "vcs"));
+            entries.push(fixture(&format!("import-{i}"), "git log", "tldr-import"));
         }
+        let hits = search(&entries, "git log");
+        assert_eq!(hits.len(), 10, "result must fill the 10 row cap");
+        let curated = hits.iter().filter(|(e, _)| !is_bulk_import(e)).count();
+        let imports = hits.iter().filter(|(e, _)| is_bulk_import(e)).count();
+        assert_eq!(
+            curated, 6,
+            "curated group must cap at 6 when imports compete"
+        );
+        assert_eq!(imports, 4, "imports must be guaranteed 4 slots");
+    }
+
+    #[test]
+    fn one_group_backfills_the_whole_cap() {
+        // No imports competing: curated takes all 10, no 6-slot cap applied.
+        let entries: Vec<Entry> = (0..12)
+            .map(|i| fixture(&format!("curated-{i}"), "git log", "vcs"))
+            .collect();
+        assert_eq!(search(&entries, "git log").len(), 10);
     }
 }

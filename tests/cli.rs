@@ -96,15 +96,62 @@ fn collect_manual_writes_overlay_file() {
     let _ = std::fs::remove_dir_all(&home);
 }
 
+/// Temp HOME seeded with one curated and one bulk-import overlay entry, so
+/// grouping behavior is asserted against fixtures rather than corpus contents.
+fn grouping_home(tag: &str) -> std::path::PathBuf {
+    let home = std::env::temp_dir().join(format!("col-{tag}-{}", std::process::id()));
+    let _ = std::fs::remove_dir_all(&home);
+    let dir = home.join(".collective/corpus");
+    std::fs::create_dir_all(&dir).unwrap();
+    let entry = |id: &str, domain: &str| {
+        format!(
+            "id: {id}\ntitle: zzmarker widget\ncmd: run {id}\nplatform: [macos]\n\
+             domains: [{domain}]\ndanger: low\nexplanation: fixture entry.\nsource: fixture\n"
+        )
+    };
+    std::fs::write(dir.join("zz-curated.yaml"), entry("zz-curated", "shell")).unwrap();
+    std::fs::write(
+        dir.join("zz-import.yaml"),
+        entry("zz-import", "tldr-import"),
+    )
+    .unwrap();
+    home
+}
+
+#[test]
+fn search_prints_separator_between_groups() {
+    let home = grouping_home("sep");
+    Command::cargo_bin("collective")
+        .unwrap()
+        .args(["search", "zzmarker"])
+        .env("HOME", &home)
+        .assert()
+        .success()
+        .stdout(str::contains("── tldr imports ──"))
+        .stdout(str::contains("zz-curated"))
+        .stdout(str::contains("zz-import"));
+    let _ = std::fs::remove_dir_all(&home);
+}
+
 #[test]
 fn search_curated_excludes_tldr_imports() {
+    let home = grouping_home("cur");
     let out = Command::cargo_bin("collective")
         .unwrap()
-        .args(["search", "git", "--curated"])
+        .args(["search", "zzmarker", "--curated"])
+        .env("HOME", &home)
         .assert()
         .success();
     let stdout = String::from_utf8(out.get_output().stdout.clone()).unwrap();
-    assert!(!stdout.contains("tldr-"), "curated search leaked a tldr import:\n{stdout}");
+    assert!(
+        stdout.contains("zz-curated"),
+        "curated entry missing:\n{stdout}"
+    );
+    assert!(
+        !stdout.contains("zz-import"),
+        "curated search leaked an import:\n{stdout}"
+    );
+    let _ = std::fs::remove_dir_all(&home);
 }
 
 #[test]
@@ -135,7 +182,9 @@ fn collect_last_reads_env_and_writes_overlay() {
         .stdout(str::contains("saved grab-last"));
     let f = home.join(".collective/corpus/grab-last.yaml");
     assert!(f.exists());
-    assert!(std::fs::read_to_string(&f).unwrap().contains("cmd: echo captured"));
+    assert!(std::fs::read_to_string(&f)
+        .unwrap()
+        .contains("cmd: echo captured"));
     let _ = std::fs::remove_dir_all(&home);
 }
 
@@ -171,22 +220,15 @@ fn completions_unknown_shell_errors() {
 }
 
 #[test]
-fn search_prints_separator_between_groups() {
-    Command::cargo_bin("collective")
-        .unwrap()
-        .args(["search", "port"])
-        .assert()
-        .success()
-        .stdout(str::contains("── tldr imports ──"));
-}
-
-#[test]
 fn search_curated_output_has_no_separator() {
+    let home = grouping_home("nosep");
     let out = Command::cargo_bin("collective")
         .unwrap()
-        .args(["search", "port", "--curated"])
+        .args(["search", "zzmarker", "--curated"])
+        .env("HOME", &home)
         .assert()
         .success();
     let stdout = String::from_utf8(out.get_output().stdout.clone()).unwrap();
     assert!(!stdout.contains("── tldr imports ──"));
+    let _ = std::fs::remove_dir_all(&home);
 }
