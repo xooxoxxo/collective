@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// Pack types and validators are consumed by Tasks 4-7; suppress dead-code warnings
+// Pack types and validators are consumed by Tasks 5-7; suppress dead-code warnings
 // until then. This allow will be removed when those consumers land.
 
 use crate::entry::Entry;
@@ -85,6 +85,44 @@ pub fn classify(arg: &str) -> Result<Arg, String> {
 
 pub fn owner_repo_url(owner: &str, repo: &str) -> String {
     format!("https://raw.githubusercontent.com/{owner}/{repo}/HEAD/pack.json")
+}
+
+/// Parse pack JSON and drop entries that fail schema validation. A malformed
+/// entry degrades the pack; it never aborts the load. When `expected_name` is
+/// given, a manifest claiming a different name is rejected outright — that
+/// mismatch means the fetched file is not the pack that was asked for.
+pub fn parse(text: &str, expected_name: Option<&str>) -> Result<Pack, String> {
+    let mut pack: Pack = serde_json::from_str(text).map_err(|e| e.to_string())?;
+    validate_pack_name(&pack.manifest.name)?;
+    if let Some(want) = expected_name {
+        if pack.manifest.name != want {
+            return Err(format!(
+                "manifest name {:?} does not match requested pack {want:?}",
+                pack.manifest.name
+            ));
+        }
+    }
+    let mut seen = std::collections::HashSet::new();
+    let mut kept = Vec::with_capacity(pack.entries.len());
+    for e in pack.entries {
+        if let Err(err) = e.validate() {
+            eprintln!(
+                "warning: skipping entry in pack {}: {err}",
+                pack.manifest.name
+            );
+            continue;
+        }
+        if !seen.insert(e.id.clone()) {
+            eprintln!(
+                "warning: duplicate id {} within pack {}, keeping the first",
+                e.id, pack.manifest.name
+            );
+            continue;
+        }
+        kept.push(e);
+    }
+    pack.entries = kept;
+    Ok(pack)
 }
 
 #[cfg(test)]
