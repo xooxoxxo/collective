@@ -162,24 +162,31 @@ pub fn remove(dir: &std::path::Path, name: &str) -> Result<(), String> {
 /// far below anything that would exhaust memory.
 const MAX_PACK_BYTES: u64 = 32 * 1024 * 1024;
 
-/// One HTTPS GET of one JSON document. Redirects stay at ureq's default cap of
-/// 5 because GitHub release assets 302 to objects.githubusercontent.com. The
-/// body is bounded by `take` rather than by trusting `content-length`, which a
-/// hostile server can understate.
+/// One HTTPS GET of one JSON document. Redirects are capped at 5 and must stay
+/// enabled: GitHub release assets 302 to objects.githubusercontent.com, so
+/// disabling them would break `pack add` outright. The cap is set explicitly
+/// rather than inherited, so the behaviour cannot drift with a library default.
+/// The body is bounded by `take` rather than by trusting `content-length`,
+/// which a hostile server can understate.
 fn fetch(url: &str) -> Result<String, String> {
     if !url.starts_with("https://") {
         return Err(format!("refusing non-https url: {url}"));
     }
-    let agent = ureq::AgentBuilder::new()
-        .timeout_connect(std::time::Duration::from_secs(10))
-        .timeout_read(std::time::Duration::from_secs(60))
+    let config = ureq::Agent::config_builder()
+        .timeout_connect(Some(std::time::Duration::from_secs(10)))
+        .timeout_recv_body(Some(std::time::Duration::from_secs(60)))
+        .max_redirects(5)
         .build();
+    let agent: ureq::Agent = config.into();
+    // ureq 3's error text omits the URL, so name it here: "http status: 404"
+    // alone tells the user nothing about which pack or registry failed.
     let resp = agent
         .get(url)
         .call()
-        .map_err(|e| format!("fetch failed: {e}"))?;
+        .map_err(|e| format!("fetch failed for {url}: {e}"))?;
     let mut buf = String::new();
-    resp.into_reader()
+    resp.into_body()
+        .into_reader()
         .take(MAX_PACK_BYTES)
         .read_to_string(&mut buf)
         .map_err(|e| format!("read failed: {e}"))?;

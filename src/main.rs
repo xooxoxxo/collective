@@ -213,9 +213,9 @@ fn cmd_copy(entries: &[entry::Entry], id: &str) {
 }
 
 fn random_id(entries: &[entry::Entry]) -> String {
-    use rand::seq::SliceRandom;
+    use rand::seq::IndexedRandom;
     entries
-        .choose(&mut rand::thread_rng())
+        .choose(&mut rand::rng())
         .expect("corpus is never empty")
         .id
         .clone()

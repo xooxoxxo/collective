@@ -173,9 +173,11 @@ both source types. `manifest.version` is display metadata, not update logic.
    the raw.githubusercontent path. That charset excludes `/` and therefore
    cannot contain `..`, so neither segment can walk out of the intended path.
    Reject any resolved URL whose scheme is not `https`.
-3. **Fetch with a configured `ureq::Agent`** — explicit connect and read
-   timeouts, redirects left at ureq's default cap of 5 (GitHub release assets
-   302 to `objects.githubusercontent.com`, so redirects cannot be disabled).
+3. **Fetch with a configured `ureq::Agent`** — explicit connect and receive
+   timeouts, and an explicit redirect cap of 5. Redirects cannot be disabled:
+   GitHub release assets 302 to `objects.githubusercontent.com`. The cap is set
+   explicitly rather than inherited so it cannot drift with a library default —
+   ureq 3 raised its own default from 5 to 10.
 4. **Bound the response** by reading through `into_reader().take(N)` rather than
    trusting the `content-length` header, which a hostile server can understate.
    `N` = 32 MB. Without this, `into_json()` on an unbounded body is an OOM.

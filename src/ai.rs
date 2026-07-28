@@ -111,13 +111,14 @@ fn populate_api(cmd: &str) -> Result<AiFields, String> {
         "messages": [{"role": "user", "content": prompt(cmd)}]
     });
     let resp = ureq::post("https://api.anthropic.com/v1/messages")
-        .set("x-api-key", &key)
-        .set("anthropic-version", "2023-06-01")
-        .set("content-type", "application/json")
+        .header("x-api-key", &key)
+        .header("anthropic-version", "2023-06-01")
+        .header("content-type", "application/json")
         .send_json(body)
         .map_err(|e| format!("API request failed: {e}"))?;
     let v: serde_json::Value = resp
-        .into_json()
+        .into_body()
+        .read_json()
         .map_err(|e| format!("bad API response: {e}"))?;
     let text = v["content"][0]["text"]
         .as_str()

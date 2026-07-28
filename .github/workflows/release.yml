@@ -22,7 +22,7 @@ jobs:
             target: aarch64-unknown-linux-gnu
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
@@ -35,7 +35,7 @@ jobs:
           cp "target/${{ matrix.target }}/release/collective" dist/
           tar -czf "collective-${VERSION}-${{ matrix.target }}.tar.gz" -C dist collective
           shasum -a 256 "collective-${VERSION}-${{ matrix.target }}.tar.gz" > "collective-${VERSION}-${{ matrix.target }}.tar.gz.sha256"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.target }}
           path: collective-*.tar.gz*
@@ -43,10 +43,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: artifacts
           merge-multiple: true

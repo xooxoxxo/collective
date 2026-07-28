@@ -61,7 +61,7 @@ pub fn draw(f: &mut Frame, app: &App) {
             .style(Style::default().add_modifier(Modifier::BOLD)),
     )
     .block(Block::default().borders(Borders::ALL))
-    .highlight_style(Style::default().add_modifier(Modifier::REVERSED))
+    .row_highlight_style(Style::default().add_modifier(Modifier::REVERSED))
     .highlight_symbol("> ");
     // Stateful render tracks the selected row so the viewport scrolls to keep
     // it visible — a stateless render would leave the cursor off-screen.
