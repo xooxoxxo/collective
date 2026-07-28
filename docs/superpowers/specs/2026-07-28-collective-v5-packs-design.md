@@ -17,8 +17,10 @@ Three pieces:
 2. **Pack format + loader** — a pack is one self-describing JSON file, fetched
    over HTTPS, stored in `~/.collective/packs/`, merged into the corpus at
    runtime between the embedded starter and the user overlay.
-3. **Registry** — a static `registry.json` in `xooxoxxo/collective-registry`
-   mapping pack name to download URL. `pack add/list/search/update/remove`.
+3. **Two ways to name a pack** — a curated short name resolved through a static
+   `registry.json` in `xooxoxxo/collective-registry`, or an `<owner>/<repo>`
+   source address resolved directly on GitHub with no registry entry at all.
+   `pack add/list/search/update/remove`.
 
 Blessed consequence: a fresh install searches ~152 curated gems. `collective
 pack add tldr` restores the full corpus.
@@ -96,16 +98,32 @@ JSON rather than YAML because packs are machine-generated, never hand-edited,
 and parsed on every CLI invocation; `serde_json` is already a dependency and
 parses several times faster than `serde_yaml`.
 
-## 3. Registry
+## 3. Two ways to name a pack
 
-`registry.json` at a fixed raw URL in `xooxoxxo/collective-registry`:
+A pack is identified either by a **curated short name** resolved through a
+registry, or by a **`<owner>/<repo>` source address** resolved directly on
+GitHub. The second form follows the model `vercel-labs/skills` uses for skill
+distribution, where the repository is the unit and no central index exists.
+
+**Short name** — `registry.json` at a fixed raw URL in
+`xooxoxxo/collective-registry`:
 
 ```json
 { "packs": [
-  { "name": "tldr", "version": "1.0.0", "description": "...",
-    "license": "CC-BY-4.0", "count": 1459, "url": "https://…/tldr.json" }
+  { "name": "tldr", "description": "...", "license": "CC-BY-4.0",
+    "count": 1459, "url": "https://…/tldr.json" }
 ] }
 ```
+
+**Source address** — `<owner>/<repo>` resolves by convention to
+`https://raw.githubusercontent.com/<owner>/<repo>/HEAD/pack.json`. No registry
+entry, no release asset, no publish step: pushing `pack.json` to a repo
+publishes the pack.
+
+Both forms end in the same place — one HTTPS GET of one JSON file — so §5's
+pipeline and its guarantees are identical for either. The registry buys
+discoverability (`pack search` needs something to search) and curation; the
+source address buys zero-friction third-party publishing.
 
 **No sha256 field.** A checksum published in the same registry, by the same
 owner, that points at an asset that owner controls, provides no independent
@@ -118,30 +136,43 @@ publishing is ever opened beyond the registry owner, revisit with real signing.
 
 | command | behavior |
 |---|---|
-| `pack list` | installed packs from disk: name, version, entry count |
+| `pack list` | installed packs from disk: name, version, entry count, origin |
 | `pack search [query]` | fetch `registry.json`, filter by name/description |
-| `pack add <name>` | resolve name via registry, fetch, validate, install |
-| `pack add <path.json>` | install from a local file (same validation path) |
-| `pack update [name]` | reinstall when registry version differs from disk |
+| `pack add <name>` | resolve via registry, fetch, validate, install |
+| `pack add <owner>/<repo>` | resolve via raw.githubusercontent, same pipeline |
+| `pack add <path.json>` | install from a local file, same validation |
+| `pack update [name]` | refetch from the recorded origin and reinstall |
 | `pack remove <name>` | delete `~/.collective/packs/<name>.json` |
 
-Install source is **registry name or local path only**. Arbitrary URLs are not
-accepted, which keeps every fetched URL one the registry owner published.
+Install accepts a registry name, an `<owner>/<repo>` pair, or a local path.
+Arbitrary URLs remain unaccepted: every remote fetch targets either a URL the
+registry owner published or a path under `raw.githubusercontent.com`.
+
+`pack update` **always refetches** rather than comparing versions. Version
+comparison would need a registry lookup that the `<owner>/<repo>` form cannot
+do, so refetching is both the simpler code path and the only one that works for
+both source types. `manifest.version` is display metadata, not update logic.
 
 ## 5. Install pipeline and its security requirements
 
 `pack add` performs, in order:
 
-1. **Validate the pack name** against `^[a-z0-9-]+$` before it touches any path.
-   `Path::join` does not neutralize `..`, so an unchecked name such as
-   `../../.zshrc` escapes the packs directory on both write and remove. This
-   check is the single most important requirement in this spec and applies to
-   `add`, `update`, and `remove` alike. For `pack add <path.json>` the argument
-   is a path, not a name: the pack name comes from the file's `manifest.name`
-   and is validated by this same rule before it is used to build the
-   destination path.
-2. **Resolve the name** to a URL from `registry.json`. Reject any URL whose
-   scheme is not `https`.
+1. **Classify the argument, then validate the on-disk pack name.** The argument
+   is a local path if it ends in `.json`, an `<owner>/<repo>` pair if it contains
+   exactly one `/`, otherwise a registry short name. The **on-disk pack name** —
+   the short name, or `manifest.name` for the other two forms — must match
+   `^[a-z0-9-]+$` before it is used to build any path. `Path::join` does not
+   neutralize `..`, so an unchecked name such as `../../.zshrc` escapes the
+   packs directory on both write and remove. This is the single most important
+   requirement in this spec and applies to `add`, `update`, and `remove` alike.
+   Note that `manifest.name` is publisher-controlled and reaches the filesystem,
+   so it is validated on exactly the same terms as a name the user typed.
+2. **Resolve to a URL.** A short name is looked up in `registry.json`. An
+   `<owner>/<repo>` argument — recognized by containing exactly one `/` — is
+   validated against `^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$` and interpolated into
+   the raw.githubusercontent path. That charset excludes `/` and therefore
+   cannot contain `..`, so neither segment can walk out of the intended path.
+   Reject any resolved URL whose scheme is not `https`.
 3. **Fetch with a configured `ureq::Agent`** — explicit connect and read
    timeouts, redirects left at ureq's default cap of 5 (GitHub release assets
    302 to `objects.githubusercontent.com`, so redirects cannot be disabled).
@@ -155,7 +186,15 @@ accepted, which keeps every fetched URL one the registry owner published.
    id, print the colliding ids. A pack silently redefining a known id such as
    `flush-dns-cache` with a hostile `cmd` is the one content attack the merge
    order makes possible; naming it at install time is the cheap defense.
-7. **Write atomically** — write to a temp file in the same directory, then
+7. **Refuse a cross-origin overwrite.** Two sources can claim the same pack
+   name — `pack add someone/tldr` whose manifest says `"name": "tldr"` would
+   land on the official `tldr.json`. On install, record the resolved fetch URL
+   as an `origin` field written by the CLI (distinct from the publisher-authored
+   `manifest.source`, which is advisory and may lie). If a pack of that name is
+   already installed with a different `origin`, abort and tell the user to
+   `pack remove <name>` first. Same origin overwrites freely — that is what
+   `pack update` is.
+8. **Write atomically** — write to a temp file in the same directory, then
    `fs::rename` into place. A single rename syscall also makes two concurrent
    `pack add` runs safe without a lock, and leaves no truncated pack behind on
    interrupt or disk-full.
@@ -164,7 +203,14 @@ accepted, which keeps every fetched URL one the registry owner published.
 
 - **Registry compromise.** An attacker who controls the registry repo controls
   what a pack contains. No transport measure addresses this; signing is the
-  only real answer and is out of scope until third-party publishing exists.
+  only real answer and is out of scope.
+- **Third-party packs are a user trust decision.** `pack add <owner>/<repo>`
+  installs a stranger's command corpus, exactly as `brew tap`, `cargo install
+  --git`, and `npx skills add` do. The trust judgment belongs to the person
+  typing the name and cannot be delegated to the tool. What the tool owes them
+  is honesty about what arrived: the shadowing warning (step 6) and the origin
+  shown by `pack list` exist for this case, and matter more here than for
+  registry packs.
 - **Redirect scheme downgrade.** ureq 2.12.1 does not refuse an https→http
   redirect. Reaching one requires already controlling the registry URL, at
   which point the attacker would publish a hostile https URL directly — so the
@@ -242,11 +288,12 @@ which doubles as the end-to-end test that pack loading works.
 
 `caps_at_ten_results` asserts `<= 10` and is unaffected by corpus size.
 
-New tests: pack name validation rejects `..`/`/`/empty/uppercase; response size
-cap trips; manifest name mismatch rejected; invalid entry warns and is skipped
-without aborting; pack-vs-pack precedence is sorted-filename deterministic;
-three-layer merge precedence holds; `add`→`list`→`remove` roundtrip in a temp
-home.
+New tests: pack name validation rejects `..`/`/`/empty/uppercase; `<owner>/<repo>`
+parsing accepts valid pairs and rejects `..`, extra slashes, and empty segments;
+response size cap trips; manifest name mismatch rejected; cross-origin overwrite
+refused; invalid entry warns and is skipped without aborting; pack-vs-pack
+precedence is sorted-filename deterministic; three-layer merge precedence holds;
+`add`→`list`→`remove` roundtrip in a temp home.
 
 ## 8. Release pipeline
 
@@ -264,16 +311,22 @@ fail `build.rs` cannot be published.
 1. `packs/tldr/` move + `build.rs` validates both trees (binary shrinks here).
 2. Test rewrite onto synthetic fixtures (green before packs exist).
 3. Pack format, `packs()` loader, three-layer merge.
-4. `pack` subcommand: list/remove, then add/update/search.
+4. `pack` subcommand: list/remove, then add (both resolution forms), update, search.
 5. Pack generator script + release workflow step + registry repo + `registry.json`.
 6. Version bump, README, tag.
+
+Steps 1–4 stand alone: the `<owner>/<repo>` form needs no registry, so packs are
+installable and testable before step 5 exists.
 
 ## Done criteria
 
 - Fresh binary embeds ~152 entries; `corpus/imported/` no longer in the build tree.
 - `collective pack add tldr` installs 1459 entries; search results and grouping
   match v4 behavior exactly with the pack installed.
-- `pack list/update/remove` roundtrip cleanly; `pack add ../../evil` is rejected.
+- `pack add <owner>/<repo>` installs from a plain repo containing `pack.json`,
+  with no registry entry involved.
+- `pack list/update/remove` roundtrip cleanly; `pack add ../../evil` is rejected;
+  a second pack claiming an installed name from a different origin is refused.
 - Every test green with zero warnings, and no test depends on bulk imports being
   embedded.
 - `brew upgrade` to the new version leaves an existing `~/.collective/` intact.
