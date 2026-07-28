@@ -39,58 +39,6 @@ pub fn write_entry(dir: &Path, e: &Entry) -> std::io::Result<PathBuf> {
     Ok(path)
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn slug_is_kebab() {
-        assert_eq!(slug("Disable Sleep, Entirely!"), "disable-sleep-entirely");
-        assert_eq!(slug("  git   reflog  "), "git-reflog");
-    }
-
-    #[test]
-    fn uniquify_appends_suffix() {
-        let mut existing = HashSet::new();
-        existing.insert("git-reflog".to_string());
-        existing.insert("git-reflog-2".to_string());
-        assert_eq!(uniquify("git-reflog", &existing), "git-reflog-3");
-        assert_eq!(uniquify("fresh", &existing), "fresh");
-    }
-
-    #[test]
-    fn assembled_entry_validates_and_roundtrips() {
-        let e = Entry {
-            id: "test-entry".into(),
-            title: "Test entry".into(),
-            cmd: "echo hi".into(),
-            undo: None,
-            platform: vec!["macos".into()],
-            domains: vec!["shell".into()],
-            danger: Danger::Low,
-            explanation: "Prints hi.".into(),
-            source: "collect:testhost".into(),
-            tags: vec!["echo".into()],
-        };
-        assert!(e.validate().is_ok());
-        let dir = std::env::temp_dir().join("col-collect-test");
-        let _ = fs::remove_dir_all(&dir);
-        let path = write_entry(&dir, &e).unwrap();
-        let text = fs::read_to_string(&path).unwrap();
-        let back: Entry = serde_yaml::from_str(&text).unwrap();
-        assert_eq!(back.id, e.id);
-        assert_eq!(back.danger, Danger::Low);
-        assert_eq!(back.cmd, "echo hi");
-        let _ = fs::remove_dir_all(&dir);
-    }
-
-    #[test]
-    fn danger_parses() {
-        assert_eq!(Danger::parse("high"), Some(Danger::High));
-        assert_eq!(Danger::parse("bogus"), None);
-    }
-}
-
 use crate::ai;
 use std::io::{self, Write};
 
@@ -241,5 +189,57 @@ pub fn run(command: Option<String>, manual: bool, last: bool) {
             eprintln!("write failed: {e}");
             std::process::exit(1);
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn slug_is_kebab() {
+        assert_eq!(slug("Disable Sleep, Entirely!"), "disable-sleep-entirely");
+        assert_eq!(slug("  git   reflog  "), "git-reflog");
+    }
+
+    #[test]
+    fn uniquify_appends_suffix() {
+        let mut existing = HashSet::new();
+        existing.insert("git-reflog".to_string());
+        existing.insert("git-reflog-2".to_string());
+        assert_eq!(uniquify("git-reflog", &existing), "git-reflog-3");
+        assert_eq!(uniquify("fresh", &existing), "fresh");
+    }
+
+    #[test]
+    fn assembled_entry_validates_and_roundtrips() {
+        let e = Entry {
+            id: "test-entry".into(),
+            title: "Test entry".into(),
+            cmd: "echo hi".into(),
+            undo: None,
+            platform: vec!["macos".into()],
+            domains: vec!["shell".into()],
+            danger: Danger::Low,
+            explanation: "Prints hi.".into(),
+            source: "collect:testhost".into(),
+            tags: vec!["echo".into()],
+        };
+        assert!(e.validate().is_ok());
+        let dir = std::env::temp_dir().join("col-collect-test");
+        let _ = fs::remove_dir_all(&dir);
+        let path = write_entry(&dir, &e).unwrap();
+        let text = fs::read_to_string(&path).unwrap();
+        let back: Entry = serde_yaml::from_str(&text).unwrap();
+        assert_eq!(back.id, e.id);
+        assert_eq!(back.danger, Danger::Low);
+        assert_eq!(back.cmd, "echo hi");
+        let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn danger_parses() {
+        assert_eq!(Danger::parse("high"), Some(Danger::High));
+        assert_eq!(Danger::parse("bogus"), None);
     }
 }

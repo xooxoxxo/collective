@@ -103,6 +103,104 @@ impl App {
     }
 }
 
+fn restore() {
+    let _ = disable_raw_mode();
+    let _ = execute!(io::stdout(), LeaveAlternateScreen);
+}
+
+pub fn run() -> io::Result<()> {
+    // Ensure the terminal is restored even on panic.
+    let prev = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        restore();
+        prev(info);
+    }));
+
+    let fav_path = favorites::default_path();
+    let mut app = App::new(crate::corpus::load(), favorites::load(&fav_path));
+    let mut picked: Option<String> = None;
+
+    let result = (|| -> io::Result<()> {
+        enable_raw_mode()?;
+        execute!(io::stdout(), EnterAlternateScreen)?;
+        let mut terminal = Terminal::new(CrosstermBackend::new(io::stdout()))?;
+
+        loop {
+            terminal.draw(|f| ui::draw(f, &app))?;
+            let Event::Key(key) = event::read()? else {
+                continue;
+            };
+            if key.kind != KeyEventKind::Press {
+                continue;
+            }
+            match (key.code, key.modifiers) {
+                (KeyCode::Esc, _) => break,
+                (KeyCode::Char('c'), KeyModifiers::CONTROL) => break,
+                (KeyCode::Up, _) => app.move_up(),
+                (KeyCode::Down, _) => app.move_down(),
+                (KeyCode::Enter, _) => {
+                    if let Some(e) = app.selected_entry() {
+                        picked = Some(e.cmd.clone());
+                    }
+                    break;
+                }
+                (KeyCode::Backspace, _) => {
+                    let mut f = app.filter.clone();
+                    f.pop();
+                    app.set_filter(&f);
+                }
+                (KeyCode::Char('y'), KeyModifiers::CONTROL) => {
+                    if let Some(e) = app.selected_entry() {
+                        let _ =
+                            arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone()));
+                    }
+                }
+                (KeyCode::Char('s'), KeyModifiers::CONTROL) => {
+                    if let Some(_id) = app.toggle_star() {
+                        let _ = favorites::save(&fav_path, &app.favorites);
+                    }
+                }
+                (KeyCode::Char('o'), KeyModifiers::CONTROL) => app.toggle_fav_only(),
+                (KeyCode::Char('u'), KeyModifiers::CONTROL) => app.toggle_curated_only(),
+                // Everything printable types into the filter. SHIFT accompanies
+                // uppercase chars, so allow it; any other modifier is ignored.
+                (KeyCode::Char(ch), m) if m.is_empty() || m == KeyModifiers::SHIFT => {
+                    let mut f = app.filter.clone();
+                    f.push(ch);
+                    app.set_filter(&f);
+                }
+                _ => {}
+            }
+        }
+        Ok(())
+    })();
+
+    restore();
+    let _ = std::panic::take_hook();
+    result?;
+
+    if let Some(cmd) = picked {
+        let cmd = crate::placeholder::fill_interactive(&cmd);
+        deliver(&cmd);
+    }
+    Ok(())
+}
+
+fn deliver(cmd: &str) {
+    let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(cmd.to_string()));
+    match std::env::var("COLLECTIVE_PICK") {
+        Ok(path) if !path.is_empty() => {
+            // Wrapper reads this file and places the command on the prompt.
+            let _ = std::fs::write(path, cmd);
+        }
+        _ => {
+            // No wrapper: print so the user can copy/paste.
+            println!("{cmd}");
+            let _ = io::stdout().flush();
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -211,103 +309,5 @@ mod tests {
             .visible()
             .iter()
             .all(|e| !crate::search::is_bulk_import(e)));
-    }
-}
-
-fn restore() {
-    let _ = disable_raw_mode();
-    let _ = execute!(io::stdout(), LeaveAlternateScreen);
-}
-
-pub fn run() -> io::Result<()> {
-    // Ensure the terminal is restored even on panic.
-    let prev = std::panic::take_hook();
-    std::panic::set_hook(Box::new(move |info| {
-        restore();
-        prev(info);
-    }));
-
-    let fav_path = favorites::default_path();
-    let mut app = App::new(crate::corpus::load(), favorites::load(&fav_path));
-    let mut picked: Option<String> = None;
-
-    let result = (|| -> io::Result<()> {
-        enable_raw_mode()?;
-        execute!(io::stdout(), EnterAlternateScreen)?;
-        let mut terminal = Terminal::new(CrosstermBackend::new(io::stdout()))?;
-
-        loop {
-            terminal.draw(|f| ui::draw(f, &app))?;
-            let Event::Key(key) = event::read()? else {
-                continue;
-            };
-            if key.kind != KeyEventKind::Press {
-                continue;
-            }
-            match (key.code, key.modifiers) {
-                (KeyCode::Esc, _) => break,
-                (KeyCode::Char('c'), KeyModifiers::CONTROL) => break,
-                (KeyCode::Up, _) => app.move_up(),
-                (KeyCode::Down, _) => app.move_down(),
-                (KeyCode::Enter, _) => {
-                    if let Some(e) = app.selected_entry() {
-                        picked = Some(e.cmd.clone());
-                    }
-                    break;
-                }
-                (KeyCode::Backspace, _) => {
-                    let mut f = app.filter.clone();
-                    f.pop();
-                    app.set_filter(&f);
-                }
-                (KeyCode::Char('y'), KeyModifiers::CONTROL) => {
-                    if let Some(e) = app.selected_entry() {
-                        let _ =
-                            arboard::Clipboard::new().and_then(|mut c| c.set_text(e.cmd.clone()));
-                    }
-                }
-                (KeyCode::Char('s'), KeyModifiers::CONTROL) => {
-                    if let Some(_id) = app.toggle_star() {
-                        let _ = favorites::save(&fav_path, &app.favorites);
-                    }
-                }
-                (KeyCode::Char('o'), KeyModifiers::CONTROL) => app.toggle_fav_only(),
-                (KeyCode::Char('u'), KeyModifiers::CONTROL) => app.toggle_curated_only(),
-                // Everything printable types into the filter. SHIFT accompanies
-                // uppercase chars, so allow it; any other modifier is ignored.
-                (KeyCode::Char(ch), m) if m.is_empty() || m == KeyModifiers::SHIFT => {
-                    let mut f = app.filter.clone();
-                    f.push(ch);
-                    app.set_filter(&f);
-                }
-                _ => {}
-            }
-        }
-        Ok(())
-    })();
-
-    restore();
-    let _ = std::panic::take_hook();
-    result?;
-
-    if let Some(cmd) = picked {
-        let cmd = crate::placeholder::fill_interactive(&cmd);
-        deliver(&cmd);
-    }
-    Ok(())
-}
-
-fn deliver(cmd: &str) {
-    let _ = arboard::Clipboard::new().and_then(|mut c| c.set_text(cmd.to_string()));
-    match std::env::var("COLLECTIVE_PICK") {
-        Ok(path) if !path.is_empty() => {
-            // Wrapper reads this file and places the command on the prompt.
-            let _ = std::fs::write(path, cmd);
-        }
-        _ => {
-            // No wrapper: print so the user can copy/paste.
-            println!("{cmd}");
-            let _ = io::stdout().flush();
-        }
     }
 }

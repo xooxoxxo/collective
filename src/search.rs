@@ -2,6 +2,9 @@ use crate::entry::Entry;
 use nucleo_matcher::pattern::{CaseMatching, Normalization, Pattern};
 use nucleo_matcher::{Config, Matcher, Utf32Str};
 
+/// A scored search hit: the entry and its weighted fuzzy score.
+type Scored<'a> = (&'a Entry, u32);
+
 /// Bulk tldr-pages imports live in this domain; they are ranked below
 /// hand-curated entries so the good stuff surfaces first.
 pub(crate) fn is_bulk_import(e: &Entry) -> bool {
@@ -46,7 +49,7 @@ pub fn search<'a>(entries: &'a [Entry], query: &str) -> Vec<(&'a Entry, u32)> {
     });
     // Per-group cap: 10 rows total, imports guaranteed up to 4 slots when
     // both groups match, either group backfills when the other runs short.
-    let (curated, imports): (Vec<(&Entry, u32)>, Vec<(&Entry, u32)>) =
+    let (curated, imports): (Vec<Scored>, Vec<Scored>) =
         scored.into_iter().partition(|(e, _)| !is_bulk_import(e));
     let import_take = imports.len().min(4);
     let curated_take = curated.len().min(10 - import_take);
