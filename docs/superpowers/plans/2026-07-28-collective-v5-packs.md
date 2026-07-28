@@ -135,7 +135,7 @@ Delete the `use crate::corpus;` import from the test module if nothing else in i
 
 - [ ] **Step 2: Run the unit tests**
 
-Run: `cargo test --lib search`
+Run: `cargo test search`
 Expected: PASS, including the new `one_group_backfills_the_whole_cap`.
 
 This also retires the v4 carried debt: `both_groups_share_the_cap` no longer assumes the corpus yields ≥6 curated "git" hits, so the in-code note about relaxing the assertions if the corpus shrinks can be deleted along with the old test body.
@@ -482,7 +482,7 @@ Add `mod pack;` to the module list at the top of `src/main.rs`.
 
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: FAIL — the `todo!()` bodies panic.
 
 - [ ] **Step 3: Implement the three functions**
@@ -538,7 +538,7 @@ pub fn owner_repo_url(owner: &str, repo: &str) -> String {
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: PASS, all six.
 
 - [ ] **Step 5: Commit**
@@ -674,7 +674,7 @@ Add to the `tests` module in `src/corpus.rs`:
 
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `cargo test --lib corpus`
+Run: `cargo test corpus`
 Expected: FAIL — `read_packs` is not defined.
 
 - [ ] **Step 3: Add `pack::parse`**
@@ -781,7 +781,7 @@ pub fn load() -> Vec<Entry> {
 
 - [ ] **Step 5: Run the tests to verify they pass**
 
-Run: `cargo test --lib corpus`
+Run: `cargo test corpus`
 Expected: PASS, all five new tests plus the three existing ones.
 
 - [ ] **Step 6: Run the whole suite**
@@ -881,7 +881,7 @@ Add to the `tests` module in `src/pack.rs`:
 
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: FAIL — `installed` and `remove` are not defined.
 
 - [ ] **Step 3: Implement `installed` and `remove`**
@@ -928,7 +928,7 @@ pub fn remove(dir: &std::path::Path, name: &str) -> Result<(), String> {
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: PASS.
 
 - [ ] **Step 5: Wire the subcommand into `src/main.rs`**
@@ -1212,7 +1212,7 @@ Add to the `tests` module in `src/pack.rs`:
 
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: FAIL — `install` and `add` are not defined.
 
 - [ ] **Step 3: Implement fetch, install, and add**
@@ -1338,7 +1338,7 @@ fn registry_url_for(_name: &str) -> Result<String, String> {
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: PASS, all six new tests.
 
 - [ ] **Step 5: Wire `Add` into `cmd_pack`**
@@ -1488,7 +1488,7 @@ Add to the `tests` module in `src/pack.rs`:
 
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: FAIL — `Registry`, `filter_registry`, `lookup_registry`, and `update` are not defined.
 
 - [ ] **Step 3: Implement the registry and update**
@@ -1599,7 +1599,7 @@ pub fn update(
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `cargo test --lib pack`
+Run: `cargo test pack`
 Expected: PASS.
 
 - [ ] **Step 5: Wire `Update` and `Search` into `cmd_pack`**
