@@ -203,6 +203,9 @@ pub fn install(
 
     // A pack name is claimable by any publisher, so an incoming pack must not
     // land on one installed from somewhere else just by reusing its name.
+    // If the installed pack cannot be parsed, its origin cannot be established, so we
+    // allow the install rather than permanently stranding the name. The origin is always
+    // written by install() itself, so an empty origin is never a valid case to check.
     if let Ok(existing) = std::fs::read_to_string(&path) {
         if let Ok(old) = parse(&existing, None) {
             if old.manifest.origin != origin {
@@ -226,9 +229,9 @@ pub fn install(
 
     std::fs::create_dir_all(dir).map_err(|e| format!("cannot create packs dir: {e}"))?;
     let json = serde_json::to_string(&pack).map_err(|e| e.to_string())?;
-    // Same-directory temp plus rename: one syscall to publish, so an interrupt
-    // or a concurrent add can never leave a half-written pack in place.
-    let tmp = dir.join(format!(".{name}.json.tmp"));
+    // Same-directory temp file plus atomic rename: the rename publishes atomically,
+    // and a per-process temp name prevents concurrent writers from colliding.
+    let tmp = dir.join(format!(".{name}.{}.json.tmp", std::process::id()));
     std::fs::write(&tmp, &json).map_err(|e| format!("cannot write pack: {e}"))?;
     std::fs::rename(&tmp, &path).map_err(|e| format!("cannot install pack: {e}"))?;
 
@@ -521,13 +524,41 @@ mod tests {
     #[test]
     fn add_rejects_a_manifest_name_that_would_escape_the_packs_dir() {
         let dir = temp_dir("addescape");
-        let src = dir.join("evil.json");
-        std::fs::write(
-            &src,
-            r#"{"manifest":{"name":"../../pwned","count":0},"entries":[]}"#,
-        )
-        .unwrap();
-        assert!(add(&dir, src.to_str().unwrap(), &no_embedded()).is_err());
+
+        // Test multiple escape payloads, verifying both error and filesystem outcome.
+        for escape_name in ["../../pwned", "..", "a/b"] {
+            let src = dir.join("evil.json");
+            std::fs::write(
+                &src,
+                format!(r#"{{"manifest":{{"name":"{escape_name}","count":0}},"entries":[]}}"#),
+            )
+            .unwrap();
+
+            // add() must reject the name and return an error.
+            assert!(
+                add(&dir, src.to_str().unwrap(), &no_embedded()).is_err(),
+                "failed to reject escape payload {escape_name:?}"
+            );
+
+            // Verify no installed pack was written to the packs directory.
+            // (The source file "evil.json" is still there, but no escaped pack file.)
+            let installed_packs: Vec<_> = std::fs::read_dir(&dir)
+                .unwrap()
+                .filter_map(|e| e.ok())
+                .filter(|e| {
+                    let name = e.file_name();
+                    name.to_str()
+                        .is_some_and(|n| !n.contains(".tmp") && !n.starts_with("evil"))
+                        && e.path().extension().is_some_and(|ext| ext == "json")
+                })
+                .collect();
+            assert!(
+                installed_packs.is_empty(),
+                "escape payload {escape_name:?} wrote a pack file to packs dir"
+            );
+
+            let _ = std::fs::remove_file(&src);
+        }
         let _ = std::fs::remove_dir_all(&dir);
     }
 }
