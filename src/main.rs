@@ -249,7 +249,16 @@ fn cmd_pack(action: PackCmd) {
         PackCmd::Add { source } => {
             pack::add(&dir, &source, &corpus::embedded_ids()).map(|report| println!("{report}"))
         }
-        PackCmd::Update { .. } | PackCmd::Search { .. } => Err("not implemented yet".to_string()),
+        PackCmd::Update { name } => pack::update(&dir, name.as_deref(), &corpus::embedded_ids())
+            .map(|report| println!("{report}")),
+        PackCmd::Search { query } => pack::search_registry(&query.join(" ")).map(|hits| {
+            if hits.is_empty() {
+                println!("no matching packs");
+            }
+            for p in hits {
+                println!("{:<20} {:>5} entries  {}", p.name, p.count, p.description);
+            }
+        }),
     };
     if let Err(e) = result {
         eprintln!("error: {e}");
