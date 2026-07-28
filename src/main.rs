@@ -4,6 +4,7 @@ mod corpus;
 mod drill;
 mod entry;
 mod favorites;
+mod pack;
 mod placeholder;
 mod search;
 mod sm2;
