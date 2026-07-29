@@ -110,6 +110,22 @@ fn token_matches(expected: &str, typed: &str) -> bool {
         && typed.ends_with(suffix)
 }
 
+/// Index of the first whitespace-separated token that differs, for pointing at
+/// the mistake. `None` when the answer matches token-for-token. Compares in
+/// order, so a reordered-but-correct answer still reports the first positional
+/// difference — the marker is a hint, not a verdict.
+pub fn first_difference(expected: &str, typed: &str) -> Option<usize> {
+    let exp: Vec<&str> = expected.split_whitespace().collect();
+    let got: Vec<&str> = typed.split_whitespace().collect();
+    for i in 0..exp.len().max(got.len()) {
+        match (exp.get(i), got.get(i)) {
+            (Some(e), Some(g)) if token_matches(e, g) => continue,
+            _ => return Some(i),
+        }
+    }
+    None
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -236,5 +252,37 @@ mod tests {
     #[test]
     fn a_typed_wrong_answer_is_a_miss() {
         assert_eq!(outcome_for(false, false), Outcome::Miss);
+    }
+
+    #[test]
+    fn no_difference_when_tokens_match() {
+        assert_eq!(
+            first_difference("git log --oneline", "git log --oneline"),
+            None
+        );
+    }
+
+    #[test]
+    fn reports_the_first_differing_token() {
+        assert_eq!(
+            first_difference("git log --oneline", "git log --graph"),
+            Some(2)
+        );
+        assert_eq!(first_difference("cp a b", "mv a b"), Some(0));
+    }
+
+    #[test]
+    fn a_short_answer_differs_at_the_missing_token() {
+        assert_eq!(first_difference("ls -la /tmp", "ls -la"), Some(2));
+    }
+
+    #[test]
+    fn a_long_answer_differs_at_the_extra_token() {
+        assert_eq!(first_difference("git log", "git log --oneline"), Some(2));
+    }
+
+    #[test]
+    fn a_placeholder_value_is_not_a_difference() {
+        assert_eq!(first_difference("lsof -i :<port>", "lsof -i :8080"), None);
     }
 }

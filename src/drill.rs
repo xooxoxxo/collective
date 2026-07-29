@@ -93,6 +93,16 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
                 "✗ not quite"
             };
             println!("  you typed: {typed}  {mark}");
+            if !correct {
+                if let Some(i) = crate::answer::first_difference(&e.cmd, typed) {
+                    let caret_col: usize = typed
+                        .split_whitespace()
+                        .take(i)
+                        .map(|t| t.chars().count() + 1)
+                        .sum();
+                    println!("  {}^ first difference", " ".repeat(caret_col + 11));
+                }
+            }
         }
         let outcome = crate::answer::outcome_for(typed.is_empty(), correct);
         let proposed = crate::answer::derived_grade(outcome);
