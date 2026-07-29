@@ -34,7 +34,13 @@ pub fn search<'a>(entries: &'a [Entry], query: &str) -> Vec<(&'a Entry, u32)> {
                 .max()
                 .unwrap_or(0);
             let cmd = score_of(&e.cmd, &mut matcher);
-            let raw = 3 * title + 2 * tag + cmd;
+            // Explanation is scored so you can find an entry by describing what
+            // it does, not only by recalling its title or the command itself.
+            // Weighted lowest: it is the longest field, and fuzzy matchers
+            // reward long haystacks, so an equal weight would let prose drown
+            // out titles.
+            let explanation = score_of(&e.explanation, &mut matcher);
+            let raw = 3 * title + 2 * tag + cmd + explanation;
             (raw > 0).then_some((e, raw))
         })
         .collect();
@@ -90,6 +96,40 @@ mod tests {
     fn no_match_returns_empty() {
         let entries = corpus::load();
         assert!(search(&entries, "zzqqxxnothing").is_empty());
+    }
+
+    #[test]
+    fn finds_an_entry_by_describing_what_it_does() {
+        // The query words appear ONLY in the explanation — not in the title,
+        // the command, or the tags. Without explanation scoring this entry is
+        // unreachable, which was the gap: you had to already know the title or
+        // the command to find the command.
+        let mut e = fixture("quarantine-strip", "Remove the quarantine flag", "macos");
+        e.cmd = "xattr -d com.apple.quarantine".into();
+        e.tags = vec!["xattr".into()];
+        e.explanation = "Stops Gatekeeper nagging about an unidentified developer.".into();
+        let entries = vec![e];
+
+        let hits = search(&entries, "gatekeeper nagging");
+        assert_eq!(hits.len(), 1, "explanation-only match must be findable");
+        assert_eq!(hits[0].0.id, "quarantine-strip");
+    }
+
+    #[test]
+    fn title_still_outranks_explanation() {
+        // Explanation is searchable but must not drown out titles: it is the
+        // longest field, and fuzzy matchers reward long haystacks.
+        let mut on_title = fixture("by-title", "flush dns cache", "network");
+        on_title.explanation = "Unrelated prose.".into();
+        let mut in_prose = fixture("by-prose", "Reset resolver state", "network");
+        in_prose.explanation = "Use when you need to flush dns cache after edits.".into();
+
+        let entries = vec![in_prose, on_title];
+        let hits = search(&entries, "flush dns cache");
+        assert_eq!(
+            hits[0].0.id, "by-title",
+            "prose match outranked a title match"
+        );
     }
 
     /// Throwaway entry for ranking tests. `domain` decides curated vs import:
