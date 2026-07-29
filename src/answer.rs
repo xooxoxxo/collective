@@ -9,6 +9,19 @@ pub enum Outcome {
     Revealed,
 }
 
+/// Which outcome a card's answer represents. Empty input means the answer was
+/// revealed rather than attempted, which is why emptiness is checked before
+/// correctness — `correct` is false in both cases and cannot distinguish them.
+pub fn outcome_for(typed_is_empty: bool, correct: bool) -> Outcome {
+    if typed_is_empty {
+        Outcome::Revealed
+    } else if correct {
+        Outcome::Match
+    } else {
+        Outcome::Miss
+    }
+}
+
 /// The SM-2 grade a session proposes for an outcome. Typing is far better
 /// evidence of recall than self-report, so the session grades you and lets you
 /// override rather than asking every time.
@@ -206,5 +219,22 @@ mod tests {
             let g = derived_grade(o);
             assert!((1..=4).contains(&g), "grade {g} out of range for {o:?}");
         }
+    }
+
+    #[test]
+    fn empty_input_is_revealed_not_missed() {
+        // `correct` is false for both a reveal and a wrong answer, so emptiness
+        // must be what separates them.
+        assert_eq!(outcome_for(true, false), Outcome::Revealed);
+    }
+
+    #[test]
+    fn a_typed_correct_answer_is_a_match() {
+        assert_eq!(outcome_for(false, true), Outcome::Match);
+    }
+
+    #[test]
+    fn a_typed_wrong_answer_is_a_miss() {
+        assert_eq!(outcome_for(false, false), Outcome::Miss);
     }
 }

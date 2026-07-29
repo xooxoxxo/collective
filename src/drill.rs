@@ -94,13 +94,7 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
             };
             println!("  you typed: {typed}  {mark}");
         }
-        let outcome = if typed.is_empty() {
-            crate::answer::Outcome::Revealed
-        } else if correct {
-            crate::answer::Outcome::Match
-        } else {
-            crate::answer::Outcome::Miss
-        };
+        let outcome = crate::answer::outcome_for(typed.is_empty(), correct);
         let proposed = crate::answer::derived_grade(outcome);
         let label = match proposed {
             1 => "again",
