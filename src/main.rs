@@ -1,4 +1,4 @@
-mod ai; // consumed by collect (Task 6)
+mod ai;
 mod collect;
 mod corpus;
 mod drill;
