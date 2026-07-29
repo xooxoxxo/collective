@@ -1,8 +1,10 @@
+mod fetch;
 mod parse;
 mod rest;
 mod store;
 mod types;
 
+pub use fetch::add;
 pub use parse::parse;
 pub use rest::*;
 pub use store::{installed, remove};
