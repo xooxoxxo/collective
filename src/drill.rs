@@ -94,8 +94,22 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
             };
             println!("  you typed: {typed}  {mark}");
         }
+        let outcome = if typed.is_empty() {
+            crate::answer::Outcome::Revealed
+        } else if correct {
+            crate::answer::Outcome::Match
+        } else {
+            crate::answer::Outcome::Miss
+        };
+        let proposed = crate::answer::derived_grade(outcome);
+        let label = match proposed {
+            1 => "again",
+            2 => "hard",
+            3 => "good",
+            _ => "easy",
+        };
         let grade = loop {
-            print!("grade  1=again 2=hard 3=good 4=easy: ");
+            print!("graded: {label}   [Enter accepts · 1-4 overrides]: ");
             io::stdout().flush().unwrap();
             let mut g = String::new();
             match stdin.read_line(&mut g) {
@@ -103,10 +117,16 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
                     println!("\nsession ended.");
                     return;
                 }
-                Ok(_) => match g.trim().parse::<u8>() {
-                    Ok(n @ 1..=4) => break n,
-                    _ => continue,
-                },
+                Ok(_) => {
+                    let g = g.trim();
+                    if g.is_empty() {
+                        break proposed;
+                    }
+                    match g.parse::<u8>() {
+                        Ok(n @ 1..=4) => break n,
+                        _ => continue,
+                    }
+                }
                 Err(err) => {
                     eprintln!("input error: {err}");
                     return;

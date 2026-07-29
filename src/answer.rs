@@ -1,3 +1,24 @@
+/// How a card was answered, before the user gets a say.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Outcome {
+    /// Typed and matched.
+    Match,
+    /// Typed and did not match.
+    Miss,
+    /// Not attempted — the answer was revealed.
+    Revealed,
+}
+
+/// The SM-2 grade a session proposes for an outcome. Typing is far better
+/// evidence of recall than self-report, so the session grades you and lets you
+/// override rather than asking every time.
+pub fn derived_grade(outcome: Outcome) -> u8 {
+    match outcome {
+        Outcome::Match => 3,
+        Outcome::Miss | Outcome::Revealed => 1,
+    }
+}
+
 /// Does a typed answer match the expected command?
 ///
 /// Formatting is forgiven, substance is not: whitespace collapses and flags may
@@ -162,5 +183,28 @@ mod tests {
         // the positional sequences would be [ls, -l, /tmp] and [ls, /tmp, -l]
         // — different orders — and this would fail.
         assert!(matches("ls -l /tmp", "ls /tmp -l"));
+    }
+
+    #[test]
+    fn a_match_grades_good() {
+        assert_eq!(derived_grade(Outcome::Match), 3);
+    }
+
+    #[test]
+    fn a_miss_grades_again() {
+        assert_eq!(derived_grade(Outcome::Miss), 1);
+    }
+
+    #[test]
+    fn a_reveal_grades_again() {
+        assert_eq!(derived_grade(Outcome::Revealed), 1);
+    }
+
+    #[test]
+    fn derived_grades_are_in_sm2_range() {
+        for o in [Outcome::Match, Outcome::Miss, Outcome::Revealed] {
+            let g = derived_grade(o);
+            assert!((1..=4).contains(&g), "grade {g} out of range for {o:?}");
+        }
     }
 }
