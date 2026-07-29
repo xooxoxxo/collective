@@ -55,6 +55,9 @@ fn multiset_matches(expected: &[&str], typed: &[&str]) -> bool {
 /// One token. An expected token containing `<...>` matches any non-empty typed
 /// token sharing its literal prefix and suffix, so `:<port>` accepts both
 /// `:<port>` and `:8080` but not a bare `:`.
+///
+/// Exactly one `<...>` slot per token is supported. A token like `<a>-<b>`
+/// will not match `x-y`; the second `<b>` is treated as literal text.
 fn token_matches(expected: &str, typed: &str) -> bool {
     if expected == typed {
         return true;
@@ -151,5 +154,13 @@ mod tests {
     #[test]
     fn extra_trailing_token_is_a_miss() {
         assert!(!matches("git log", "git log --oneline"));
+    }
+
+    #[test]
+    fn single_dash_flag_may_move_past_a_positional() {
+        // Pins is_flag: if single-dash tokens were treated as positionals,
+        // the positional sequences would be [ls, -l, /tmp] and [ls, /tmp, -l]
+        // — different orders — and this would fail.
+        assert!(matches("ls -l /tmp", "ls /tmp -l"));
     }
 }
