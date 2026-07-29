@@ -88,7 +88,7 @@ tags: [sleep, clamshell]
 
     #[test]
     fn parses_valid_entry() {
-        let e: Entry = serde_yaml::from_str(GOOD).unwrap();
+        let e: Entry = serde_yaml_bw::from_str(GOOD).unwrap();
         assert_eq!(e.id, "pmset-disable-sleep");
         assert_eq!(e.danger, Danger::Medium);
         assert_eq!(e.undo.as_deref(), Some("sudo pmset -a disablesleep 0"));
@@ -98,21 +98,22 @@ tags: [sleep, clamshell]
     #[test]
     fn rejects_bad_id_chars() {
         let e: Entry =
-            serde_yaml::from_str(&GOOD.replace("pmset-disable-sleep", "Bad_ID!")).unwrap();
+            serde_yaml_bw::from_str(&GOOD.replace("pmset-disable-sleep", "Bad_ID!")).unwrap();
         assert!(e.validate().is_err());
     }
 
     #[test]
     fn rejects_unknown_fields() {
         let bad = format!("{GOOD}\nbogus_field: 1");
-        assert!(serde_yaml::from_str::<Entry>(&bad).is_err());
+        assert!(serde_yaml_bw::from_str::<Entry>(&bad).is_err());
     }
 
     #[test]
     fn rejects_empty_cmd() {
-        let e: Entry =
-            serde_yaml::from_str(&GOOD.replace("cmd: sudo pmset -a disablesleep 1", "cmd: \"\""))
-                .unwrap();
+        let e: Entry = serde_yaml_bw::from_str(
+            &GOOD.replace("cmd: sudo pmset -a disablesleep 1", "cmd: \"\""),
+        )
+        .unwrap();
         assert!(e.validate().is_err());
     }
 }

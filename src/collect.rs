@@ -35,7 +35,10 @@ pub fn uniquify(base: &str, existing: &HashSet<String>) -> String {
 pub fn write_entry(dir: &Path, e: &Entry) -> std::io::Result<PathBuf> {
     fs::create_dir_all(dir)?;
     let path = dir.join(format!("{}.yaml", e.id));
-    fs::write(&path, serde_yaml::to_string(e).expect("entry serializes"))?;
+    fs::write(
+        &path,
+        serde_yaml_bw::to_string(e).expect("entry serializes"),
+    )?;
     Ok(path)
 }
 
@@ -230,7 +233,7 @@ mod tests {
         let _ = fs::remove_dir_all(&dir);
         let path = write_entry(&dir, &e).unwrap();
         let text = fs::read_to_string(&path).unwrap();
-        let back: Entry = serde_yaml::from_str(&text).unwrap();
+        let back: Entry = serde_yaml_bw::from_str(&text).unwrap();
         assert_eq!(back.id, e.id);
         assert_eq!(back.danger, Danger::Low);
         assert_eq!(back.cmd, "echo hi");

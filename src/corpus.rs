@@ -10,7 +10,7 @@ fn embedded() -> Vec<Entry> {
         for f in dir.files() {
             if f.path().extension().is_some_and(|e| e == "yaml") {
                 let text = f.contents_utf8().expect("corpus yaml is utf8");
-                out.push(serde_yaml::from_str(text).expect("validated at build time"));
+                out.push(serde_yaml_bw::from_str(text).expect("validated at build time"));
             }
         }
         for d in dir.dirs() {
@@ -36,7 +36,7 @@ fn overlay() -> Vec<Entry> {
         .filter(|p| p.extension().is_some_and(|e| e == "yaml"))
         .filter_map(|p| {
             let text = fs::read_to_string(&p).ok()?;
-            match serde_yaml::from_str::<Entry>(&text)
+            match serde_yaml_bw::from_str::<Entry>(&text)
                 .map_err(|e| e.to_string())
                 .and_then(|e| e.validate().map(|_| e))
             {

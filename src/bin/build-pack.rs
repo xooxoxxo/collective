@@ -27,7 +27,7 @@ fn main() {
                 stack.push(p);
             } else if p.extension().is_some_and(|e| e == "yaml") {
                 let text = fs::read_to_string(&p).unwrap();
-                let e: entry::Entry = serde_yaml::from_str(&text)
+                let e: entry::Entry = serde_yaml_bw::from_str(&text)
                     .unwrap_or_else(|err| panic!("{}: {err}", p.display()));
                 e.validate()
                     .unwrap_or_else(|err| panic!("{}: {err}", p.display()));
