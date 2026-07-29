@@ -1,4 +1,5 @@
 use super::parse::parse;
+use super::registry::registry_url_for;
 use super::store::install;
 use super::types::{classify, owner_repo_url, Arg};
 use std::collections::HashSet;
@@ -56,7 +57,7 @@ pub fn add(dir: &Path, source: &str, embedded: &HashSet<String>) -> Result<Strin
             (fetch(&url)?, url)
         }
         Arg::Name(name) => {
-            let url = super::rest::registry_url_for(&name)?;
+            let url = registry_url_for(&name)?;
             (fetch(&url)?, url)
         }
     };

@@ -1,18 +1,19 @@
 mod fetch;
 mod parse;
-mod rest;
+mod registry;
 mod store;
 mod types;
 
 pub use fetch::add;
 pub use parse::parse;
-pub use rest::*;
+#[allow(unused_imports)]
+pub use registry::{search_registry, update, Registry, RegistryPack, REGISTRY_URL};
 pub use store::{installed, remove};
 #[allow(unused_imports)]
 pub use types::{classify, owner_repo_url, validate_pack_name, Arg, Manifest, Pack};
 
 #[cfg(test)]
-pub(crate) mod testutil {
+pub(in crate::pack) mod testutil {
     use super::parse::parse;
     use super::types::Pack;
     use std::collections::HashSet;
