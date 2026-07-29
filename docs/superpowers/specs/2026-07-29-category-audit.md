@@ -1,5 +1,11 @@
 # collective — category audit and positioning
 
+> **Decision (2026-07-29):** Option 1 adopted — learning + safety schema +
+> offline-first positioning — **except the tldr-pack cut is rejected.** The pack
+> ships today, is opt-in, and is how the corpus reaches 1611 entries; core stays
+> 152 curated, packs stay optional bulk. Landing page work is unblocked under
+> this framing.
+
 ## Verdict in three sentences
 
 Collective is functionally redundant with navi on core use cases—interactive fuzzy search, command prefill, optional packs—and navi outscales it decisively on variable sourcing (live shell command population with transformations), ecosystem (17.4k stars vs 0 GitHub stars for collective), and repository contribution workflow (PR-based featured_repos.txt vs JSON pack registry). Collective's genuine differentiator is not spaced repetition (prior art: srsh, 2021; multiple general-purpose SR CLI tools exist) but the *combination* of offline curated corpus + strict safety schema (danger ratings, undo commands, platform filtering) + learning-focused UX (SM-2 drills). However, this positioning serves a narrow market: developers who prioritize *memorizing* commands deeply over *generating* them on demand—a segment shrinking as LLM command assistants mature. Collective's viability depends on finding an audience that values learning and memorization as a deliberate discipline, not as a substitute for generation.
