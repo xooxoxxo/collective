@@ -6,11 +6,8 @@ mod types;
 
 pub use fetch::add;
 pub use parse::parse;
-#[allow(unused_imports)]
-pub use registry::{search_registry, update, Registry, RegistryPack, REGISTRY_URL};
+pub use registry::{search_registry, update};
 pub use store::{installed, remove};
-#[allow(unused_imports)]
-pub use types::{classify, owner_repo_url, validate_pack_name, Arg, Manifest, Pack};
 
 #[cfg(test)]
 pub(in crate::pack) mod testutil {
