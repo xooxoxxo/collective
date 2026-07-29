@@ -84,12 +84,13 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
             return;
         }
         let typed = buf.trim();
+        let correct = !typed.is_empty() && crate::answer::matches(&e.cmd, typed);
         println!("  {}", e.cmd);
         if !typed.is_empty() {
-            let mark = if typed == e.cmd {
-                "✓ exact"
+            let mark = if correct {
+                "✓ correct"
             } else {
-                "✗ differs"
+                "✗ not quite"
             };
             println!("  you typed: {typed}  {mark}");
         }
