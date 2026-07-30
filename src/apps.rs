@@ -71,6 +71,15 @@ const BUILTINS: &[&str] = &[
     "trap", "ulimit",
 ];
 
+/// The binary an entry needs: explicit `app:` field wins, else derived.
+#[allow(dead_code)]
+pub fn entry_binary(app_field: Option<&str>, cmd: &str) -> Option<String> {
+    match app_field {
+        Some(a) => Some(a.to_string()),
+        None => derive_binary(cmd),
+    }
+}
+
 /// The binary a command needs, or None for builtins/empty commands.
 #[allow(dead_code)]
 pub fn derive_binary(cmd: &str) -> Option<String> {
@@ -195,5 +204,12 @@ mod tests {
         assert_eq!(got, Some("brew install ripgrep"));
         #[cfg(target_os = "linux")]
         assert_eq!(got, Some("apt install ripgrep"));
+    }
+
+    #[test]
+    fn entry_binary_prefers_explicit_field() {
+        assert_eq!(entry_binary(Some("delta"), "git diff"), Some("delta".into()));
+        assert_eq!(entry_binary(None, "rg --files"), Some("rg".into()));
+        assert_eq!(entry_binary(None, "cd /tmp"), None);
     }
 }

@@ -8,6 +8,8 @@ pub struct Entry {
     pub cmd: String,
     #[serde(default)]
     pub undo: Option<String>,
+    #[serde(default)]
+    pub app: Option<String>,
     pub platform: Vec<String>,
     pub domains: Vec<String>,
     pub danger: Danger,
@@ -115,5 +117,14 @@ tags: [sleep, clamshell]
         )
         .unwrap();
         assert!(e.validate().is_err());
+    }
+
+    #[test]
+    fn app_field_is_optional_and_parsed() {
+        let e: Entry = serde_yaml_bw::from_str(GOOD).unwrap();
+        assert_eq!(e.app, None);
+        let with = format!("{GOOD}\napp: pmset");
+        let e: Entry = serde_yaml_bw::from_str(&with).unwrap();
+        assert_eq!(e.app.as_deref(), Some("pmset"));
     }
 }

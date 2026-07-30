@@ -262,6 +262,7 @@ mod tests {
             title: title.into(),
             cmd: "c".into(),
             undo: None,
+            app: None,
             platform: vec!["macos".into()],
             domains: vec!["shell".into()],
             danger: crate::entry::Danger::Low,

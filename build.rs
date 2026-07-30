@@ -16,7 +16,14 @@ fn main() {
     // pack entry that would break the corpus cannot be published either.
     println!("cargo:rerun-if-changed=corpus");
     println!("cargo:rerun-if-changed=packs");
+    println!("cargo:rerun-if-changed=apps.yaml");
+    let text = fs::read_to_string("apps.yaml").expect("apps.yaml missing");
+    let reg: apps::Registry =
+        serde_yaml_bw::from_str(&text).unwrap_or_else(|err| panic!("apps.yaml: {err}"));
+    reg.validate().unwrap_or_else(|err| panic!("apps.yaml: {err}"));
+
     let mut ids = HashSet::new();
+    let mut app_refs = Vec::new();
     let mut stack = vec![
         Path::new("corpus").to_path_buf(),
         Path::new("packs").to_path_buf(),
@@ -33,13 +40,15 @@ fn main() {
                 e.validate()
                     .unwrap_or_else(|err| panic!("{}: {err}", p.display()));
                 assert!(ids.insert(e.id.clone()), "duplicate id: {}", e.id);
+                app_refs.push((p.display().to_string(), e.app.clone()));
             }
         }
     }
 
-    println!("cargo:rerun-if-changed=apps.yaml");
-    let text = fs::read_to_string("apps.yaml").expect("apps.yaml missing");
-    let reg: apps::Registry =
-        serde_yaml_bw::from_str(&text).unwrap_or_else(|err| panic!("apps.yaml: {err}"));
-    reg.validate().unwrap_or_else(|err| panic!("apps.yaml: {err}"));
+    let known: HashSet<&str> = reg.apps.iter().map(|a| a.binary.as_str()).collect();
+    for (file, app) in &app_refs {
+        if let Some(a) = app {
+            assert!(known.contains(a.as_str()), "{file}: app '{a}' not in apps.yaml");
+        }
+    }
 }

@@ -84,6 +84,7 @@ fn from_ai(cmd: &str, f: ai::AiFields) -> Entry {
         title: f.title,
         cmd: cmd.to_string(),
         undo: (!f.undo.is_empty()).then_some(f.undo),
+        app: None,
         platform: if f.platform.is_empty() {
             vec!["macos".into()]
         } else {
@@ -119,6 +120,7 @@ fn from_manual(cmd: &str) -> Entry {
         title,
         cmd: cmd.to_string(),
         undo: (!undo.is_empty()).then_some(undo),
+        app: None,
         platform,
         domains,
         danger,
@@ -221,6 +223,7 @@ mod tests {
             title: "Test entry".into(),
             cmd: "echo hi".into(),
             undo: None,
+            app: None,
             platform: vec!["macos".into()],
             domains: vec!["shell".into()],
             danger: Danger::Low,

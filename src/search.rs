@@ -140,6 +140,7 @@ mod tests {
             title: title.into(),
             cmd: format!("run {id}"),
             undo: None,
+            app: None,
             platform: vec!["macos".into()],
             domains: vec![domain.into()],
             danger: crate::entry::Danger::Low,
