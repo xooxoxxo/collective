@@ -1,4 +1,11 @@
 apps:
+  - binary: bat
+    name: bat
+    description: Cat clone with syntax highlighting and Git integration
+    homepage: https://github.com/sharkdp/bat
+    install:
+      brew: brew install bat
+      apt: apt install bat
   - binary: btop
     name: btop
     description: Modern system resource dashboard with GPU and disk I/O views
@@ -6,6 +13,69 @@ apps:
     install:
       brew: brew install btop
       apt: apt install btop
+  - binary: delta
+    name: delta
+    description: Syntax-highlighting pager for git and diff output
+    homepage: https://dandavison.github.io/delta/
+    install:
+      brew: brew install git-delta
+      apt: apt install git-delta
+  - binary: entr
+    name: entr
+    description: Run a program when files change
+    homepage: https://eradman.com/entrproject/
+    install:
+      brew: brew install entr
+      apt: apt install entr
+  - binary: eza
+    name: eza
+    description: Modern replacement for ls with colors and icons
+    homepage: https://eza.rocks
+    install:
+      brew: brew install eza
+      apt: apt install eza
+  - binary: fd
+    name: fd
+    description: Fast alternative to find with sensible defaults
+    homepage: https://github.com/sharkdp/fd
+    install:
+      brew: brew install fd
+      apt: apt install fd-find
+  - binary: fzf
+    name: fzf
+    description: Fuzzy finder for command line with preview support
+    homepage: https://junegunn.github.io/fzf/
+    install:
+      brew: brew install fzf
+      apt: apt install fzf
+  - binary: htop
+    name: htop
+    description: Interactive process viewer and system monitor
+    homepage: https://htop.dev/
+    install:
+      brew: brew install htop
+      apt: apt install htop
+  - binary: jq
+    name: jq
+    description: Lightweight JSON query and transformation tool
+    homepage: https://jqlang.github.io/jq/
+    install:
+      brew: brew install jq
+      apt: apt install jq
+  - binary: mtr
+    name: mtr
+    description: Combined traceroute and ping tool with live stats
+    homepage: https://www.bitwizard.nl/mtr/
+    install:
+      brew: brew install mtr
+      apt: apt install mtr
+  - binary: ncdu
+    name: ncdu
+    description: Disk usage analyzer with interactive interface
+    homepage: https://dev.yorhel.nl/ncdu
+    install:
+      brew: brew install ncdu
+      apt: apt install ncdu
   - binary: rg
     name: ripgrep
     description: Recursively search directories with regex, gitignore-aware
@@ -13,3 +83,44 @@ apps:
     install:
       brew: brew install ripgrep
       apt: apt install ripgrep
+  - binary: strace
+    name: strace
+    description: Trace system calls and signals made by processes
+    homepage: https://strace.io/
+    install:
+      brew: brew install strace
+      apt: apt install strace
+  - binary: tldr
+    name: tldr
+    description: Simplified and community-driven man pages
+    homepage: https://tldr.sh/
+    install:
+      brew: brew install tldr
+      apt: apt install tldr
+  - binary: tmux
+    name: tmux
+    description: Terminal multiplexer for managing multiple sessions
+    homepage: https://tmux.github.io/
+    install:
+      brew: brew install tmux
+      apt: apt install tmux
+  - binary: tree
+    name: tree
+    description: Display directory structure in a tree-like format
+    homepage: https://oldmanprogrammer.net/source.php?dir=projects/tree
+    install:
+      brew: brew install tree
+      apt: apt install tree
+  - binary: watch
+    name: watch
+    description: Execute a command repeatedly and display output
+    homepage: https://gitlab.com/procps-ng/procps
+    install:
+      brew: brew install watch
+      apt: apt install procps
+  - binary: z
+    name: z
+    description: Jump quickly to frequently used directories
+    homepage: https://github.com/rupa/z
+    install:
+      brew: brew install z

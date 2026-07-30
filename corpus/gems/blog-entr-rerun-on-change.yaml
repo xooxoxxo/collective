@@ -1,6 +1,7 @@
 id: blog-entr-rerun-on-change
 title: 'Re-run a command when files change'
 cmd: ls <file> | entr <command>
+app: entr
 undo: ''
 platform: [macos, linux]
 domains: [shell, debugging, power]

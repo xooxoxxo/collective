@@ -1,6 +1,7 @@
 id: blog-delta-diff-highlighting
 title: 'Beautiful diffs with syntax highlighting'
 cmd: git diff | delta
+app: delta
 undo: ''
 platform: [macos, linux]
 domains: [git, shell]
