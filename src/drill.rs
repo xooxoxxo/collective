@@ -36,18 +36,41 @@ pub fn save_state(path: &Path, state: &HashMap<String, Card>) -> std::io::Result
     )
 }
 
-pub fn pick_due<'a>(
+pub fn is_due(
+    e: &Entry,
+    state: &HashMap<String, Card>,
+    domain: Option<&str>,
+    now: u64,
+) -> bool {
+    domain.is_none_or(|d| e.domains.iter().any(|x| x == d))
+        && state.get(&e.id).is_none_or(|c| c.due <= now)
+}
+
+/// Due entries split into (runnable, skipped-count) by app availability.
+pub fn split_by_availability<'a>(
     entries: &'a [Entry],
     state: &HashMap<String, Card>,
     domain: Option<&str>,
     now: u64,
-) -> Vec<&'a Entry> {
+    avail: &crate::apps::Availability,
+) -> (Vec<&'a Entry>, usize) {
+    let due: Vec<&Entry> = entries.iter().filter(|e| is_due(e, state, domain, now)).collect();
+    let mut runnable = Vec::new();
+    let mut skipped = 0usize;
+    for e in due {
+        let bin = crate::apps::entry_binary(e.app.as_deref(), &e.cmd);
+        if avail.available(bin.as_deref()) {
+            runnable.push(e);
+        } else {
+            skipped += 1;
+        }
+    }
+    (runnable, skipped)
+}
+
+fn rank<'a>(due: Vec<&'a Entry>, state: &HashMap<String, Card>) -> Vec<&'a Entry> {
     use rand::seq::SliceRandom;
-    let mut due: Vec<&Entry> = entries
-        .iter()
-        .filter(|e| domain.is_none_or(|d| e.domains.iter().any(|x| x == d)))
-        .filter(|e| state.get(&e.id).is_none_or(|c| c.due <= now))
-        .collect();
+    let mut due = due;
     // Shuffle first, then stable-sort by due date: most-overdue cards come
     // first, ties (e.g. all-unseen due=0) resolve randomly so a large corpus
     // does not always drill the same alphabetically-first 20.
@@ -57,6 +80,17 @@ pub fn pick_due<'a>(
     due
 }
 
+#[allow(dead_code)]
+pub fn pick_due<'a>(
+    entries: &'a [Entry],
+    state: &HashMap<String, Card>,
+    domain: Option<&str>,
+    now: u64,
+) -> Vec<&'a Entry> {
+    let due: Vec<&Entry> = entries.iter().filter(|e| is_due(e, state, domain, now)).collect();
+    rank(due, state)
+}
+
 pub fn run(entries: &[Entry], domain: Option<&str>) {
     let now = SystemTime::now()
         .duration_since(UNIX_EPOCH)
@@ -64,7 +98,20 @@ pub fn run(entries: &[Entry], domain: Option<&str>) {
         .as_secs();
     let path = default_state_path();
     let mut state = load_state(&path);
-    let due = pick_due(entries, &state, domain, now);
+    let avail = crate::apps::Availability::scan(
+        entries
+            .iter()
+            .filter_map(|e| crate::apps::entry_binary(e.app.as_deref(), &e.cmd))
+            .collect::<Vec<_>>()
+            .iter()
+            .map(|s| s.as_str()),
+        &std::env::var("PATH").unwrap_or_default(),
+    );
+    let (runnable, skipped) = split_by_availability(entries, &state, domain, now, &avail);
+    let due = rank(runnable, &state);
+    if skipped > 0 {
+        println!("{skipped} skipped (app not installed)");
+    }
     if due.is_empty() {
         println!("nothing due. come back later.");
         return;
@@ -209,5 +256,39 @@ mod tests {
         let due = pick_due(&entries, &state, Some("git"), 0);
         assert!(!due.is_empty());
         assert!(due.iter().all(|e| e.domains.iter().any(|d| d == "git")));
+    }
+
+    #[test]
+    fn unavailable_apps_are_skipped_and_counted() {
+        let mk = |id: &str, cmd: &str| Entry {
+            id: id.into(),
+            title: id.into(),
+            cmd: cmd.into(),
+            undo: None,
+            app: None,
+            platform: vec!["macos".into()],
+            domains: vec!["shell".into()],
+            danger: crate::entry::Danger::Low,
+            explanation: "e".into(),
+            source: "s".into(),
+            tags: vec![],
+        };
+        let entries = vec![
+            mk("ok", "cd /tmp"),
+            mk("missing", "definitely-not-on-path-xyzq --run"),
+        ];
+        let state = std::collections::HashMap::new();
+        let avail = crate::apps::Availability::scan(
+            entries
+                .iter()
+                .filter_map(|e| crate::apps::entry_binary(e.app.as_deref(), &e.cmd))
+                .collect::<Vec<_>>()
+                .iter()
+                .map(|s| s.as_str()),
+            &std::env::var("PATH").unwrap_or_default(),
+        );
+        let (runnable, skipped) = split_by_availability(&entries, &state, None, 0, &avail);
+        assert_eq!(runnable.iter().map(|e| e.id.as_str()).collect::<Vec<_>>(), ["ok"]);
+        assert_eq!(skipped, 1);
     }
 }
