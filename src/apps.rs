@@ -72,7 +72,6 @@ const BUILTINS: &[&str] = &[
 ];
 
 /// The binary an entry needs: explicit `app:` field wins, else derived.
-#[allow(dead_code)]
 pub fn entry_binary(app_field: Option<&str>, cmd: &str) -> Option<String> {
     match app_field {
         Some(a) => Some(a.to_string()),
@@ -95,11 +94,9 @@ pub fn derive_binary(cmd: &str) -> Option<String> {
 
 /// PATH presence for the binaries scanned this run. Binaries never scanned
 /// resolve to available — graying must never be a false positive.
-#[allow(dead_code)]
 pub struct Availability(HashMap<String, bool>);
 
 impl Availability {
-    #[allow(dead_code)]
     pub fn scan<'a>(binaries: impl Iterator<Item = &'a str>, path_var: &str) -> Availability {
         let dirs: Vec<&str> = path_var.split(':').filter(|d| !d.is_empty()).collect();
         let mut map = HashMap::new();
@@ -113,7 +110,6 @@ impl Availability {
         Availability(map)
     }
 
-    #[allow(dead_code)]
     pub fn available(&self, binary: Option<&str>) -> bool {
         match binary {
             None => true,

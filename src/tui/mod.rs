@@ -21,10 +21,20 @@ pub struct App {
     pub favorites: HashSet<String>,
     pub fav_only: bool,
     pub curated_only: bool,
+    pub availability: crate::apps::Availability,
+    pub available_only: bool,
 }
 
 impl App {
     pub fn new(all: Vec<Entry>, favorites: HashSet<String>) -> App {
+        let binaries: Vec<String> = all
+            .iter()
+            .filter_map(|e| crate::apps::entry_binary(e.app.as_deref(), &e.cmd))
+            .collect();
+        let availability = crate::apps::Availability::scan(
+            binaries.iter().map(|s| s.as_str()),
+            &std::env::var("PATH").unwrap_or_default(),
+        );
         let mut app = App {
             all,
             filtered: Vec::new(),
@@ -33,6 +43,8 @@ impl App {
             favorites,
             fav_only: false,
             curated_only: false,
+            availability,
+            available_only: false,
         };
         app.recompute();
         app
@@ -53,6 +65,18 @@ impl App {
         }
         if self.curated_only {
             idx.retain(|&i| !crate::search::is_bulk_import(&self.all[i]));
+        }
+        if self.available_only {
+            let avail: Vec<bool> = idx
+                .iter()
+                .map(|&i| {
+                    let e = &self.all[i];
+                    let bin = crate::apps::entry_binary(e.app.as_deref(), &e.cmd);
+                    self.availability.available(bin.as_deref())
+                })
+                .collect();
+            let mut it = avail.iter();
+            idx.retain(|_| *it.next().unwrap());
         }
         self.filtered = idx;
         self.selected = 0;
@@ -80,6 +104,16 @@ impl App {
 
     pub fn toggle_curated_only(&mut self) {
         self.curated_only = !self.curated_only;
+        self.recompute();
+    }
+
+    pub fn entry_available(&self, e: &Entry) -> bool {
+        let bin = crate::apps::entry_binary(e.app.as_deref(), &e.cmd);
+        self.availability.available(bin.as_deref())
+    }
+
+    pub fn toggle_available_only(&mut self) {
+        self.available_only = !self.available_only;
         self.recompute();
     }
 
@@ -162,6 +196,7 @@ pub fn run() -> io::Result<()> {
                 }
                 (KeyCode::Char('o'), KeyModifiers::CONTROL) => app.toggle_fav_only(),
                 (KeyCode::Char('u'), KeyModifiers::CONTROL) => app.toggle_curated_only(),
+                (KeyCode::Char('t'), KeyModifiers::CONTROL) => app.toggle_available_only(),
                 // Everything printable types into the filter. SHIFT accompanies
                 // uppercase chars, so allow it; any other modifier is ignored.
                 (KeyCode::Char(ch), m) if m.is_empty() || m == KeyModifiers::SHIFT => {
@@ -205,6 +240,22 @@ fn deliver(cmd: &str) {
 mod tests {
     use super::*;
     use crate::corpus;
+
+    fn fixture(id: &str, cmd: &str) -> Entry {
+        Entry {
+            id: id.into(),
+            title: id.into(),
+            cmd: cmd.into(),
+            undo: None,
+            app: None,
+            platform: vec!["macos".into()],
+            domains: vec!["shell".into()],
+            danger: crate::entry::Danger::Low,
+            explanation: "e".into(),
+            source: "s".into(),
+            tags: vec![],
+        }
+    }
 
     fn app() -> App {
         App::new(corpus::load(), HashSet::new())
@@ -312,5 +363,20 @@ mod tests {
             .visible()
             .iter()
             .all(|e| !crate::search::is_bulk_import(e)));
+    }
+
+    #[test]
+    fn available_only_hides_missing_apps() {
+        let entries = vec![
+            fixture("has-app", "definitely-not-on-path-xyzq --flag"),
+            fixture("no-app", "cd /tmp"),
+        ];
+        let mut a = App::new(entries, HashSet::new());
+        assert_eq!(a.visible().len(), 2);
+        assert!(!a.entry_available(a.all.iter().find(|e| e.id == "has-app").unwrap()));
+        assert!(a.entry_available(a.all.iter().find(|e| e.id == "no-app").unwrap()));
+        a.toggle_available_only();
+        assert_eq!(a.visible().len(), 1);
+        assert_eq!(a.visible()[0].id, "no-app");
     }
 }

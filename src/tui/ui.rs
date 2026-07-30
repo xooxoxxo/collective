@@ -34,7 +34,9 @@ pub fn draw(f: &mut Frame, app: &App) {
         let danger = format!("{:?}", e.danger).to_lowercase();
         // Selection highlight is applied by the table's row_highlight_style;
         // here we only colour danger:high rows red.
-        let style = if e.danger == Danger::High {
+        let style = if !app.entry_available(e) {
+            Style::default().fg(Color::DarkGray)
+        } else if e.danger == Danger::High {
             Style::default().fg(Color::Red)
         } else {
             Style::default()
@@ -99,7 +101,7 @@ pub fn draw(f: &mut Frame, app: &App) {
     f.render_widget(detail, chunks[2]);
 
     // help bar
-    let help = Paragraph::new("↵ prefill  ^Y copy  ^S ★  ^O fav-only  ^U curated  Esc quit")
+    let help = Paragraph::new("↵ prefill  ^Y copy  ^S ★  ^O fav  ^U curated  ^T avail  ^A app  Esc quit")
         .style(Style::default().fg(Color::DarkGray));
     f.render_widget(help, chunks[3]);
 }
