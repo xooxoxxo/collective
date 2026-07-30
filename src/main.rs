@@ -159,6 +159,17 @@ fn cmd_search(entries: &[entry::Entry], query: &str, domain: Option<&str>, curat
         eprintln!("no matches for '{query}'");
         std::process::exit(1);
     }
+
+    let avail = apps::Availability::scan(
+        filtered
+            .iter()
+            .filter_map(|e| apps::entry_binary(e.app.as_deref(), &e.cmd))
+            .collect::<Vec<_>>()
+            .iter()
+            .map(|s| s.as_str()),
+        &std::env::var("PATH").unwrap_or_default(),
+    );
+
     let has_curated = hits.iter().any(|(e, _)| !search::is_bulk_import(e));
     let mut sep_printed = false;
     for (e, _) in hits {
@@ -166,8 +177,14 @@ fn cmd_search(entries: &[entry::Entry], query: &str, domain: Option<&str>, curat
             println!("── tldr imports ──");
             sep_printed = true;
         }
+        let bin = apps::entry_binary(e.app.as_deref(), &e.cmd);
         let preview: String = e.cmd.chars().take(48).collect();
-        println!("{:<28} {:<44} {}", e.id, truncate(&e.title, 44), preview);
+        let line = format!("{:<28} {:<44} {}", e.id, truncate(&e.title, 44), preview);
+        if avail.available(bin.as_deref()) {
+            println!("{line}");
+        } else {
+            println!("\x1b[2m{line}\x1b[0m");
+        }
     }
 }
 
@@ -204,6 +221,22 @@ fn cmd_show(entries: &[entry::Entry], id: &str) {
     }
     println!("{}", e.explanation.trim());
     println!("source: {}", e.source);
+
+    if let Some(bin) = apps::entry_binary(e.app.as_deref(), &e.cmd) {
+        if let Some(info) = apps::registry().get(&bin) {
+            println!("app: {} ({})", info.name, info.binary);
+            let avail = apps::Availability::scan(
+                std::iter::once(bin.as_str()),
+                &std::env::var("PATH").unwrap_or_default(),
+            );
+            if !avail.available(Some(&bin)) {
+                match apps::install_for_platform(info) {
+                    Some(cmd) => println!("install: {cmd}"),
+                    None => println!("install: see {}", info.homepage),
+                }
+            }
+        }
+    }
 }
 
 fn cmd_copy(entries: &[entry::Entry], id: &str) {
