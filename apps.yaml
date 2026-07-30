@@ -88,7 +88,6 @@ apps:
     description: Trace system calls and signals made by processes
     homepage: https://strace.io/
     install:
-      brew: brew install strace
       apt: apt install strace
   - binary: tldr
     name: tldr
@@ -118,9 +117,9 @@ apps:
     install:
       brew: brew install watch
       apt: apt install procps
-  - binary: z
-    name: z
-    description: Jump quickly to frequently used directories
-    homepage: https://github.com/rupa/z
+  - binary: zoxide
+    name: zoxide
+    description: Smarter cd command that learns your navigation patterns
+    homepage: https://github.com/ajeetdsouza/zoxide
     install:
-      brew: brew install z
+      brew: brew install zoxide

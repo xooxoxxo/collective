@@ -1,6 +1,7 @@
 id: blog-zoxide-smarter-cd
 title: 'Jump to frequently-used directories'
 cmd: z <partial-path>
+app: zoxide
 undo: ''
 platform: [macos, linux]
 domains: [shell, power]
