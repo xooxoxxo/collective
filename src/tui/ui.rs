@@ -74,30 +74,63 @@ pub fn draw(f: &mut Frame, app: &App) {
     f.render_stateful_widget(table, chunks[1], &mut state);
 
     // detail pane
-    let detail = match app.selected_entry() {
-        Some(e) => {
-            let mut lines = vec![
-                Line::from(Span::styled(
-                    e.title.clone(),
-                    Style::default().add_modifier(Modifier::BOLD),
-                )),
-                Line::from(format!("cmd:  {}", e.cmd)),
-            ];
-            if let Some(u) = e.undo.as_deref().filter(|u| !u.is_empty()) {
-                lines.push(Line::from(format!("undo: {u}")));
+    let detail = if let Some(pane) = &app.pane {
+        let lines = match pane.binary.as_deref().and_then(|b| crate::apps::registry().get(b)) {
+            Some(info) => {
+                let install = app
+                    .pane_install_cmd()
+                    .unwrap_or_else(|| "see homepage".to_string());
+                vec![
+                    Line::from(Span::styled(
+                        format!("{} ({})", info.name, info.binary),
+                        Style::default().add_modifier(Modifier::BOLD),
+                    )),
+                    Line::from(info.description.clone()),
+                    Line::from(format!("homepage: {}", info.homepage)),
+                    Line::from(format!("install:  {install}")),
+                    Line::from(""),
+                    Line::from(Span::styled(
+                        "↵ prefill install  o open homepage  Esc close",
+                        Style::default().fg(Color::DarkGray),
+                    )),
+                ]
             }
-            lines.push(Line::from(format!(
-                "domains: {}   danger: {:?}",
-                e.domains.join(", "),
-                e.danger
-            )));
-            lines.push(Line::from(e.explanation.trim().to_string()));
-            lines.push(Line::from(format!("source: {}", e.source)));
-            Paragraph::new(lines).wrap(Wrap { trim: true })
+            None => vec![Line::from(match pane.binary.as_deref() {
+                Some(b) => format!("no app info for {b}"),
+                None => "built-in command".to_string(),
+            })],
+        };
+        Paragraph::new(lines).wrap(Wrap { trim: true })
+    } else {
+        match app.selected_entry() {
+            Some(e) => {
+                let mut lines = vec![
+                    Line::from(Span::styled(
+                        e.title.clone(),
+                        Style::default().add_modifier(Modifier::BOLD),
+                    )),
+                    Line::from(format!("cmd:  {}", e.cmd)),
+                ];
+                if let Some(u) = e.undo.as_deref().filter(|u| !u.is_empty()) {
+                    lines.push(Line::from(format!("undo: {u}")));
+                }
+                lines.push(Line::from(format!(
+                    "domains: {}   danger: {:?}",
+                    e.domains.join(", "),
+                    e.danger
+                )));
+                lines.push(Line::from(e.explanation.trim().to_string()));
+                lines.push(Line::from(format!("source: {}", e.source)));
+                Paragraph::new(lines).wrap(Wrap { trim: true })
+            }
+            None => Paragraph::new("no match"),
         }
-        None => Paragraph::new("no match"),
     }
-    .block(Block::default().borders(Borders::ALL).title("detail"));
+    .block(Block::default().borders(Borders::ALL).title(if app.pane.is_some() {
+        "app"
+    } else {
+        "detail"
+    }));
     f.render_widget(detail, chunks[2]);
 
     // help bar

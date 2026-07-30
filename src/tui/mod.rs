@@ -13,6 +13,10 @@ use ratatui::Terminal;
 use std::collections::HashSet;
 use std::io::{self, Write};
 
+pub struct AppPane {
+    pub binary: Option<String>,
+}
+
 pub struct App {
     pub all: Vec<Entry>,
     pub filtered: Vec<usize>,
@@ -23,6 +27,7 @@ pub struct App {
     pub curated_only: bool,
     pub availability: crate::apps::Availability,
     pub available_only: bool,
+    pub pane: Option<AppPane>,
 }
 
 impl App {
@@ -45,6 +50,7 @@ impl App {
             curated_only: false,
             availability,
             available_only: false,
+            pane: None,
         };
         app.recompute();
         app
@@ -117,6 +123,30 @@ impl App {
         self.recompute();
     }
 
+    pub fn open_pane(&mut self) {
+        if let Some(e) = self.selected_entry() {
+            let binary = crate::apps::entry_binary(e.app.as_deref(), &e.cmd);
+            self.pane = Some(AppPane { binary });
+        }
+    }
+
+    pub fn close_pane(&mut self) {
+        self.pane = None;
+    }
+
+    pub fn pane_install_cmd(&self) -> Option<String> {
+        let pane = self.pane.as_ref()?;
+        let bin = pane.binary.as_deref()?;
+        let app = crate::apps::registry().get(bin)?;
+        crate::apps::install_for_platform(app).map(str::to_string)
+    }
+
+    pub fn pane_homepage(&self) -> Option<String> {
+        let pane = self.pane.as_ref()?;
+        let bin = pane.binary.as_deref()?;
+        crate::apps::registry().get(bin).map(|a| a.homepage.clone())
+    }
+
     pub fn toggle_star(&mut self) -> Option<String> {
         let id = self.selected_entry()?.id.clone();
         if !self.favorites.remove(&id) {
@@ -140,6 +170,18 @@ impl App {
 fn restore() {
     let _ = disable_raw_mode();
     let _ = execute!(io::stdout(), LeaveAlternateScreen);
+}
+
+fn open_url(url: &str) {
+    #[cfg(target_os = "macos")]
+    let opener = "open";
+    #[cfg(not(target_os = "macos"))]
+    let opener = "xdg-open";
+    let _ = std::process::Command::new(opener)
+        .arg(url)
+        .stdout(std::process::Stdio::null())
+        .stderr(std::process::Stdio::null())
+        .spawn();
 }
 
 pub fn run() -> io::Result<()> {
@@ -168,6 +210,21 @@ pub fn run() -> io::Result<()> {
                 continue;
             }
             match (key.code, key.modifiers) {
+                _ if app.pane.is_some() => match (key.code, key.modifiers) {
+                    (KeyCode::Esc, _) => app.close_pane(),
+                    (KeyCode::Enter, _) => {
+                        if let Some(cmd) = app.pane_install_cmd() {
+                            picked = Some(cmd);
+                            break;
+                        }
+                    }
+                    (KeyCode::Char('o'), m) if m.is_empty() => {
+                        if let Some(url) = app.pane_homepage() {
+                            open_url(&url);
+                        }
+                    }
+                    _ => {}
+                },
                 (KeyCode::Esc, _) => break,
                 (KeyCode::Char('c'), KeyModifiers::CONTROL) => break,
                 (KeyCode::Up, _) => app.move_up(),
@@ -197,6 +254,7 @@ pub fn run() -> io::Result<()> {
                 (KeyCode::Char('o'), KeyModifiers::CONTROL) => app.toggle_fav_only(),
                 (KeyCode::Char('u'), KeyModifiers::CONTROL) => app.toggle_curated_only(),
                 (KeyCode::Char('t'), KeyModifiers::CONTROL) => app.toggle_available_only(),
+                (KeyCode::Char('a'), KeyModifiers::CONTROL) => app.open_pane(),
                 // Everything printable types into the filter. SHIFT accompanies
                 // uppercase chars, so allow it; any other modifier is ignored.
                 (KeyCode::Char(ch), m) if m.is_empty() || m == KeyModifiers::SHIFT => {
@@ -378,5 +436,30 @@ mod tests {
         a.toggle_available_only();
         assert_eq!(a.visible().len(), 1);
         assert_eq!(a.visible()[0].id, "no-app");
+    }
+
+    #[test]
+    fn pane_opens_for_selected_entry_and_closes() {
+        let entries = vec![fixture("rg-entry", "rg --files")];
+        let mut a = App::new(entries, HashSet::new());
+        assert!(a.pane.is_none());
+        a.open_pane();
+        assert_eq!(a.pane.as_ref().unwrap().binary.as_deref(), Some("rg"));
+        a.close_pane();
+        assert!(a.pane.is_none());
+    }
+
+    #[test]
+    fn pane_install_cmd_comes_from_registry() {
+        let entries = vec![fixture("rg-entry", "rg --files"), fixture("no-app", "cd /tmp")];
+        let mut a = App::new(entries, HashSet::new());
+        a.open_pane();
+        let cmd = a.pane_install_cmd();
+        #[cfg(target_os = "macos")]
+        assert_eq!(cmd.as_deref(), Some("brew install ripgrep"));
+        a.close_pane();
+        a.move_down();
+        a.open_pane();
+        assert_eq!(a.pane_install_cmd(), None, "no registry app, no install");
     }
 }
