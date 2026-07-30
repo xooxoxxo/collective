@@ -4,6 +4,10 @@
 // build script reads only `id`; the binary uses every field
 mod entry;
 
+#[path = "src/apps.rs"]
+#[allow(dead_code)]
+mod apps;
+
 use std::{collections::HashSet, fs, path::Path};
 
 fn main() {
@@ -32,4 +36,10 @@ fn main() {
             }
         }
     }
+
+    println!("cargo:rerun-if-changed=apps.yaml");
+    let text = fs::read_to_string("apps.yaml").expect("apps.yaml missing");
+    let reg: apps::Registry =
+        serde_yaml_bw::from_str(&text).unwrap_or_else(|err| panic!("apps.yaml: {err}"));
+    reg.validate().unwrap_or_else(|err| panic!("apps.yaml: {err}"));
 }

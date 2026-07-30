@@ -1,0 +1,15 @@
+apps:
+  - binary: btop
+    name: btop
+    description: Modern system resource dashboard with GPU and disk I/O views
+    homepage: https://github.com/aristocratos/btop
+    install:
+      brew: brew install btop
+      apt: apt install btop
+  - binary: rg
+    name: ripgrep
+    description: Recursively search directories with regex, gitignore-aware
+    homepage: https://github.com/BurntSushi/ripgrep
+    install:
+      brew: brew install ripgrep
+      apt: apt install ripgrep

@@ -1,5 +1,6 @@
 mod ai;
 mod answer;
+mod apps;
 mod collect;
 mod corpus;
 mod drill;
