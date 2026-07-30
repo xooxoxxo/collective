@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>collective — drill the commands you keep re-googling</title>
+<meta name="description" content="A curated, offline command corpus with spaced-repetition practice built in. Danger ratings and undos on every entry, SM-2 typing drills, works without a network.">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="vendor/asciinema-player.css">
+</head>
+<body>
+
+<header class="hero">
+  <p class="prompt" aria-hidden="true">$</p>
+  <h1>collective</h1>
+  <p class="tagline">Stop re-googling the same commands.<br>Drill them until they stick.</p>
+  <p class="sub">A curated, offline command corpus with spaced-repetition practice built in.</p>
+  <div class="install-row">
+    <code id="install-cmd">brew install xooxoxxo/tap/collective</code>
+    <button class="copy" type="button" aria-label="Copy install command">copy</button>
+  </div>
+  <p class="hero-links"><a href="https://github.com/xooxoxxo/collective">source on GitHub</a></p>
+</header>
+
+<main>
+  <section class="demo" aria-label="Terminal demo">
+    <div id="player">
+      <pre class="demo-fallback">$ collective drill --domain git
+<!-- JS-disabled fallback: replace this comment with the first two lines of the
+     Task 2 Segment C drill capture, verbatim — never invented text. Until Task 2
+     runs, leave the comment in place; Task 2 Step 6 fills it. --></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why</h2>
+    <div class="beat">
+      <p><strong>Lookup tools answer the question; they don't stop you asking it again.</strong>
+      collective drills what you look up until recall beats re-googling.</p>
+    </div>
+    <div class="beat">
+      <p><strong>Every entry ships with a danger rating, an explanation, and an undo</strong> —
+      enforced by schema, not convention.</p>
+      <pre class="entry">Force push to undo last commit on remote (destructive)  [git]
+⚠ DANGER: <span class="danger">high</span> — know your exit before you run this.
+  undo: git push origin +&lt;original-commit-hash&gt;:$(git rev-parse --abbrev-ref HEAD)
+
+  git push -f origin HEAD^:$(git rev-parse --abbrev-ref HEAD)
+
+Forcefully moves remote branch pointer back one commit, effectively undoing last push. DANGEROUS on shared branches; only safe on personal feature branches before merge. Requires force push permissions; will fail on protected branches (use carefully!).
+source: https://github.com/paulirish/dotfiles</pre>
+    </div>
+    <div class="beat">
+      <p><strong>Works the moment it installs.</strong> 152 curated commands offline, the
+      1,459-entry tldr pack one command away. No network, no API key.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Packs</h2>
+    <p>The core stays hand-picked. Bulk is opt-in:</p>
+    <pre class="term">$ collective pack add tldr
+installed tldr (1459 entries)</pre>
+    <p>Anyone can publish a pack — a repo with entry YAML is enough:</p>
+    <pre class="term">$ collective pack add owner/repo</pre>
+  </section>
+
+  <section>
+    <h2>Install</h2>
+    <pre class="term">$ brew install xooxoxxo/tap/collective</pre>
+    <p>Or with cargo:</p>
+    <pre class="term">$ cargo install --git https://github.com/xooxoxxo/collective</pre>
+    <p>The shell wrapper puts picked commands on your prompt instead of your clipboard:</p>
+    <pre class="term">$ collective --print-shell zsh &gt;&gt; ~/.zshrc</pre>
+  </section>
+</main>
+
+<footer>
+  <p>
+    <a href="https://github.com/xooxoxxo/collective">GitHub</a> ·
+    <a href="https://github.com/xooxoxxo/collective/blob/main/LICENSE">MIT</a> ·
+    <a href="https://github.com/xooxoxxo/collective-registry">pack registry</a>
+  </p>
+</footer>
+
+<script src="vendor/asciinema-player.min.js"></script>
+<script>
+(function () {
+  var el = document.getElementById('player');
+  if (window.AsciinemaPlayer && el) {
+    el.textContent = '';
+    AsciinemaPlayer.create('demo.cast', el, {
+      loop: true,
+      autoPlay: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      controls: true,
+      idleTimeLimit: 2,
+      fit: 'width'
+    });
+  }
+  var btn = document.querySelector('.copy');
+  var cmd = document.getElementById('install-cmd');
+  if (btn && cmd) {
+    btn.addEventListener('click', function () {
+      function done() {
+        btn.textContent = 'copied';
+        btn.classList.add('ok');
+        setTimeout(function () {
+          btn.textContent = 'copy';
+          btn.classList.remove('ok');
+        }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(cmd.textContent).then(done);
+      } else {
+        var r = document.createRange();
+        r.selectNodeContents(cmd);
+        var sel = getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+        if (document.execCommand('copy')) done();
+        sel.removeAllRanges();
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
