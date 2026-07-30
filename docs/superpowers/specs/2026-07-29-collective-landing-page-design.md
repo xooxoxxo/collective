@@ -1,7 +1,10 @@
 # Collective landing page — Design Spec
 
 Date: 2026-07-29
-Status: Approved (brainstorming session)
+Status: **Superseded by `2026-07-30-landing-page-v2-design.md`** — the
+positioning this spec's pitch rests on was invalidated by the category audit
+(navi, not tldr/cheat.sh, is the real competitor), and the demo predates the
+v0.4.0 typed drill.
 Relates to: the `collective` CLI, released at v0.3.1
 
 ## What
